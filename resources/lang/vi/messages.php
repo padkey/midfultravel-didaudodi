@@ -45,4 +45,6 @@ return [
     'america' => 'Châu Mỹ',
     'africa' => 'Châu Phi',
     'mission' => 'Sứ mệnh',
+    'our_journey'=>'Hành trình của chúng ta',
+
 ];

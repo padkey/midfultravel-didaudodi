@@ -80,7 +80,7 @@
                             <ul class="list cat-list">
                                 @foreach($listCate as $cate)
                                 <li>
-                                    <a href="#" class="d-flex">
+                                    <a href="/list-blogs/{{$cate->url}}" class="d-flex">
                                         <p>{{ $cate->title }}</p>
                                         <!-- <p>(37)</p> -->
                                     </a>
@@ -89,7 +89,7 @@
                             </ul>
                         </aside>
 
-                        <aside class="single_sidebar_widget popular_post_widget">
+                        <!-- <aside class="single_sidebar_widget popular_post_widget">
                             <h3 class="widget_title">Recent Post</h3>
                             <div class="media post_item">
                                 <img src="img/post/post_1.png" alt="post">
@@ -127,7 +127,7 @@
                                     <p>01 Hours ago</p>
                                 </div>
                             </div>
-                        </aside>
+                        </aside> -->
 
 
 

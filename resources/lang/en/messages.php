@@ -43,7 +43,7 @@ return [
     'europe' => 'Europe',
     'america' => 'America',
     'africa' => 'Africa',
-    'mission'=>'Mission',
+    'our_journey'=>'Our journey',
     'mission'=>'Mission',
     'mission'=>'Mission',
 ];

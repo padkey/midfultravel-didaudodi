@@ -10,7 +10,6 @@
 
 	<section class="sample-text-area">
 		<div class="container-package box_1170">
-			<h3 class="text-heading">Chuyến đi cộng đồng khám phá đất nước sau chiến tranh</h3>
 			<p class="sample-text">
 				{!! $tour->content !!}
 		 </p>

@@ -39,24 +39,28 @@
         font-weight: 100;
         margin-top: 20px
     }
+    .misson_title h1{
+        color:#8b572a;
+    }
 	</style>
     
    <div class="row">
         <hr width=60%>
-        <div class="col-xl-6 xtc">
-            <h2>Zen Master Thich Nhat Hanh is a global spiritual leader, poet and peace activist, revered around the world for his pioneering teachings on mindfulness, global ethics and peace.</h2>
+        <div class="col-xl-7 xtc">
+            <h2>Đi Đâu Đó Đi Mindful Travel offers mindfulness tours globally.  We are committed to creating a positive
+                 impact on the environment and local communities through sustainability and social responsibility programs.</h2>
         </div>
    </div>
    
      <div class="misson_area" >
-        <div class="container" style="max-width: 1700px;">
+        <div class="container" style="max-width: 95%;">
             <div class="row">
                 <div class="col-xl-6 col-lg-12">
                     <div class="misson_title mb-20px">
                     <img src="{{url('uploads/'.$missionPage->avatar)}}" alt=""  >
                     </div>
                 </div>
-                <div class="col-xl-5 col-lg-12">
+                <div class="col-xl-6 col-lg-12">
                     <div class="misson_title mb-20px">
                         <h1>{{trans('messages.mission')}}</h1>
                         <p>{!! $missionPage->content !!} </p>
@@ -97,7 +101,7 @@
             background-size: cover;
         }
         .image-cn{
-            background-image: url("frontend/images/h3.jpg");
+            background-image: url("frontend/images/za4.jpg");
             background-size: cover;
         }
         .title-impatti{
@@ -112,7 +116,7 @@
 
             </div>
             <div class="col-xl-4 col-lg-4" style="">
-                <h1 class="title-impatti mt-10">{{trans('messages.impacts')}}</h1>
+                <h1 class="title-impatti mt-10">Value</h1>
                 <div class="content-impatti">
                     {!! $impactsPage->content !!}
                     <!-- <p><i class="fa fa-handshake-o" aria-hidden="true"></i>
@@ -154,11 +158,18 @@
 		margin:auto;
 	}
     .ourToursImage img{
-            max-height: 50vh;
+            width: 100%;
         }
+    .section_title h1{
+        color: #8b572a!important;
+    }
+    .generated_title h1{
+        color: #8b572a!important;
+
+    }    
 	</style>
     <div class="generated_area">
-        <div class="container">
+        <div class="container" style="max-width:95%">
             <div class="row">
                 <div class="col-xl-6 col-lg-12">
                     <div class="generated_title mb-20px">
@@ -274,7 +285,7 @@
                 <div class="col-xl-4 col-md-4">
                     <div class="single_offers">
                         <div class="about_thumb">
-                            <img src="{{url('frontend/images/pk2.jpg')}}" alt="">
+                            <img src="{{url('/uploads/'.$tour->image_thumbnail)}}" alt="">
                         </div>
                         <div class="offers_content">
                             <div class="trangthai-category">
@@ -326,6 +337,7 @@
         .ndh_title h3{
             font-style: inherit;
             font-weight: 700;
+            color:#8b572a;
            
         }
         .avatar-p:hover{
@@ -390,6 +402,7 @@
         .text_area_video h3{
             font-style: inherit;
             font-weight: 700;
+            color:#8b572a;
         }
         .title-video{
             margin-top: 15px;
@@ -427,7 +440,7 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="text_area_video">
-                        <h3>{{trans('messages.dharma_talks')}}</h3>
+                        <h3>{{trans('messages.our_journey')}}</h3>
                         <hr style="margin-bottom:50px;"> <!--  -->
                     </div>
                 </div>
@@ -520,7 +533,7 @@
             padding: 0px 0 5px 0px;
         }
         .blog_details p{
-            font-size: 29px;
+            font-size: 25px;
         }
 
         .small-blog-details h2{
@@ -578,8 +591,8 @@
             display:flex;
         }
         .center-small-blog img{
-            width: 200px;
-            height:200px;
+            width: 250px;
+            height:250px;
             object-fit:cover;
         }
         .center-small-blog .small-blog-details p{
@@ -646,7 +659,7 @@
                         @php 
                             $small = 'blog_details';
                             $flex = '';
-                        @endphp;
+                        @endphp
                         @foreach($blogPosts['posts'] as $post)
                         <article class="blog_item {{$flex}}">
                             <div class="blog_item_img">
@@ -661,7 +674,7 @@
                                 <a class="d-inline-block" href="/blogs/{{$post->url}}">
                                     <h2>{{$post->title}}</h2>
                                 </a>
-                                <p>Brother Phap Linh aka, Brother Spirit, recently spoke at Overheated, a climate event in London co-presented by Billie Eilish.</p>
+                                <p>{{$post->short_description}}</p>
                                 <!-- <ul class="blog-info-link">
                                     <li><a href="#"><i class="fa fa-user"></i> Travel, Lifestyle</a></li>
                                     <li><a href="#"><i class="fa fa-comments"></i> 03 Comments</a></li>
@@ -672,7 +685,7 @@
                             $small = 'small-blog-details';
                             $flex = 'center-small-blog';
 
-                        @endphp;
+                        @endphp
                         @endforeach
 
                     </div>

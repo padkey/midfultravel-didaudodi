@@ -58,7 +58,7 @@
         <div class="title-package">
             <p><span class="event-label trangthai-open">ĐĂNG KÝ MỞ</span> <span class="event-label"> ĐI HÀNH HƯƠNG</span></p>
             <p class="date-start-end">Ngày 15 tháng 2 đến ngày 28 tháng 2 năm 2024</p>
-            <h3 class="">Theo Dấu Chân Đức Phật</h3>
+            <h3 class="">{{$tour->name}}</h3>
         </div>
     </div>
 </div>

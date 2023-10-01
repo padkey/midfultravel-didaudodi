@@ -17,7 +17,7 @@
                      <ul class="list cat-list">
                         @foreach($listCate as $cate)
                         <li>
-                           <a href="#" class="d-flex">
+                           <a href="/list-blogs/{{$cate->url}}" class="d-flex">
                               <p>{{ $cate->title }}</p>
                               <p>(37)</p>
                            </a>

@@ -1,6 +1,6 @@
 <style>
     .slider_bg_1{
-        background-image: url("frontend/images/p5.jpg");
+        background-image: url("frontend/images/k3.jpg");
     }
     .slider_bg_2{
         background-image: url("frontend/images/tnh12.png");
@@ -12,7 +12,7 @@
         color:white;
     }
     .owl-carousel .owl-item img {
-        width:180%;
+       
     }
 </style>
 <div class="slider_area">
@@ -20,7 +20,7 @@
         <div class="single_slider d-flex align-items-center justify-content-center slider_bg_1">
             <div class="container" style="margin-top: -10px;">
                 <div class="row">
-                    <div class="col-xl-2">
+                    <div class="col-xl-3">
                         <div class="logo-img">
                             <a href="/">
                                 <img src="{{url('frontend/images/nl1.png')}}" alt="">

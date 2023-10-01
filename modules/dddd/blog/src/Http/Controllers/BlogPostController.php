@@ -117,7 +117,7 @@ class BlogPostController extends Controller
         $form->tab(__("General Information"), function ($form) {
             $form->text(BlogPost::COL_TITLE, __("Title"))->rules("required");
             $form->image(BlogPost::COL_IMAGE_THUMBNAIL, __("Image Thumbnail"))->setWidth(4, 2)->uniqueName();
-            $form->multipleImage(BlogPost::COL_IMAGE_BANNER, __("Images"))->removable()->uniqueName();
+            //$form->multipleImage(BlogPost::COL_IMAGE_BANNER, __("Images"))->removable()->uniqueName();
             //$form->text(BlogPost::COL_URL, __("Url Key"))->rules("required");
             if ($form->isEditing()) {
                 $form->text(BlogPost::COL_URL, __("Url Key"))->rules("required");
