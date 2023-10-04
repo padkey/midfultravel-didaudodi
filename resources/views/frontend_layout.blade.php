@@ -25,15 +25,25 @@
     <link rel="stylesheet" href="{{asset('frontend/css/slicknav.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/css/style.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/css/new-fonts.css')}}">
+    <link href='https://fonts.googleapis.com/css?family=Dancing Script' rel='stylesheet'>
 
     <!-- <link rel="stylesheet" href="css/responsive.css"> -->
 </head>
 
 <body>
+    <!-- loading-start -->
+<style>
+    
+</style>
+
+    <!-- loading-end -->
+
+
+    
     <style>
         body{
             font-family:"Cormorant Garamond",serif!important;
-            margin:-13px;
+            
         }
         .header-area{
             padding-top: 0;
@@ -68,15 +78,29 @@
             padding: 10px;
             border-radius: 10px;
             margin-bottom:15px;
-            font-weight: 600;
+            font-weight: 900;
+            font-size:18px;
         }
         .btn-earth:hover{
             background-color: darkcyan;
+        }  
+        .btn-shop{
+            background-color:  #ffe277;
+            color:black!important;
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom:15px;
+            font-weight: 900;
         }
+        .btn-shop:hover{
+            background-color: darkcyan;
+            color:white!important;
+        } 
         a{
             color:blue;
         }
     </style>
+    
     <!--[if lte IE 9]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
         <![endif]-->
@@ -142,6 +166,9 @@
             margin-left:5px;
         }
     </style>
+
+
+
     <hr style="margin-top: 100px;">
     <footer class="footer">
         <div class="footer_top">
@@ -293,8 +320,8 @@
     <script src="{{asset('frontend/js/jquery.form.js')}}"></script>
     <script src="{{asset('frontend/js/jquery.validate.min.js')}}"></script>
     <script src="{{asset('frontend/js/mail-script.js')}}"></script>
-
     <script src="{{asset('frontend/js/main.js')}}"></script>
+
     <script>
         $('#datepicker').datepicker({
             iconsLibrary: 'fontawesome',
@@ -309,6 +336,89 @@
          }
 
         });
+
+        var owl = $('.owl-two');
+        owl.owlCarousel({
+            items:3,
+            loop:true,
+            nav:true,
+            navText: ['<i class="fa fa-chevron-left" ></i>','<i class="fa fa-chevron-right" ></i>'],
+            margin:20,
+            autoplay:true,
+            autoplayTimeout:1000,
+            autoplayHoverPause:true,
+            responsive:{
+                0:{
+                    items:1,
+                    nav:true
+                },
+                700:{
+                    items:2,
+                    nav:false
+                },
+                1500:{
+                    items:3,
+                    nav:true,
+                    loop:false
+                }
+            }
+            });
+            
+            var owl = $('.owl-three');
+        owl.owlCarousel({
+            items:4,
+            loop:true,
+            nav:true,
+            navText: ['<i class="fa fa-chevron-left" ></i>','<i class="fa fa-chevron-right" ></i>'],
+            margin:20,
+            autoplay:true,
+            autoplayTimeout:500,
+            autoplayHoverPause:true,
+            responsive:{
+                0:{
+                    items:1,
+                    nav:true
+                },
+                700:{
+                    items:2,
+                    nav:false
+                },
+                1500:{
+                    items:4,
+                    nav:true,
+                    loop:false
+                }
+            }
+            });
+
+
+            var owl = $('.owl-four');
+            owl.owlCarousel({
+            items:5,
+            loop:true,
+            nav:true,
+            navText: ['<i class="fa fa-chevron-left" ></i>','<i class="fa fa-chevron-right" ></i>'],
+            margin:20,
+            autoplay:true,
+            autoplayTimeout:500,
+            autoplayHoverPause:true,
+            responsive:{
+                0:{
+                    items:1,
+                    nav:true
+                },
+                700:{
+                    items:2,
+                    nav:false
+                },
+                1500:{
+                    items:5,
+                    nav:true,
+                    loop:false
+                }
+            }
+            });
+
     </script>
 
 

@@ -30,13 +30,14 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
-        $ourToursPage = Pages::where('url_key','our-tours')->first();
-        $missionPage = Pages::where('url_key','mission')->first();
-        $impactsPage = Pages::where('url_key','impacts')->first();
-        $tours = TourModel::get();
-        $blogPosts = BlogCategory::with('posts')->where('url','show-home')->first();
-        $categoryPost = BlogCategory::where('url','!=','show-home')->get();
+        // $ourToursPage = Pages::where('url_key','our-tours')->first();
+        // $missionPage = Pages::where('url_key','mission')->first();
+        // $impactsPage = Pages::where('url_key','impacts')->first();
+        // $tours = TourModel::get();
+        // $blogPosts = BlogCategory::with('posts')->where('url','show-home')->first();
+        // $categoryPost = BlogCategory::where('url','!=','show-home')->get();
+        $categoryPost = BlogCategory::where('url','!=','show-home-center')->where('url','!=','show-home-right')->where('url','!=','show-home-left')->get();
 
-        View::share(compact('ourToursPage','missionPage','impactsPage','blogPosts','tours','categoryPost'));
+        View::share(compact('categoryPost'));
     }
 }

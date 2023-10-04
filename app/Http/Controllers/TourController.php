@@ -12,7 +12,7 @@ class TourController extends Controller
     public function showList()
     {
         $tours = TourModel::get();
-        return view('pages.tours.list_tours');
+        return view('pages.tours.list_tours')->with(compact('tours'));
     }
     public function showDetails($url)
     {

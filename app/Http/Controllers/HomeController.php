@@ -7,22 +7,28 @@ use DDDD\Blog\Models\Pages;
 use DDDD\Url\Models\UrlModel;
 use DDDD\Blog\Models\BlogPost;
 use DDDD\Blog\Models\BlogCategory;
-
+use DDDD\Blog\Models\Video;
+use DDDD\Blog\Models\Companion;
+use DDDD\Blog\Models\Block;
+use DDDD\Tour\Models\TourModel;
 class HomeController extends Controller
 {
     //
     public function index(Request $req)
     {
-        $ourToursPage = Pages::where('url_key','our-tours')->first();
-        $missionPage = Pages::where('url_key','mission')->first();
-        $impactsPage = Pages::where('url_key','impacts')->first();
-        $blogPosts = BlogCategory::with('posts')->where('url','show-home')->first();
         $tours = TourModel::get();
-        // echo '<pre>';
-        // var_dump($blogPosts['posts']);
-        // echo '</pre>';
-        //$blogPosts = $blogCategory->posts()->get();
-        return view('pages.home')->with(compact('missionPage','ourToursPage','impactsPage','blogPosts','tours'));
+        $blogPostsCenter = BlogCategory::with('posts')->where('url','show-home-center')->first();
+        $blogPostsLeft = BlogCategory::with('posts')->where('url','show-home-left')->first();
+        $blogPostsRight = BlogCategory::with('posts')->where('url','show-home-right')->first();
+        $blockOurMission = Block::where('code','our_mission')->first();
+        $blockOurTour= Block::where('code','our_tour')->first();
+        $blockValue = Block::where('code','value')->first();
+
+        $videos = Video::get();
+        $companions = Companion::get();
+
+
+        return view('pages.home')->with(compact('blockValue','blockOurTour','blockOurMission','blogPostsCenter','blogPostsLeft','blogPostsRight','tours','videos','companions'));
     }
     public function showAbout(Request $req)
     {

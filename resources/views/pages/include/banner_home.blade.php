@@ -6,7 +6,7 @@
         background-image: url("frontend/images/tnh12.png");
     }    
     .single_slider {
-        height: 90vh!important;
+        /* height: 90vh!important; */
     }
     .slider_text h1{
         color:white;
@@ -15,24 +15,31 @@
        
     }
 </style>
-<div class="slider_area">
+<div class="slider_area" style="margin-top:-13px;">
     <div class="slider_active owl-carousel">
-        <div class="single_slider d-flex align-items-center justify-content-center slider_bg_1">
-            <div class="container" style="margin-top: -10px;">
+        <div class="single_slider d-flex align-items-center  slider_bg_1">
+            <div class="" style="margin-top: 90px; ">
                 <div class="row">
                     <div class="col-xl-3">
+
+                    </div>
+                    <div class="col-xl-5">
                         <div class="logo-img">
                             <a href="/">
-                                <img src="{{url('frontend/images/nl1.png')}}" alt="">
+                                <img src="{{url('frontend/images/nlw.png')}}" alt="">
                             </a>
                         </div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-xl-5">
-                        <div class="slider_text text-left">
-                          <!-- <h2>{{trans('messages.slogan')}}</h2>  -->
-                          <h1 >"Save the Environment and you will Save the Life and Future."</h1>
+                <div class="col-xl-1">
+
+                </div>  
+                <div class="col-xl-9">
+                        <div class="logo-img">
+                            <a href="/">
+                                <img src="{{url('frontend/images/slogan-white.png')}}" alt="">
+                            </a>
                         </div>
                     </div>
                 </div>

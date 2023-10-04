@@ -93,13 +93,19 @@
                 <div class="col-xl-4 col-md-4">
                     <div class="single_offers">
                         <div class="about_thumb">
-                            <img src="{{url('frontend/images/pk2.jpg')}}" alt="">
+                            <img src="{{url('uploads/'.$tour->image_thumbnail)}}" alt="">
                         </div>
                         <div class="offers_content">
                             <div class="trangthai-category">
-                                <span class="event-label trangthai-open">{{trans('messages.registration_open')}}</span> <span  class="event-label">{{trans('messages.pilgrimage')}}</span>
+                                <span class="event-label trangthai-open">{{trans('messages.registration_open')}}</span> <span  class="event-label">{{$tour->type_tour}}</span>
                             </div>
-                            <b>15/9 - 30/9/2023</b>
+                            @php
+                            $date = date_create($tour->date_start);
+                            $date_start= date_format($date, 'd/m/Y');
+                            $date = date_create($tour->date_end);
+                            $date_end= date_format($date, 'd/m/Y');
+                            @endphp
+                            <b>{{$date_start}} - {{$date_end}}</b>
                             <h2 class="title-offer">  {{$tour->name}}</h2>
                             <i class="fa fa-map-marker" aria-hidden="true"></i> Asia
                             <p class="short-desc"> {{$tour->short_description}} </p>

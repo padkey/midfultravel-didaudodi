@@ -6,9 +6,14 @@ use Illuminate\Support\ServiceProvider;
 use DDDD\Blog\Observers\BlogPostObserver;
 use DDDD\Blog\Observers\BlogCategoryObserver;
 use DDDD\Blog\Observers\PagesObserver;
+use DDDD\Blog\Observers\CompanionObserver;
+use DDDD\Blog\Observers\VideoObserver;
+
 use DDDD\Blog\Models\BlogCategory;
 use DDDD\Blog\Models\Pages;
 use DDDD\Blog\Models\BlogPost;
+use DDDD\Blog\Models\Companion;
+use DDDD\Blog\Models\Video;
 
 class BlogServiceProvider extends ServiceProvider
 {
@@ -37,6 +42,8 @@ class BlogServiceProvider extends ServiceProvider
             BlogCategory::observe(BlogCategoryObserver::class);
             BlogPost::observe(BlogPostObserver::class);
             Pages::observe(PagesObserver::class);
+            Video::observe(VideoObserver::class);
+            Companion::observe(CompanionObserver::class);
         });
     }
 

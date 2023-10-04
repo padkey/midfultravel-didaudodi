@@ -17,13 +17,6 @@
                             .sticky{
                                 background:white!important;
                             }
-                            .trangchu-title {
-                                margin-bottom: 22px;
-                            }
-                            .trangchu-title a{
-                                color:black;
-                                font-weight: 700;
-                            }
                             .trangchu-title:hover{
                                 transform: scale(1.1);
                                 transition: 1s;
@@ -40,9 +33,20 @@
                             }
                             .f-r a{
                                 color:black!important;
+                                font-size: 20px!important;
+                                font-weight:800!important;
                             }
                             .f-l a{
                                 color:black!important;
+                                font-size: 20px!important;
+                                font-weight:800!important;
+                            }
+                            .mobile_menu li{
+                                float:none!important;
+                                margin:30px;
+                            }
+                            .mobile_menu .slicknav_icon-bar{
+                                background: black !important;
                             }
                         </style>
                          <div class="col-xl-1">

@@ -44,6 +44,5 @@ return [
     'america' => 'America',
     'africa' => 'Africa',
     'our_journey'=>'Our journey',
-    'mission'=>'Mission',
-    'mission'=>'Mission',
+    'mission'=>'Our mission',
 ];

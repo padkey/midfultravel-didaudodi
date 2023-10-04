@@ -2,7 +2,7 @@
         <div class="header-area" > 
         <!-- style="background: black;" -->
             <div id="sticky-header" class="main-header-area" style="padding: 25px 0 0 0;">
-                <div class="container-fluid p-0">
+                <div class="container-fluid p-0" style="max-width:90%">
                     <div class="row align-items-center no-gutters">
                         <!-- <div class="col-xl-2 col-lg-2">
                             <div class="logo-img">
@@ -25,27 +25,33 @@
                             }
                             .f-l{
                                 float:left;
+                                margin-left: 20px;
                                 
                             }
                             .f-r{
                                 float:right;
+                                margin-left: 10px;
                             }
                             .f-l a{
-                                font-size: 18px!important;
+                                font-size: 16px!important;
                                 font-family:"Raleway",sans-serif!important;
                             }
                             .f-r a{
-                                font-size: 18px!important;
+                                font-size: 16px!important;
                                 font-family:"Raleway",sans-serif!important;
                             }
+                            .mobile_menu li{
+                                float:none!important;
+                                margin:30px;
+                            }
                         </style>
-                        <div class="col-xl-1">
+                        <div class="">
                             <div class="trangchu-title">
                                
                             </div>
                         </div>
 
-                        <div class="col-xl-11 col-lg-6">
+                        <div class="col-xl-12 col-lg-6">
                             <div class="main-menu  d-none d-lg-block">
                                 <nav>
                                     <ul id="navigation">
@@ -64,7 +70,7 @@
                                         </li>
                                         <li class="f-l"><a href="/contact">{{trans('messages.contact')}}</a></li>
                                         <li class="f-r">
-                                             <a class="btn-earth " href="https://didaudodi.com/" target='_blank' style="padding: 10px 20px 10px 20px;border-radius:0;top:-10px">{{trans('messages.shop')}}</a>
+                                             <a class="btn-shop " href="https://didaudodi.com/" target='_blank' style="padding: 10px 20px 10px 20px;border-radius:0;top:-10px">{{trans('messages.shop')}}</a>
                                         </li>
                                         @php 
                                             $language = \Session::get('website_language', config('app.locale'));

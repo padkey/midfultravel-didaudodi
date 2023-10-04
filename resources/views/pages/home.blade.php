@@ -18,7 +18,7 @@
         padding-bottom:30px;
         margin-bottom:80px;
         margin-top:80px;
-       
+
     }
     .misson_title img{
         width: 100%;
@@ -28,8 +28,8 @@
 		color:black;
 	}
 	.misson_content p{
-		
-	}   
+
+	}
     .xtc{
         text-align:center;
         margin:auto;
@@ -41,9 +41,12 @@
     }
     .misson_title h1{
         color:#8b572a;
+        /* font-family:'Dancing Script'!important;
+        font-weight: 500;
+        font-size: 65px; */
     }
 	</style>
-    
+
    <div class="row">
         <hr width=60%>
         <div class="col-xl-7 xtc">
@@ -51,22 +54,22 @@
                  impact on the environment and local communities through sustainability and social responsibility programs.</h2>
         </div>
    </div>
-   
+
      <div class="misson_area" >
         <div class="container" style="max-width: 95%;">
             <div class="row">
                 <div class="col-xl-6 col-lg-12">
                     <div class="misson_title mb-20px">
-                    <img src="{{url('uploads/'.$missionPage->avatar)}}" alt=""  >
+                    <img src="{{url('uploads/'.$blockOurMission->image_one)}}" alt=""  >
                     </div>
                 </div>
                 <div class="col-xl-6 col-lg-12">
                     <div class="misson_title mb-20px">
                         <h1>{{trans('messages.mission')}}</h1>
-                        <p>{!! $missionPage->content !!} </p>
+                        <p>{!! $blockOurMission->content !!} </p>
                     </div>
                 </div>
-                
+
             </div>
             <!-- <div class="row">
                 <div class="col-xl-12 col-lg-12">
@@ -91,44 +94,35 @@
             background:#faf1eb;
         }
         .content-impatti{
-            max-width: 80%;
+            max-width: 100%;
             margin:auto;
             font-size:20px
 
         }
         .image-mt{
-            background-image: url("uploads/{{$impactsPage->avatar}}");
+            background-image: url("uploads/{{$blockValue->image_one}}");
             background-size: cover;
         }
         .image-cn{
-            background-image: url("frontend/images/za4.jpg");
+            background-image: url("uploads/{{$blockValue->image_two}}");
             background-size: cover;
         }
         .title-impatti{
             text-align:center;
-            color: #8b572a;
-            text-decoration: overline;
+            color:#8b572a;
+            font-family:'Dancing Script'!important;
+            font-weight: 500;
+            font-size: 75px;
         }
     </style>
     <div class="impatti_area">
-        <div class="row impatti">
+        <div class="row">
             <div class="col-xl-4 col-lg-4 image-mt">
-
             </div>
             <div class="col-xl-4 col-lg-4" style="">
-                <h1 class="title-impatti mt-10">Value</h1>
+                <h1 class="title-impatti mt-10">~ Value ~</h1>
                 <div class="content-impatti">
-                    {!! $impactsPage->content !!}
-                    <!-- <p><i class="fa fa-handshake-o" aria-hidden="true"></i>
-                        Mỗi diễn viên được trả một mức lương công bằng, có tính chất tập thể và có sự tham gia.</p>
-                    <p><i class="fa fa-money" aria-hidden="true"></i>
-                        Khoảng 55% hoặc 65% chi phí của các hành trình mà chúng tôi cung cấp sẽ mang lại lợi ích cho cộng đồng địa phương nơi chúng tôi hoạt động.</p>
-                    <p><i class="fa fa-users" aria-hidden="true"></i>
-                        Trên khắp Trung Mỹ, chúng tôi trực tiếp mang lại lợi ích cho hơn 100 gia đình.</p>
-                    <p><i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                        Chúng tôi đã trao học bổng cho 3 nam và 1 nữ trong 3 năm qua ở Guatemala.</p>
-                    <p><i class="fa fa-university" aria-hidden="true"></i>
-                        Các đối tác địa phương của chúng tôi giải quyết vấn đề bảo vệ đa dạng sinh học, di sản văn hóa, thủ công, nghệ thuật và tinh thần.</p> -->
+                    {!! $blockValue->content !!}
                 </div>
             </div>
             <div class="col-xl-4 col-lg-4 image-cn">
@@ -136,7 +130,7 @@
             </div>
 
         </div>
-       
+
     </div>
     <!-- IMPATTI_end -->
 
@@ -165,8 +159,10 @@
     }
     .generated_title h1{
         color: #8b572a!important;
-
-    }    
+        /* font-family:'Dancing Script'!important;
+            font-weight: 500;
+            font-size: 65px; */
+    }
 	</style>
     <div class="generated_area">
         <div class="container" style="max-width:95%">
@@ -176,26 +172,16 @@
                     <h1>{{trans('messages.our_tours')}}</h1>
                     </div>
                     <div class="section_content">
-                        <p>{!! $ourToursPage->content !!}
+                        <p>{!! $blockOurTour->content !!}
                          </p>
                     </div>
                 </div>
                 <div class="col-xl-6 col-lg-12">
                     <div class="ourToursImage mb-20px">
-                    <img src="{{url('uploads/'.$ourToursPage->avatar)}}" alt=""  >
+                    <img src="{{url('uploads/'.$blockOurTour->image_one)}}" alt=""   loading="lazy">
                     </div>
                 </div>
             </div>
-            <!-- <div class="row">
-                <div class="col-xl-12 col-lg-12">
-                    <div class="section_content">
-                        <p>Là du lịch xã hội, có đạo đức và có ý thức, được tạo ra bằng cách giúp đỡ mọi người, phát triển đối thoại giao lưu văn hóa phù hợp cho tình bạn, sức khỏa và tham gia bình đẳng.
-                        Là du lịch xã hội, có đạo đức và có ý thức, được tạo ra bằng cách giúp đỡ mọi người, phát triển đối thoại giao lưu văn hóa phù hợp cho tình bạn, sức khỏa và tham gia bình đẳng
-                        Là du lịch xã hội, có đạo đức và có ý thức, được tạo ra bằng cách giúp đỡ mọi người, phát triển đối thoại giao lưu văn hóa phù hợp cho tình bạn, sức khỏa và tham gia bình đẳng
-                         </p>
-                    </div>
-                </div>
-            </div> -->
         </div>
     </div>
     <hr width=50% >
@@ -213,6 +199,9 @@
             -webkit-line-clamp: 3; /* number of lines to show */
             -webkit-box-orient: vertical;
             /* font-family: "Cormorant Garamond",Courier!important; */
+            font-size: 20px;
+            font-weight: 100;
+            /* font-family: "Raleway",sans-serif!important; */
         }
         .about_thumb {
             height:120px;
@@ -247,10 +236,14 @@
             /* background: beige; */
             border-radius: 5px;
         }
+        .single_offers h2{
+            font-weight: 100;
+        }
+
         .offers_content{
             margin-left: 15px ;
         }
-        
+
         .offers_area {
             padding-bottom: 0;
             padding-top: 20px;
@@ -265,10 +258,20 @@
             /* transform: scale(1.1); */
             transition: 0.1s;
         }
-        
+
         .section_title h1{
             margin-bottom:50px;
-            font-style: normal;
+            font-weight: 500;
+        }
+        .owl-prev{
+            color: black!important;
+        }
+        .owl-next{
+            color: black!important;
+        }
+
+        .owl-nav div:hover{
+            background: darkseagreen!important;
         }
     </style>
     <div class="offers_area">
@@ -280,26 +283,32 @@
                     </div>
                 </div>
             </div>
-			<div class="row" >
+			<div class="row owl-carousel owl-two owl-theme" >
                 @foreach($tours as $tour)
-                <div class="col-xl-4 col-md-4">
+
                     <div class="single_offers">
                         <div class="about_thumb">
                             <img src="{{url('/uploads/'.$tour->image_thumbnail)}}" alt="">
                         </div>
                         <div class="offers_content">
                             <div class="trangthai-category">
-                                <span class="event-label trangthai-open">{{trans('messages.registration_open')}}</span> <span  class="event-label">{{trans('messages.pilgrimage')}}</span>
+                                <span class="event-label trangthai-open">{{trans('messages.registration_open')}}</span> <span  class="event-label">{{$tour->type_tour}}</span>
                             </div>
-                            <b>15/9 - 30/9/2023</b>
+                            @php
+                            $date = date_create($tour->date_start);
+                            $date_start= date_format($date, 'd/m/Y');
+                            $date = date_create($tour->date_end);
+                            $date_end= date_format($date, 'd/m/Y');
+                            @endphp
+                            <b>{{$date_start}} - {{$date_end}}</b>
                             <h2 class="title-offer">  {{$tour->name}}</h2>
                             <i class="fa fa-map-marker" aria-hidden="true"></i> Asia
                             <p class="short-desc"> {{$tour->short_description}} </p>
                             <a href="/tours/{{$tour->url}}" class="btn btn-earth">{{trans('messages.more_infomation_&_register')}}</a>
                         </div>
                     </div>
-                </div>
-                @endforeach 
+
+                @endforeach
             </div>
         </div>
     </div>
@@ -323,13 +332,19 @@
         }
         .avatar-p h3{
             text-align:center;
-            font-size:20px;
-            margin-top:10px;
-            font-weight: 700;
+            font-size:25px;
+            padding-top:10px;
+            font-weight: 100;
             font-style: inherit;
             max-width:200px;
             margin: auto;
 
+        }
+        .avatar-ndh img{
+            width: 185px;
+            border-radius: 90px;
+            height: 180px;
+            object-fit: cover;
         }
         .section-avatar{
             background-size: cover;
@@ -338,7 +353,7 @@
             font-style: inherit;
             font-weight: 700;
             color:#8b572a;
-           
+
         }
         .avatar-p:hover{
             transform: scale(1.1);
@@ -346,7 +361,7 @@
         }
         .avatar-p:hover > a h3{
             color:darkcyan;
-           
+
         }
     </style>
 
@@ -359,14 +374,15 @@
             </div>
             <hr style="margin-bottom:50px;"> <!--  -->
             <div class="row" style="justify-content:center">
+                @foreach($companions as $companion)
                 <div class="avatar-p">
                     <a href="">
-                        <img src="{{url('frontend/images/z1.jpg')}}" alt=""  >
-                        <h3>Sister Luc Nghiem Francese-Inglese</h3>
+                        <img src="{{url('uploads/'.$companion->avatar)}}" alt=""  >
+                        <h3>{{$companion->name}}</h3>
                     </a>
                 </div>
-                
-                <div class="avatar-p">
+                @endforeach
+                <!-- <div class="avatar-p">
                     <img src="{{url('frontend/images/z3.jpg')}}" alt="" >
                     <h3>Sister Sac Nghiem Vietnamese</h3>
                 </div>
@@ -381,12 +397,11 @@
                 <div class="avatar-p">
                     <img src="{{url('frontend/images/z2.jpg')}}" alt=""  >
                     <h3>Fabio Cappiello Organizzatore</h3>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
     <!-- end-picture -->
-
 
 
     <!-- video_area_start -->
@@ -397,7 +412,7 @@
         .single_video img{
          width: 100%;
          height: 215px;
-            
+
         }
         .text_area_video h3{
             font-style: inherit;
@@ -421,12 +436,12 @@
             height: 53px;
             line-height: 57px;
             text-align: center;
-            
+
         }
         .single_video:hover .icon-play{
             color:white;
             background:black;
-            transform:  translateY(-20%); 
+            transform:  translateY(-20%);
             transition: 0.3s;
         }
         /* .title-video h3:hover{
@@ -435,6 +450,9 @@
             transition: 0.1s;
         } */
     </style>
+
+
+
     <div class="video_area2" >
         <div class="container">
             <div class="row">
@@ -446,31 +464,33 @@
                 </div>
             </div>
             <div class="row">
+                @foreach($videos as $video)
                 <div class="col-md-3">
                     <div class="single_video">
                         <div class="thumbnail-video ">
-                            <a href="/https://www.youtube.com/embed/bX2dMtKEtdU?si=TDE0FtH5a0CfZ93H" class="popup-video">
-                                 <img src="{{url('frontend/images/tn1.jpg')}}" alt=""  >
+                            <a href="/{{$video->url_video}}" class="popup-video">
+                                 <img src="{{url('uploads/'.$video->image_thumbnail)}}" alt=""  >
                                  <span  class="icon-play"><i class="fa fa-play"></i></span>
                             </a>
-                           
+
                         </div>
                         <div class="title-video">
-                            <h3>Presence, Ethics, and the Rewarding Challenges of Caring for Others</h3>
-                            <b>Thich Nhat hanh</b>
-                            <p> - July 20, 2023</p>
+                            <h3>{{$video->title}}</h3>
+                            <b>- {{$video->author}}</b>
+                            <p></p>
                         </div>
 
                     </div>
                 </div>
-                <div class="col-md-3">
+                @endforeach
+                <!-- <div class="col-md-3">
                     <div class="single_video">
                         <div class="thumbnail-video ">
                             <a href="/https://www.youtube.com/embed/m6keU6_2SzE?si=iIZemXgI14ErFKxH" class="popup-video">
                                  <img src="{{url('frontend/images/tn2.jpg')}}" alt=""  >
                                  <span  class="icon-play"><i class="fa fa-play"></i></span>
                             </a>
-                           
+
                         </div>
                         <div class="title-video">
                             <h3>Exploring the Nature of Consciousness</h3>
@@ -505,7 +525,7 @@
                         </div>
 
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
@@ -515,8 +535,8 @@
         <style>
         .about_area_home{
             padding-top:20px;
-         
-        }    
+
+        }
         .about_thumb img{
             max-height: 50vh;
         }
@@ -540,7 +560,7 @@
             font-size: 28px;
             margin-bottom: 0px;
             padding: 15px 0 5px 15px;
-           
+
         }
         .small-blog-details p{
             padding: 0 0 15px 15px;
@@ -551,7 +571,8 @@
         }
         .title-about h1{
             font-style: normal;
-            font-size: 40px;
+            /* font-family:'Dancing Script'!important; */
+            color: #8b572a!important;
 
         }
         .title-about p {
@@ -564,7 +585,7 @@
         }
         .d-inline-block::before{
             content: '';
-            background-color: rgba(255,210,42,.4); 
+            background-color: rgba(255,210,42,.4);
             position: absolute;
             left: 0;
             bottom: 0px;
@@ -591,9 +612,21 @@
             display:flex;
         }
         .center-small-blog img{
-            width: 250px;
-            height:250px;
+            width: 200px;
+            height:200px;
             object-fit:cover;
+        }
+        @media screen and (max-width: 800px) {
+            .center-small-blog {
+                display:block;
+                width: 100%;
+                height:auto;
+            }
+            .center-small-blog img{
+                width: 100%;
+                height:100%;
+                object-fit:cover;
+            }
         }
         .center-small-blog .small-blog-details p{
             font-size:22px;
@@ -602,34 +635,37 @@
             height: 560px;
             object-fit:cover;
         }
- 
-   
+
+
     </style>
     <div class="about_area_home">
         <div class="container">
             <div class="row">
                 <div class="col-xl-12">
                     <div class="title-about">
-                        <p>Didaudodi midful travel</p>
-                        <h1>Honoring our beloved teacher</h1>
+                        <h1>Mindful travel blog</h1>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-xl-3 col-lg-3">
+                    @if($blogPostsLeft['posts'] != null)
+                    @foreach($blogPostsLeft['posts'] as $post)
                     <div class="blog_left_sidebar">
                         <article class="blog_item">
                             <div class="blog_item_img">
-                                <img class="card-img rounded-0 small-image-blog" src="{{url('/frontend/images/bl1.jpg')}}" alt="">
+                                <img class="card-img rounded-0 small-image-blog" src="{{url('/uploads/'.$post->image_thumbnail)}}" alt="">
                             </div>
                             <div class="small-blog-details">
                                 <a class="d-inline-block" href="single-blog.html">
-                                    <h2>Video of Thay’s funeral and cremation</h2>
+                                    <h2>{{$post->title}}</h2>
                                 </a>
                             </div>
                         </article>
                     </div>
-                    <div class="blog_left_sidebar">
+                    @endforeach
+                    @endif
+                    <!-- <div class="blog_left_sidebar">
                         <article class="blog_item">
                             <div class="blog_item_img">
                                 <img class="card-img rounded-0 small-image-blog" src="{{url('/frontend/images/bl2.jpg')}}" alt="">
@@ -652,15 +688,16 @@
                                 </a>
                             </div>
                         </article>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="col-lg-6 mb-5 mb-lg-0">
                     <div class="blog_left_sidebar">
-                        @php 
+                        @php
                             $small = 'blog_details';
                             $flex = '';
                         @endphp
-                        @foreach($blogPosts['posts'] as $post)
+                        @if($blogPostsCenter['posts'] != null)
+                        @foreach($blogPostsCenter['posts'] as $post)
                         <article class="blog_item {{$flex}}">
                             <div class="blog_item_img">
                                 <img class="card-img rounded-0 " src="{{url('/uploads/'.$post->image_thumbnail)}}" alt="">
@@ -681,17 +718,33 @@
                                 </ul> -->
                             </div>
                         </article>
-                        @php 
+                        @php
                             $small = 'small-blog-details';
                             $flex = 'center-small-blog';
 
                         @endphp
                         @endforeach
-
+                        @endif
                     </div>
                 </div>
                 <div class="col-xl-3 col-lg-3">
+                    @if($blogPostsRight['posts'] != null)
+                    @foreach($blogPostsRight['posts'] as $post)
                     <div class="blog_left_sidebar">
+                        <article class="blog_item">
+                            <div class="blog_item_img">
+                                <img class="card-img rounded-0 small-image-blog" src="{{url('/uploads/'.$post->image_thumbnail)}}" alt="">
+                            </div>
+                            <div class="small-blog-details">
+                                <a class="d-inline-block" href="single-blog.html">
+                                    <h2>{{$post->title}}</h2>
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+                    @endforeach
+                    @endif
+                    <!-- <div class="blog_left_sidebar">
                         <article class="blog_item">
                             <div class="blog_item_img">
                                 <img class="card-img rounded-0 small-image-blog" src="{{url('/frontend/images/bl5.jpg')}}" alt="">
@@ -726,7 +779,7 @@
                                 </a>
                             </div>
                         </article>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>

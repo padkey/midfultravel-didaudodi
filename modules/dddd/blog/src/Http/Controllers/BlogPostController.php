@@ -112,7 +112,6 @@ class BlogPostController extends Controller
 //             *
 //             */
 //        }
-
         $form = new Form(new BlogPost);
         $form->tab(__("General Information"), function ($form) {
             $form->text(BlogPost::COL_TITLE, __("Title"))->rules("required");
