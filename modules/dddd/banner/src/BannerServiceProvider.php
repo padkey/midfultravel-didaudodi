@@ -1,6 +1,6 @@
 <?php
 
-namespace DTV\Banner;
+namespace DDDD\Banner;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
@@ -17,7 +17,7 @@ class BannerServiceProvider extends ServiceProvider
         }
 
         if ($this->app->runningInConsole()) {
-            //$this->registerMigrations();
+            $this->registerMigrations();
         }
 
         $this->app->booted(function () {
@@ -27,7 +27,7 @@ class BannerServiceProvider extends ServiceProvider
 
             // Menu + Permission Admin config
             // Phan nay, comment lai => muon bat thi chay "sail artisan admin:import banner"
-            // Banner::import();
+             Banner::import();
         });
     }
 

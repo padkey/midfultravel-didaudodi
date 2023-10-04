@@ -52,7 +52,7 @@
     <div class="container-package">
         <div class="logo-img">
             <a href="/">
-                <img src="{{url('frontend/images/nlw.png')}}" alt="">
+                <img src="{{url('uploads/'.$logoWhite->items[0]->path_desktop)}}" alt="">
             </a>
         </div>
         <div class="title-package">

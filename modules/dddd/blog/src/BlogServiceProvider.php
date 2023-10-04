@@ -8,12 +8,14 @@ use DDDD\Blog\Observers\BlogCategoryObserver;
 use DDDD\Blog\Observers\PagesObserver;
 use DDDD\Blog\Observers\CompanionObserver;
 use DDDD\Blog\Observers\VideoObserver;
+use DDDD\Blog\Observers\UploadFileMediaObserver;
 
 use DDDD\Blog\Models\BlogCategory;
 use DDDD\Blog\Models\Pages;
 use DDDD\Blog\Models\BlogPost;
 use DDDD\Blog\Models\Companion;
 use DDDD\Blog\Models\Video;
+use DDDD\Blog\Models\UploadFileMedia;
 
 class BlogServiceProvider extends ServiceProvider
 {
@@ -44,6 +46,8 @@ class BlogServiceProvider extends ServiceProvider
             Pages::observe(PagesObserver::class);
             Video::observe(VideoObserver::class);
             Companion::observe(CompanionObserver::class);
+            UploadFileMedia::observe(UploadFileMediaObserver::class);
+
         });
     }
 

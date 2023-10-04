@@ -1,9 +1,9 @@
 <?php
 
-namespace DTV\Banner\Http\Controllers;
+namespace DDDD\Banner\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use DTV\Banner\Repositories\BannerRepository;
+use DDDD\Banner\Repositories\BannerRepository;
 use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Foundation\Application;
 use Illuminate\Http\Response;
@@ -17,7 +17,7 @@ class BannerController extends Controller
         $this->repository = $repository;
     }
 
-    public function get($uuid): Application|Response|\Illuminate\Contracts\Foundation\Application|ResponseFactory
+    public function get($uuid)
     {
         if (empty($uuid)) {
             return response([], 400);

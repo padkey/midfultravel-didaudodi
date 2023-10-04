@@ -23,13 +23,13 @@
     },
     "autoload": {
         "psr-4": {
-            "DTV\\Banner\\": "src/"
+            "DDDD\\Banner\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "DTV\\Banner\\BannerServiceProvider"
+                "DDDD\\Banner\\BannerServiceProvider"
             ]
         }
     }

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0d882ac28597f015f521039d4bfee032",
+    "content-hash": "2f9af4b93cc1d1aa31609eb59dd55bdb",
     "packages": [
         {
             "name": "asm-laravel-admin-ext/tmeditor",
@@ -162,6 +162,53 @@
                 }
             ],
             "time": "2021-08-15T20:50:18+00:00"
+        },
+        {
+            "name": "dddd/banner",
+            "version": "dev-fix-1",
+            "dist": {
+                "type": "path",
+                "url": "modules/dddd/banner",
+                "reference": "db5eaf02b5a4c8970ad157bbf79bc41ca9151e2e"
+            },
+            "require": {
+                "encore/laravel-admin": "~1.6",
+                "php": ">=7.0.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~6.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "DDDD\\Banner\\BannerServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "DDDD\\Banner\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "your name",
+                    "email": "your email"
+                }
+            ],
+            "description": "Banner Management",
+            "homepage": "https://github.com/dddd/banner",
+            "keywords": [
+                "extension",
+                "laravel-admin"
+            ],
+            "transport-options": {
+                "relative": true
+            }
         },
         {
             "name": "dddd/blog",
@@ -8152,6 +8199,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "dddd/banner": 20,
         "dddd/blog": 20,
         "dddd/menu": 20,
         "dddd/tour": 20,

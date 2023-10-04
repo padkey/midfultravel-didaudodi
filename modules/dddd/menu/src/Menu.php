@@ -33,7 +33,7 @@ class Menu extends Extension
             if (!$menuModel::firstWhere('uri', 'menu')) {
                 parent::createMenu('Menu Management', 'menu', 'fa-bars', $menuModelId);
             }
-            CRUDPermission::initPermission("Menu", "menu");
+           // CRUDPermission::initPermission("Menu", "menu");
         } catch (\Exception $exception) {
             return;
         }

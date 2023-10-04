@@ -6,7 +6,7 @@
     @include('pages.include.banner_about')
 @endsection
 @section('content')
-<section class="about py-5">
+<section class="about">
 	<div class="container" style="max-width:1200px">
 		<div class="row">
 			<div class="title-about">

@@ -1,7 +1,7 @@
 <?php
 
-use DTV\Banner\Http\Controllers\BannerAdminController;
-use DTV\Banner\Http\Controllers\BannerItemsAdminController;
+use DDDD\Banner\Http\Controllers\BannerAdminController;
+use DDDD\Banner\Http\Controllers\BannerItemsAdminController;
 use Illuminate\Routing\Router;
 use Illuminate\Support\Facades\Route;
 

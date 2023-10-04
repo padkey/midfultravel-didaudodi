@@ -91,7 +91,7 @@ class VideoController extends Controller
         $grid->column(Video::COL_TITLE, __("Title"));
         $grid->column(Video::COL_URL_KEY);
         $grid->column(Video::COL_IS_ACTIVE, __("Status"))->bool();
-       
+
         $grid->column(Video::COL_CREATED_AT, __("Created At"))->display(function () {
             return date_format($this->{Video::COL_CREATED_AT},"Y/m/d H:i:s");
         });

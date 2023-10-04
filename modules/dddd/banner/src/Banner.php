@@ -1,6 +1,6 @@
 <?php
 
-namespace DTV\Banner;
+namespace DDDD\Banner;
 
 use Encore\Admin\Extension;
 
@@ -13,7 +13,6 @@ class Banner extends Extension
      */
     public static function import()
     {
-        try {
             $menuModel = config('admin.database.menu_model');
 
             if (!$menuModel::firstWhere('uri', 'general')) {
@@ -27,21 +26,19 @@ class Banner extends Extension
             }
 
             $permissionModel = config('admin.database.permissions_model');
-            if (!$permissionModel::firstWhere('slug', 'dtv.banner')) {
-                parent::createPermission('Banner', 'dtv.banner', 'banner*');
+            if (!$permissionModel::firstWhere('slug', 'dddd.banner')) {
+                parent::createPermission('Banner', 'dddd.banner', 'banner*');
             }
-            if (!$permissionModel::firstWhere('slug', 'dtv.banner.edit')) {
-                parent::createPermission('Banner edit', 'dtv.banner.edit', '');
+            if (!$permissionModel::firstWhere('slug', 'dddd.banner.edit')) {
+                parent::createPermission('Banner edit', 'dddd.banner.edit', '');
             }
-            if (!$permissionModel::firstWhere('slug', 'dtv.banner.create')) {
-                parent::createPermission('Banner create', 'dtv.banner.create', '');
+            if (!$permissionModel::firstWhere('slug', 'dddd.banner.create')) {
+                parent::createPermission('Banner create', 'dddd.banner.create', '');
             }
-            if (!$permissionModel::firstWhere('slug', 'dtv.banner.delete')) {
-                parent::createPermission('Banner delete', 'dtv.banner.delete', '');
+            if (!$permissionModel::firstWhere('slug', 'dddd.banner.delete')) {
+                parent::createPermission('Banner delete', 'dddd.banner.delete', '');
             }
-        } catch (\Exception) {
-            return;
-        }
+       
 
     }
 }

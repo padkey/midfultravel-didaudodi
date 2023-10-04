@@ -1,10 +1,10 @@
 <?php
 
-namespace DTV\Banner\Models;
+namespace DDDD\Banner\Models;
 
-use DTV\Blog\Models\Pages;
-use DTV\CatalogCategory\Models\CatalogCategory;
-use DTV\CatalogProduct\Models\CatalogProduct;
+use DDDD\Blog\Models\Pages;
+use DDDD\CatalogCategory\Models\CatalogCategory;
+use DDDD\CatalogProduct\Models\CatalogProduct;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;

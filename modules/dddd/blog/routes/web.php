@@ -8,7 +8,7 @@ use DDDD\Blog\Http\Controllers\TourController;
 use DDDD\Blog\Http\Controllers\VideoController;
 use DDDD\Blog\Http\Controllers\CompanionController;
 use DDDD\Blog\Http\Controllers\BlockController;
-
+use DDDD\Blog\Http\Controllers\UploadFileMediaController;
 use Illuminate\Routing\Router;
 use Illuminate\Support\Facades\Route;
 
@@ -22,6 +22,7 @@ Route::group([
     $router->resource('video', VideoController::class);
     $router->resource('companion', CompanionController::class);
     $router->resource('block', BlockController::class);
+    $router->resource('upload-file-media', UploadFileMediaController::class);
 
    //$router->resource('tour', TourController::class);
 });

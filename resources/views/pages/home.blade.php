@@ -50,8 +50,7 @@
    <div class="row">
         <hr width=60%>
         <div class="col-xl-7 xtc">
-            <h2>Đi Đâu Đó Đi Mindful Travel offers mindfulness tours globally.  We are committed to creating a positive
-                 impact on the environment and local communities through sustainability and social responsibility programs.</h2>
+            <h2>{!! $blockShortAboutUs->content!!}</h2>
         </div>
    </div>
 

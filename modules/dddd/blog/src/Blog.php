@@ -42,6 +42,9 @@ class Blog extends Extension
             if (!$menuModel::firstWhere('uri', 'block')) {
                 parent::createMenu('Block', 'block', 'fa-tags', $menuModelId);
             }
+            if (!$menuModel::firstWhere('uri', 'upload-file-media')) {
+                parent::createMenu('Upload file media', 'upload-file-media', 'fa-file-pdf-o', $menuModelId);
+            }
         } catch (\Exception $exception) {
             throwException($exception);
             return;

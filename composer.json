@@ -7,6 +7,7 @@
     "require": {
         "php": "^7.3|^8.0",
         "asm-laravel-admin-ext/tmeditor": "^1.0",
+        "dddd/banner": "dev-fix-1",
         "dddd/blog": "dev-main",
         "dddd/menu": "dev-main",
         "dddd/tour": "dev-main",
@@ -79,6 +80,10 @@
         {
             "type": "path",
             "url": "modules/dddd/tour"
+        },
+        {
+            "type": "path",
+            "url": "modules/dddd/banner"
         }
     ],
     "minimum-stability": "dev",
