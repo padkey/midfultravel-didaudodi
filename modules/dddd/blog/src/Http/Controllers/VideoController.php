@@ -132,7 +132,7 @@ class VideoController extends Controller
         });
 
         $form->tab(__("Content"), function ($form) {
-            $form->file(Video::COL_IMAGE_THUMBNAIL, __("Image thumbnail"))->setWidth(4, 2)->uniqueName();
+            $form->image(Video::COL_IMAGE_THUMBNAIL, __("Image thumbnail"))->setWidth(4, 2)->uniqueName();
             //$form->multipleImage(Pages::COL_AVATAR, __("Avatar"))->removable()->uniqueName();
 
             $form->tmeditor(Video::COL_CONTENT);
