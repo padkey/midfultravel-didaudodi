@@ -11,6 +11,8 @@ use DDDD\Blog\Models\Video;
 use DDDD\Blog\Models\Companion;
 use DDDD\Blog\Models\Block;
 use DDDD\Tour\Models\TourModel;
+use DDDD\Banner\Models\Banner;
+
 class HomeController extends Controller
 {
     //
@@ -23,12 +25,20 @@ class HomeController extends Controller
         $blockOurMission = Block::where('code','our_mission')->first();
         $blockOurTour= Block::where('code','our_tour')->first();
         $blockValue = Block::where('code','value')->first();
-
+        $blockShortAboutUs = Block::where('code','short_about_us')->first();
         $videos = Video::get();
         $companions = Companion::get();
 
-
-        return view('pages.home')->with(compact('blockValue','blockOurTour','blockOurMission','blogPostsCenter','blogPostsLeft','blogPostsRight','tours','videos','companions'));
+        $sloganImage = Banner::with('items')->where('uuid','slogan_image')->first();
+        $bannerHomeImage = Banner::with('items')->where('uuid','banner_home')->first();
+        /*echo '<pre>';
+        var_dump($sloganImage->items[0]->path_desktop);
+        echo '</pre>';
+        die();*/
+        return view('pages.home')->with(compact('blockValue',
+            'sloganImage','bannerHomeImage',
+            'blockOurTour','blockOurMission','blogPostsCenter','blockShortAboutUs',
+            'blogPostsLeft','blogPostsRight','tours','videos','companions'));
     }
     public function showAbout(Request $req)
     {

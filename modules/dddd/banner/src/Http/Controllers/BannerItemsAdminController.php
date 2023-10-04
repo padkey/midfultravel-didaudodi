@@ -1,9 +1,9 @@
 <?php
 
-namespace DTV\Banner\Http\Controllers;
+namespace DDDD\Banner\Http\Controllers;
 
-use DTV\Banner\Models\Banner;
-use DTV\Banner\Models\BannerItems;
+use DDDD\Banner\Models\Banner;
+use DDDD\Banner\Models\BannerItems;
 use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
@@ -50,7 +50,7 @@ class BannerItemsAdminController extends AdminController
      * @param mixed $id
      * @return Show
      */
-    protected function detail(mixed $id): Show
+    protected function detail( $id): Show
     {
         $show = new Show(BannerItems::findOrFail($id));
 

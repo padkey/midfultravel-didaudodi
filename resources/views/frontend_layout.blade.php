@@ -33,22 +33,22 @@
 <body>
     <!-- loading-start -->
 <style>
-    
+
 </style>
 
     <!-- loading-end -->
 
 
-    
+
     <style>
         body{
             font-family:"Cormorant Garamond",serif!important;
-            
+
         }
         .header-area{
             padding-top: 0;
         }
-        
+
         p,span,a{
             font-family:"Cormorant Garamond",serif!important;
             color:#333333;
@@ -63,7 +63,7 @@
             font-size:55px;
         }
         .container{
-            max-width: 1550px;
+            max-width: 90%;
         }
         b{
             color:#222;
@@ -83,7 +83,7 @@
         }
         .btn-earth:hover{
             background-color: darkcyan;
-        }  
+        }
         .btn-shop{
             background-color:  #ffe277;
             color:black!important;
@@ -95,12 +95,12 @@
         .btn-shop:hover{
             background-color: darkcyan;
             color:white!important;
-        } 
+        }
         a{
             color:blue;
         }
     </style>
-    
+
     <!--[if lte IE 9]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
         <![endif]-->
@@ -195,7 +195,7 @@
                                     <button class="genric-btn primary circle">{{trans('messages.register')}}</button>
                                 </div>
                             </div>
-                        
+
                         </div>
                     </div>
                     <div class="col-xl-5">
@@ -205,7 +205,7 @@
                         <div class="">
                             <p class="footer_text">
                             {{trans('messages.support_our_community_c')}}                            </p>
-                        </div>        
+                        </div>
                     </div>
                 </div>
                 <div class="row footer_2">
@@ -264,7 +264,7 @@
                                     <p class="footer_text">8 Rue des Fans</p>
                                 </div>
                             </div>
-                        
+
                         </div>
                     </div>
                     <div class="col-xl-5" >
@@ -273,18 +273,18 @@
                               -  {{trans('messages.follow')}}  Didaudodi
                             </h3>
                             <a href="#">
-                                <i class="fa fa-facebook-square"></i>   
+                                <i class="fa fa-facebook-square"></i>
                             </a>
                             <a href="#">
-                                <i class="fa fa-twitter"></i>   
+                                <i class="fa fa-twitter"></i>
                             </a>
                             <a href="#">
-                                <i class="fa fa-instagram"></i>   
+                                <i class="fa fa-instagram"></i>
                             </a>
                             <a href="https://www.youtube.com/@didaudodireview">
-                                <i class="fa fa-youtube"></i>   
+                                <i class="fa fa-youtube"></i>
                             </a>
-                        </div>        
+                        </div>
                     </div>
                 </div>
             </div>
@@ -363,7 +363,7 @@
                 }
             }
             });
-            
+
             var owl = $('.owl-three');
         owl.owlCarousel({
             items:4,

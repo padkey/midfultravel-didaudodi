@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Providers;
+use DDDD\Banner\Models\Banner;
 use DDDD\Blog\Models\Pages;
 use DDDD\Url\Models\UrlModel;
 use DDDD\Blog\Models\BlogPost;
@@ -37,7 +38,9 @@ class AppServiceProvider extends ServiceProvider
         // $blogPosts = BlogCategory::with('posts')->where('url','show-home')->first();
         // $categoryPost = BlogCategory::where('url','!=','show-home')->get();
         $categoryPost = BlogCategory::where('url','!=','show-home-center')->where('url','!=','show-home-right')->where('url','!=','show-home-left')->get();
+        $logoWhite = Banner::with('items')->where('uuid','logo_white')->first();
+        $logoBlack = Banner::with('items')->where('uuid','logo_black')->first();
 
-        View::share(compact('categoryPost'));
+        View::share(compact('categoryPost','logoWhite','logoBlack'));
     }
 }

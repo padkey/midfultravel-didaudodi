@@ -91,7 +91,7 @@ class VideoController extends Controller
         $grid->column(Video::COL_TITLE, __("Title"));
         $grid->column(Video::COL_URL_KEY);
         $grid->column(Video::COL_IS_ACTIVE, __("Status"))->bool();
-       
+
         $grid->column(Video::COL_CREATED_AT, __("Created At"))->display(function () {
             return date_format($this->{Video::COL_CREATED_AT},"Y/m/d H:i:s");
         });
@@ -132,7 +132,7 @@ class VideoController extends Controller
         });
 
         $form->tab(__("Content"), function ($form) {
-            $form->image(Video::COL_IMAGE_THUMBNAIL, __("Image thumbnail"))->setWidth(4, 2)->uniqueName();
+            $form->file(Video::COL_IMAGE_THUMBNAIL, __("Image thumbnail"))->setWidth(4, 2)->uniqueName();
             //$form->multipleImage(Pages::COL_AVATAR, __("Avatar"))->removable()->uniqueName();
 
             $form->tmeditor(Video::COL_CONTENT);

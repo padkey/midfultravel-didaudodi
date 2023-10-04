@@ -1,11 +1,11 @@
 <?php
 
-namespace DTV\Banner\Http\Controllers;
+namespace DDDD\Banner\Http\Controllers;
 
-use DTV\Banner\Models\Banner;
-use DTV\Blog\Admin\Selectable\PageSelectable;
-use DTV\CatalogProduct\Selectable\CategorySelectable;
-use DTV\CatalogProduct\Selectable\ProductSelectable;
+use DDDD\Banner\Models\Banner;
+use DDDD\Blog\Admin\Selectable\PageSelectable;
+// use DDDD\CatalogProduct\Selectable\CategorySelectable;
+// use DDDD\CatalogProduct\Selectable\ProductSelectable;
 use Encore\Admin\Auth\Permission;
 use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Facades\Admin;
@@ -33,7 +33,7 @@ class BannerAdminController extends AdminController
      */
     public function index(Content $content)
     {
-        Permission::check('dtv.banner');
+        Permission::check('DDDD.banner');
         return $content
             ->title($this->title())
             ->description($this->description['index'] ?? trans('admin.list'))
@@ -50,7 +50,7 @@ class BannerAdminController extends AdminController
      */
     public function edit($id, Content $content)
     {
-        Permission::check('dtv.banner.edit');
+        Permission::check('DDDD.banner.edit');
         return $content
             ->title($this->title())
             ->description($this->description['edit'] ?? trans('admin.edit'))
@@ -67,7 +67,7 @@ class BannerAdminController extends AdminController
      */
     public function create(Content $content)
     {
-        Permission::check('dtv.banner.create');
+        Permission::check('DDDD.banner.create');
         return $content
             ->title($this->title())
             ->description($this->description['create'] ?? trans('admin.create'))
@@ -95,7 +95,7 @@ class BannerAdminController extends AdminController
         $grid->column('updated_at', __('Updated at'));
 
         $grid->actions(function ($actions) {
-            if (!Admin::user()->can('dtv.banner.delete')) {
+            if (!Admin::user()->can('DDDD.banner.delete')) {
                 $actions->disableDelete();
             }
         });
@@ -109,7 +109,7 @@ class BannerAdminController extends AdminController
      * @param mixed $id
      * @return Show
      */
-    protected function detail(mixed $id): Show
+    protected function detail( $id): Show
     {
         $show = new Show(Banner::findOrFail($id));
 
@@ -156,16 +156,16 @@ class BannerAdminController extends AdminController
                     'pages' => 'Pages',
                     'custom' => 'Custom'
                 ])
-            ->when('catalog-product', function (Form $form) {
-                $form->belongsToMany('products', ProductSelectable::class, __('Products'));
-                $form->belongsToMany('categories', CategorySelectable::class, __('Categories'));
-            })
-            ->when('catalog-category', function (Form $form) {
-                $form->belongsToMany('categories', CategorySelectable::class, __('Categories'));
-            })
-            ->when('pages', function (Form $form) {
-                $form->belongsToMany('pages', PageSelectable::class, __('Pages'));
-            })
+            // ->when('catalog-product', function (Form $form) {
+            //     $form->belongsToMany('products', ProductSelectable::class, __('Products'));
+            //     $form->belongsToMany('categories', CategorySelectable::class, __('Categories'));
+            // })
+            // ->when('catalog-category', function (Form $form) {
+            //     $form->belongsToMany('categories', CategorySelectable::class, __('Categories'));
+            // })
+            // ->when('pages', function (Form $form) {
+            //     $form->belongsToMany('pages', PageSelectable::class, __('Pages'));
+            // })
             ->default('home')
             ->required();
 
@@ -178,7 +178,7 @@ class BannerAdminController extends AdminController
             ->default('none');
 
         $form->tools(function (Form\Tools $tools) {
-            if (!Admin::user()->can('dtv.banner.delete')) {
+            if (!Admin::user()->can('DDDD.banner.delete')) {
                 $tools->disableDelete();
             }
         });

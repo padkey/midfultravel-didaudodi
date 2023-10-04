@@ -1,14 +1,14 @@
 <?php
 
-namespace DTV\Banner\Admin\Selectable;
+namespace DDDD\Banner\Admin\Selectable;
 
-use DTV\Banner\Models\Banner as model;
+use DDDD\Banner\Models\Banner as model;
 use Encore\Admin\Grid\Filter;
 use Encore\Admin\Grid\Selectable;
 
 /**
  * Class BannerSelectable
- * @package DTV\Banner\Admin\Selectable
+ * @package DDDD\Banner\Admin\Selectable
  */
 class BannerSelectable extends Selectable
 {
