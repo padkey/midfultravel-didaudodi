@@ -24,7 +24,7 @@
     <div class="col-xl-4 about-page-logo">
         <div class="logo-img">
             <a href="/">
-                <img src="{{url('frontend/images/nl12.png')}}" alt="">
+                <img src="{{url('frontend/images/nlb.png')}}" alt="">
             </a>
         </div>
     </div>

@@ -52,7 +52,7 @@
     <div class="container-package">
         <div class="logo-img">
             <a href="/">
-                <img src="{{url('frontend/images/nl2.png')}}" alt="">
+                <img src="{{url('frontend/images/nlw.png')}}" alt="">
             </a>
         </div>
         <div class="title-package">
