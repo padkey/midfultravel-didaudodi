@@ -56,8 +56,14 @@
             </a>
         </div>
         <div class="title-package">
-            <p><span class="event-label trangthai-open">ĐĂNG KÝ MỞ</span> <span class="event-label"> ĐI HÀNH HƯƠNG</span></p>
-            <p class="date-start-end">Ngày 15 tháng 2 đến ngày 28 tháng 2 năm 2024</p>
+            @php
+            $date = date_create($tour->date_start);
+            $date_start= date_format($date, 'd/m/Y');
+            $date = date_create($tour->date_end);
+            $date_end= date_format($date, 'd/m/Y');
+            @endphp
+            <p><span class="event-label trangthai-open">ĐĂNG KÝ MỞ</span> <span class="event-label"> {{$tour->type_tour}}</span></p>
+            <p class="date-start-end">{{$date_start}} - {{$date_end}}</p>
             <h3 class="">{{$tour->name}}</h3>
         </div>
     </div>

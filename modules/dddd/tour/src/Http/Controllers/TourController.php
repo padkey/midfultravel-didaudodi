@@ -105,7 +105,7 @@ class TourController extends Controller
             $form->text(TourModel::COL_NAME, __("Name"))->rules("required");
             $form->image(TourModel::COL_IMAGE, __("Image"))->setWidth(4, 2)->uniqueName();
             $form->image(TourModel::COL_IMAGE_THUMBNAIL, __("Image Thumbnail"))->setWidth(4, 2)->uniqueName();
-            //$form->text(BlogPost::COL_URL, __("Url Key"))->rules("required");
+            $form->text(TourModel::COL_TYPE_TOUR, __("Type tour"))->rules("required");
             if ($form->isEditing()) {
                 $form->text(TourModel::COL_URL, __("Url Key"))->rules("required");
             }

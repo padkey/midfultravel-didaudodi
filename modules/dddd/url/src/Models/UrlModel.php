@@ -5,6 +5,8 @@ namespace DDDD\Url\Models;
 use DDDD\Blog\Models\BlogCategory;
 use DDDD\Blog\Models\BlogPost;
 use DDDD\Blog\Models\BlogTag;
+use DDDD\Blog\Models\Video;
+use DDDD\Blog\Models\Companion;
 use DDDD\Blog\Models\Pages;
 use DDDD\Tour\Models\TourModel;
 
@@ -33,6 +35,9 @@ class UrlModel extends Model
     const ENTITY_TYPE_PRODUCT_TAG = "product-tag";
     const ENTITY_TYPE_BLOG_TAG = "blog-tag";
     const ENTITY_TYPE_TOUR = "tour";
+    const ENTITY_TYPE_VIDEO = "video";
+    const ENTITY_TYPE_COMPANION = "companion";
+
     protected $primaryKey = self::COL_ID;
 
     const MAPPING_ENTITY = [
@@ -44,6 +49,8 @@ class UrlModel extends Model
       self::ENTITY_TYPE_PRODUCT_TAG => ProductTag::class,
       self::ENTITY_TYPE_BLOG_TAG => BlogTag::class,
       self::ENTITY_TYPE_TOUR => TourModel::class,
+      self::ENTITY_TYPE_VIDEO => Video::class,
+      self::ENTITY_TYPE_COMPANION => Companion::class,
 
     ];
 

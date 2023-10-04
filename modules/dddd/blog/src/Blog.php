@@ -33,10 +33,15 @@ class Blog extends Extension
             if (!$menuModel::firstWhere('uri', 'pages')) {
                 parent::createMenu('Pages', 'pages', 'fa-tags', $menuModelId);
             }
-            if (!$menuModel::firstWhere('uri', 'tour')) {
-                parent::createMenu('Tour', 'tour', 'fa-linux', $menuModelId);
+            if (!$menuModel::firstWhere('uri', 'video')) {
+                parent::createMenu('Video', 'video', 'fa-youtube', $menuModelId);
             }
-
+            if (!$menuModel::firstWhere('uri', 'companion')) {
+                parent::createMenu('Companion', 'companion', 'fa-users', $menuModelId);
+            }
+            if (!$menuModel::firstWhere('uri', 'block')) {
+                parent::createMenu('Block', 'block', 'fa-tags', $menuModelId);
+            }
         } catch (\Exception $exception) {
             throwException($exception);
             return;

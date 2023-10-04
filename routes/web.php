@@ -17,9 +17,6 @@ use DDDD\Blog\Models\Pages;
 | contains the "web" middleware group. Now create something great!
 |
 */
-// Route::get('/', function(){
-//     return view('frontend_layout');
-// });
 
 // Route::group(['middleware' => 'locale'], function() {
 //     Route::get('change-language/{language}', [HomeController::class,'changeLanguage'])->name('user.change-language');
@@ -40,13 +37,10 @@ use DDDD\Blog\Models\Pages;
 // Route::get('/list-blogs',[BlogController::class,'showList']);
 // Route::get('/details-blog',[BlogController::class,'showDetails']);
 
-//contact
 Route::group(['middleware' => 'locale'], function() {
 
 Route::get('change-language/{language}', [HomeController::class,'changeLanguage'])->name('user.change-language');
-Route::get('/', function(){
-    return view('pages.home');
-});
+Route::get('/', [HomeController::class,'index']);
 
 //Tours
 Route::get('/tours/list-tours',[TourController::class,'showList']);

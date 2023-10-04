@@ -91,12 +91,12 @@
 
 @font-face {
     font-family: 'Cormorant Garamond';
-    src: url('CormorantGaramond-SemiBold.eot');
-    src: url('CormorantGaramond-SemiBold.eot?#iefix') format('embedded-opentype'),
-        url('CormorantGaramond-SemiBold.woff2') format('woff2'),
-        url('CormorantGaramond-SemiBold.woff') format('woff'),
-        url('CormorantGaramond-SemiBold.ttf') format('truetype'),
-        url('CormorantGaramond-SemiBold.svg#CormorantGaramond-SemiBold') format('svg');
+    src: url('../fonts/CormorantGaramond-SemiBold.eot');
+    src: url('../fonts/CormorantGaramond-SemiBold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/CormorantGaramond-SemiBold.woff2') format('woff2'),
+        url('../fonts/CormorantGaramond-SemiBold.woff') format('woff'),
+        url('../fonts/CormorantGaramond-SemiBold.ttf') format('truetype'),
+        url('../fonts/CormorantGaramond-SemiBold.svg#CormorantGaramond-SemiBold') format('svg');
     font-weight: 600;
     font-style: normal;
     font-display: swap;
