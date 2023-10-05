@@ -9,7 +9,7 @@
 
     }
     .about-page-area{
-        height: 55vh;
+        height: 48vh;
         align-items:center!important;
         display:flex!important;
         /* justify-content:center; */

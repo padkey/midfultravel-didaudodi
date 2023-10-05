@@ -60,10 +60,10 @@
         .offers_content{
             margin-left: 15px ;
         }
-        
+
         .offers_area {
             padding-bottom: 0;
-            padding-top: 20px;
+            padding-top: 0px;
             margin-bottom:50px;
         }
         .title-offer{
@@ -73,7 +73,7 @@
             transform: scale(1.1);
             transition: 0.1s;
         }
-        
+
         .section_title h1{
             margin-bottom:50px;
             font-style: normal;
@@ -113,7 +113,7 @@
                         </div>
                     </div>
                 </div>
-                @endforeach 
+                @endforeach
             </div>
     </div>
     <!-- offers_area_end -->

@@ -26,6 +26,8 @@ class HomeController extends Controller
         $blockOurTour= Block::where('code','our_tour')->first();
         $blockValue = Block::where('code','value')->first();
         $blockShortAboutUs = Block::where('code','short_about_us')->first();
+        $blackgroundCompanion = Block::where('code','blackground_companion')->first();
+        $TourBackground =Block::where('code','popular_tour')->first();
         $videos = Video::get();
         $companions = Companion::get();
 
@@ -36,7 +38,7 @@ class HomeController extends Controller
         echo '</pre>';
         die();*/
         return view('pages.home')->with(compact('blockValue',
-            'sloganImage','bannerHomeImage',
+            'sloganImage','bannerHomeImage','blackgroundCompanion','TourBackground',
             'blockOurTour','blockOurMission','blogPostsCenter','blockShortAboutUs',
             'blogPostsLeft','blogPostsRight','tours','videos','companions'));
     }

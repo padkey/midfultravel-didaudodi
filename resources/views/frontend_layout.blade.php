@@ -4,12 +4,12 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Didaudodi-tour</title>
+    <title>Mindful Travel Didaudodi</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- <link rel="manifest" href="site.webmanifest"> -->
-    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="{{'uploads/'.$logoWhite->items[0]->path_desktop}}">
     <!-- Place favicon.ico in the root directory -->
 
     <!-- CSS here -->
@@ -63,7 +63,7 @@
             font-size:55px;
         }
         .container{
-            max-width: 90%;
+            max-width: 85%;
         }
         b{
             color:#222;
