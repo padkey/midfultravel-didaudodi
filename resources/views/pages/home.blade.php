@@ -571,11 +571,12 @@
             border-radius: 10px;
         }
         .img img{
-            object-fit: fill;
             width: 100%;
             border-radius: 50%;
             transition: all .4s;
             z-index: 99;
+            height: 230px;
+            object-fit: cover;
         }
         .caption{
             transform: translateY(-210px);
