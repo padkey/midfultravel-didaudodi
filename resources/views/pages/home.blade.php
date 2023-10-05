@@ -55,7 +55,7 @@
    </div>
 
      <div class="misson_area" >
-        <div class="container" style="max-width: 95%;">
+        <div class="container">
             <div class="row">
                 <div class="col-xl-6 col-lg-12">
                     <div class="misson_title mb-20px">
@@ -164,7 +164,7 @@
     }
 	</style>
     <div class="generated_area">
-        <div class="container" style="max-width:95%">
+        <div class="container">
             <div class="row">
                 <div class="col-xl-6 col-lg-12">
                     <div class="generated_title mb-20px">
@@ -247,6 +247,7 @@
             padding-bottom: 0;
             padding-top: 20px;
             margin-bottom:50px;
+            background: url('uploads/{{$TourBackground != null ? $TourBackground->image_one : 2 }}');
         }
         .title-offer{
             color: #8b572a;
@@ -284,7 +285,6 @@
             </div>
 			<div class="row owl-carousel owl-two owl-theme" >
                 @foreach($tours as $tour)
-
                     <div class="single_offers">
                         <div class="about_thumb">
                             <img src="{{url('/uploads/'.$tour->image_thumbnail)}}" alt="">
@@ -314,7 +314,7 @@
     <!-- offers_area_end -->
 
     <!-- picture -->
-    <style>
+    {{--<style>
         .ndh_area{
             padding-bottom:50px;
             padding-top:50px;
@@ -363,7 +363,6 @@
 
         }
     </style>
-
     <div class="ndh_area">
         <div class="container"style="margin:auto">
             <div class="row">
@@ -381,7 +380,7 @@
                     </a>
                 </div>
                 @endforeach
-                <!-- <div class="avatar-p">
+                <div class="avatar-p">
                     <img src="{{url('frontend/images/z3.jpg')}}" alt="" >
                     <h3>Sister Sac Nghiem Vietnamese</h3>
                 </div>
@@ -396,12 +395,11 @@
                 <div class="avatar-p">
                     <img src="{{url('frontend/images/z2.jpg')}}" alt=""  >
                     <h3>Fabio Cappiello Organizzatore</h3>
-                </div> -->
+                </div>
             </div>
         </div>
-    </div>
+    </div>--}}
     <!-- end-picture -->
-
 
     <!-- video_area_start -->
     <style>
@@ -409,9 +407,9 @@
             margin-bottom:50px;
         }
         .single_video img{
-         width: 100%;
-         height: 215px;
-
+             width: 100%;
+             height: 250px;
+            object-fit:cover;
         }
         .text_area_video h3{
             font-style: inherit;
@@ -423,7 +421,7 @@
         }
         .icon-play{
             position: absolute;
-            bottom: 45%;
+            bottom: 35%;
             left: 8%;
             color: var(--color-cloud);
             font-size:18px;
@@ -449,9 +447,6 @@
             transition: 0.1s;
         } */
     </style>
-
-
-
     <div class="video_area2" >
         <div class="container">
             <div class="row">
@@ -530,7 +525,128 @@
     </div>
     <!-- video_area_end -->
 
-        <!-- about_area_start -->
+    <!-- companion -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+        .companion-area{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: Poppins;
+            background: url("uploads/{{$blackgroundCompanion != null ? $blackgroundCompanion->image_one : 2}}");
+
+        }
+        .team-profile{
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+        }
+        .profile-card{
+            position: relative;
+            width: 280px;
+            height: 250px;
+            background-color: #fff;
+            padding: 30px;
+            /**/border-radius: 10%;
+            box-shadow: -5px 8px 45px rgba(51, 51, 51, 0.126);
+            transition: all .4s;
+            margin: 50px 20px;
+
+        }
+        .profile-card:hover{
+            border-radius: 10px;
+            height: 460px;
+        }
+        .profile-card .img{
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform: translateY(-110px);
+            border-radius: 50%;
+            background: #fff;
+
+        }
+        .profile-card:hover img{
+            border-radius: 10px;
+        }
+        .img img{
+            object-fit: fill;
+            width: 100%;
+            border-radius: 50%;
+            transition: all .4s;
+            z-index: 99;
+        }
+        .caption{
+            transform: translateY(-210px);
+            opacity: 0;
+            pointer-events: none;
+            transition: all .5s;
+        }
+        .profile-card:hover .caption{
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .name-companion {
+            text-align: center;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+        .name-companion h3{
+            font-size: 25px;
+            color: #8B572A;
+            /*
+            font-weight: 600;
+            */
+        }
+        .caption p{
+            font-size: 17px;
+            font-weight: 500;
+            margin: 2px 0 12px 0;
+        }
+        .caption .social-links i:hover{
+            color: #0c52a1;
+        }
+        .desc-companion {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 10;
+            -webkit-box-orient: vertical;
+        }
+        .title-companion{
+            text-align: center;
+        }
+    </style>
+    <div class="companion-area">
+        <div class="container">
+            <div style="margin-bottom: 80px">
+                <h1 class="title-impatti">Companions</h1>
+            </div>
+            <div class="team-profile">
+                @foreach($companions as $companion)
+                    <div class="profile-card">
+                        <div class="img">
+                            <img src="{{url('uploads/'.$companion->avatar)}}" alt=""  >
+                            <div class="name-companion">
+                                <h3>{{$companion->name}}</h3>
+                            </div>
+                        </div>
+                        <div class="caption">
+                            <div class="desc-companion">
+                                {!! $companion->content !!}
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </div>
+
+    <!-- end-companion -->
+
+    <!-- about_area_start -->
         <style>
         .about_area_home{
             padding-top:20px;
@@ -784,4 +900,7 @@
         </div>
     </div>
     <!-- about_area_end -->
+
+
+
 @endsection
