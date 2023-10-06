@@ -99,6 +99,9 @@
         a{
             color:blue;
         }
+        strong{
+            font-weight: 700!important;
+        }
     </style>
 
     <!--[if lte IE 9]>
@@ -321,6 +324,18 @@
     <script src="{{asset('frontend/js/jquery.validate.min.js')}}"></script>
     <script src="{{asset('frontend/js/mail-script.js')}}"></script>
     <script src="{{asset('frontend/js/main.js')}}"></script>
+    <script>
+        $(document).ready(function(){
+            $(".single_offers").hover(function(){
+                $('.offers_area').css("background-image", 'url(' + $(this).data('img') + ')' );
+
+            }, function(){
+                $('.offers_area').css("background-image", 'url(' + $(this).data('img') + ')' );
+               /* var orderCode = $(this).data('order_code');*/
+                /*$('.offers_area').css("background-color", "pink");*/
+            });
+        });
+    </script>
 
     <script>
         $('#datepicker').datepicker({

@@ -20,18 +20,15 @@ class BlogController extends Controller
         //             */
         //        }
         $listPosts =  BlogCategory::with('posts')->where('url',$url)->get();
-        $listCate =  BlogCategory::where('url','!=','show-home')->get();
        // $listPosts = $catePost->posts()->get();
         //$listPosts = BlogPost::with('categories')->where('categories.url',$url)->get();
 
-        return view('pages.blogs.list')->with(compact('listPosts','listCate'));
+        return view('pages.blogs.list')->with(compact('listPosts'));
     }
     public function showDetails($url)
     {
-        $listCate =  BlogCategory::where('url','!=','show-home')->get();
         $post = BlogPost::where('url',$url)->first();
-
-        return view('pages.blogs.details')->with(compact('post','listCate'));
+        return view('pages.blogs.details')->with(compact('post'));
 
     }
 }

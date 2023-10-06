@@ -78,7 +78,7 @@
                         <aside class="single_sidebar_widget post_category_widget">
                             <h4 class="widget_title">Category</h4>
                             <ul class="list cat-list">
-                                @foreach($listCate as $cate)
+                                @foreach($categoryPost as $cate)
                                 <li>
                                     <a href="/list-blogs/{{$cate->url}}" class="d-flex">
                                         <p>{{ $cate->title }}</p>
