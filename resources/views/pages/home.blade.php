@@ -23,7 +23,7 @@
         {{-- <img src="{{url('frontend/images/loading.gif')}}" alt="">--}}
     </div>
     <!-- loading-end -->
-    
+
     <!-- mission -->
 	<style>
     .misson_area{
