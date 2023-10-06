@@ -31,12 +31,7 @@
 </head>
 
 <body>
-    <!-- loading-start -->
-<style>
 
-</style>
-
-    <!-- loading-end -->
 
 
 
@@ -337,6 +332,15 @@
         });
     </script>
 
+    <script type="text/javascript">
+        $(window).load(function() {
+            setTimeout(function() {
+                $(".loader").hide();
+                $(".loader").remove();
+            }, 3500);
+
+        });
+    </script>
     <script>
         $('#datepicker').datepicker({
             iconsLibrary: 'fontawesome',

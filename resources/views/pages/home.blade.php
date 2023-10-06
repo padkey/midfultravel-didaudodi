@@ -7,7 +7,23 @@
 @endsection
 @section('content')
 
-
+    <!-- loading-start -->
+    <style>
+        .loader {
+            position: fixed;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            background: url('frontend/images/loading.gif') 50% 50% no-repeat white;
+        }
+    </style>
+    <div class="loader">
+        {{-- <img src="{{url('frontend/images/loading.gif')}}" alt="">--}}
+    </div>
+    <!-- loading-end -->
+    
     <!-- mission -->
 	<style>
     .misson_area{
@@ -59,16 +75,15 @@
             <div class="row">
                 <div class="col-xl-6 col-lg-12">
                     <div class="misson_title mb-20px">
-                        <h1>{{trans('messages.mission')}}</h1>
-                        <p>{!! $blockOurMission->content !!} </p>
+                        <img src="{{url('uploads/'.$blockOurMission->image_one)}}" alt=""  >
                     </div>
                 </div>
                 <div class="col-xl-6 col-lg-12">
                     <div class="misson_title mb-20px">
-                    <img src="{{url('uploads/'.$blockOurMission->image_one)}}" alt=""  >
+                        <h1>{{trans('messages.mission')}}</h1>
+                        <p>{!! $blockOurMission->content !!} </p>
                     </div>
                 </div>
-
             </div>
             <!-- <div class="row">
                 <div class="col-xl-12 col-lg-12">
