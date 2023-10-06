@@ -78,7 +78,7 @@
                         <img src="{{url('uploads/'.$blockOurMission->image_one)}}" alt=""  >
                     </div>
                 </div>
-                <div class="col-xl-6 col-lg-12">
+                <div class="col-xl-6 col-lg-12" style="margin-top: auto;margin-bottom: auto;">
                     <div class="misson_title mb-20px">
                         <h1>{{trans('messages.mission')}}</h1>
                         <p>{!! $blockOurMission->content !!} </p>
@@ -190,7 +190,7 @@
                          </p>
                     </div>
                 </div>
-                <div class="col-xl-6 col-lg-12">
+                <div class="col-xl-6 col-lg-12" style="margin-top: auto;margin-bottom: auto;">
                     <div class="ourToursImage mb-20px">
                     <img src="{{url('uploads/'.$blockOurTour->image_one)}}" alt=""   loading="lazy">
                     </div>
