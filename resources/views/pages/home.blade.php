@@ -59,13 +59,13 @@
             <div class="row">
                 <div class="col-xl-6 col-lg-12">
                     <div class="misson_title mb-20px">
-                    <img src="{{url('uploads/'.$blockOurMission->image_one)}}" alt=""  >
+                        <h1>{{trans('messages.mission')}}</h1>
+                        <p>{!! $blockOurMission->content !!} </p>
                     </div>
                 </div>
                 <div class="col-xl-6 col-lg-12">
                     <div class="misson_title mb-20px">
-                        <h1>{{trans('messages.mission')}}</h1>
-                        <p>{!! $blockOurMission->content !!} </p>
+                    <img src="{{url('uploads/'.$blockOurMission->image_one)}}" alt=""  >
                     </div>
                 </div>
 
@@ -183,7 +183,7 @@
             </div>
         </div>
     </div>
-    <hr width=50% >
+    {{--<hr width=50% >--}}
     <!-- Generated_end -->
 
     <!-- offers_area_start -->
@@ -244,13 +244,34 @@
         }
 
         .offers_area {
-            padding-bottom: 0;
+            position: relative;
+            padding-bottom: 80px;
             padding-top: 20px;
             margin-bottom:50px;
-            background: url('uploads/{{$TourBackground != null ? $TourBackground->image_one : 2 }}');
+            background-size: cover;
+            background-image: url('uploads/{{$TourBackground != null ? $TourBackground->image_one : 2 }}');
+            border-radius:35px;
+            width: 90%;
+            margin: auto;
+
+        }
+        .offers_area::before{
+            content: "";
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            bottom: 0px;
+            left: 0px;
+            background-color: rgba(0,0,0,0.30);
+            border-radius:35px;
+
+
         }
         .title-offer{
             color: #8b572a;
+        }
+        .single_offers {
+            /*box-shadow: 10px 10px 15px 10px rgba(221,221,221,0.3);*/
         }
         .single_offers:hover {
             box-shadow: 10px 10px 15px 10px rgba(221,221,221,0.3);
@@ -261,7 +282,11 @@
 
         .section_title h1{
             margin-bottom:50px;
+            text-align:center;
+            color:white!important;
+            font-family:'Dancing Script'!important;
             font-weight: 500;
+            font-size: 85px;
         }
         .owl-prev{
             color: black!important;
@@ -274,18 +299,19 @@
             background: darkseagreen!important;
         }
     </style>
-    <div class="offers_area">
-        <div class="container">
+    <div class="offers_area" >
+        <div class="container" style="">
             <div class="row">
                 <div class="col-xl-12">
                     <div class="section_title text-center mb-20 mt-10">
-                        <h1>{{trans('messages.popular_tours')}}</h1>
+                        {{--<h1>{{trans('messages.popular_tours')}}</h1>--}}
+                        <h1>Tours</h1>
                     </div>
                 </div>
             </div>
 			<div class="row owl-carousel owl-two owl-theme" >
                 @foreach($tours as $tour)
-                    <div class="single_offers">
+                    <div class="single_offers" data-img="{{url('/uploads/'.$tour->image_thumbnail)}}">
                         <div class="about_thumb">
                             <img src="{{url('/uploads/'.$tour->image_thumbnail)}}" alt="">
                         </div>
@@ -405,6 +431,7 @@
     <style>
         .video_area2{
             margin-bottom:50px;
+            margin-top:50px
         }
         .single_video img{
              width: 100%;
@@ -533,8 +560,9 @@
             margin: 0;
             box-sizing: border-box;
             font-family: Poppins;
-            background: url("uploads/{{$blackgroundCompanion != null ? $blackgroundCompanion->image_one : 2}}");
-
+            background-image: url("uploads/{{$blackgroundCompanion != null ? $blackgroundCompanion->image_one : 2}}");
+            background-size:cover;
+            loading:"lazy";
         }
         .team-profile{
             display: flex;
@@ -773,7 +801,7 @@
                                 <img class="card-img rounded-0 small-image-blog" src="{{url('/uploads/'.$post->image_thumbnail)}}" alt="">
                             </div>
                             <div class="small-blog-details">
-                                <a class="d-inline-block" href="single-blog.html">
+                                <a class="d-inline-block" href="/blogs/{{$post->url}}">
                                     <h2>{{$post->title}}</h2>
                                 </a>
                             </div>
@@ -852,7 +880,7 @@
                                 <img class="card-img rounded-0 small-image-blog" src="{{url('/uploads/'.$post->image_thumbnail)}}" alt="">
                             </div>
                             <div class="small-blog-details">
-                                <a class="d-inline-block" href="single-blog.html">
+                                <a class="d-inline-block" href="/blogs/{{$post->url}}">
                                     <h2>{{$post->title}}</h2>
                                 </a>
                             </div>
@@ -901,7 +929,4 @@
         </div>
     </div>
     <!-- about_area_end -->
-
-
-
 @endsection
