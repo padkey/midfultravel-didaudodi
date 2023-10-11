@@ -19,7 +19,7 @@
                         <li>
                            <a href="/list-blogs/{{$cate->url}}" class="d-flex">
                               <p>{{ $cate->title }}</p>
-                              <p>(37)</p>
+                             {{-- <p>(37)</p>--}}
                            </a>
                         </li>
                         @endforeach

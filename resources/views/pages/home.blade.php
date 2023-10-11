@@ -9,7 +9,7 @@
 
     <!-- loading-start -->
     <style>
-        .loader {
+        /*.loader {
             position: fixed;
             left: 0px;
             top: 0px;
@@ -22,10 +22,10 @@
             .loader{
                 background: url('frontend/images/logo-loading-mobile.gif') 50% 50% no-repeat white;
             }
-        }
+        }*/
     </style>
-    <div class="loader">
-    </div>
+    {{--<div class="loader">
+    </div>--}}
     <!-- loading-end -->
 
     <!-- mission -->
@@ -268,7 +268,7 @@
             padding-top: 20px;
             margin-bottom:50px;
             background-size: cover;
-            background-image: url('uploads/{{$TourBackground != null ? $TourBackground->image_one : 2 }}');
+            /*background-image: url('uploads/{{$TourBackground != null ? $TourBackground->image_one : 2 }}');*/
             border-radius:35px;
             width: 90%;
             margin: auto;
