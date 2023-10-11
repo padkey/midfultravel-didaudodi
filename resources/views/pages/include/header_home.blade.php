@@ -1,5 +1,5 @@
 <header>
-        <div class="header-area" > 
+        <div class="header-area" >
         <!-- style="background: black;" -->
             <div id="sticky-header" class="main-header-area" style="padding: 25px 0 0 0;">
                 <div class="container-fluid p-0" style="max-width:90%">
@@ -25,19 +25,19 @@
                             }
                             .f-l{
                                 float:left;
-                                margin-left: 20px;
-                                
+                                margin-left: 15px;
+
                             }
                             .f-r{
                                 float:right;
                                 margin-left: 10px;
                             }
                             .f-l a{
-                                font-size: 16px!important;
+                                font-size: 16px;
                                 font-family:"Raleway",sans-serif!important;
                             }
                             .f-r a{
-                                font-size: 16px!important;
+                                font-size: 16px;
                                 font-family:"Raleway",sans-serif!important;
                             }
                             .mobile_menu li{
@@ -47,7 +47,7 @@
                         </style>
                         <div class="">
                             <div class="trangchu-title">
-                               
+
                             </div>
                         </div>
 
@@ -72,7 +72,7 @@
                                         <li class="f-r">
                                              <a class="btn-shop " href="https://didaudodi.com/" target='_blank' style="padding: 10px 20px 10px 20px;border-radius:0;top:-10px">{{trans('messages.shop')}}</a>
                                         </li>
-                                        @php 
+                                        @php
                                             $language = \Session::get('website_language', config('app.locale'));
                                             if($language == 'vi'){
                                                 $language = 'VietNam';
@@ -90,8 +90,8 @@
                                 </nav>
                             </div>
                         </div>
-                        
-                       
+
+
                         <div class="col-12">
                             <div class="mobile_menu d-block d-lg-none"></div>
                         </div>

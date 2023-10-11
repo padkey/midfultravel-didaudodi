@@ -16,11 +16,15 @@
             width: 100%;
             height: 100%;
             z-index: 9999;
-            background: url('frontend/images/loading.gif') 50% 50% no-repeat white;
+            background: url('frontend/images/logo-loading.gif') 50% 50% no-repeat white;
+        }
+        @media (max-width: 700px) {
+            .loader{
+                background: url('frontend/images/logo-loading-mobile.gif') 50% 50% no-repeat white;
+            }
         }
     </style>
     <div class="loader">
-        {{-- <img src="{{url('frontend/images/loading.gif')}}" alt="">--}}
     </div>
     <!-- loading-end -->
 
@@ -270,7 +274,7 @@
             margin: auto;
 
         }
-        .offers_area::before{
+/*        .offers_area::before{
             content: "";
             position: absolute;
             top: 0px;
@@ -281,7 +285,7 @@
             border-radius:35px;
 
 
-        }
+        }*/
         .title-offer{
             color: #8b572a;
         }
@@ -298,20 +302,21 @@
         .section_title h1{
             margin-bottom:50px;
             text-align:center;
-            color:white!important;
             font-family:'Dancing Script'!important;
             font-weight: 500;
             font-size: 85px;
         }
         .owl-prev{
             color: black!important;
+            left: -20px!important;
         }
         .owl-next{
             color: black!important;
+            right: -20px!important;
         }
 
         .owl-nav div:hover{
-            background: darkseagreen!important;
+            /* background: darkseagreen!important; */
         }
     </style>
     <div class="offers_area" >
@@ -588,24 +593,24 @@
         .profile-card{
             position: relative;
             width: 280px;
-            height: 250px;
+            height: 280px;
             background-color: #fff;
             padding: 30px;
             /**/border-radius: 10%;
             box-shadow: -5px 8px 45px rgba(51, 51, 51, 0.126);
             transition: all .4s;
-            margin: 50px 20px;
+            margin: 50px 0px;
 
         }
         .profile-card:hover{
             border-radius: 10px;
-            height: 460px;
+            height: 500px;
         }
         .profile-card .img{
             position: relative;
             width: 100%;
             height: 100%;
-            transform: translateY(-110px);
+            transform: translateY(-80px);
             border-radius: 50%;
             background: #fff;
 
@@ -618,7 +623,7 @@
             border-radius: 50%;
             transition: all .4s;
             z-index: 99;
-            height: 230px;
+            height: 220px;
             object-fit: cover;
         }
         .caption{
@@ -662,13 +667,17 @@
         .title-companion{
             text-align: center;
         }
+
+        .owl-carousel .owl-stage-outer {
+            /*overflow: inherit;*/
+        }
     </style>
-    <div class="companion-area">
+    <div class="companion-area ">
         <div class="container">
             <div style="margin-bottom: 80px">
                 <h1 class="title-impatti">Companions</h1>
             </div>
-            <div class="team-profile">
+            <div class="team-profile owl-four owl-carousel  owl-theme">
                 @foreach($companions as $companion)
                     <div class="profile-card">
                         <div class="img">

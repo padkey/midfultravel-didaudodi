@@ -11,49 +11,66 @@
     .slider_text h1{
         color:white;
     }
-    .owl-carousel .owl-item img {
-
-    }
-    .logo-img{
-        width: 550px!important;
-
+    .logo-image{
+        width: 30%;
     }
     @media (max-width:1900px) {
-        .logo-img {
-            width: 400px!important;
-            margin: auto;
+        .logo-image {
+            width: 30%;
         }
     }
+    /* Tablet desktop :768px. */
+    @media  (min-width: 768px) and (max-width: 993px) {
+        .logo-image {
+            width: 50%;
+            margin:auto;
+        }
+    }
+    /* Mobile desktop :768px. */
+    @media (min-width: 100px) and (max-width: 700px) {
+        .logo-image {
+            width: 100%;
+            margin:auto;
 
+        }
+    }
 </style>
 <div class="slider_area" style="margin-top:-13px;">
     <div class="slider_active owl-carousel">
         <div class="single_slider d-flex align-items-center  slider_bg_1">
-            <div class="" style="margin-top: 90px; ">
-                <div class="row">
-                    <div class="col-xl-3">
+            <div class="container" style="margin-top: 10px; ">
+                <div class="logo-image">
+                    <a href="/">
+                        <img src="{{url('uploads/'.$logoWhite->items[0]->path_desktop)}}" alt="">
+                    </a>
+                </div>
+                <div class="logo-image">
+                    <a href="/">
+                        <img src="{{url('uploads/'.$sloganImage->items[0]->path_desktop)}}" alt="">
+                    </a>
+                </div>
+                {{--<div class="row">
+                    <div class="col-xl-1">
 
                     </div>
-                    <div class="col-xl-5">
-                        <div class="logo-img">
-                            <a href="/">
-                                <img src="{{url('uploads/'.$logoWhite->items[0]->path_desktop)}}" alt="">
-                            </a>
-                        </div>
+                    <div class="col-xl-4">
+
+                    </div>
+                    <div class="col-xl-4">
+
                     </div>
                 </div>
                 <div class="row">
-                <div class="col-xl-3">
+                <div class="col-xl-1">
 
                 </div>
-                <div class="col-xl-5">
-                        <div class="logo-img">
-                            <a href="/">
-                                <img src="{{url('uploads/'.$sloganImage->items[0]->path_desktop)}}" alt="">
-                            </a>
-                        </div>
+                <div class="col-xl-4">
+
                     </div>
-                </div>
+                    <div class="col-xl-4">
+
+                    </div>
+                </div>--}}
             </div>
         </div>
         <!-- <div class="single_slider  d-flex align-items-center justify-content-center slider_bg_2">

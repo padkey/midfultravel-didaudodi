@@ -320,16 +320,14 @@
     <script src="{{asset('frontend/js/mail-script.js')}}"></script>
     <script src="{{asset('frontend/js/main.js')}}"></script>
     <script>
-        $(document).ready(function(){
+        /*$(document).ready(function(){
             $(".single_offers").hover(function(){
                 $('.offers_area').css("background-image", 'url(' + $(this).data('img') + ')' );
 
             }, function(){
                 $('.offers_area').css("background-image", 'url(' + $(this).data('img') + ')' );
-               /* var orderCode = $(this).data('order_code');*/
-                /*$('.offers_area').css("background-color", "pink");*/
             });
-        });
+        });*/
     </script>
 
     <script type="text/javascript">
@@ -361,7 +359,7 @@
             items:3,
             loop:true,
             nav:true,
-            navText: ['<i class="fa fa-chevron-left" ></i>','<i class="fa fa-chevron-right" ></i>'],
+            navText:['<i class="ti-angle-left"></i>','<i class="ti-angle-right"></i>'],
             margin:20,
             autoplay:true,
             autoplayTimeout:1000,
@@ -373,12 +371,12 @@
                 },
                 700:{
                     items:2,
-                    nav:false
+                    nav:true
                 },
-                1500:{
+                1200:{
                     items:3,
                     nav:true,
-                    loop:false
+                    loop:true
                 }
             }
             });
@@ -411,15 +409,15 @@
             });
 
 
-            var owl = $('.owl-four');
-            owl.owlCarousel({
+            var owl2 = $('.owl-four');
+            owl2.owlCarousel({
             items:5,
             loop:true,
             nav:true,
             navText: ['<i class="fa fa-chevron-left" ></i>','<i class="fa fa-chevron-right" ></i>'],
-            margin:20,
+
             autoplay:true,
-            autoplayTimeout:500,
+            autoplayTimeout:1500,
             autoplayHoverPause:true,
             responsive:{
                 0:{
@@ -428,9 +426,21 @@
                 },
                 700:{
                     items:2,
-                    nav:false
+                    nav:true,
+                    loop:true
+
                 },
-                1500:{
+                1100:{
+                    items:3,
+                    nav:true,
+                    loop:true
+                },
+                1400:{
+                    items:4,
+                    nav:true,
+                    loop:true
+                },
+                1900:{
                     items:5,
                     nav:true,
                     loop:false
