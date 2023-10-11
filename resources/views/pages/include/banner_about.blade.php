@@ -14,10 +14,15 @@
         display:flex!important;
         /* justify-content:center; */
     }
+    .logo-img{
+        width: 80%;
+        margin: auto;
+    }
+    .logo-img img{
+        width: 100%;
+    }
 </style>
 <div class="about-page-area row">
-
-
     <div class="col-xl-1">
 
     </div>

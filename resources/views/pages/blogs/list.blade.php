@@ -7,19 +7,24 @@
 @endsection
 @section('content')
 <!--================Blog Area =================-->
+<style>
+    .blog_details {
+        padding: 30px 30px 15px 5px;
+    }
+</style>
 <section class="blog_area">
         <div class="container" style="max-width: 1440px;">
             <div class="row">
                 <div class="col-lg-8 mb-5 mb-lg-0">
                     <div class="blog_left_sidebar">
-                        @foreach($listPosts[0]['posts'] as $post)
+                        @foreach($listPosts as $post)
                         <article class="blog_item">
                             <div class="blog_item_img">
                                 <img class="card-img rounded-0" src="{{url('/uploads/'.$post->image_thumbnail)}}" alt="">
-                                <a href="#" class="blog_item_date">
+                                {{--<a href="#" class="blog_item_date">
                                     <h3>15</h3>
                                     <p>Jan</p>
-                                </a>
+                                </a>--}}
                             </div>
 
                             <div class="blog_details">
@@ -28,27 +33,34 @@
                                 </a>
                                 <p>{{$post->short_description}}.</p>
                                 <ul class="blog-info-link">
-                                    <li><a href="#"><i class="fa fa-user"></i> {{$listPosts[0]->title}}</a></li>
+                                    {{--<li><a href="#"><i class="fa fa-user"></i> {{$listPosts->title}}</a></li>--}}
                                     <!-- <li><a href="#"><i class="fa fa-comments"></i> 03 Comments</a></li> -->
                                 </ul>
                             </div>
                         </article>
                         @endforeach
+{{--                        <div>
+                            {!! $listPosts->links() !!}
+                        </div>--}}
+
                         <nav class="blog-pagination justify-content-center d-flex">
                             <ul class="pagination">
                                 <li class="page-item">
-                                    <a href="#" class="page-link" aria-label="Previous">
+                                    <a href="{{$listPosts->previousPageUrl()}}" class="page-link" aria-label="Previous">
                                         <i class="ti-angle-left"></i>
                                     </a>
                                 </li>
+                                @for($i=1;$i<=$listPosts->total();$i++)
+                                    <li class="page-item">
+                                        <a href="{{$listPosts->path()}}?page={{$i}}" class="page-link">{{$i}}</a>
+                                    </li>
+                                @endfor
+
+                         {{--       <li class="page-item active">
+                                    <a href="{{$listPosts->nextPageUrl()}}" class="page-link">{{$listPosts->count()}}</a>
+                                </li>--}}
                                 <li class="page-item">
-                                    <a href="#" class="page-link">1</a>
-                                </li>
-                                <li class="page-item active">
-                                    <a href="#" class="page-link">2</a>
-                                </li>
-                                <li class="page-item">
-                                    <a href="#" class="page-link" aria-label="Next">
+                                    <a href="{{$listPosts->nextPageUrl()}}" class="page-link" aria-label="Next">
                                         <i class="ti-angle-right"></i>
                                     </a>
                                 </li>
@@ -58,7 +70,7 @@
                 </div>
                 <div class="col-lg-4">
                     <div class="blog_right_sidebar">
-                        <aside class="single_sidebar_widget search_widget">
+                        {{--<aside class="single_sidebar_widget search_widget">
                             <form action="#">
                                 <div class="form-group">
                                     <div class="input-group mb-3">
@@ -73,7 +85,7 @@
                                 <button class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn"
                                     type="submit">Search</button>
                             </form>
-                        </aside>
+                        </aside>--}}
 
                         <aside class="single_sidebar_widget post_category_widget">
                             <h4 class="widget_title">Category</h4>
