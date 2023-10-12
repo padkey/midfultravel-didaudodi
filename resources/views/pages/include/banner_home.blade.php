@@ -12,18 +12,21 @@
         color:white;
     }
     .logo-image{
-        width: 30%;
+        width: 25%;
+        margin-top: 50px;
     }
     @media (max-width:1900px) {
         .logo-image {
             width: 30%;
+            margin-top: 50px;
         }
     }
     /* Tablet desktop :768px. */
-    @media  (min-width: 768px) and (max-width: 993px) {
+    @media  (min-width: 700px) and (max-width: 993px) {
         .logo-image {
-            width: 50%;
+            width: 55%;
             margin:auto;
+            margin-top: 80px;
         }
     }
     /* Mobile desktop :768px. */
@@ -31,7 +34,7 @@
         .logo-image {
             width: 100%;
             margin:auto;
-
+            margin-top: 80px;
         }
     }
 </style>

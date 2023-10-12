@@ -68,7 +68,7 @@
         }
     }
     /* Mobile desktop :768px.*/
-    @media (min-width: 100px) and (max-width: 700px) {
+    @media (min-width: 100px) and (max-width: 767px) {
         .logo-image {
             width: 100%;
             margin:auto;
