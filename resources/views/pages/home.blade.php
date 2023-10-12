@@ -268,7 +268,7 @@
             padding-top: 20px;
             margin-bottom:50px;
             background-size: cover;
-            /*background-image: url('uploads/{{$TourBackground != null ? $TourBackground->image_one : 2 }}');*/
+            background-image: url('uploads/{{$TourBackground != null ? $TourBackground->image_one : 2 }}');
             border-radius:35px;
             width: 90%;
             margin: auto;
