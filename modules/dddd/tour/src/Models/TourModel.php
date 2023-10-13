@@ -25,6 +25,8 @@ class TourModel extends Model
     const COL_DATE_START = "date_start";
     const COL_TYPE_TOUR = "type_tour";
     const COL_LOCALE_CODE = "locale_code";
+    const COL_REGION = "region";
+
 
     /**
      * The table associated with the model.

@@ -352,7 +352,7 @@
                             @endphp
                             <b>{{$date_start}} - {{$date_end}}</b>
                             <h2 class="title-offer">  {{$tour->name}}</h2>
-                            <i class="fa fa-map-marker" aria-hidden="true"></i> Asia
+                            <i class="fa fa-map-marker" aria-hidden="true"></i> {{$tour->region}}
                             <p class="short-desc"> {{$tour->short_description}} </p>
                             <a href="/tours/{{$tour->url}}" class="btn btn-earth">{{trans('messages.more_infomation_&_register')}}</a>
                         </div>
