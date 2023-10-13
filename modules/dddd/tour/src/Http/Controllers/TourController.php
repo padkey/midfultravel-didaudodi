@@ -113,6 +113,16 @@ class TourController extends Controller
         )->setWidth(4, 2);
         $form->tab(__("General Information"), function ($form) {
             $form->text(TourModel::COL_NAME, __("Name"))->rules("required");
+           // $form->text(TourModel::COL_REGION, __("Region"));
+
+            $form->select(TourModel::COL_REGION)->options(
+                [
+                    'Asia'=>'Asia',
+                    'Africa'=>'Africa',
+                    'the Americas'=>'the Americas',
+                    'Europe'=>'Europe',
+                    'Oceania'=>'Oceania',
+                ])->setWidth(4, 2);
             $form->image(TourModel::COL_IMAGE, __("Image"))->setWidth(4, 2)->uniqueName();
             $form->image(TourModel::COL_IMAGE_THUMBNAIL, __("Image Thumbnail"))->setWidth(4, 2)->uniqueName();
             $form->text(TourModel::COL_TYPE_TOUR, __("Type tour"))->rules("required");
