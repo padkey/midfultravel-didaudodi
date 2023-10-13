@@ -827,7 +827,7 @@
             <div class="row">
                 <div class="col-xl-3 col-lg-3">
                     @if($blogPostsLeft != null)
-                    @foreach($blogPostsLeft['posts'] as $post)
+                    @foreach($blogPostsLeft as $post)
                     <div class="blog_left_sidebar">
                         <article class="blog_item">
                             <div class="blog_item_img">
@@ -874,7 +874,7 @@
                             $flex = '';
                         @endphp
                         @if($blogPostsCenter != null)
-                        @foreach($blogPostsCenter['posts'] as $post)
+                        @foreach($blogPostsCenter as $post)
                         <article class="blog_item {{$flex}}">
                             <div class="blog_item_img">
                                 <img class="card-img rounded-0 " src="{{url('/uploads/'.$post->image_thumbnail)}}" alt="">
@@ -906,7 +906,7 @@
                 </div>
                 <div class="col-xl-3 col-lg-3">
                     @if($blogPostsRight != null)
-                    @foreach($blogPostsRight['posts'] as $post)
+                    @foreach($blogPostsRight as $post)
                     <div class="blog_left_sidebar">
                         <article class="blog_item">
                             <div class="blog_item_img">
