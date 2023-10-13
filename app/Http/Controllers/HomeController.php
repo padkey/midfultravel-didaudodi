@@ -21,9 +21,21 @@ class HomeController extends Controller
         $locale_code =   config('app.locale');
 
         $tours = TourModel::where('locale_code',$locale_code)->get();
-        $blogPostsCenter = BlogCategory::with('posts')->where('locale_code',$locale_code)->where('url','show-home-center')->first();
-        $blogPostsLeft = BlogCategory::with('posts')->where('locale_code',$locale_code)->where('url','show-home-left')->first();
-        $blogPostsRight = BlogCategory::with('posts')->where('locale_code',$locale_code)->where('url','show-home-right')->first();
+        //center
+        $catePostsCenter = BlogCategory::with('posts')->where('url','show-home-center')->first();
+        $listPostsCenter  = $catePostsCenter->posts();
+        $blogPostsCenter = $listPostsCenter->orderByDesc('id')->where('locale_code',$locale_code)->get();
+        //left
+        $catePostsLeft  = BlogCategory::with('posts')->where('url','show-home-left')->first();
+        $listPostsLeft   = $catePostsLeft->posts();
+        $blogPostsLeft = $listPostsLeft->orderByDesc('id')->where('locale_code',$locale_code)->get();
+        //right
+        $catePostsRight= BlogCategory::with('posts')->where('url','show-home-right')->first();
+        $listPostsRight = $catePostsRight->posts();
+        $blogPostsRight = $listPostsRight->orderByDesc('id')->where('locale_code',$locale_code)->get();
+
+        //$blogPostsLeft = BlogCategory::with('posts')->where('locale_code',$locale_code)->where('url','show-home-left')->first();
+        //$blogPostsRight = BlogCategory::with('posts')->where('locale_code',$locale_code)->where('url','show-home-right')->first();
         $blockOurMission = Block::where('locale_code',$locale_code)->where('code','our_mission')->first();
         $blockOurTour= Block::where('locale_code',$locale_code)->where('code','our_tour')->first();
         $blockValue = Block::where('locale_code',$locale_code)->where('code','value')->first();
