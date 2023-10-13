@@ -2,6 +2,8 @@
 
 namespace DDDD\Blog\Http\Controllers;
 
+use DDDD\Blog\Models\Companion;
+use DDDD\Blog\Models\Locale;
 use DDDD\Blog\Models\Pages;
 use Encore\Admin\Auth\Permission;
 use Encore\Admin\Facades\Admin;
@@ -89,20 +91,22 @@ class PagesController extends Controller
         $grid = new Grid(new Pages);
         $grid->column(Pages::COL_ID, __("ID"))->sortable();
         $grid->column(Pages::COL_TITLE, __("Title"));
+        $grid->column(Pages::COL_LOCALE_CODE, __('Language'));
         $grid->column(Pages::COL_URL_KEY);
-        $grid->column(Pages::COL_IS_ACTIVE, __("Status"))->bool();
-        $grid->column(Pages::COL_PUBLIC_DATE, __("Public Date"))->display(function () {
+
+        //$grid->column(Pages::COL_IS_ACTIVE, __("Status"))->bool();
+        /*$grid->column(Pages::COL_PUBLIC_DATE, __("Public Date"))->display(function () {
             $date = date_create($this->{Pages::COL_PUBLIC_DATE});
             return date_format($date,"Y/m/d H:i:s");
-        });
-        $grid->column(Pages::COL_CREATED_AT, __("Created At"))->display(function () {
+        });*/
+        /*$grid->column(Pages::COL_CREATED_AT, __("Created At"))->display(function () {
             return date_format($this->{Pages::COL_CREATED_AT},"Y/m/d H:i:s");
-        });
+        });*/
         $grid->filter(function($filter){
             $filter->ilike(Pages::COL_TITLE, __("Title"));
             $filter->like(Pages::COL_URL_KEY);
-            $filter->between(Pages::COL_PUBLIC_DATE,  __("Public Date"))->datetime();
-            $filter->equal(Pages::COL_IS_ACTIVE, __("Status"))->select([0 => _("Inactive"), 1 => _("Active")]);
+            //$filter->between(Pages::COL_PUBLIC_DATE,  __("Public Date"))->datetime();
+            //$filter->equal(Pages::COL_IS_ACTIVE, __("Status"))->select([0 => _("Inactive"), 1 => _("Active")]);
         });
         $grid->actions(function ($actions) {
             if (!Admin::user()->can('dddd.pages.delete')) {
@@ -122,6 +126,14 @@ class PagesController extends Controller
     protected function form(): Form
     {
         $form = new Form(new Pages);
+        $locales = Locale::all();
+        $arrayLocale = [];
+        foreach ($locales as $locale) {
+            $arrayLocale[$locale->code] = $locale->name;
+        }
+        $form->select(Pages::COL_LOCALE_CODE,__("Language"))->options(
+            $arrayLocale
+        )->setWidth(4, 2);
         $form->tab(__("General Information"), function ($form) {
             $form->text(Pages::COL_TITLE, __("Title"))->rules("required");
             if ($form->isEditing()) {

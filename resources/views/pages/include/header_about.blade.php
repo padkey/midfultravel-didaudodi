@@ -61,9 +61,8 @@
                                         <li class="f-l"><a  href="/">{{trans('messages.home')}}</a></li>
                                         <li class="f-l"><a href="/about-us">{{trans('messages.about_us')}}</a></li>
 										<li class="f-l"><a href="/fabio">Fabio Cappiello</a></li>
-                                        <li class="f-l"><a href="/">Midfulness Practice</a></li>
-
-										<li class="f-l"><a href="/tours/list-tours">Midfulness Tours</a></li>
+                                        <li class="f-l"><a href="/">{{trans('messages.mindfulness_practice')}}</a></li>
+                                        <li class="f-l"><a href="/tours/list-tours">{{trans('messages.mindfulness_tour')}}</a></li>
                                         <li class="f-l"><a href="">{{trans('messages.blog')}} <i class="ti-angle-down"></i></a>
                                             <ul class="submenu">
                                                 @foreach($categoryPost as $cate)

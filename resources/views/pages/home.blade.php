@@ -66,14 +66,15 @@
         font-size: 65px; */
     }
 	</style>
-
-   <div class="row">
-        <hr width=60%>
-        <div class="col-xl-7 xtc">
-            <h2>{!! $blockShortAboutUs->content!!}</h2>
+    @if($blockShortAboutUs != null)
+        <div class="row">
+            <hr width=60%>
+            <div class="col-xl-7 xtc">
+                <h2>{!! $blockShortAboutUs->content!!}</h2>
+            </div>
         </div>
-   </div>
-
+    @endif
+    @if($blockOurMission != null)
      <div class="misson_area" >
         <div class="container">
             <div class="row">
@@ -98,11 +99,12 @@
             </div> -->
         </div>
     </div>
-
+    @endif
 
     <!-- mission_end -->
 
-    <!-- IMPATTI -->
+    <!-- Value -->
+    @if($blockValue != null)
     <style>
         .impatti_area{
             box-shadow: 10px 10px 15px 10px rgba(221,221,221,0.3);
@@ -138,7 +140,7 @@
             <div class="col-xl-4 col-lg-4 image-mt">
             </div>
             <div class="col-xl-4 col-lg-4" style="">
-                <h1 class="title-impatti mt-10">~ Value ~</h1>
+                <h1 class="title-impatti mt-10">~ {{trans('messages.value')}} ~</h1>
                 <div class="content-impatti">
                     {!! $blockValue->content !!}
                 </div>
@@ -150,7 +152,8 @@
         </div>
 
     </div>
-    <!-- IMPATTI_end -->
+    @endif
+    <!-- VALUE_end -->
 
 
     <!-- Generated -->
@@ -182,6 +185,7 @@
             font-size: 65px; */
     }
 	</style>
+    @if($blockOurTour != null)
     <div class="generated_area">
         <div class="container">
             <div class="row">
@@ -202,6 +206,7 @@
             </div>
         </div>
     </div>
+    @endif
     {{--<hr width=50% >--}}
     <!-- Generated_end -->
 
@@ -324,8 +329,8 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="section_title text-center mb-20 mt-10">
-                        {{--<h1>{{trans('messages.popular_tours')}}</h1>--}}
-                        <h1>Tours</h1>
+                        <h1>{{trans('messages.popular_tours')}}</h1>
+                        {{--<h1>Tours</h1>--}}
                     </div>
                 </div>
             </div>
@@ -505,6 +510,7 @@
                 </div>
             </div>
             <div class="row">
+               @if($videos != null)
                 @foreach($videos as $video)
                 <div class="col-md-3">
                     <div class="single_video">
@@ -524,6 +530,7 @@
                     </div>
                 </div>
                 @endforeach
+                @endif
                 <!-- <div class="col-md-3">
                     <div class="single_video">
                         <div class="thumbnail-video ">
@@ -675,9 +682,10 @@
     <div class="companion-area ">
         <div class="container">
             <div style="margin-bottom: 80px">
-                <h1 class="title-impatti">Companions</h1>
+                <h1 class="title-impatti">{{trans('messages.companions')}}</h1>
             </div>
             <div class="team-profile owl-four owl-carousel  owl-theme">
+                @if($companions != null)
                 @foreach($companions as $companion)
                     <div class="profile-card">
                         <div class="img">
@@ -693,6 +701,7 @@
                         </div>
                     </div>
                 @endforeach
+                @endif
             </div>
         </div>
     </div>
@@ -811,13 +820,13 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="title-about">
-                        <h1>Mindful travel blog</h1>
+                        <h1>{{trans('messages.mindful_travel_blog')}}</h1>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-xl-3 col-lg-3">
-                    @if($blogPostsLeft['posts'] != null)
+                    @if($blogPostsLeft != null)
                     @foreach($blogPostsLeft['posts'] as $post)
                     <div class="blog_left_sidebar">
                         <article class="blog_item">
@@ -864,7 +873,7 @@
                             $small = 'blog_details';
                             $flex = '';
                         @endphp
-                        @if($blogPostsCenter['posts'] != null)
+                        @if($blogPostsCenter != null)
                         @foreach($blogPostsCenter['posts'] as $post)
                         <article class="blog_item {{$flex}}">
                             <div class="blog_item_img">
@@ -896,7 +905,7 @@
                     </div>
                 </div>
                 <div class="col-xl-3 col-lg-3">
-                    @if($blogPostsRight['posts'] != null)
+                    @if($blogPostsRight != null)
                     @foreach($blogPostsRight['posts'] as $post)
                     <div class="blog_left_sidebar">
                         <article class="blog_item">

@@ -65,11 +65,11 @@ class PagesObserver
      */
     public function updating(Pages $item): void
     {
-        if ($item->getUrlKey() != $item->getOriginal(Pages::COL_URL_KEY)) {
+        /*if ($item->getUrlKey() != $item->getOriginal(Pages::COL_URL_KEY)) {
             if ($this->urlService->isUrlExisted($item->getUrlKey())) {
                 throw new Exception(sprintf("Error occur during updating Pages: Url key already existed."));
             }
-        }
+        }*/
     }
 
     /**

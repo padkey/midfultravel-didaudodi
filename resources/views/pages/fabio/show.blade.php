@@ -6,21 +6,25 @@
     @include('pages.include.banner_about')
 @endsection
 @section('content')
-<section class="about">
-	<div class="container" style="max-width:1200px">
-		<div class="row">
-			<div class="title-about">
-				<h1> Fabio</h1>
-			</div>
-			<div class="content-about">
-				<p>
-					{!! $page->content !!}
-				</p>
-			</div>
-		</div>
+    @if($page != null)
+    <section class="about">
+        <div class="container" style="max-width:1200px">
+            <div class="row">
+                <div class="title-about">
+                    <h1> {{$page->title}}</h1>
+                </div>
+                <div class="content-about">
+                    <p>
 
-	</div>
-</section>
+                            {!! $page->content !!}
+
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    @endif
 <!-- //about -->
 @endsection
 

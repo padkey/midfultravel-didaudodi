@@ -3,7 +3,9 @@
 namespace DDDD\Blog\Http\Controllers;
 
 use DDDD\Blog\Admin\Selectable\BlogPostSelectable;
+use DDDD\Blog\Models\Block;
 use DDDD\Blog\Models\BlogCategory;
+use DDDD\Blog\Models\Locale;
 use Encore\Admin\Auth\Permission;
 use Encore\Admin\Facades\Admin;
 use Encore\Admin\Layout\Content;
@@ -84,6 +86,15 @@ class BlogCategoryController extends Controller
     protected function form(): Form
     {
         $form = new Form(new BlogCategory);
+        $locales = Locale::all();
+        $arrayLocale = [];
+        foreach ($locales as $locale) {
+            $arrayLocale[$locale->code] = $locale->name;
+        }
+        $form->select(BlogCategory::COL_LOCALE_CODE,__("Language"))->options(
+            $arrayLocale
+        )->setWidth(4, 2);
+
         $form->tab(__("General Information"), function ($form) {
             $form->text(BlogCategory::COL_TITLE, __("Title"))->rules("required");
             //$form->image(BlogCategory::COL_IMAGE_BANNER, __("Image Banner"))->setWidth(4, 2)->uniqueName();
@@ -91,7 +102,7 @@ class BlogCategoryController extends Controller
             if ($form->isEditing()) {
                 $form->text(BlogCategory::COL_URL, __("Url Key"))->rules("required");
             }
-            //$form->text(BlogCategory::COL_URL, __("Url Key"))->rules("required");
+            //$form->text(BlogCategory::COL_URL, __("Url Key"));
 
             $form->text(BlogCategory::COL_POSITION,__("Position"))->default("1")->setWidth(2,2);
             $form->select(BlogCategory::COL_PARENT_ID, __("Parent Category"))->options(BlogCategory::selectOptions());
@@ -134,7 +145,7 @@ class BlogCategoryController extends Controller
     {
         $tree = new Tree(new BlogCategory);
         $tree->branch(function ($branch) {
-            return "{$branch[BlogCategory::COL_ID]} &nbsp; | &nbsp;&nbsp;<strong>{$branch[BlogCategory::COL_TITLE]}</strong>";
+            return "{$branch[BlogCategory::COL_ID]} &nbsp; | &nbsp;&nbsp;<strong>{$branch[BlogCategory::COL_TITLE]}</strong>| &nbsp;&nbsp;<strong>{$branch[BlogCategory::COL_LOCALE_CODE]}</strong>";
         });
         if (!Admin::user()->can('dtv.blog-category.edit')) {
             $tree->disableSave();

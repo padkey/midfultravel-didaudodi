@@ -11,17 +11,20 @@ class TourController extends Controller
     //
     public function showList()
     {
-        $tours = TourModel::get();
+        $locale_code =   config('app.locale');
+        $tours = TourModel::where('locale_code',$locale_code)->get();
         return view('pages.tours.list_tours')->with(compact('tours'));
     }
     public function showDetails($url)
     {
-        $tour = TourModel::where('url',$url)->first();
+        $locale_code =   config('app.locale');
+        $tour = TourModel::where('locale_code',$locale_code)->where('url',$url)->first();
         return view('pages.tours.details')->with(compact('tour'));
 
     }
     public function showPageTourDetails($url){
-        $tour = Pages::where('url_key',$url)->first();
+        $locale_code =   config('app.locale');
+        $tour = Pages::where('locale_code',$locale_code)->where('url_key',$url)->first();
         return view('pages.tours.page_tour_details')->with(compact('tour'));
     }
 }

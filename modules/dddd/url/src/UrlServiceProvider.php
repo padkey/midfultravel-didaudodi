@@ -45,6 +45,8 @@ class UrlServiceProvider extends ServiceProvider
         $this->loadMigrationsFrom([
             __DIR__ . '/../database/migrations/2023_09_25_000003_create_url_manage_table.php',
             __DIR__ . '/../database/migrations/2023_09_25_000004_add_meta_seo_to_url_table.php',
+            __DIR__ . '/../database/migrations/2023_10_13_000004_add_col_url__manage_table.php',
+
         ]);
     }
 }

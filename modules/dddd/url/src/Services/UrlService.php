@@ -89,9 +89,9 @@ class UrlService
      * @throws \Exception
      */
     public function update($oldUrl, $newUrl) {
-        if ($this->isUrlExisted($newUrl)) {
+        /*if ($this->isUrlExisted($newUrl)) {
             throw new \Exception(sprintf("Error occur during updating URL: Url key already existed."));
-        }
+        }*/
         $model = $this->urlRepo->getUrlModelByRequestPath($oldUrl);
         if ($model instanceof UrlModel) {
             $model->update([UrlModel::COL_REQUEST_PATH => $newUrl]);

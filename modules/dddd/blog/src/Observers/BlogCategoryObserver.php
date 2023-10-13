@@ -79,7 +79,7 @@ class BlogCategoryObserver {
         if ($item->getUrl() != $item->getOriginal(BlogCategory::COL_URL)) {
             $this->urlService->update($item->getOriginal(BlogCategory::COL_URL), $item->getUrl());
         }
-        $this->blogCategoryRepo->injectLevelAndPath($item);
+        //$this->blogCategoryRepo->injectLevelAndPath($item);
     }
 
     /**
@@ -88,11 +88,11 @@ class BlogCategoryObserver {
      */
     public function updating(BlogCategory $item): void
     {
-        if ($item->getUrl() != $item->getOriginal(BlogCategory::COL_URL)) {
+        /*if ($item->getUrl() != $item->getOriginal(BlogCategory::COL_URL)) {
             if ($this->urlService->isUrlExisted($item->getUrl())) {
                 throw new Exception("Error occur during updating BlogCategory: Url key already existed.");
             }
-        }
+        }*/
     }
 
     /**

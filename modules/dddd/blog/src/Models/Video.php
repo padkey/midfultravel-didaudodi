@@ -25,6 +25,7 @@ class Video extends Model
     const COL_URL_KEY = "url_key";
     const COL_URL_VIDEO = "url_video";
     const COL_URL_AUTHOR = "author";
+    const COL_LOCALE_CODE = "locale_code";
 
     const COL_UPDATED_AT = "updated_at";
 

@@ -2,8 +2,10 @@
 
 namespace DDDD\Blog\Http\Controllers;
 
+use DDDD\Blog\Models\Block;
 use DDDD\Blog\Models\BlogPost;
 use DDDD\Blog\Models\BlogCategory;
+use DDDD\Blog\Models\Locale;
 use Encore\Admin\Auth\Permission;
 use Encore\Admin\Facades\Admin;
 use Encore\Admin\Form;
@@ -85,12 +87,12 @@ class BlogPostController extends Controller
         $grid = new Grid(new BlogPost);
         $grid->column(BlogPost::COL_ID, __("ID"))->sortable();
         $grid->column(BlogPost::COL_TITLE, __("Title"));
-        $grid->column(BlogPost::COL_META_TITLE)->hide();
-
-        $grid->column(BlogPost::COL_IS_ACTIVE)->bool();
-        $grid->column(BlogPost::COL_META_KEYWORDS);
-        $grid->column(BlogPost::COL_META_DESCRIPTION);
-        $grid->column(BlogPost::COL_PUBLIC_DATE);
+        $grid->column(BlogPost::COL_LOCALE_CODE,__("Language"));
+        $grid->column(BlogPost::COL_URL);
+        //$grid->column(BlogPost::COL_IS_ACTIVE)->bool();
+        //$grid->column(BlogPost::COL_META_KEYWORDS);
+        //$grid->column(BlogPost::COL_META_DESCRIPTION);
+        //$grid->column(BlogPost::COL_PUBLIC_DATE);
         return $grid;
     }
 
@@ -113,11 +115,20 @@ class BlogPostController extends Controller
 //             */
 //        }
         $form = new Form(new BlogPost);
+        $locales = Locale::all();
+        $arrayLocale = [];
+        foreach ($locales as $locale) {
+            $arrayLocale[$locale->code] = $locale->name;
+        }
+        $form->select(BlogPost::COL_LOCALE_CODE,__("Language"))->options(
+            $arrayLocale
+        )->setWidth(4, 2);
+
         $form->tab(__("General Information"), function ($form) {
             $form->text(BlogPost::COL_TITLE, __("Title"))->rules("required");
             $form->image(BlogPost::COL_IMAGE_THUMBNAIL, __("Image Thumbnail"))->setWidth(4, 2)->uniqueName();
             //$form->multipleImage(BlogPost::COL_IMAGE_BANNER, __("Images"))->removable()->uniqueName();
-            //$form->text(BlogPost::COL_URL, __("Url Key"))->rules("required");
+            //$form->text(BlogPost::COL_URL, __("Url Key"));
             if ($form->isEditing()) {
                 $form->text(BlogPost::COL_URL, __("Url Key"))->rules("required");
             }

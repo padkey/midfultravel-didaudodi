@@ -3,7 +3,10 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use DDDD\Banner\Models\Banner;
+use DDDD\Blog\Models\BlogCategory;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\View;
 
 class Locale
 {
@@ -21,7 +24,11 @@ class Locale
 
         config(['app.locale' => $language]);
         // Chuyển ứng dụng sang ngôn ngữ được chọn
-
+        $categoryPost = BlogCategory::where('url','!=','show-home-center')->where('locale_code',$language)->where('url','!=','show-home-right')->where('url','!=','show-home-left')->get();
+        $logoWhite = Banner::with('items')->where('uuid','logo_white')->first();
+        $logoBlack = Banner::with('items')->where('uuid','logo_black')->first();
+        View::share(compact('categoryPost','logoWhite','logoBlack'));
+        
         return $next($request);
     }
 }

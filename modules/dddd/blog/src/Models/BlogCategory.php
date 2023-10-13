@@ -29,6 +29,7 @@ class BlogCategory extends Model
     const COL_UPDATED_AT = "updated_at";
     const COL_IS_ACTIVE = "is_active";
     const COL_PATH_LEVEL = "path_level";
+    const COL_LOCALE_CODE = "locale_code";
 
     /**
      * The table associated with the model.
@@ -98,6 +99,6 @@ class BlogCategory extends Model
     {
         return env('WEBSITE_BASE_URL') . $this->getUrl();
     }
-    
+
 
 }

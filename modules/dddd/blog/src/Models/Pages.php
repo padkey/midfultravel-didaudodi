@@ -23,6 +23,7 @@ class Pages extends Model
     const COL_CREATED_AT = "created_at";
     const COL_URL_KEY = "url_key";
     const COL_UPDATED_AT = "updated_at";
+    const COL_LOCALE_CODE = "locale_code";
 
     /**
      * The table associated with the model.

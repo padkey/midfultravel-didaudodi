@@ -65,11 +65,11 @@ class BlogTagObserver
      */
     public function updating(BlogTag $item): void
     {
-        if ($item->{BlogTag::COL_URL} != $item->getOriginal(BlogTag::COL_URL)) {
+        /*if ($item->{BlogTag::COL_URL} != $item->getOriginal(BlogTag::COL_URL)) {
             if ($this->urlService->isUrlExisted($item->{BlogTag::COL_URL})) {
                 throw new Exception("Error occur during updating BlogTag: Url key already existed.");
             }
-        }
+        }*/
     }
 
     /**

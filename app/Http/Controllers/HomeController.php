@@ -18,18 +18,20 @@ class HomeController extends Controller
     //
     public function index(Request $req)
     {
-        $tours = TourModel::get();
-        $blogPostsCenter = BlogCategory::with('posts')->where('url','show-home-center')->first();
-        $blogPostsLeft = BlogCategory::with('posts')->where('url','show-home-left')->first();
-        $blogPostsRight = BlogCategory::with('posts')->where('url','show-home-right')->first();
-        $blockOurMission = Block::where('code','our_mission')->first();
-        $blockOurTour= Block::where('code','our_tour')->first();
-        $blockValue = Block::where('code','value')->first();
-        $blockShortAboutUs = Block::where('code','short_about_us')->first();
-        $blackgroundCompanion = Block::where('code','blackground_companion')->first();
-        $TourBackground =Block::where('code','popular_tour')->first();
-        $videos = Video::get();
-        $companions = Companion::get();
+        $locale_code =   config('app.locale');
+
+        $tours = TourModel::where('locale_code',$locale_code)->get();
+        $blogPostsCenter = BlogCategory::with('posts')->where('locale_code',$locale_code)->where('url','show-home-center')->first();
+        $blogPostsLeft = BlogCategory::with('posts')->where('locale_code',$locale_code)->where('url','show-home-left')->first();
+        $blogPostsRight = BlogCategory::with('posts')->where('locale_code',$locale_code)->where('url','show-home-right')->first();
+        $blockOurMission = Block::where('locale_code',$locale_code)->where('code','our_mission')->first();
+        $blockOurTour= Block::where('locale_code',$locale_code)->where('code','our_tour')->first();
+        $blockValue = Block::where('locale_code',$locale_code)->where('code','value')->first();
+        $blockShortAboutUs = Block::where('locale_code',$locale_code)->where('code','short_about_us')->first();
+        $blackgroundCompanion = Block::where('locale_code',$locale_code)->where('code','blackground_companion')->first();
+        $TourBackground =Block::where('locale_code',$locale_code)->where('code','popular_tour')->first();
+        $videos = Video::where('locale_code',$locale_code)->get();
+        $companions = Companion::where('locale_code',$locale_code)->get();
 
         $sloganImage = Banner::with('items')->where('uuid','slogan_image')->first();
         $bannerHomeImage = Banner::with('items')->where('uuid','banner_home')->first();
@@ -44,17 +46,20 @@ class HomeController extends Controller
     }
     public function showAbout(Request $req)
     {
-        $page = Pages::where('url_key','impacts')->first();
+        $locale_code =   config('app.locale');
+        $page = Pages::where('url_key','about-us')->where('locale_code',$locale_code)->first();
         return view('pages.about-us.show')->with(compact('page'));
     }
     public function showContact()
     {
-        $page = Pages::where('url_key','contact')->first();
+        $locale_code =   config('app.locale');
+        $page = Pages::where('url_key','contact')->where('locale_code',$locale_code)->first();
         return view('pages.contact.show')->with(compact('page'));
     }
     public function showFabio()
     {
-        $page = Pages::where('url_key','fabio')->first();
+        $locale_code =  config('app.locale');
+        $page = Pages::where('url_key','fabio')->where('locale_code',$locale_code)->first();
         return view('pages.fabio.show')->with(compact('page'));
     }
     public function changeLanguage($language)
