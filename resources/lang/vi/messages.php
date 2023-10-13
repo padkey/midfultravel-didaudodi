@@ -30,7 +30,7 @@ return [
     'login' => 'Đăng nhập',
     'dharma_talks'=> 'Pháp thoại',
     'companions' => 'Những người đồng hành',
-    'popular_tours' => 'Các chuyển du lịch phổ biến',
+    'popular_tours' => 'Các chuyến du lịch phổ biến',
     'impacts'=>'Tác động',
     'see_details'=>'See details',
     'registration_open'=>'Đang mở đăng kí',
@@ -46,5 +46,12 @@ return [
     'africa' => 'Châu Phi',
     'mission' => 'Sứ mệnh',
     'our_journey'=>'Hành trình của chúng ta',
+    'mindful_travel_blog' => 'Blog du lịch chánh niệm',
+    'Companions' => 'Những người đồng hành',
+    'value' => 'Giá trị',
+    'our_parnership' => 'Mối quan hệ của chúng tôi',
+    'mindfulness_tour' => 'Du lịch chánh niệm',
+    'mindfulness_practice' => 'Thực hành chánh niệm',
+    'get_in_touch' => 'Liên lạc'
 
 ];

@@ -14,11 +14,15 @@
     .logo-image{
         width: 25%;
         margin-top: 50px;
+        margin-left: 40px;
+
     }
     @media (max-width:1900px) {
         .logo-image {
             width: 30%;
             margin-top: 50px;
+            margin-left: 40px;
+
         }
     }
     /* Tablet desktop :768px. */
@@ -35,6 +39,28 @@
             width: 100%;
             margin:auto;
             margin-top: 80px;
+
+        }
+    }
+
+    @media  (min-height: 700px) and (max-height: 950px) {
+        .logo-image {
+            width: 23%;
+            margin-top: 100px;
+            margin-left: 40px;
+        }
+        .logo-top{
+            margin-top: 100px;
+        }
+    }
+    @media  (min-height: 500px) and (max-height: 700px) {
+        .logo-image {
+            width: 20%;
+            margin-top: 80px;
+            margin-left: 40px;
+        }
+        .logo-top{
+            margin-top: 100px;
         }
     }
 </style>
@@ -42,7 +68,7 @@
     <div class="slider_active owl-carousel">
         <div class="single_slider d-flex align-items-center  slider_bg_1">
             <div class="container" style="margin-top: 10px; ">
-                <div class="logo-image">
+                <div class="logo-image logo-top">
                     <a href="/">
                         <img src="{{url('uploads/'.$logoWhite->items[0]->path_desktop)}}" alt="">
                     </a>

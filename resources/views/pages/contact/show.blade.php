@@ -16,15 +16,16 @@
 
 	}
  </style>
+ @if($page != null)
     <section class="">
             <div class="container" style="max-width:1300px">
 				<div class="row">
 					<div class="col-lg-8">
 						<div class="title_contact">
-							<h1>Contact Us</h1>
+							<h1>{{$page->title}}</h1>
 						</div>
 						<div class="content_contact">
-							{!! $page->content !!}
+                            {!! $page->content !!}
 						</div>
 
 						<!-- <div class="media_contact row">
@@ -51,12 +52,12 @@
 							</div>
 						</div> -->
 					</div>
-					
+
 				</div>
                 <div class="row">
 						<div class="col-lg-8">
 							<div class="title_contact">
-								<h1>Get in Touch</h1>
+								<h1>{{trans('messages.get_in_touch')}}</h1>
 							</div>
 							<form class="form-contact contact_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
 								<div class="row">
@@ -86,10 +87,10 @@
 								</div>
 							</form>
 						</div>
-						
+
                 </div>
             </div>
         </section>
     <!-- ================ contact section end ================= -->
-
+ @endif
 @endsection

@@ -76,11 +76,11 @@ class BlogPostObserver
      */
     public function updating(BlogPost $item): void
     {
-        if ($item->getUrl() != $item->getOriginal(BlogPost::COL_URL)) {
+        /*if ($item->getUrl() != $item->getOriginal(BlogPost::COL_URL)) {
             if ($this->urlService->isUrlExisted($item->getUrl())) {
                 throw new Exception(sprintf("Error occur during updating BlogPost: Url key already existed."));
             }
-        }
+        }*/
     }
 
     /**

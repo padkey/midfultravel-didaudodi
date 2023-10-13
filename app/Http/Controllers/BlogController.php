@@ -26,9 +26,10 @@ class BlogController extends Controller
         //$listPosts = BlogPost::with('categories')->where('categories.url',$url)->get();
        /* $aa = BlogPost::query()->findOrFail(1);
         $cates = $aa->categories()->get();*/
-        $cate = BlogCategory::with('posts')->where('url',$url)->get();
+        $locale_code =   config('app.locale');
+        $cate = BlogCategory::with('posts')->where('url',$url)->where('locale_code',$locale_code)->get();
         $listPosts = $cate[0]->posts();
-        $listPosts = $listPosts->orderByDesc('id')->paginate(1);
+        $listPosts = $listPosts->orderByDesc('id')->where('locale_code',$locale_code)->paginate(1);
         //$listPosts =  BlogPost::with('categories')->where('url',$url)->orderBy('id','Desc')->get();
 
 
@@ -36,7 +37,8 @@ class BlogController extends Controller
     }
     public function showDetails($url)
     {
-        $post = BlogPost::where('url',$url)->first();
+        $locale_code =   config('app.locale');
+        $post = BlogPost::where('url',$url)->where('locale_code',$locale_code)->first();
         return view('pages.blogs.details')->with(compact('post'));
 
     }

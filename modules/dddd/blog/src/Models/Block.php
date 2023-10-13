@@ -19,5 +19,6 @@ class Block extends Model
     const COL_IMAGE_ONE = "image_one";
     const COL_IMAGE_TWO = "image_two";
     const COL_TYPE = "type";
+    const COL_LOCALE_CODE = "locale_code";
 
 }

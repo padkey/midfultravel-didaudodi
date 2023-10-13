@@ -89,12 +89,13 @@ class VideoController extends Controller
         $grid = new Grid(new Video);
         $grid->column(Video::COL_ID, __("ID"))->sortable();
         $grid->column(Video::COL_TITLE, __("Title"));
+        $grid->column(Video::COL_LOCALE_CODE, __("Language"));
         $grid->column(Video::COL_URL_KEY);
-        $grid->column(Video::COL_IS_ACTIVE, __("Status"))->bool();
+        //$grid->column(Video::COL_IS_ACTIVE, __("Status"))->bool();
 
-        $grid->column(Video::COL_CREATED_AT, __("Created At"))->display(function () {
+        /*$grid->column(Video::COL_CREATED_AT, __("Created At"))->display(function () {
             return date_format($this->{Video::COL_CREATED_AT},"Y/m/d H:i:s");
-        });
+        });*/
         $grid->filter(function($filter){
             $filter->ilike(Video::COL_TITLE, __("Title"));
             $filter->like(Video::COL_URL_KEY);

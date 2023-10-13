@@ -2,6 +2,8 @@
 
 namespace DDDD\Tour\Http\Controllers;
 
+use DDDD\Blog\Models\BlogPost;
+use DDDD\Blog\Models\Locale;
 use DDDD\Tour\Models\TourModel;
 use Encore\Admin\Auth\Permission;
 use Encore\Admin\Facades\Admin;
@@ -83,12 +85,12 @@ class TourController extends Controller
         $grid = new Grid(new TourModel);
         $grid->column(TourModel::COL_ID, __("ID"))->sortable();
         $grid->column(TourModel::COL_NAME, __("Name"));
-        $grid->column(TourModel::COL_META_TITLE)->hide();
+        $grid->column(TourModel::COL_LOCALE_CODE, __("Language"));
 
-        $grid->column(TourModel::COL_IS_ACTIVE)->bool();
-        $grid->column(TourModel::COL_META_KEYWORDS);
-        $grid->column(TourModel::COL_META_DESCRIPTION);
+        //$grid->column(TourModel::COL_IS_ACTIVE)->bool();
+        $grid->column(TourModel::COL_URL);
         $grid->column(TourModel::COL_DATE_START);
+        $grid->column(TourModel::COL_DATE_END);
         return $grid;
     }
 
@@ -101,6 +103,14 @@ class TourController extends Controller
     {
 
         $form = new Form(new TourModel);
+        $locales = Locale::all();
+        $arrayLocale = [];
+        foreach ($locales as $locale) {
+            $arrayLocale[$locale->code] = $locale->name;
+        }
+        $form->select(TourModel::COL_LOCALE_CODE,__("Language"))->options(
+            $arrayLocale
+        )->setWidth(4, 2);
         $form->tab(__("General Information"), function ($form) {
             $form->text(TourModel::COL_NAME, __("Name"))->rules("required");
             $form->image(TourModel::COL_IMAGE, __("Image"))->setWidth(4, 2)->uniqueName();

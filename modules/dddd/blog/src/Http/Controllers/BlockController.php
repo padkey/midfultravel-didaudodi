@@ -3,6 +3,7 @@
 namespace DDDD\Blog\Http\Controllers;
 
 use DDDD\Blog\Models\Block;
+use DDDD\Blog\Models\Locale;
 use Encore\Admin\Auth\Permission;
 use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Form;
@@ -27,9 +28,17 @@ class BlockController extends AdminController
      */
     protected function form(): Form
     {
+        $locales = Locale::all();
+        $arrayLocale = [];
+        foreach ($locales as $locale) {
+            $arrayLocale[$locale->code] = $locale->name;
+        }
         $form = new Form(new Block());
-        $form->text(Block::COL_TITLE);
+        $form->select(Block::COL_LOCALE_CODE,__("Language"))->options(
+            $arrayLocale
+        )->setWidth(4, 2);
 
+        $form->text(Block::COL_TITLE);
         $form->text(Block::COL_CODE);
         $form->select(Block::COL_TYPE)->options(
             [
@@ -61,6 +70,7 @@ class BlockController extends AdminController
         $grid->column(Block::COL_ID)->sortable();
         $grid->column(Block::COL_TITLE);
         $grid->column(Block::COL_CODE);
+        $grid->column(Block::COL_LOCALE_CODE, __("Language"));
         $grid->filter(function($filter){
             $filter->like(Block::COL_TITLE);
             $filter->like(Block::COL_CODE);

@@ -3,6 +3,8 @@
 namespace DDDD\Blog\Http\Controllers;
 
 use DDDD\Blog\Models\Companion;
+use DDDD\Blog\Models\Locale;
+use DDDD\Tour\Models\TourModel;
 use Encore\Admin\Auth\Permission;
 use Encore\Admin\Facades\Admin;
 use Encore\Admin\Form;
@@ -88,9 +90,9 @@ class CompanionController extends Controller
     {
         $grid = new Grid(new Companion);
         $grid->column(Companion::COL_ID, __("ID"))->sortable();
-        $grid->column(Companion::COL_NAME, __("name"));
+        $grid->column(Companion::COL_NAME, __("Name"));
         $grid->column(Companion::COL_URL_KEY);
-        $grid->column(Companion::COL_IS_ACTIVE, __("Status"))->bool();
+        $grid->column(Companion::COL_LOCALE_CODE, __("Language"));
 
         $grid->column(Companion::COL_CREATED_AT, __("Created At"))->display(function () {
             return date_format($this->{Companion::COL_CREATED_AT},"Y/m/d H:i:s");
@@ -98,7 +100,7 @@ class CompanionController extends Controller
         $grid->filter(function($filter){
             $filter->ilike(Companion::COL_NAME, __("name"));
             $filter->like(Companion::COL_URL_KEY);
-            $filter->equal(Companion::COL_IS_ACTIVE, __("Status"))->select([0 => _("Inactive"), 1 => _("Active")]);
+            //$filter->equal(Companion::COL_IS_ACTIVE, __("Status"))->select([0 => _("Inactive"), 1 => _("Active")]);
         });
         $grid->actions(function ($actions) {
             if (!Admin::user()->can('dddd.companion.delete')) {
@@ -118,11 +120,19 @@ class CompanionController extends Controller
     protected function form(): Form
     {
         $form = new Form(new Companion);
+        $locales = Locale::all();
+        $arrayLocale = [];
+        foreach ($locales as $locale) {
+            $arrayLocale[$locale->code] = $locale->name;
+        }
+        $form->select(Companion::COL_LOCALE_CODE,__("Language"))->options(
+            $arrayLocale
+        )->setWidth(4, 2);
         $form->tab(__("General Information"), function ($form) {
             $form->text(Companion::COL_NAME, __("Name"))->rules("required");
             $form->image(Companion::COL_AVATAR, __("Avatar"))->setWidth(4, 2)->uniqueName();
             if ($form->isEditing()) {
-                //$form->text(Companion::COL_URL_KEY, __("Url Key"));
+                $form->text(Companion::COL_URL_KEY, __("Url Key"));
             }
             $form->select(Companion::COL_IS_ACTIVE, "Status")->options([1 => "Active", 0 => "Inactive"]);
         });

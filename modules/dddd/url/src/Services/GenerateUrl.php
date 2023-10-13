@@ -85,9 +85,9 @@ class GenerateUrl
             throw new \Exception(__("String is not empty."));
         }
         $baseUrl = $this->createUrlSlug($string);
-        if ($this->urlRepo->getUrlModelByRequestPath($baseUrl) != null) {
+        /*if ($this->urlRepo->getUrlModelByRequestPath($baseUrl) != null) {
             throw new \Exception(sprintf("Url key already existed, please change the title or name (%s).", $string));
-        }
+        }*/
 
         return $baseUrl;
     }

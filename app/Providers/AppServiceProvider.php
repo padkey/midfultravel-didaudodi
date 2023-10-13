@@ -30,6 +30,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        /*$locale_code =   \Session::get('website_language', config('app.locale'));
+        echo $locale_code;*/
         //
         // $ourToursPage = Pages::where('url_key','our-tours')->first();
         // $missionPage = Pages::where('url_key','mission')->first();
@@ -37,10 +39,10 @@ class AppServiceProvider extends ServiceProvider
         // $tours = TourModel::get();
         // $blogPosts = BlogCategory::with('posts')->where('url','show-home')->first();
         // $categoryPost = BlogCategory::where('url','!=','show-home')->get();
-        $categoryPost = BlogCategory::where('url','!=','show-home-center')->where('url','!=','show-home-right')->where('url','!=','show-home-left')->get();
+        /*$categoryPost = BlogCategory::where('url','!=','show-home-center')->where('locale_code',$locale_code)->where('url','!=','show-home-right')->where('url','!=','show-home-left')->get();
         $logoWhite = Banner::with('items')->where('uuid','logo_white')->first();
         $logoBlack = Banner::with('items')->where('uuid','logo_black')->first();
 
-        View::share(compact('categoryPost','logoWhite','logoBlack'));
+        View::share(compact('categoryPost','logoWhite','logoBlack'));*/
     }
 }
