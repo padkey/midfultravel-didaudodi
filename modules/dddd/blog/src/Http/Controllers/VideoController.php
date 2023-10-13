@@ -2,6 +2,8 @@
 
 namespace DDDD\Blog\Http\Controllers;
 
+use DDDD\Blog\Models\Locale;
+use DDDD\Blog\Models\Pages;
 use DDDD\Blog\Models\Video;
 use Encore\Admin\Auth\Permission;
 use Encore\Admin\Facades\Admin;
@@ -120,7 +122,16 @@ class VideoController extends Controller
     protected function form(): Form
     {
         $form = new Form(new Video);
+
         $form->tab(__("General Information"), function ($form) {
+            $locales = Locale::all();
+            $arrayLocale = [];
+            foreach ($locales as $locale) {
+                $arrayLocale[$locale->code] = $locale->name;
+            }
+            $form->select(Video::COL_LOCALE_CODE,__("Language"))->options(
+                $arrayLocale
+            )->setWidth(4, 2);
             $form->text(Video::COL_TITLE, __("Title"))->rules("required");
             if ($form->isEditing()) {
                 $form->text(Video::COL_URL_KEY, __("Url Key"))->rules("required");
