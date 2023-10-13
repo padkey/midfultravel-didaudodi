@@ -119,7 +119,7 @@ class TourController extends Controller
                 [
                     'Asia'=>'Asia',
                     'Africa'=>'Africa',
-                    'the Americas'=>'the Americas',
+                    'the Americas'=>'The Americas',
                     'Europe'=>'Europe',
                     'Oceania'=>'Oceania',
                 ])->setWidth(4, 2);

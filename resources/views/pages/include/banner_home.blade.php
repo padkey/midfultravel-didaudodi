@@ -12,19 +12,19 @@
         color:white;
     }
     .logo-image{
-        width: 25%;
+        width: 26%;
         margin-top: 50px;
         margin-left: 40px;
 
     }
-    @media (max-width:1900px) {
+    /*@media (max-width:2200px) {
         .logo-image {
-            width: 30%;
+            width: 26%;
             margin-top: 50px;
             margin-left: 40px;
 
         }
-    }
+    }*/
     /* Tablet desktop :768px. */
     @media  (min-width: 700px) and (max-width: 993px) {
         .logo-image {
@@ -43,7 +43,7 @@
         }
     }
 
-    @media  (min-height: 700px) and (max-height: 950px) {
+    /*@media  (min-height: 800px) and (max-height: 950px) {
         .logo-image {
             width: 23%;
             margin-top: 100px;
@@ -52,8 +52,8 @@
         .logo-top{
             margin-top: 100px;
         }
-    }
-    @media  (min-height: 500px) and (max-height: 700px) {
+    }*/
+    /*@media  (min-height: 500px) and (max-height: 700px) {
         .logo-image {
             width: 20%;
             margin-top: 80px;
@@ -62,7 +62,7 @@
         .logo-top{
             margin-top: 100px;
         }
-    }
+    }*/
 </style>
 <div class="slider_area" style="margin-top:-13px;">
     <div class="slider_active owl-carousel">
