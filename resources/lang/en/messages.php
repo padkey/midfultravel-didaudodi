@@ -50,5 +50,7 @@ return [
     'our_partnership' => 'Our Partnership',
     'mindfulness_tour' => 'Mindfulness tour',
     'mindfulness_practice' => 'Mindfulness tour',
-    'get_in_touch' => 'Get in Touch'
+    'get_in_touch' => 'Get in Touch',
+    'see_more' => 'See more',
+    'shrink' => 'Shrink'
 ];

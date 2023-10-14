@@ -52,6 +52,7 @@ return [
     'our_parnership' => 'Mối quan hệ của chúng tôi',
     'mindfulness_tour' => 'Du lịch chánh niệm',
     'mindfulness_practice' => 'Thực hành chánh niệm',
-    'get_in_touch' => 'Liên lạc'
-
+    'get_in_touch' => 'Liên lạc',
+    'see_more' => 'Xem thêm',
+    'shrink' => 'Thu gọn'
 ];

@@ -2,7 +2,7 @@
         <div class="header-area" >
         <!-- style="background: black;" -->
             <div id="sticky-header" class="main-header-area" style="padding: 25px 0 0 0;">
-                <div class="container-fluid p-0" style="max-width:90%">
+                <div class="container-fluid p-0" style="max-width:95%">
                     <div class="row align-items-center no-gutters">
                         <!-- <div class="col-xl-2 col-lg-2">
                             <div class="logo-img">

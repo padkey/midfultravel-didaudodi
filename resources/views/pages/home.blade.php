@@ -65,6 +65,29 @@
         font-weight: 500;
         font-size: 65px; */
     }
+    .mission_margin{
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+    .mission_content {
+       /* height:700px;*/
+        overflow: hidden;
+        text-overflow: ellipsis;
+        line-height: 30px;
+        -webkit-line-clamp: 11;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+    }
+    @media (max-width: 1700px) {
+        .mission_content {
+            -webkit-line-clamp: 10;
+        }
+    }
+    .btn-xt {
+        margin-top:10px;
+        float:right;
+        font-size: 18px;
+    }
 	</style>
     @if($blockShortAboutUs != null)
         <div class="row">
@@ -78,15 +101,18 @@
      <div class="misson_area" >
         <div class="container">
             <div class="row">
-                <div class="col-xl-6 col-lg-12">
+                <div class="col-xl-6 col-lg-12 ">
                     <div class="misson_title mb-20px">
                         <img src="{{url('uploads/'.$blockOurMission->image_one)}}" alt=""  >
                     </div>
                 </div>
-                <div class="col-xl-6 col-lg-12" style="margin-top: auto;margin-bottom: auto;">
-                    <div class="misson_title mb-20px">
+                <div class="col-xl-6 col-lg-12 mission_margin" >
+                    <div class="misson_title mb-20px ">
                         <h1>{{trans('messages.mission')}}</h1>
-                        <p>{!! $blockOurMission->content !!} </p>
+                        <div class="mission_content">{!! $blockOurMission->content !!} </div>
+                        <div class="btn-xemthem">
+                            <button class="btn btn-success btn-xt">{{trans('messages.see_more')}}</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -184,21 +210,36 @@
             font-weight: 500;
             font-size: 65px; */
     }
+    .our_tour_content{
+        overflow: hidden;
+        text-overflow: ellipsis;
+        line-height: 25px;
+        -webkit-line-clamp: 10;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+    }
+    .our_tour_xt{
+        margin-top: 20px;
+        margin-bottom: 40px;
+        font-size: 18px;
+    }
 	</style>
     @if($blockOurTour != null)
     <div class="generated_area">
         <div class="container">
             <div class="row">
-                <div class="col-xl-6 col-lg-12">
+                <div class="col-xl-6 col-lg-12 ">
                     <div class="generated_title mb-20px">
                     <h1>{{trans('messages.our_tours')}}</h1>
                     </div>
-                    <div class="section_content">
-                        <p>{!! $blockOurTour->content !!}
-                         </p>
+                    <div class="our_tour_content">
+                            {!! $blockOurTour->content !!}
+                    </div>
+                    <div>
+                        <button class="btn btn-success our_tour_xt"> {{trans('messages.see_more')}} </button>
                     </div>
                 </div>
-                <div class="col-xl-6 col-lg-12" style="margin-top: auto;margin-bottom: auto;">
+                <div class="col-xl-6 col-lg-12 mission_margin" >
                     <div class="ourToursImage mb-20px">
                     <img src="{{url('uploads/'.$blockOurTour->image_one)}}" alt=""   loading="lazy">
                     </div>

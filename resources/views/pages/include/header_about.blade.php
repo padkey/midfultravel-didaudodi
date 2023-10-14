@@ -4,7 +4,7 @@
     </style>
         <div class="header-area" style="background: white;    opacity: 90%;">
             <div id="sticky-header" class="main-header-area" style="padding: 25px 0 0 0;">
-                <div class="container-fluid p-0">
+                <div class="container-fluid p-0" style="max-width:95%">
                     <div class="row align-items-center no-gutters">
                         <!-- <div class="col-xl-2 col-lg-2">
                             <div class="logo-img">
@@ -23,9 +23,13 @@
                             }
                             .f-l{
                                 float:left;
+                                margin-left: 15px;
+
                             }
                             .f-r{
                                 float:right;
+                                margin-left: 15px;
+
                             }
                             .f-l:hover{
                                 transform:  translateY(-15%);
@@ -33,13 +37,13 @@
                             }
                             .f-r a{
                                 color:black!important;
-                                font-size: 20px!important;
-                                font-weight:700!important;
+                                font-size: 16px;
+                                font-family:"Raleway",sans-serif!important;
                             }
                             .f-l a{
                                 color:black!important;
-                                font-size: 20px!important;
-                                font-weight:700!important;
+                                font-size: 16px;
+                                font-family:"Raleway",sans-serif!important;
                             }
                             .mobile_menu li{
                                 float:none!important;
@@ -49,7 +53,7 @@
                                 background: black !important;
                             }
                         </style>
-                         <div class="col-xl-1">
+                         <div class="">
                             <div class="trangchu-title">
 
                             </div>
