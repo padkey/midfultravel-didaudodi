@@ -328,6 +328,27 @@
                 $('.offers_area').css("background-image", 'url(' + $(this).data('img') + ')' );
             });
         });*/
+        $('.btn-xt').click(function(){
+            if(  $('.mission_content').css('display') == '-webkit-box') {
+                $('.mission_content').css('display','block');
+                $(this).text('{{trans('messages.shrink')}}');
+            } else {
+                $('.mission_content').css('display','-webkit-box');
+                $(this).text('{{trans('messages.see_more')}}');
+            }
+
+        });
+        $('.our_tour_xt').click(function(){
+            if(  $('.our_tour_content').css('display') == '-webkit-box') {
+                $('.our_tour_content').css('display','block');
+                $(this).text('{{trans('messages.shrink')}}');
+            } else {
+                $('.our_tour_content').css('display','-webkit-box');
+                $(this).text('{{trans('messages.see_more')}}');
+            }
+
+        });
+
     </script>
 
     <script type="text/javascript">
