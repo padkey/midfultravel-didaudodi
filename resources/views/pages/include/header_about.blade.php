@@ -2,7 +2,7 @@
     <style>
 
     </style>
-        <div class="header-area" style="background: white;    opacity: 90%;">
+        <div class="header-area" style="background: white;    opacity: 90%;    position: relative;">
             <div id="sticky-header" class="main-header-area" style="padding: 25px 0 0 0;">
                 <div class="container-fluid p-0" style="max-width:95%">
                     <div class="row align-items-center no-gutters">
@@ -58,7 +58,7 @@
 
                             </div>
                         </div>
-                        <div class="col-xl-11 col-lg-6">
+                        <div class="col-xl-12 col-lg-6">
                         <div class="main-menu  d-none d-lg-block">
                                 <nav>
                                     <ul id="navigation">

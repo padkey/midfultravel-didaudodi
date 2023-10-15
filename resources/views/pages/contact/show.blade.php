@@ -15,10 +15,17 @@
 		margin-bottom:40px;
 
 	}
+
+ </style>
+ <style>
+     .container-about{
+         width: 75%;
+         margin: auto;
+     }
  </style>
  @if($page != null)
     <section class="">
-            <div class="container" style="max-width:1300px">
+            <div class="container-about">
 				<div class="row">
 					<div class="col-lg-8">
 						<div class="title_contact">
