@@ -580,6 +580,10 @@
             text-align: center;
 
         }
+        @media (max-width: 800px) {
+            .icon-play{
+            bottom: 45%;}
+        }
         .single_video:hover .icon-play{
             color:white;
             background:black;
