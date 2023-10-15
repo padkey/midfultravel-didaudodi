@@ -311,6 +311,13 @@
             background: #faf1eb;
             /* background: beige; */
             border-radius: 5px;
+
+        }
+        @media (max-width: 800px) {
+            .single_offers{
+                width: 90%;
+                margin: auto;
+            }
         }
         .single_offers h2{
             font-weight: 100;
