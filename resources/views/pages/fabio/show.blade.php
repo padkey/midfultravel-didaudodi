@@ -6,9 +6,15 @@
     @include('pages.include.banner_about')
 @endsection
 @section('content')
+    <style>
+        .container-about{
+            width: 75%;
+            margin: auto;
+        }
+    </style>
     @if($page != null)
     <section class="about">
-        <div class="container" style="max-width:1200px">
+        <div class="container-about">
             <div class="row">
                 <div class="title-about">
                     <h1> {{$page->title}}</h1>

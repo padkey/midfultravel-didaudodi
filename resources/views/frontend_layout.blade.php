@@ -383,7 +383,7 @@
             navText:['<i class="ti-angle-left"></i>','<i class="ti-angle-right"></i>'],
             margin:20,
             autoplay:true,
-            autoplayTimeout:1000,
+            autoplayTimeout:1500,
             autoplayHoverPause:true,
             responsive:{
                 0:{
@@ -443,29 +443,37 @@
             responsive:{
                 0:{
                     items:1,
-                    nav:true
+
+                    nav:true,
+                    loop:true,
                 },
-                700:{
+                600:{
                     items:2,
+                    nav:true,
+                    loop:true
+                },
+
+                890:{
+                    items:3,
                     nav:true,
                     loop:true
 
                 },
-                1100:{
-                    items:3,
-                    nav:true,
-                    loop:true
-                },
-                1400:{
+                1190:{
                     items:4,
                     nav:true,
                     loop:true
                 },
-                1900:{
+                1620:{
+                    items:5,
+                    nav:true,
+                    loop:true
+                },
+                /*2000:{
                     items:5,
                     nav:true,
                     loop:false
-                }
+                }*/
             }
             });
 

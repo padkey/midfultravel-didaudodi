@@ -156,7 +156,7 @@
         .title-impatti{
             text-align:center;
             color:#8b572a;
-            font-family:'Dancing Script'!important;
+            /*font-family:'Dancing Script'!important;*/
             font-weight: 500;
             font-size: 75px;
         }
@@ -194,13 +194,9 @@
     }
     .generated_title h1{
     }
-	.content-mission{
-		max-width:70%;
-		margin:auto;
-	}
     .ourToursImage img{
-            width: 100%;
-        }
+        width: 100%;
+    }
     .section_title h1{
         color: #8b572a!important;
     }
@@ -229,18 +225,18 @@
         <div class="container">
             <div class="row">
                 <div class="col-xl-6 col-lg-12 ">
-                    <div class="generated_title mb-20px">
-                    <h1>{{trans('messages.our_tours')}}</h1>
+                    <div class="generated_title">
+                        <h1>{{trans('messages.our_tours')}}</h1>
                     </div>
                     <div class="our_tour_content">
-                            {!! $blockOurTour->content !!}
+                        {!! $blockOurTour->content !!}
                     </div>
                     <div>
                         <button class="btn btn-success our_tour_xt"> {{trans('messages.see_more')}} </button>
                     </div>
                 </div>
                 <div class="col-xl-6 col-lg-12 mission_margin" >
-                    <div class="ourToursImage mb-20px">
+                    <div class="ourToursImage">
                     <img src="{{url('uploads/'.$blockOurTour->image_one)}}" alt=""   loading="lazy">
                     </div>
                 </div>
@@ -253,6 +249,22 @@
 
     <!-- offers_area_start -->
     <style>
+        .offers_area {
+            position: relative;
+            padding-bottom: 80px;
+            padding-top: 20px;
+            margin-bottom:50px;
+            background-size: cover;
+            background-image: url('uploads/{{$TourBackground != null ? $TourBackground->image_one : 2 }}');
+            border-radius:35px;
+            width: 100%;
+            margin: auto;
+
+        }
+        .container-pop-tour{
+            width: 95%;
+            margin: auto;
+        }
         .short-desc{
             word-break: break-word;
             overflow: hidden;
@@ -308,18 +320,7 @@
             margin-left: 15px ;
         }
 
-        .offers_area {
-            position: relative;
-            padding-bottom: 80px;
-            padding-top: 20px;
-            margin-bottom:50px;
-            background-size: cover;
-            background-image: url('uploads/{{$TourBackground != null ? $TourBackground->image_one : 2 }}');
-            border-radius:35px;
-            width: 90%;
-            margin: auto;
 
-        }
 /*        .offers_area::before{
             content: "";
             position: absolute;
@@ -348,7 +349,7 @@
         .section_title h1{
             margin-bottom:50px;
             text-align:center;
-            font-family:'Dancing Script'!important;
+            /*font-family:'Dancing Script'!important;*/
             font-weight: 500;
             font-size: 85px;
         }
@@ -406,7 +407,7 @@
 
     </style>
     <div class="offers_area" >
-        <div class="container" style="">
+        <div class="container-pop-tour" style="">
             <div class="row">
                 <div class="col-xl-12">
                     <div class="section_title text-center mb-20 mt-10">
@@ -415,7 +416,7 @@
                     </div>
                 </div>
             </div>
-			<div class="row owl-carousel owl-two owl-theme" >
+			<div class="row owl-carousel owl-two owl-theme"  style="margin: auto;">
                 @foreach($tours as $tour)
                     <div class="single_offers block" data-img="{{url('/uploads/'.$tour->image_thumbnail)}}">
                         <div class="about_thumb">
@@ -539,9 +540,13 @@
             margin-bottom:50px;
             margin-top:50px
         }
+        .single_video{
+            /*margin-right:20px;*/
+        }
         .single_video img{
              width: 100%;
-             height: 250px;
+            height: 100%;
+             /*height: 250px;*/
             object-fit:cover;
         }
         .text_area_video h3{
@@ -579,6 +584,11 @@
             transform: scale(1.1);
             transition: 0.1s;
         } */
+        .thumbnail-video{
+            /*width: 380px;
+            height: 250px;*/
+            width: 100%;
+        }
     </style>
     <div class="video_area2" >
         <div class="container">
@@ -593,23 +603,21 @@
             <div class="row">
                @if($videos != null)
                 @foreach($videos as $video)
-                <div class="col-md-3">
-                    <div class="single_video">
-                        <div class="thumbnail-video ">
-                            <a href="/{{$video->url_video}}" class="popup-video">
-                                 <img src="{{url('uploads/'.$video->image_thumbnail)}}" alt=""  >
-                                 <span  class="icon-play"><i class="fa fa-play"></i></span>
-                            </a>
-
+                    <div class="col-md-3" >
+                        <div class="single_video">
+                            <div class="thumbnail-video">
+                                <a href="/{{$video->url_video}}" class="popup-video">
+                                    <img src="{{url('uploads/'.$video->image_thumbnail)}}" alt=""  >
+                                    <span  class="icon-play"><i class="fa fa-play"></i></span>
+                                </a>
+                            </div>
+                            <div class="title-video">
+                                <h3>{{$video->title}}</h3>
+                                <b>- {{$video->author}}</b>
+                                <p></p>
+                            </div>
                         </div>
-                        <div class="title-video">
-                            <h3>{{$video->title}}</h3>
-                            <b>- {{$video->author}}</b>
-                            <p></p>
-                        </div>
-
                     </div>
-                </div>
                 @endforeach
                 @endif
                 <!-- <div class="col-md-3">
@@ -689,6 +697,119 @@
             transition: all .4s;
             margin: 50px 0px;
 
+        }
+        @media (max-width: 1750px) and (min-width: 1620px) {
+            .profile-card{
+                width: 250px;
+                height: 250px;
+            }
+            .profile-card .img img{
+                height: 200px;
+            }
+        }
+
+        @media (max-width: 1420px) {
+            .profile-card{
+                width: 250px;
+                height: 250px;
+            }
+            .profile-card .img img{
+                height: 200px;
+            }
+        }
+        @media (max-width: 1280px) and (min-width: 1190px) {
+            .profile-card{
+                width: 220px;
+                height: 220px;
+            }
+            .profile-card .img img{
+                height: 165px;
+            }
+            .profile-card .caption{
+                transform: translateY(-265px);
+            }
+            .profile-card  .desc-companion{
+                -webkit-line-clamp: 13;
+            }
+        }
+        @media (max-width: 1190px) and (min-width: 1100px) {
+            .profile-card{
+                width: 280px;
+                height: 280px;
+            }
+            .profile-card .img img{
+                height: 220px;
+            }
+        }
+        @media (max-width: 1100px) and (min-width: 900px) {
+            .profile-card{
+                width: 250px;
+                height: 250px;
+            }
+            .profile-card .img img{
+                height: 200px;
+            }
+        }
+        @media (max-width: 970px) and (min-width: 890px) {
+            .profile-card{
+                width: 220px;
+                height: 220px;
+            }
+            .profile-card .img img{
+                height: 165px;
+            }
+            .profile-card .caption{
+                transform: translateY(-265px);
+            }
+            .profile-card  .desc-companion{
+                -webkit-line-clamp: 13;
+            }
+        }
+        @media (max-width: 890px) and (min-width: 730px) {
+            .profile-card{
+                width: 280px;
+                height: 280px;
+            }
+            .profile-card .img img{
+                height: 220px;
+            }
+        }
+        @media (max-width: 730px) and (min-width: 660px) {
+            .profile-card{
+                width: 250px;
+                height: 250px;
+            }
+            .profile-card .img img{
+                height: 200px;
+            }
+        }
+        @media (max-width: 660px) and (min-width: 599px) {
+            .profile-card{
+                width: 220px;
+                height: 220px;
+            }
+            .profile-card .img img{
+                height: 165px;
+            }
+            .profile-card .caption{
+                transform: translateY(-265px);
+            }
+            .profile-card  .desc-companion{
+                -webkit-line-clamp: 12;
+            }
+        }
+        @media (max-width: 599px) {
+            .profile-card{
+                width: 280px;
+                height: 280px;
+                margin: auto;
+                margin-top: 50px;
+                margin-bottom: 50px;
+
+            }
+            .profile-card .img img{
+                height: 220px;
+            }
         }
         .profile-card:hover{
             border-radius: 10px;
