@@ -807,15 +807,15 @@
         }
         @media (max-width: 599px) {
             .profile-card{
-                width: 280px;
-                height: 280px;
+                width: 250px;
+                height: 250px;
                 margin: auto;
                 margin-top: 50px;
                 margin-bottom: 50px;
 
             }
             .profile-card .img img{
-                height: 220px;
+                height: 200px;
             }
         }
         .profile-card:hover{
@@ -882,16 +882,21 @@
         }
         .title-companion{
             text-align: center;
-        }
+            margin-top: 80px;
+            margin-bottom: 80px;
 
+        }
+        .title-companion h1 {
+            color: #8b572a;
+        }
         .owl-carousel .owl-stage-outer {
             /*overflow: inherit;*/
         }
     </style>
     <div class="companion-area ">
         <div class="container">
-            <div style="margin-bottom: 80px">
-                <h1 class="title-impatti">{{trans('messages.companions')}}</h1>
+            <div class="title-companion" style="margin-bottom: 80px">
+                <h1 >{{trans('messages.companions')}}</h1>
             </div>
             <div class="team-profile owl-four owl-carousel  owl-theme">
                 @if($companions != null)
