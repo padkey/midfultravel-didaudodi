@@ -157,7 +157,7 @@ class VideoController extends Controller
 
 
         $form->tools(function (Form\Tools $tools) {
-            if (!Admin::user()->can('dtv.pages.delete')) {
+            if (!Admin::user()->can('dddd.pages.delete')) {
                 $tools->disableDelete();
             }
         });

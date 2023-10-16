@@ -52,5 +52,6 @@ return [
     'mindfulness_practice' => 'Mindfulness practice',
     'get_in_touch' => 'Get in Touch',
     'see_more' => 'See more',
-    'shrink' => 'Shrink'
+    'shrink' => 'Shrink',
+    'all_tours' => 'All tours'
 ];

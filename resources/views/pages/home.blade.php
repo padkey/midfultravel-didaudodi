@@ -23,6 +23,9 @@
                 background: url('frontend/images/logo-loading-mobile.gif') 50% 50% no-repeat white;
             }
         }*/
+        .owl-carousel:hover .owl-nav div:hover{
+            background: lightgray;
+        }
     </style>
     {{--<div class="loader">
     </div>--}}
@@ -149,10 +152,26 @@
         .image-mt{
             background-image: url("uploads/{{$blockValue->image_one}}");
             background-size: cover;
+            background-position: center;
         }
         .image-cn{
             background-image: url("uploads/{{$blockValue->image_two}}");
             background-size: cover;
+            background-position: center;
+        }
+        @media (max-width: 990px) {
+            .image-mt{
+                background-size: cover;
+                height: 600px;
+                background-size: cover;
+                background-position: center;
+            }
+            .image-cn{
+                background-size: cover;
+                height: 600px;
+                background-size: cover;
+                background-position: center;
+            }
         }
         .title-impatti{
             text-align:center;
@@ -265,7 +284,7 @@
 
         }
         .container-pop-tour{
-            width: 95%;
+            width: 85%;
             margin: auto;
         }
         .short-desc{
@@ -320,6 +339,9 @@
             .single_offers{
                 width: 90%;
                 margin: auto;
+            }
+            .container-pop-tour{
+                width: 95%;
             }
         }
         .single_offers h2{

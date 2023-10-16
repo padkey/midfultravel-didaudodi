@@ -25,6 +25,11 @@
     .logo-img img{
         width: 100%;
     }
+    @media (max-width: 800px) {
+        .about-page-area {
+            margin: auto;
+        }
+    }
 </style>
 <div class="about-page-area">
     <div class="about-page-logo">

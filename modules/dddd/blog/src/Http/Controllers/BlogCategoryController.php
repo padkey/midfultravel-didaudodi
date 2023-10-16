@@ -106,7 +106,7 @@ class BlogCategoryController extends Controller
 
             $form->text(BlogCategory::COL_POSITION,__("Position"))->default("1")->setWidth(2,2);
             $form->select(BlogCategory::COL_PARENT_ID, __("Parent Category"))->options(BlogCategory::selectOptions());
-            $form->select(BlogCategory::COL_IS_ACTIVE, "Status")->options([1 => "Active", 0 => "Inactive"]);
+           // $form->select(BlogCategory::COL_IS_ACTIVE, "Status")->options([1 => "Active", 0 => "Inactive"]);
         });
         // $form->tab(__("Content"), function ($form) {
         //     $form->textarea(BlogCategory::COL_CONTENT_HEADER, __("Content Header"));
