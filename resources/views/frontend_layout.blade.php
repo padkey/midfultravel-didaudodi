@@ -208,7 +208,7 @@
                 </div>
                 <div class="row footer_2">
                     <div class="col-xl-7">
-                        <h3 class="footer_title_2">- {{trans('messages.our_parnership')}}</h3>
+                        <h3 class="footer_title_2">- {{trans('messages.our_partnership')}}</h3>
                         <div class="row" style="margin-top: 10px;">
                             <div class="col-xl-4" style="margin-top: 20px;">
                                 <div class="footer_widget">

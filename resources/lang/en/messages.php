@@ -46,10 +46,10 @@ return [
     'our_journey'=>'Our journey',
     'mission'=>'Our mission',
     'mindful_travel_blog' => 'Mindful travel blog',
-    'value' => 'Value',
+    'value' => 'Core value',
     'our_partnership' => 'Our Partnership',
     'mindfulness_tour' => 'Mindfulness tour',
-    'mindfulness_practice' => 'Mindfulness tour',
+    'mindfulness_practice' => 'Mindfulness practice',
     'get_in_touch' => 'Get in Touch',
     'see_more' => 'See more',
     'shrink' => 'Shrink'
