@@ -29,7 +29,7 @@ class BlogController extends Controller
         $locale_code =   config('app.locale');
         $cate = BlogCategory::with('posts')->where('url',$url)->where('locale_code',$locale_code)->get();
         $listPosts = $cate[0]->posts();
-        $listPosts = $listPosts->orderByDesc('id')->where('locale_code',$locale_code)->paginate(1);
+        $listPosts = $listPosts->orderByDesc('id')->where('locale_code',$locale_code)->paginate(5);
         //$listPosts =  BlogPost::with('categories')->where('url',$url)->orderBy('id','Desc')->get();
 
 

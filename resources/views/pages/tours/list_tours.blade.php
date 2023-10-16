@@ -84,7 +84,7 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="section_title text-center mb-20 mt-10">
-                        <h1>Tất cả các chuyến du lịch</h1>
+                        <h1>{{trans('messages.all_tours')}}</h1>
                     </div>
                 </div>
             </div>

@@ -134,7 +134,7 @@ class CompanionController extends Controller
             if ($form->isEditing()) {
                 $form->text(Companion::COL_URL_KEY, __("Url Key"));
             }
-            $form->select(Companion::COL_IS_ACTIVE, "Status")->options([1 => "Active", 0 => "Inactive"]);
+            //$form->select(Companion::COL_IS_ACTIVE, "Status")->options([1 => "Active", 0 => "Inactive"]);
         });
 
         $form->tab(__("Content"), function ($form) {
