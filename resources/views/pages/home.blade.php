@@ -71,6 +71,7 @@
     }
     .mission_content {
        /* height:700px;*/
+        position:relative;
         overflow: hidden;
         text-overflow: ellipsis;
         line-height: 30px;
@@ -155,10 +156,11 @@
         }
         .title-impatti{
             text-align:center;
-            color:#8b572a;
-            /*font-family:'Dancing Script'!important;*/
+
+            /*font-family:'Dancing Script'!important;
             font-weight: 500;
-            font-size: 75px;
+            font-size: 75px;*/
+            color:#8b572a;
         }
     </style>
     <div class="impatti_area">
@@ -207,6 +209,7 @@
             font-size: 65px; */
     }
     .our_tour_content{
+        position:relative;
         overflow: hidden;
         text-overflow: ellipsis;
         line-height: 25px;
@@ -357,8 +360,8 @@
             margin-bottom:50px;
             text-align:center;
             /*font-family:'Dancing Script'!important;*/
-            font-weight: 500;
-            font-size: 85px;
+            /*font-weight: 500;
+            font-size: 85px;*/
         }
         .owl-prev{
             color: black!important;
