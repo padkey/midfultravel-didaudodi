@@ -20,7 +20,7 @@ class HomeController extends Controller
     {
         $locale_code =   config('app.locale');
 
-        $tours = TourModel::where('locale_code',$locale_code)->get();
+        $tours = TourModel::where('locale_code',$locale_code)->where('is_active',1)->get();
         //center
         $catePostsCenter = BlogCategory::with('posts')->where('url','show-home-center')->first();
         $listPostsCenter  = $catePostsCenter->posts();

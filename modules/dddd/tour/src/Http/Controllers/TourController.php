@@ -87,7 +87,7 @@ class TourController extends Controller
         $grid->column(TourModel::COL_NAME, __("Name"));
         $grid->column(TourModel::COL_LOCALE_CODE, __("Language"));
 
-        //$grid->column(TourModel::COL_IS_ACTIVE)->bool();
+        $grid->column(TourModel::COL_IS_ACTIVE)->bool();
         $grid->column(TourModel::COL_URL);
         $grid->column(TourModel::COL_DATE_START);
         $grid->column(TourModel::COL_DATE_END);
@@ -114,6 +114,7 @@ class TourController extends Controller
         $form->tab(__("General Information"), function ($form) {
             $form->text(TourModel::COL_NAME, __("Name"))->rules("required");
            // $form->text(TourModel::COL_REGION, __("Region"));
+            $form->select(TourModel::COL_IS_ACTIVE, "Status")->options([1 => "Active", 0 => "Inactive"]);
 
             $form->select(TourModel::COL_REGION)->options(
                 [
