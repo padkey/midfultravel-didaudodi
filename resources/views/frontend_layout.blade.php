@@ -40,6 +40,9 @@
             font-family:"Cormorant Garamond",serif!important;
 
         }
+        .overlay::before{
+            z-index:5!important;
+        }
         .header-area{
             padding-top: 0;
         }
@@ -50,6 +53,7 @@
             font-size: 25px;
             line-height: 1.3;
         }
+
         h1,h2,h3,h4{
             font-family:"Cormorant Garamond",serif!important;
             font-style:italic;
@@ -99,6 +103,210 @@
         }
     </style>
 
+    <style>
+        .s-call-1 {
+            position: fixed;
+            bottom: 5px;
+            right: 0;
+            z-index: 1030
+        }
+
+        .s-call-1 .s_call {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            width: 60px;
+            height: 60px;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            margin: 0;
+            z-index: 9999;
+            border-radius: 50%;
+            background: #d70018;
+            -webkit-box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 3px 6px rgb(0 0 0 / 23%);
+            box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 3px 6px rgb(0 0 0 / 23%);
+            overflow: hidden;
+            -webkit-transform: rotate(0);
+            transform: rotate(0);
+            -webkit-transition: all .15s cubic-bezier(.15, .87, .45, 1.23);
+            transition: all .15s cubic-bezier(.15, .87, .45, 1.23);
+            -webkit-animation: pulse-red 2s infinite;
+            animation: pulse-red 2s infinite;
+            cursor: pointer
+        }
+
+        .s-call-1 .s_call div {
+            background-repeat: no-repeat;
+            display: inline-block;
+            vertical-align: middle;
+            background-image: url('frontend/images/call.png');
+            width: 50px;
+            height: 50px;
+            margin: 0 !important;
+            background-size: 694px;
+            background-position: -649px 0
+        }
+
+        .s-call-1.is-active .s_call div {
+            background-size: 615px;
+            background-position: -281px -61px
+        }
+
+        .s-call-1 .s_wheel {
+            width: 260px;
+            height: 220px;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            opacity: 0;
+            visibility: hidden;
+            -webkit-transform: scale(0);
+            transform: scale(0);
+            -webkit-transform-origin: bottom right;
+            transform-origin: bottom right;
+            -webkit-transition: all .3s ease;
+            transition: all .3s ease;
+            z-index: 12
+        }
+
+        .s-call-1.is-active .s_wheel {
+            -webkit-transform: scale(1);
+            transform: scale(1);
+            opacity: 1;
+            visibility: visible
+        }
+
+        .s-call-1 .s_wheel a {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            font-size: 14px;
+            font-weight: 700;
+            color: #fff!important;
+            position: absolute;
+            bottom: 30px
+        }
+        .s-call-1 .s_wheel a span{
+            color: #fff!important;
+            font-size: 21px;
+        }
+        .s-call-1 .s_wheel a div em {
+            background-repeat: no-repeat;
+            display: inline-block;
+            vertical-align: middle;
+            background-image: url('frontend/images/call.png');
+            background-size: 453px
+        }
+
+        .s-call-1 .s_wheel a div {
+            width: 45px;
+            height: 45px;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            float: left;
+            padding: 4px;
+            border-radius: 50%;
+            background: #0f1941;
+            -webkit-box-shadow: 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%);
+            box-shadow: 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%);
+            font-size: 24px;
+            color: #fff;
+            -webkit-transition: all 1s ease;
+            transition: all 1s ease;
+            overflow: hidden;
+            margin-left: 10px
+        }
+
+        .s-call-1 .s_wheel a:first-child {
+            left: -40px;
+            bottom: 10px;
+            z-index: 200
+        }
+
+        .s-call-1 .s_wheel a:first-child div {
+            background: #2f82fc
+        }
+
+        .s-call-1 .s_wheel a:first-child div em {
+            width: 30px;
+            height: 30px;
+            background-position: -362px -1px;
+            background-size: 515px
+        }
+
+        .s-call-1 .s_wheel a:nth-child(2) {
+            left: 30px;
+            bottom: 75px;
+            z-index: 200
+        }
+
+        .s-call-1 .s_wheel a:nth-child(2) div {
+            background: #fff
+        }
+
+        .s-call-1 .s_wheel a:nth-child(2) div em {
+            width: 30px;
+            height: 30px;
+            background-position: -369px 0
+        }
+
+        .s-call-1 .s_wheel a:nth-child(2) {
+            top: 75px;
+            right: 60px
+        }
+
+        .s-call-1 .s_wheel a:nth-child(2) div {
+            background: #fb0
+        }
+
+        .s-call-1 .s_wheel a:nth-child(2) div em {
+            width: 28px;
+            height: 28px;
+            background-position: 0 -48px
+        }
+
+        .s-call-1 .s_wheel a:nth-child(3) {
+            top: -110px;
+            right: 10px
+        }
+
+        .s-call-1 .s_wheel a:nth-child(3) div {
+            background: #15b76c
+        }
+
+        .s-call-1 .s_wheel a:nth-child(3) div em {
+            width: 30px;
+            height: 30px;
+            background-position: -51px -49px
+        }
+        .s-call-1 .s_wheel a:nth-child(3) {
+            right: 10px
+        }
+        .s-call-1 .s_wheel a:nth-child(4) {
+            top: -70px;
+            right: 60px;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex
+        }
+    </style>
     <!--[if lte IE 9]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
         <![endif]-->
@@ -164,7 +372,6 @@
             margin-left:5px;
         }
     </style>
-
 
 
     <hr style="margin-top: 100px;">
@@ -291,6 +498,32 @@
     </footer>
 
     <!-- link that opens popup -->
+
+
+    <!--Call here -->
+    <div class="s-call-1">
+        <div class="s_call">
+            <div></div>
+        </div>
+        <div class="s_wheel">
+            <a href="https://zalo.me/0983616618" target="_blank" rel="nofollow"><span>Chat trên zalo</span><div><em></em></div></a>
+            <!-- <a href="" target="_blank" rel="nofollow"><span>Chat ngay</span><div><img loading="lazy" width="400" height="300" src="/images/icons/icon-mes.png" alt="messenger"></div></a> -->
+            <a href="https://goo.gl/maps/i7Tufrm2xLkcjNQn9" target="_blank" rel="nofollow"><span>Tìm cửa hàng</span><div><em></em></div></a>
+            <a href="javascript:;" onclick="window.location.href='tel:0789 939 828 ';" target="_blank" rel="nofollow"><span>Gọi ngay</span><div><em></em></div></a>
+        </div>
+    </div>
+    <button class="hide" ht-trigger="c-modal" ht-target="#formProduct"></button>
+    <div id="formProduct" class="c-modal c-product">
+        <div class="c-modal-box">
+            <div class="c-modal-group" ht-skip="parent">
+                <div class="c_close text--white" ht-close="c-modal"><i class="fa fa-times" aria-hidden="true"></i></div>
+                <div id="detail"></div>
+            </div>
+        </div>
+    </div>
+    <!--end call -->
+
+
 
     <!-- JS here -->
     <script src="{{asset('frontend/js/vendor/modernizr-3.5.0.min.js')}}"></script>
@@ -478,8 +711,58 @@
         });
     </script>
 
-
-
+    <script>
+        var e = 0,
+            t = ($(".s-call-1").click(function() {
+                e % 2 == 0 ? $(".s-popup-1, .s-popup-3").css({
+                    "z-index": 1e3,
+                    transition: "none"
+                }) : $(".s-popup-1, .s-popup-3").removeAttr("style"), e++
+            }), $("body").on("click", '[ht-close="c-modal"], .lg-close', function() {
+                $(".s-popup-1, .s-popup-3").removeAttr("style")
+            }), $("body").on("click", ".size ul li", function() {
+                $(this).addClass("is-select"), $(this).siblings().removeClass("is-select");
+                var e = $(this).data("item"),
+                    t = "";
+                0 < e.price && 0 < e.price_market ? (t += '<span class="discount">' + _HTHelper.money(e.price) + "đ</span>", 0 < e.price_discount && (t += '<span class="market">' + _HTHelper.money(e.price_market) + "đ</span>"), $(this).closest(".parentPrice").find(".add-to-cart").removeClass("disabled")) : (t = '<span class="discount">Liên hệ</span>', $(this).closest(".parentPrice").find(".add-to-cart").addClass("disabled")), e.thumbPath && $(".p-slide-7 .p_thumb img, .b-card-77 .b_thumb img").attr("src", e.thumbPath.replace("100x100-", "")), $(this).closest(".parentPrice").find(".priceChange").html(t)
+            }), $(".s-call-1 .s_call").click(function() {
+                $(this).parent().toggleClass("is-active"), $("body").toggleClass("overlay")
+            }), 5),
+            i = ($("body").on("click", ".s-more-1.click2", function() {
+                $(".s-review-1 .s-comment-1").length - t <= 5 && $(this).hide(), $(".s-comment-1:eq(" + t + ")").show(), t++, $(".s-comment-1:eq(" + t + ")").show(), t++, $(".s-comment-1:eq(" + t + ")").show(), t++, $(".s-comment-1:eq(" + t + ")").show(), t++, $(".s-comment-1:eq(" + t + ")").show(), t++
+            }), $(".c-register .c_close").click(function() {
+                $(".s-popup-1, .s-popup-3").removeClass("is-active"), setTimeout(function() {
+                    $(".s-popup-1 .s_left").attr("ht-close", function(e, t) {
+                        return "c-modal" == t ? null : "c-modal"
+                    }), $(".s-popup-1 .s_left").attr("ht-trigger", function(e, t) {
+                        return "c-modal" == t ? null : "c-modal"
+                    })
+                }, 500), setTimeout(function() {
+                    $(".s-popup-3 .s_left").attr("ht-close", function(e, t) {
+                        return "c-modal" == t ? null : "c-modal"
+                    }), $(".s-popup-3 .s_left").attr("ht-trigger", function(e, t) {
+                        return "c-modal" == t ? null : "c-modal"
+                    })
+                }, 500)
+            }), $('.s-header-2 [ht-trigger="hd-menu"]').click(function() {
+                $(".s-menu-1").addClass("is-active")
+            }), $(".s-menu-1 .s_close").click(function() {
+                $(".s-menu-1").removeClass("is-active")
+            }), $(document).mouseup(function(e) {
+                var t = $(".s-menu-1 .s_menu");
+                t.parent().hasClass("is-active") && !t.is(e.target) && 0 === t.has(e.target).length && t.parent().removeClass("is-active")
+            }), $(".s-menu-1 .s_top .s_icon").click(function() {
+                $(this).toggleClass("is-active"), $(this).parent().siblings("ul").slideToggle(400)
+            }), $(".s-menu-1 .s_top_2 .s_icon_2").click(function() {
+                $(this).toggleClass("is-active"), $(this).parent().siblings("ul").slideToggle(400)
+            }), window.innerWidth < 768 && $(".s-footer-7 .ft-title").click(function() {
+                $(this).parent().find(".ft-menu").slideToggle(400)
+            }), window.innerWidth < 1260 && $(".hd-user > span, .hd-user > a").click(function() {
+                $(this).parent().toggleClass("is-active")
+            }), $(".s-header-2 .slick-slider").slick({
+                arrows: !1
+            }), 0);
+    </script>
 </body>
 
 </html>
