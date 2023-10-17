@@ -139,7 +139,7 @@ class PagesController extends Controller
             if ($form->isEditing()) {
                 $form->text(Pages::COL_URL_KEY, __("Url Key"))->rules("required");
             }
-            $form->select(Pages::COL_IS_ACTIVE, "Status")->options([1 => "Active", 0 => "Inactive"]);
+            //$form->select(Pages::COL_IS_ACTIVE, "Status")->options([1 => "Active", 0 => "Inactive"]);
             $form->datetime(Pages::COL_PUBLIC_DATE)->rules("required");
         });
 

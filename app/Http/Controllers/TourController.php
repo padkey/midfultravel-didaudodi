@@ -12,19 +12,19 @@ class TourController extends Controller
     public function showList()
     {
         $locale_code =   config('app.locale');
-        $tours = TourModel::where('locale_code',$locale_code)->get();
+        $tours = TourModel::where('locale_code',$locale_code)->where('is_active',1)->get();
         return view('pages.tours.list_tours')->with(compact('tours'));
     }
     public function showDetails($url)
     {
         $locale_code =   config('app.locale');
-        $tour = TourModel::where('locale_code',$locale_code)->where('url',$url)->first();
+        $tour = TourModel::where('locale_code',$locale_code)->where('url',$url)->where('is_active',1)->first();
         return view('pages.tours.details')->with(compact('tour'));
 
     }
     public function showPageTourDetails($url){
         $locale_code =   config('app.locale');
-        $tour = Pages::where('locale_code',$locale_code)->where('url_key',$url)->first();
+        $tour = Pages::where('locale_code',$locale_code)->where('url_key',$url)->where('is_active',1)->first();
         return view('pages.tours.page_tour_details')->with(compact('tour'));
     }
 }

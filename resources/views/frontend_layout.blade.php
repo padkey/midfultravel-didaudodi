@@ -402,32 +402,7 @@
             }
             });
 
-            var owl = $('.owl-three');
-        owl.owlCarousel({
-            items:4,
-            loop:true,
-            nav:true,
-            navText: ['<i class="fa fa-chevron-left" ></i>','<i class="fa fa-chevron-right" ></i>'],
-            margin:20,
-            autoplay:true,
-            autoplayTimeout:500,
-            autoplayHoverPause:true,
-            responsive:{
-                0:{
-                    items:1,
-                    nav:true
-                },
-                700:{
-                    items:2,
-                    nav:false
-                },
-                1500:{
-                    items:4,
-                    nav:true,
-                    loop:false
-                }
-            }
-            });
+
 
 
             var owl2 = $('.owl-four');
@@ -435,8 +410,7 @@
             items:5,
             loop:true,
             nav:true,
-            navText: ['<i class="fa fa-chevron-left" ></i>','<i class="fa fa-chevron-right" ></i>'],
-
+                navText:['<i class="ti-angle-left"></i>','<i class="ti-angle-right"></i>'],
             autoplay:true,
             autoplayTimeout:1500,
             autoplayHoverPause:true,
@@ -476,7 +450,32 @@
                 }*/
             }
             });
-
+        var owl3 = $('.owl-three');
+        owl3.owlCarousel({
+            items:1,
+            loop:true,
+            nav:true,
+            navText: ['<i class="fa fa-chevron-left" ></i>','<i class="fa fa-chevron-right" ></i>'],
+            margin:20,
+            autoplay:true,
+            autoplayTimeout:500,
+            autoplayHoverPause:true,
+            responsive:{
+                0:{
+                    items:1,
+                    nav:true
+                },
+                700:{
+                    items:1,
+                    nav:false
+                },
+                1500:{
+                    items:1,
+                    nav:true,
+                    loop:false
+                }
+            }
+        });
     </script>
 
 

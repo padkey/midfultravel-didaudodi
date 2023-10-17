@@ -41,9 +41,12 @@
         padding-bottom:30px;
         margin-bottom:80px;
         margin-top:80px;
-
     }
-    .misson_title img{
+    .container-mission{
+        width:85%;
+        margin:auto;
+    }
+    .mission-image img{
         width: 100%;
     }
 	.misson h3{
@@ -92,6 +95,29 @@
         float:right;
         font-size: 18px;
     }
+    @media (max-width: 990px) {
+        .mission_margin {
+            padding-left: 0px;
+            padding-right: 0px;
+
+        }
+
+        .container-mission{
+            width: 100%;
+            margin:auto;
+
+        }
+        .misson_title {
+            margin-left: 10px;
+        }
+        .mission_content{
+            width: 95%;
+            margin: auto;
+        }
+        .btn-xt{
+            margin-right: 20px;
+        }
+    }
 	</style>
     @if($blockShortAboutUs != null)
         <div class="row">
@@ -103,20 +129,20 @@
     @endif
     @if($blockOurMission != null)
      <div class="misson_area" >
-        <div class="container">
+        <div class="container-mission">
             <div class="row">
-                <div class="col-xl-6 col-lg-12 ">
-                    <div class="misson_title mb-20px">
+                <div class="col-xl-6 col-lg-12 mission_margin">
+                    <div class="mb-20px mission-image">
                         <img src="{{url('uploads/'.$blockOurMission->image_one)}}" alt=""  >
                     </div>
                 </div>
-                <div class="col-xl-6 col-lg-12 mission_margin" >
-                    <div class="misson_title mb-20px ">
+                <div class="col-xl-6 col-lg-12 " >
+                    <div class="misson_title">
                         <h1>{{trans('messages.mission')}}</h1>
-                        <div class="mission_content">{!! $blockOurMission->content !!} </div>
-                        <div class="btn-xemthem">
-                            <button class="btn btn-success btn-xt">{{trans('messages.see_more')}}</button>
-                        </div>
+                    </div>
+                    <div class="mission_content">{!! $blockOurMission->content !!} </div>
+                    <div class="btn-xemthem">
+                        <button class="btn btn-success btn-xt">{{trans('messages.see_more')}}</button>
                     </div>
                 </div>
             </div>
@@ -139,6 +165,8 @@
         .impatti_area{
             box-shadow: 10px 10px 15px 10px rgba(221,221,221,0.3);
             background-color:beige;
+
+
         }
         .impatti_area:hover{
             background:#faf1eb;
@@ -203,8 +231,12 @@
     <!-- VALUE_end -->
 
 
-    <!-- Generated -->
+    <!-- Our tour -->
     <style>
+    .container-our-tour{
+        width: 85%;
+        margin: auto;
+    }
     .generated_area{
         /* background-image: url("frontend/images/banner2.png"); */
         /* background-color:white; */
@@ -241,10 +273,29 @@
         margin-bottom: 40px;
         font-size: 18px;
     }
+    @media (max-width: 990px) {
+        .mission_margin {
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+        .container-our-tour{
+            width: 100%;
+        }
+        .generated_title {
+            margin-left: 10px;
+        }
+        .our_tour_content{
+            width: 95%;
+            margin: auto;
+        }
+        .our_tour_xt{
+            margin-left: 20px;
+        }
+    }
 	</style>
     @if($blockOurTour != null)
     <div class="generated_area">
-        <div class="container">
+        <div class="container-our-tour">
             <div class="row">
                 <div class="col-xl-6 col-lg-12 ">
                     <div class="generated_title">
@@ -259,7 +310,7 @@
                 </div>
                 <div class="col-xl-6 col-lg-12 mission_margin" >
                     <div class="ourToursImage">
-                    <img src="{{url('uploads/'.$blockOurTour->image_one)}}" alt=""   loading="lazy">
+                        <img src="{{url('uploads/'.$blockOurTour->image_one)}}" alt=""   loading="lazy">
                     </div>
                 </div>
             </div>
@@ -267,7 +318,7 @@
     </div>
     @endif
     {{--<hr width=50% >--}}
-    <!-- Generated_end -->
+    <!-- End Our tour  -->
 
     <!-- offers_area_start -->
     <style>
