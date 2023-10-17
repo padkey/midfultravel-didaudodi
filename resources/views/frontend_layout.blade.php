@@ -7,7 +7,8 @@
     <title>Mindful Travel Didaudodi</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <meta property="og:image"
+          content="{{url('frontend/images/s-logo.png')}}" />
     <!-- <link rel="manifest" href="site.webmanifest"> -->
     <link rel="shortcut icon" type="image/x-icon" href="{{url('frontend/images/s-logo.png')}}">
     <!-- Place favicon.ico in the root directory -->
