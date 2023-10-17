@@ -1,12 +1,14 @@
 <style>
     .slider_bg_1{
         background-image: url("uploads/{{$bannerHomeImage->items[0]->path_desktop}}");
+        /*width:100%;*/
     }
     .slider_bg_2{
         background-image: url("frontend/images/tnh12.png");
     }
     .single_slider {
         /* height: 90vh!important; */
+
     }
     .slider_text h1{
         color:white;
@@ -65,7 +67,7 @@
     }*/
 </style>
 <div class="slider_area" style="margin-top:-13px;">
-    <div class="slider_active owl-carousel">
+    <div class="slider_active owl-three owl-carousel owl-theme">
         <div class="single_slider d-flex align-items-center  slider_bg_1">
             <div class="container" style="margin-top: 10px; ">
                 <div class="logo-image logo-top">
