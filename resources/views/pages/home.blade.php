@@ -120,7 +120,7 @@
     }
 	</style>
     @if($blockShortAboutUs != null)
-        <div class="row">
+        <div class="row" style=" margin-right: 0;margin-left: 0;">
             <hr width=60%>
             <div class="col-xl-7 xtc">
                 <h2>{!! $blockShortAboutUs->content!!}</h2>
@@ -211,7 +211,7 @@
         }
     </style>
     <div class="impatti_area">
-        <div class="row">
+        <div class="row" style=" margin-right: 0;margin-left: 0;">
             <div class="col-xl-4 col-lg-4 image-mt">
             </div>
             <div class="col-xl-4 col-lg-4" style="">
@@ -296,7 +296,7 @@
     @if($blockOurTour != null)
     <div class="generated_area">
         <div class="container-our-tour">
-            <div class="row">
+            <div class="row" >
                 <div class="col-xl-6 col-lg-12 ">
                     <div class="generated_title">
                         <h1>{{trans('messages.our_tours')}}</h1>

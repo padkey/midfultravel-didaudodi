@@ -30,7 +30,7 @@
     <!-- <link rel="stylesheet" href="css/responsive.css"> -->
 </head>
 
-<body>
+<body >
 
 
 
@@ -608,8 +608,8 @@
 
         });
 
-        var owl = $('.owl-two');
-        owl.owlCarousel({
+        var owl2 = $('.owl-two');
+        owl2.owlCarousel({
             items:3,
             loop:true,
             nav:true,
@@ -638,8 +638,8 @@
 
 
 
-            var owl2 = $('.owl-four');
-            owl2.owlCarousel({
+            var owl4 = $('.owl-four');
+            owl4.owlCarousel({
             items:5,
             loop:true,
             nav:true,
