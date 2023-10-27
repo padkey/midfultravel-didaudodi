@@ -7,8 +7,8 @@
     <title>Mindful Travel Didaudodi</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta property="og:image"
-          content="{{url('frontend/images/s-logo.png')}}" />
+    {{--<meta property="og:image"
+          content="{{url('frontend/images/s-logo.png')}}" />--}}
     <!-- <link rel="manifest" href="site.webmanifest"> -->
     <link rel="shortcut icon" type="image/x-icon" href="{{url('frontend/images/s-logo.png')}}">
     <!-- Place favicon.ico in the root directory -->
@@ -27,8 +27,9 @@
     <link rel="stylesheet" href="{{asset('frontend/css/style.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/css/new-fonts.css')}}">
     <link href='https://fonts.googleapis.com/css?family=Dancing Script' rel='stylesheet'>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css' rel='stylesheet' />
 
-    <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+     <link rel="stylesheet" href="{{asset('frontend/css/responsive.css')}}">
 </head>
 
 <body >
@@ -82,7 +83,7 @@
             font-size:18px;
         }
         .btn-earth:hover{
-            background-color: darkcyan;
+            background-color: #024f43;
         }
         .btn-shop{
             background-color:  #ffe277;
@@ -102,9 +103,71 @@
         strong{
             font-weight: 700!important;
         }
+        .owl-carousel .owl-nav div {
+            background: bisque;
+            background-color: rgba(255,255,255,0.9);
+            color: silver;
+            font-size: 18px;
+            border: 1px solid silver;
+        }
+        .owl-carousel .owl-nav div i{
+            font-weight: 900;
+        }
+        .owl-prev{
+            left: -20px!important;
+        }
+        .owl-next{
+            right: -20px!important;
+        } 
+
+        .owl-nav div:hover{
+            background: #faf1eb!important; 
+            border: 1px solid #ffff;
+        }
     </style>
 
     <style>
+        @-webkit-keyframes pulse-red {
+            0% {
+                -webkit-transform: scale(.95);
+                transform: scale(.95);
+                -webkit-box-shadow: 0 0 0 0 rgba(215, 0, 24, .7000000000000001);
+                box-shadow: 0 0 0 0 rgba(215, 0, 24, .7000000000000001)
+            }
+            70% {
+                -webkit-transform: scale(1);
+                transform: scale(1);
+                -webkit-box-shadow: 0 0 0 10px rgba(2, 143, 227, 0);
+                box-shadow: 0 0 0 10px rgba(2, 143, 227, 0)
+            }
+            to {
+                -webkit-transform: scale(.95);
+                transform: scale(.95);
+                -webkit-box-shadow: 0 0 0 0 rgba(2, 143, 227, 0);
+                box-shadow: 0 0 0 0 rgba(2, 143, 227, 0)
+            }
+        }
+
+        @keyframes pulse-red {
+            0% {
+                -webkit-transform: scale(.95);
+                transform: scale(.95);
+                -webkit-box-shadow: 0 0 0 0 #914C04;
+                box-shadow: 0 0 0 0 #b3b3b3;
+            }
+            70% {
+                -webkit-transform: scale(1);
+                transform: scale(1);
+                -webkit-box-shadow: 0 0 0 10px rgba(2, 143, 227, 0);
+                box-shadow: 0 0 0 10px rgba(2, 143, 227, 0)
+            }
+            to {
+                -webkit-transform: scale(.95);
+                transform: scale(.95);
+                -webkit-box-shadow: 0 0 0 0 rgba(2, 143, 227, 0);
+                box-shadow: 0 0 0 0 rgba(2, 143, 227, 0)
+            }
+        }
         .s-call-1 {
             position: fixed;
             bottom: 5px;
@@ -114,8 +177,8 @@
 
         .s-call-1 .s_call {
             position: fixed;
-            bottom: 10px;
-            right: 10px;
+            bottom: 15px;
+            right: 20px;
             width: 60px;
             height: 60px;
             display: -webkit-box;
@@ -130,7 +193,7 @@
             margin: 0;
             z-index: 9999;
             border-radius: 50%;
-            background: #d70018;
+            background: #914C04;
             -webkit-box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 3px 6px rgb(0 0 0 / 23%);
             box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 3px 6px rgb(0 0 0 / 23%);
             overflow: hidden;
@@ -147,7 +210,7 @@
             background-repeat: no-repeat;
             display: inline-block;
             vertical-align: middle;
-            background-image: url('frontend/images/call.png');
+            background-image: url('/frontend/images/call.png');
             width: 50px;
             height: 50px;
             margin: 0 !important;
@@ -205,7 +268,7 @@
             background-repeat: no-repeat;
             display: inline-block;
             vertical-align: middle;
-            background-image: url('frontend/images/call.png');
+            background-image: url('/frontend/images/call.png');
             background-size: 453px
         }
 
@@ -307,6 +370,9 @@
             display: -ms-flexbox;
             display: flex
         }
+        .hide{
+            display: none !important;
+        }
     </style>
     <!--[if lte IE 9]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
@@ -375,7 +441,7 @@
     </style>
 
 
-    <hr style="margin-top: 100px;">
+    <hr style="margin-top: 0px;">
     <footer class="footer">
         <div class="footer_top">
             <div class="container">
@@ -514,14 +580,14 @@
         </div>
     </div>
     <button class="hide" ht-trigger="c-modal" ht-target="#formProduct"></button>
-    <div id="formProduct" class="c-modal c-product">
+    <!-- <div id="formProduct" class="c-modal c-product">
         <div class="c-modal-box">
             <div class="c-modal-group" ht-skip="parent">
                 <div class="c_close text--white" ht-close="c-modal"><i class="fa fa-times" aria-hidden="true"></i></div>
                 <div id="detail"></div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!--end call -->
 
 
@@ -553,6 +619,8 @@
     <script src="{{asset('frontend/js/jquery.validate.min.js')}}"></script>
     <script src="{{asset('frontend/js/mail-script.js')}}"></script>
     <script src="{{asset('frontend/js/main.js')}}"></script>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js'></script>
+    @yield('script')
     <script>
         /*$(document).ready(function(){
             $(".single_offers").hover(function(){
@@ -584,15 +652,14 @@
         });
 
     </script>
-
     <script type="text/javascript">
-        $(window).load(function() {
-            setTimeout(function() {
-                $(".loader").hide();
-                $(".loader").remove();
-            }, 3500);
+        // $(window).load(function() {
+        //     setTimeout(function() {
+        //         $(".loader").hide();
+        //         $(".loader").remove();
+        //     }, 3500);
 
-        });
+        // });
     </script>
     <script>
         $('#datepicker').datepicker({
@@ -710,6 +777,54 @@
                 }
             }
         });
+
+        var owl5 = $('.owl-five');
+        owl5.owlCarousel({
+            items:4,
+            loop:true,
+            nav:true,
+
+            navText:['<i class="ti-angle-left"></i>','<i class="ti-angle-right"></i>'],
+            autoplay:true,
+            autoplayTimeout:1500,
+            autoplayHoverPause:true,
+            responsive:{
+                0:{
+                    items:1,
+
+                    nav:true,
+                    loop:true,
+                },
+                600:{
+                    items:2,
+                    nav:true,
+                    loop:true
+                },
+
+                890:{
+                    items:3,
+                    nav:true,
+                    loop:true
+
+                },
+                1190:{
+                    items:4,
+                    nav:true,
+                    loop:true
+                },
+                1620:{
+                    items:4,
+                    nav:true,
+                    loop:true
+                },
+                /*2000:{
+                    items:5,
+                    nav:true,
+                    loop:false
+                }*/
+            }
+        });
+
     </script>
 
     <script>

@@ -142,7 +142,7 @@
                     </div>
                     <div class="mission_content">{!! $blockOurMission->content !!} </div>
                     <div class="btn-xemthem">
-                        <button class="btn btn-success btn-xt">{{trans('messages.see_more')}}</button>
+                        <button class="btn btn-earth btn-xt">{{trans('messages.see_more')}}</button>
                     </div>
                 </div>
             </div>
@@ -305,7 +305,7 @@
                         {!! $blockOurTour->content !!}
                     </div>
                     <div>
-                        <button class="btn btn-success our_tour_xt"> {{trans('messages.see_more')}} </button>
+                        <button class="btn btn-earth our_tour_xt"> {{trans('messages.see_more')}} </button>
                     </div>
                 </div>
                 <div class="col-xl-6 col-lg-12 mission_margin" >
@@ -619,16 +619,25 @@
 
     <!-- video_area_start -->
     <style>
+        .video-container{
+            width:85%;
+            margin:auto;
+            /* display:flex;
+            flex-wrap:nowrap;
+            flex-direction:row; */
+            display:grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            column-gap:10px;
+        }
         .video_area2{
             margin-bottom:50px;
             margin-top:50px
         }
         .single_video{
-            /*margin-right:20px;*/
+
         }
         .single_video img{
              width: 100%;
-            height: 100%;
              /*height: 250px;*/
             object-fit:cover;
         }
@@ -636,35 +645,110 @@
             font-style: inherit;
             font-weight: 700;
             color:#8b572a;
+
+        }
+        .text_area_video {
+
+            width: 85%;
+            margin: auto;
         }
         .title-video{
             margin-top: 15px;
         }
+        @-webkit-keyframes radio-btn {
+            0% {
+                -webkit-box-shadow: 0 0 4px 3px rgba(207, 8, 8, 0), 0 0 0 0 transparent, 0 0 0 0 rgba(207, 8, 8, 0);
+                box-shadow: 0 0 4px 3px rgba(207, 8, 8, 0), 0 0 0 0 transparent, 0 0 0 0 rgba(207, 8, 8, 0)
+            }
+            10% {
+                -webkit-box-shadow: 0 0 4px 3px, 0 0 6px 5px transparent, 0 0 6px 7px;
+                box-shadow: 0 0 4px 3px, 0 0 6px 5px transparent, 0 0 6px 7px
+            }
+            100% {
+                -webkit-box-shadow: 0 0 4px 3px rgba(207, 8, 8, 0), 0 0 0 20px transparent, 0 0 0 20px rgba(207, 8, 8, 0);
+                box-shadow: 0 0 4px 3px rgba(207, 8, 8, 0), 0 0 0 15px transparent, 0 0 0 15px rgba(207, 8, 8, 0)
+            }
+        }
+
+        @keyframes radio-btn {
+            0% {
+                -webkit-box-shadow: 0 0 4px 3px rgba(207, 8, 8, 0), 0 0 0 0 transparent, 0 0 0 0 rgba(207, 8, 8, 0);
+                box-shadow: 0 0 4px 3px rgba(207, 8, 8, 0), 0 0 0 0 transparent, 0 0 0 0 rgba(207, 8, 8, 0)
+            }
+            10% {
+                -webkit-box-shadow: 0 0 4px 3px, 0 0 6px 5px transparent, 0 0 6px 7px;
+                box-shadow: 0 0 4px 3px, 0 0 6px 5px transparent, 0 0 6px 7px
+            }
+            100% {
+                -webkit-box-shadow: 0 0 4px 3px rgba(408, 8, 8, 0), 0 0 0 20px transparent, 0 0 0 20px rgba(408, 8, 8, 0);
+                box-shadow: 0 0 4px 3px rgba(408, 8, 8, 0), 0 0 0 15px transparent, 0 0 0 15px rgba(807, 8, 8, 0)
+            }
+        }
+
         .icon-play{
             position: absolute;
-            bottom: 35%;
-            left: 8%;
-            color: var(--color-cloud);
-            font-size:18px;
+            color: #ced0d2;
+            font-size: 16px;
+            border:1px solid lightilver;
             transition: all .4s cubic-bezier(.15,.53,.35,1);
-            border-radius: 30px;
-            color:black;
+            border-radius: 50%;
             background:white;
-            width: 53px;
-            height: 53px;
-            line-height: 57px;
-            text-align: center;
+            width: 14%;
+            height: 20%;
+            bottom: 8%;
+            left: 8%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            -webkit-animation: radio-btn 1.5s linear infinite;
+            animation: radio-btn 1.5s linear infinite;
 
         }
-        @media (max-width: 800px) {
+        .fa-play{
+            position: absolute;color:rgb(12, 12, 12); font-size:1rem;
+        }
+        @media (max-width: 1200px) {
+            .video-container{
+                display:grid;
+                grid-template-columns: 1fr 1fr;
+                width:95%;
+                margin:auto;
+            }
+            .text_area_video {
+                width: 95%;
+                margin: auto;
+            }
             .icon-play{
-            bottom: 45%;}
+                width: 18%;
+                height: 25%;
+            }
+            .fa-play{
+             font-size:1.5rem;
+            }
+        }
+        @media (max-width: 750px) {
+            .video-container{
+                display:grid;
+                grid-template-columns: 1fr ;
+                width:95%;
+                margin:auto;
+            }
+            .icon-play{
+                width: 14%;
+                height: 19%;
+            }
+            .fa-play{
+             font-size:1rem;
+            }
         }
         .single_video:hover .icon-play{
             color:white;
             background:black;
             transform:  translateY(-20%);
             transition: 0.3s;
+        }
+        .single_video:hover .fa-play{
+            color:white;
         }
         /* .title-video h3:hover{
             color: darkcyan;
@@ -675,36 +759,46 @@
             /*width: 380px;
             height: 250px;*/
             width: 100%;
+
+
+
         }
+        .popup-video {
+            position:relative;
+            display:block;
+        }
+        .title-video{
+            font-size:1.48rem;
+            margin-bottom: 0;
+        }
+        .title-author{
+            font-size:0.9rem;
+
+        }
+
     </style>
     <div class="video_area2" >
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-12">
-                    <div class="text_area_video">
+    <div class="text_area_video">
                         <h3>{{trans('messages.our_journey')}}</h3>
                         <hr style="margin-bottom:50px;"> <!--  -->
                     </div>
-                </div>
-            </div>
-            <div class="row">
+        <div class="video-container">
                @if($videos != null)
                 @foreach($videos as $video)
-                    <div class="col-md-3" >
                         <div class="single_video">
                             <div class="thumbnail-video">
                                 <a href="/{{$video->url_video}}" class="popup-video">
                                     <img src="{{url('uploads/'.$video->image_thumbnail)}}" alt=""  >
-                                    <span  class="icon-play"><i class="fa fa-play"></i></span>
+                                    <span  class="icon-play"><i class="fa fa-play" style=""></i></span>
+                                    <!--  -->
                                 </a>
                             </div>
-                            <div class="title-video">
-                                <h3>{{$video->title}}</h3>
-                                <b>- {{$video->author}}</b>
+                            <div class="">
+                                <h3 class="title-video">{{$video->title}}</h3>
+                                <b class="title-author">- {{$video->author}}</b>
                                 <p></p>
                             </div>
                         </div>
-                    </div>
                 @endforeach
                 @endif
                 <!-- <div class="col-md-3">
@@ -750,7 +844,6 @@
 
                     </div>
                 </div> -->
-            </div>
         </div>
     </div>
     <!-- video_area_end -->
@@ -1109,6 +1202,7 @@
 
 
     </style>
+    <!--
     <div class="about_area_home">
         <div class="container">
             <div class="row">
@@ -1136,30 +1230,7 @@
                     </div>
                     @endforeach
                     @endif
-                    <!-- <div class="blog_left_sidebar">
-                        <article class="blog_item">
-                            <div class="blog_item_img">
-                                <img class="card-img rounded-0 small-image-blog" src="{{url('/frontend/images/bl2.jpg')}}" alt="">
-                            </div>
-                            <div class="small-blog-details">
-                                <a class="d-inline-block" href="single-blog.html">
-                                <h2>Video of Thay’s funeral and cremation</h2>
-                                </a>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="blog_left_sidebar">
-                        <article class="blog_item">
-                            <div class="blog_item_img">
-                                <img class="card-img rounded-0 small-image-blog" src="{{url('/frontend/images/bl3.jpg')}}" alt="">
-                            </div>
-                            <div class="small-blog-details">
-                                <a class="d-inline-block" href="single-blog.html">
-                                <h2>Video of Thay’s funeral and cremation</h2>
-                                </a>
-                            </div>
-                        </article>
-                    </div> -->
+
                 </div>
                 <div class="col-lg-6 mb-5 mb-lg-0">
                     <div class="blog_left_sidebar">
@@ -1172,10 +1243,7 @@
                         <article class="blog_item {{$flex}}">
                             <div class="blog_item_img">
                                 <img class="card-img rounded-0 " src="{{url('/uploads/'.$post->image_thumbnail)}}" alt="">
-                                <!-- <a href="#" class="blog_item_date">
-                                    <h3>15</h3>
-                                    <p>Jan</p>
-                                </a> -->
+
                             </div>
 
                             <div class="{{$small}} ">
@@ -1183,10 +1251,6 @@
                                     <h2>{{$post->title}}</h2>
                                 </a>
                                 <p>{{$post->short_description}}</p>
-                                <!-- <ul class="blog-info-link">
-                                    <li><a href="#"><i class="fa fa-user"></i> Travel, Lifestyle</a></li>
-                                    <li><a href="#"><i class="fa fa-comments"></i> 03 Comments</a></li>
-                                </ul> -->
                             </div>
                         </article>
                         @php
@@ -1215,45 +1279,10 @@
                     </div>
                     @endforeach
                     @endif
-                    <!-- <div class="blog_left_sidebar">
-                        <article class="blog_item">
-                            <div class="blog_item_img">
-                                <img class="card-img rounded-0 small-image-blog" src="{{url('/frontend/images/bl5.jpg')}}" alt="">
-                            </div>
-                            <div class="small-blog-details">
-                                <a class="d-inline-block" href="single-blog.html">
-                                    <h2>Free at School</h2>
-                                </a>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="blog_left_sidebar">
-                        <article class="blog_item">
-                            <div class="blog_item_img">
-                                <img class="card-img rounded-0 small-image-blog" src="{{url('/frontend/images/bl6.jpg')}}" alt="">
-                            </div>
-                            <div class="small-blog-details">
-                                <a class="d-inline-block" href="single-blog.html">
-                                <h2>Video of Thay’s funeral and cremation</h2>
-                                </a>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="blog_left_sidebar">
-                        <article class="blog_item">
-                            <div class="blog_item_img">
-                                <img class="card-img rounded-0 small-image-blog" src="{{url('/frontend/images/bl4.jpg')}}" alt="">
-                            </div>
-                            <div class="small-blog-details">
-                                <a class="d-inline-block" href="single-blog.html">
-                                <h2>Video of Thay’s funeral and cremation</h2>
-                                </a>
-                            </div>
-                        </article>
-                    </div> -->
+
                 </div>
             </div>
         </div>
     </div>
-    <!-- about_area_end -->
+    about_area_end -->
 @endsection

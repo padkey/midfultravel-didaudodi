@@ -4,7 +4,7 @@ namespace DDDD\Blog\Http\Controllers;
 
 use DDDD\Blog\Models\Companion;
 use DDDD\Blog\Models\Locale;
-use DDDD\Tour\Models\TourModel;
+use DDDD\Tour\Models\Partnership;
 use Encore\Admin\Auth\Permission;
 use Encore\Admin\Facades\Admin;
 use Encore\Admin\Form;

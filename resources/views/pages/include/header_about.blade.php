@@ -2,8 +2,8 @@
     <style>
 
     </style>
-        <div class="header-area" style="background: white;    opacity: 90%;    position: relative;">
-            <div id="sticky-header" class="main-header-area" style="padding: 25px 0 0 0;">
+        <div class="header-area" style="background: white;    opacity: 80%;    position: relative;">
+            <div id="sticky-header" class="main-header-area" >
                 <div class="container-fluid p-0" style="max-width:95%">
                     <div class="row align-items-center no-gutters">
                         <!-- <div class="col-xl-2 col-lg-2">
@@ -52,19 +52,28 @@
                             .mobile_menu .slicknav_icon-bar{
                                 background: black !important;
                             }
+                            .main-header-area{
+                                padding: 25px 0 0 0!important;
+                            }
+                            @media (max-width: 1200px) {
+                                .main-header-area{
+                                    padding: 50px 0 0 0!important;
+                                }
+                            }
                         </style>
-                         <div class="">
+                        <div class="">
                             <div class="trangchu-title">
 
                             </div>
                         </div>
+
                         <div class="col-xl-12 col-lg-6">
-                        <div class="main-menu  d-none d-lg-block">
+                            <div class="main-menu  d-none d-lg-block">
                                 <nav>
                                     <ul id="navigation">
                                         <li class="f-l"><a  href="/">{{trans('messages.home')}}</a></li>
                                         <li class="f-l"><a href="/about-us">{{trans('messages.about_us')}}</a></li>
-										<li class="f-l"><a href="/fabio">Fabio Cappiello</a></li>
+                                        <li class="f-l"><a href="/fabio">Fabio Cappiello</a></li>
                                         <li class="f-l"><a href="/list-blogs/mindfulness-practice">{{trans('messages.mindfulness_practice')}}</a></li>
                                         <li class="f-l"><a href="/tours/list-tours">{{trans('messages.mindfulness_tour')}}</a></li>
                                         <li class="f-l"><a href="">{{trans('messages.blog')}} <i class="ti-angle-down"></i></a>
@@ -78,7 +87,7 @@
                                         </li>
                                         <li class="f-l"><a href="/contact">{{trans('messages.contact')}}</a></li>
                                         <li class="f-r">
-                                             <a class="btn-earth " href="https://didaudodi.com/" target='_blank' style="padding: 10px 20px 10px 20px;border-radius:0;top:-10px">{{trans('messages.shop')}}</a>
+                                            <a class="btn-shop " href="https://didaudodi.com/" target='_blank' style="padding: 10px 20px 10px 20px;border-radius:0;top:-10px">{{trans('messages.shop')}}</a>
                                         </li>
                                         @php
                                             $language = \Session::get('website_language', config('app.locale'));
@@ -98,6 +107,8 @@
                                 </nav>
                             </div>
                         </div>
+
+
                         <div class="col-12">
                             <div class="mobile_menu d-block d-lg-none"></div>
                         </div>

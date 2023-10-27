@@ -1,8 +1,8 @@
 <?php
 
-namespace DTV\Banner\Repositories;
+namespace DDDD\Banner\Repositories;
 
-use DTV\Banner\Models\Banner;
+use DDDD\Banner\Models\Banner;
 use Illuminate\Support\Facades\Log;
 
 class BannerRepository
@@ -33,7 +33,7 @@ class BannerRepository
             Log::error("Can't get Banner with $uuid: {$e->getMessage()}");
             return $data;
         }
-        
+
         return $data;
     }
 }

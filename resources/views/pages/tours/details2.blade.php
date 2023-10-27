@@ -3,11 +3,209 @@
     @include('pages.include.header_about')
 @endsection
 @section('banner')
-    @include('pages.include.banner_package')
+    @include('pages.include.banner_tour')
 @endsection
 @section('content')
+<style>
+    @keyframes rotateMenu {
+        0% {
+        transform: rotateX(-90deg)
+        }
+        70% {
+        transform: rotateX(20deg)
+        }
+        100% {
+        transform: rotateX(0deg)
+        }
+    }
+
+    .decs-schedule {
+        padding: 15px 25px 15px 25px;
+        animation: rotateMenu 900ms ease-in-out forwards;
+        transform-origin: top center;
+    }
+    .dis-none{
+        display:none;
+    }
+    .dis-block{
+        display:block;
+    }
+    .title-schedule{
+        cursor: pointer;
+        border: 1px solid #ffff;
+        background: rgba(250, 241, 235, 0.71);
+        margin-top:2px;
+        padding: 15px 15px 15px 25px;
+        border-radius:5px;
+        display:grid;
+        grid-template-columns: 85% 15%;
+        transition: 1s;
+    }
+    .title-schedule:hover{
+        border: 1px solid #c5c5c5;
+    }
+    .title-schedule  span {
+        font-family: sans-serif!important;
+        font-weight: 600;
+        font-size:20px;
+        font-style: normal;
+        color: #2b2b2b;
+    }
+    .title-schedule-open{
+        border: 1px solid #FFFFFF;
+        background: #024f43;
+        font-weight: 400;
+    }
+    .title-schedule-open span{
+        color: #fff!important;
+    }
+    .down-up-action{
+        float:right;
+        margin-left:auto;
+        margin-top: auto;
+        margin-bottom: auto;
+        transition:0.5s;
+    }
+    .icon-open{
+        background: url('/frontend/images/down-up3.png');
+        background-size: 35px;
+        width: 35px;
+        height: 35px;
+
+    }
+    .icon-close{
+        background: url('/frontend/images/down-up2.png');
+        transform: rotate(-180deg);
+        background-size: 35px;
+        width: 35px;
+        height: 35px;
+    }
+   /* .overview-area {
+        margin-top: 100px;
+    }*/
+    .container{
+        width:70%;
+        margin:auto;
+    }
+    @media (max-width: 800px) {
+        .container{
+            width:95%;
+            margin:auto;
+        }
+        .hightlight-underline-white::before  {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            height: 1px;
+            width: 80%!important;
+            margin: 0 auto 0 10%!important;
+            display: block;
+        }
+        .hightlight-underline-green::before  {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            height: 1px;
+            width: 80%!important;
+            margin: 0 auto 0 10%!important;
+            display: block;
+        }
+    }
+    .section-icon{
+        text-align: center;
+        margin: auto;
+
+        position: relative;
+    }
+    .section-icon img{
+        border-radius: 50%;
+        margin-bottom: 10px;
+    }
+    .cacdiemden{
+        font-size: 18px;
+        text-align: center;
+    }
+    .images-overview{
+        justify-content: center;
+    }
+    .short_desc  {
+        text-align: center;
+        font-size: 24px!important;
+
+    }
+    .short_desc  p{
+        font-size: 24px!important;
+    }
+    .short_desc  span {
+        font-size: 24px!important;
+
+    }
+    .cacdiemden{
+        font-size: 24px;
+
+    }
+    .highlight-area {
+        padding: 0px 50px 150px 50px;
+        margin-top: 80px;
+    }
+    .bg-pink-1{
+        background: #faf1eb!important;
+    }
+    .content-trip{
+        width: 80%;
+        margin: auto;
+    }
+    .content-trip img{
+        width: 100%;
+    }
+    .c_margin{
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+    .title-center{
+        text-align: center;
+        margin-top: 5px;
+        margin-bottom: 35px;
+    }
+    .title-center h1 {
+        font-size: 45px;
+    }
+    .mt-100{
+        margin-top:100px;
+    }
+    .hightlight-underline-white {
+        text-transform: uppercase;
+        padding-bottom: 10px;
+        display: inline-block;
+        position: relative;
+    }
+    .hightlight-underline-white::before {
+        content: "";
+        top: -5px;
+        width: 80%;
+        position: absolute;
+        margin: 0 10%;
+        border-bottom: 3px solid #fff;
+    }
+
+    .hightlight-underline-green {
+        text-transform: uppercase;
+        padding-bottom: 10px;
+        display: inline-block;
+        position: relative;
+    }
+    .hightlight-underline-green::before {
+        content: "";
+        top: -5px;
+        width: 80%;
+        position: absolute;
+        margin: 0 10%;
+        border-bottom: 3px solid #024f43;
+    }
+
+</style>
 	<!-- Start Sample Area -->
-	<section class="sample-text-area">
+	<{{--section class="sample-text-area">
 		<div class="container box_1170">
 			<h3 class="text-heading">Chuyến đi cộng đồng khám phá đất nước sau chiến tranh</h3>
 			<p class="sample-text">
@@ -16,129 +214,694 @@ Một chuyến đi du lịch có trách nhiệm coi cuộc gặp gỡ với ngư
 Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những bãi biển tuyệt vời của Việt Nam để tái tạo cơ thể và tinh thần trước khi trở lại cuộc sống thường ngày.
 			</p>
 		</div>
-	</section>
+	</section>--}}
 	<!-- End Sample Area -->
-    
-<!-- Start Align Area -->
-<div class="whole-wrap">
-    <div class="container box_1170">
-        <div class="section-top-border">
-            <div class="row">
-                <div class="col-lg-3 col-md-4 mt-sm-30" style="border: 1px solid silver; ">
-                    <div class="single-element-widget"  style=" text-align:center;">
-                        <h3 class="mb-20 mt-10">Các khởi hành tiếp theo</h3>
-                        <p>THÁNG 11 NĂM 2023</p>
-                        <p> 23/11 - 25/11/23 </p>
-                        <hr  width="80%"  text-align="center" />
-                        <h3 class="mb-20 mt-10">Trị giá</h3>
-                        <ul style="text-align:left;width:70%">
-                            <li>Với 7/8 người: €1775</li>
-                            <li>Với 9/10 người: €1650</li>
-                            <li>Với 14/11 người: €1550</li>
-                        </ul>
-                        <p>Với 7/8 người: €1775 </p>
-                        <p>Với 9/10 người: €1650</p>    
-                        <p>Với 14/11 người: €1550</p>    
-                        <p>Với 15 người: €1500</p>    
-                        <p>Không bao gồm chuyến bay và bảo hiểm</p>    
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-8 col-md-8">
-                    <h3 class="mb-20">Hành trình</h3>
-                        <div>
-                            <p>Ngày 1: Khởi hành từ Ý</p>
-                            <p>Khởi hành theo lịch trình bay về Hà Nội, có điểm dừng. Nghỉ đêm trên tàu.</p>
-                            <p>Ngày 2: Khởi hành từ Ý</p>
-                            <p>Khởi hành theo lịch trình bay về Hà Nội, có điểm dừng. Nghỉ đêm trên tàu.</p>
-                        </div>
-                </div>
-            </div>
-        </div>
-        <div class="section-top-border">
-            <h3>Hình ảnh hành trình</h3>
-            <div class="row gallery-item">
-                <div class="col-md-4">
-                    <a href="{{url('frontend/images/g1.jpg')}}" class="img-pop-up">
-                        <div class="single-gallery-image" style="background: url(frontend/images/g1.jpg);"></div>
-                    </a>
-                </div>
-                <div class="col-md-4">
-                    <a href="img/elements/g2.jpg" class="img-pop-up">
-                        <div class="single-gallery-image" style="background: url(frontend/images/g1.jpg);"></div>
-                    </a>
-                </div>
-                <div class="col-md-4">
-                    <a href="img/elements/g3.jpg" class="img-pop-up">
-                        <div class="single-gallery-image" style="background: url(frontend/images/g1.jpg);"></div>
-                    </a>
-                </div>
-                <div class="col-md-6">
-                    <a href="img/elements/g4.jpg" class="img-pop-up">
-                        <div class="single-gallery-image" style="background: url(frontend/images/g1.jpg);"></div>
-                    </a>
-                </div>
-                <div class="col-md-6">
-                    <a href="img/elements/g5.jpg" class="img-pop-up">
-                        <div class="single-gallery-image" style="background: url(frontend/images/g1.jpg);"></div>
-                    </a>
-                </div>
-                <div class="col-md-4">
-                    <a href="img/elements/g6.jpg" class="img-pop-up">
-                        <div class="single-gallery-image" style="background: url(frontend/images/g1.jpg);"></div>
-                    </a>
-                </div>
-                <div class="col-md-4">
-                    <a href="img/elements/g7.jpg" class="img-pop-up">
-                        <div class="single-gallery-image" style="background: url(img/elements/g7.jpg);"></div>
-                    </a>
-                </div>
-                <div class="col-md-4">
-                    <a href="img/elements/g8.jpg" class="img-pop-up">
-                        <div class="single-gallery-image" style="background: url(img/elements/g8.jpg);"></div>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="section-top-border">
-            <div class="row">
-                <div class="col-lg-8 col-md-8">
-                    <h3 class="mb-30">Yêu cầu báo giá</h3>
-                    <form action="#">
-                        <div class="mt-10">
-                            <input type="text" name="first_name" placeholder="First Name"
-                                onfocus="this.placeholder = ''" onblur="this.placeholder = 'First Name'" required
-                                class="single-input">
-                        </div>
-                        <div class="mt-10">
-                            <input type="email" name="EMAIL" placeholder="Email address"
-                                onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email address'" required
-                                class="single-input">
-                        </div>
+     <div class="overview-area">
+         <div class="container mb-65">
+                 <div class="section-icon">
+                     <img src="{{url('/frontend/images/kinh-lup.png')}}" alt="">
+                     <div class="title-center">
+                         <h1 class="hightlight-underline-green">OVERVIEW</h1>
+                     </div>
+                 </div>
+                 <div class="cacdiemden">
+                     {!! $tour->place_overview !!}
+                 </div>
 
-                        <div class="mt-10">
-                            <textarea class="single-textarea" placeholder="Message" onfocus="this.placeholder = ''"
-                                onblur="this.placeholder = 'Message'" required></textarea>
-                        </div>
-                        <button class="boxed-btn3">Gửi</button>
-                    
-                    </form>
+
+             <div class="row images-overview owl-six owl-theme owl-carousel">
+                 @foreach($tour->image as $image)
+                     <div >
+                         <a href="{{url('/uploads/'.$image)}}" class="img-pop-up">
+                             <div class="single-gallery-image" style="background: url('/uploads/{{$image}}');"></div>
+                         </a>
+                     </div>
+                 @endforeach
+             </div>
+
+             <div class="short_desc mt-30">
+                 {!! $tour->short_description !!}
+             </div>
+         </div>
+     </div>
+
+    <div class="highlight-area bg-pink-1 mt-100 ">
+        <div class="section-icon" style="top:-45px">
+            <img src="{{url('/frontend/images/hightlight.png')}}" alt="">
+            <div class="title-center">
+                <h1 class="hightlight-underline-white" >TRIP HIGHLIGHTS</h1>
+            </div>
+
+        </div>
+
+        <div class="content-trip">
+            <div class="row ">
+                <div class="col-md-6">
+                    <img src="{{url('/uploads/'.$tour->image_trip_highlights)}}" alt="">
                 </div>
-                <div class="col-lg-3 col-md-4 mt-sm-30" style="border: 1px solid silver;">
-                    <div class="single-element-widget">
-                        <h3 class="mb-20 mt-10">Kết nối văn hóa</h3>
-                        <div class="switch-wrap d-flex justify-content-between">
-                            <p>
-                            Trung gian văn hóa của chuyến đi được thực hiện bởi Fabio Cappiello, một người Ý đã sống ở Việt Nam hơn 20 năm, tham gia vào lĩnh vực du lịch có trách nhiệm và hợp tác phát triển, biết và nghiên cứu văn hóa Việt Nam từ góc độ nhân chủng học, xã hội học và chính trị gia, cũng như thực hành Phật giáo Việt Nam với sự kiên trì và tận tâm cùng các đệ tử của Thiền sư vĩ đại Thích Nhất Hạnh. 
-                            </p>	
-                        </div>
-                    </div>
-                    
+                <div class="col-md-6 c_margin">
+                    {!! $tour->trip_highlights !!}
                 </div>
             </div>
         </div>
+
+    </div>
+    <style>
+        iframe{
+            width: 100%;
+            height:600px;
+        }
+        #map{
+            width: 100%;
+            height:400px;
+        }
+        .marker {
+            background-image: url('/frontend/images/position5.png');
+            background-size: cover;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .mapboxgl-popup {
+            max-width: 200px;
+        }
+        .mapboxgl-popup-content {
+            text-align: center;
+            font-family: 'Open Sans', sans-serif;
+        }
+    </style>
+    <div class="schedule-area mt-100">
+        <div class="container">
+            <div class="section-icon">
+                <img src="{{url('/frontend/images/kinh-lup.gif')}}" alt="" style="border-radius: 0">
+                <div class="title-center">
+                    <h1 class="hightlight-underline-green">LỊCH TRÌNH</h1>
+                    <h2>Khám phá đông nam á- 18 day/17 night</h2>
+                </div>
+            </div>
+            <div>
+{{--
+                <iframe src='https://api.mapbox.com/styles/v1/mapbox/streets-v12.html?title=false&zoomwheel=false&access_token=pk.eyJ1IjoidG9hbmNodW9uZyIsImEiOiJjbG80MG9zOXkwbWthMm11ZGFtcXFvdTZlIn0.VBX96EkqFGqhVwBrwSpw8A#15/37.771/-122.436/45/70' > </iframe>
+--}}
+            </div>
+            <div id='map'></div>
+
+            <div>
+                @php
+                    $dataPosition =[];
+                    $dataPosition2 =[];
+                @endphp
+                @foreach($tour->tourSchedule as $key => $schedule)
+                    @php
+                        $position = $schedule->position;
+                        $position = explode(',',$position);
+                           $lng = (int)$position[0];
+                           $lat = (int)$position[1];
+
+                           array_push($dataPosition,
+                            [
+                               'type'=> 'FeatureCollection',
+                               'geometry'=> [
+                                   'type'=> 'Point',
+                                   'coordinates'=> [ $lng, $lat]
+                               ],
+                               'properties'=> [
+                                   'title'=> 'Mapbox',
+                                   'description'=> 'Washington, D.C.'
+                               ],
+                           ]);
+                    @endphp
+                    <div class="schedule-day-{{$schedule->id}}">
+                        <div class="title-schedule" data-id="{{$schedule->id}}" data-position="{{$schedule->position}}">
+                            <span>{{$schedule->title}}</span> <span class="icon-close icon-action-{{$schedule->id}} down-up-action">   </span>
+                        </div>
+                        <div class="content-schedule-{{$schedule->id}} dis-none decs-schedule">
+                            {!! $schedule->description !!}
+                        </div>
+                    </div>
+                    {{--<script>
+                        let position = {{$schedule->position}};
+                        position = position.split(',');
+                        let lng = parseInt(position[0]);
+                        let lat = parseInt(position[1]);
+                        const geojson = {
+                            'type': 'FeatureCollection',
+                            'features': [
+                                {
+                                    'type': 'Feature',
+                                    'geometry': {
+                                        'type': 'Point',
+                                        'coordinates': [lng, lat]
+                                    },
+                                    'properties': {
+                                        'title': 'Mapbox',
+                                        'description': 'Washington, D.C.'
+                                    }
+                                }
+                            ]
+                        };
+                    </script>--}}
+
+                @endforeach
+
+              {{--@php$dataPosition2 =  json_encode($dataPosition2)@endphp--}}
+
+             {{--   <input type="hidden" value="{{$dataPosition}}" class="dataPosition">--}}
+                <input type="hidden" class="region" value="{{$tour->region}}">
+            </div>
+
+        </div>
+    </div>
+
+    <div class="important-info-area mt-100">
+    <div class="container">
+        <div class="section-icon">
+            <img src="{{url('/frontend/images/kinh-lup-ds.gif')}}" alt="" style="border-radius: 0px">
+            <div class="title-center">
+                <h1 class="hightlight-underline-green">IMPORTANT INFORMATION</h1>
+            </div>
+        </div>
+
+        <div class="schedule-day-1">
+            {!! $tour->important_information !!}
+        </div>
+
+    </div>
+</div>
+
+<!-- companion -->
+<style>
+    .companion-container{
+        width: 85%;
+        margin: auto;
+    }
+    .companion-area{
+       /* padding: 0;*/
+        /*margin: 0;*/
+        box-sizing: border-box;
+        font-family: Poppins;
+        loading:"lazy";
+        /*padding-top: 10px;*/
+        padding-bottom: 100px;
+    }
+    .team-profile{
+        max-width: 1200px;
+        margin: auto;
+        /*display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;*/
+    }
+    .profile-card{
+        position: relative;
+        width: 280px;
+        height: 280px;
+        background-color: #fff;
+        padding: 30px;
+        /**/border-radius: 10%;
+        box-shadow: -5px 8px 45px rgba(51, 51, 51, 0.126);
+        transition: all .4s;
+        margin: 50px 0px;
+
+    }
+    @media (max-width: 1750px) and (min-width: 1620px) {
+        .profile-card{
+            width: 250px;
+            height: 250px;
+        }
+        .profile-card .img img{
+            height: 200px;
+        }
+    }
+
+    @media (max-width: 1420px) {
+        .profile-card{
+            width: 250px;
+            height: 250px;
+        }
+        .profile-card .img img{
+            height: 200px;
+        }
+    }
+    @media (max-width: 1280px) and (min-width: 1190px) {
+        .profile-card{
+            width: 220px;
+            height: 220px;
+        }
+        .profile-card .img img{
+            height: 165px;
+        }
+        .profile-card .caption{
+            transform: translateY(-265px);
+        }
+        .profile-card  .desc-companion{
+            -webkit-line-clamp: 13;
+        }
+    }
+    @media (max-width: 1190px) and (min-width: 1100px) {
+        .profile-card{
+            width: 280px;
+            height: 280px;
+        }
+        .profile-card .img img{
+            height: 220px;
+        }
+    }
+    @media (max-width: 1100px) and (min-width: 900px) {
+        .profile-card{
+            width: 250px;
+            height: 250px;
+        }
+        .profile-card .img img{
+            height: 200px;
+        }
+    }
+    @media (max-width: 970px) and (min-width: 890px) {
+        .profile-card{
+            width: 220px;
+            height: 220px;
+        }
+        .profile-card .img img{
+            height: 165px;
+        }
+        .profile-card .caption{
+            transform: translateY(-265px);
+        }
+        .profile-card  .desc-companion{
+            -webkit-line-clamp: 13;
+        }
+    }
+    @media (max-width: 890px) and (min-width: 730px) {
+        .profile-card{
+            width: 280px;
+            height: 280px;
+        }
+        .profile-card .img img{
+            height: 220px;
+        }
+    }
+    @media (max-width: 730px) and (min-width: 660px) {
+        .profile-card{
+            width: 250px;
+            height: 250px;
+        }
+        .profile-card .img img{
+            height: 200px;
+        }
+    }
+    @media (max-width: 660px) and (min-width: 599px) {
+        .profile-card{
+            width: 220px;
+            height: 220px;
+        }
+        .profile-card .img img{
+            height: 165px;
+        }
+        .profile-card .caption{
+            transform: translateY(-265px);
+        }
+        .profile-card  .desc-companion{
+            -webkit-line-clamp: 12;
+        }
+    }
+    @media (max-width: 599px) {
+        .profile-card{
+            width: 250px;
+            height: 250px;
+            margin: auto;
+            margin-top: 50px;
+            margin-bottom: 50px;
+
+        }
+        .profile-card .img img{
+            height: 200px;
+        }
+    }
+    .profile-card:hover{
+        border-radius: 10px;
+        height: 500px;
+    }
+    .profile-card .img{
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transform: translateY(-80px);
+        border-radius: 50%;
+        background: #fff;
+
+    }
+    .profile-card:hover img{
+        border-radius: 10px;
+    }
+    .img img{
+        width: 100%;
+        border-radius: 50%;
+        transition: all .4s;
+        z-index: 99;
+        height: 220px;
+        object-fit: cover;
+    }
+    .caption{
+        transform: translateY(-210px);
+        opacity: 0;
+        pointer-events: none;
+        transition: all .5s;
+    }
+    .profile-card:hover .caption{
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    .name-companion {
+        text-align: center;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+    .name-companion h3{
+        font-size: 25px;
+        color: #8B572A;
+        /*
+        font-weight: 600;
+        */
+    }
+    .caption p{
+        font-size: 17px;
+        font-weight: 500;
+        margin: 2px 0 12px 0;
+    }
+    .caption .social-links i:hover{
+        color: #0c52a1;
+    }
+    .desc-companion {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 10;
+        -webkit-box-orient: vertical;
+    }
+    .title-companion{
+        text-align: center;
+        margin-top: 50px;
+        margin-bottom: 40px;
+
+    }
+    .title-companion h1 {
+        color: #8b572a;
+    }
+    .owl-carousel .owl-stage-outer {
+        /*overflow: inherit;*/
+    }
+    .mt-180{
+        margin-top:180px;
+    }
+</style>
+<div class="companion-area bg-pink-1 mt-180">
+    <div class="section-icon" style="top:-45px;">
+        <img src="{{url('/frontend/images/companion.png')}}" alt="" ">
+        <div class="title-center">
+            <h1 class="hightlight-underline-white" >{{trans('messages.companions')}}</h1>
+        </div>
+    </div>
+    {{--<div class="title-companion ">
+        <img src="{{url('/frontend/images/partnership.png')}}" alt="" style="border-radius:0px;">
+        <h1 class="hightlight-underline-white" >{{trans('messages.companions')}}</h1>
+    </div>--}}
+    <div class="companion-container">
+
+        <div class="team-profile owl-five owl-carousel  owl-theme">
+            @if($companions != null)
+                @foreach($companions as $companion)
+                    <div class="profile-card">
+                        <div class="img">
+                            <img src="{{url('uploads/'.$companion->avatar)}}" alt=""  >
+                            <div class="name-companion">
+                                <h3>{{$companion->name}}</h3>
+                            </div>
+                        </div>
+                        <div class="caption">
+                            <div class="desc-companion">
+                                {!! $companion->content !!}
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            @endif
         </div>
     </div>
 </div>
-<!-- End Align Area -->
+<style>
+    .image-partner{
+       /* position: relative;*/
+    }
+    .details-partner{
+        position: relative;
+    }
+    .show-details-partner{
+        display:none;
+    }
+    .details-partner:hover .desc-partner{
+        opacity: 100%;
+
+    }
+    .desc-partner{
+        position: absolute;
+        bottom:0px;
+        background: black;
+
+        opacity: 80%;
+        width: calc(100% );
+        padding: 0 0 0 10px;
+        transition:0.5s;
+    }
+    .desc-partner h2{
+        color: #FFFFFF;
+    }
+    .desc-partner p{
+        color: #FFFFFF;
+    }
+    .image-partner img{
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .mt-20 {
+        margin-top:20px;
+    }
+</style>
+<div class="partner-area mt-100">
+    <div class="container">
+        <div class="section-icon">
+            <img src="{{url('/frontend/images/partnership.png')}}" alt="" style="border-radius:0px;">
+            <div class="title-center">
+                <h1 class="hightlight-underline-green">PartnerShip</h1>
+            </div>
+        </div>
+
+        <div class="row">
+            @foreach($tour->partnershipBranch as $partnershipBranch)
+            <div class="col-md-6 mt-20">
+                <a href="/partnership-branch/{{$partnershipBranch->url}}" class="details-partner ">
+                    <div class="image-partner" >
+                        <img src="{{url('/uploads/'.$partnershipBranch->image)}}" alt=""  style="">
+                    </div>
+                    <div class="desc-partner">
+                        <h2>{{$partnershipBranch->name}}</h2>
+                        <p>Address : {{$partnershipBranch->address}}</p>
+                    </div>
+                </a>
+            </div>
+            @endforeach
+            {{--<div class="col-md-6 mt-20">
+                <a href="" class="details-partner">
+                    <div class="image-partner" >
+                        <img src="{{url('/frontend/images/m5.jpg')}}" alt=""  style="">
+                    </div>
+                    <div class="desc-partner">
+                        <h2>Iuteressere Monastery</h2>
+                        <p>Chi nhanh : Lieu dit Le Pey</p>
+                    </div>
+                </a>
+            </div>
+        </div>--}}
+
+    </div>
+</div>
+<div class="section-top-border mt-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-8">
+                <h3 class="mb-30">Yêu cầu báo giá</h3>
+                <form action="#">
+                    <div class="mt-10">
+                        <input type="text" name="first_name" placeholder="First Name"
+                               onfocus="this.placeholder = ''" onblur="this.placeholder = 'First Name'" required
+                               class="single-input">
+                    </div>
+                    <div class="mt-10">
+                        <input type="text" name="phone" placeholder="Phone"
+                               onfocus="this.placeholder = ''" onblur="this.placeholder = 'First Name'" required
+                               class="single-input">
+                    </div>
+                    <div class="mt-10">
+                        <input type="email" name="EMAIL" placeholder="Email address"
+                               onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email address'" required
+                               class="single-input">
+                    </div>
+
+                    <div class="mt-10">
+                            <textarea class="single-textarea" placeholder="Message" onfocus="this.placeholder = ''"
+                                      onblur="this.placeholder = 'Message'" required></textarea>
+                    </div>
+                    <button class="boxed-btn3">Gửi</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end-companion -->
+
+@endsection
+@section('script')
+<script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoidG9hbmNodW9uZyIsImEiOiJjbG80MG9zOXkwbWthMm11ZGFtcXFvdTZlIn0.VBX96EkqFGqhVwBrwSpw8A';
+        // Mã jQuery xử lý sau khi trang đã tải xong
+        var features = @php echo $geojson;@endphp;
+
+        features = JSON.stringify(features);
+        features = JSON.parse(features);
+
+        const geojson = {
+            'type': 'FeatureCollection',
+            'features':features.features
+        };
+        //console.log( geojson.features);
+        let region = $('.region').val();
+        let center= [102.084961,3.557283];
+        if(region == 'Asia'){
+            center = [102.084961,3.557283]
+        } else if (region == 'The Americas') {
+
+        } else if (region == 'Africa') {
+
+        } else if (region == 'Europe') {
+
+        } else if (region == 'Oceania') {
+
+        }
+
+        const map = new mapboxgl.Map({
+            container: 'map', // container ID
+            style: 'mapbox://styles/mapbox/streets-v12',
+            center: [ 106.65957339778778,10.82464603273621], // starting position [lng, lat]
+           // projection:'globe',
+          //  projection: 'globe',
+
+            zoom: 2
+        });
+
+
+            // add markers to map
+        for (const feature of geojson.features) {
+            // create a HTML element for each feature
+            const el = document.createElement('div');
+            el.className = 'marker';
+
+            // make a marker for each feature and add it to the map
+            new mapboxgl.Marker(el)
+                .setLngLat(feature.features.geometry.coordinates)
+                .setPopup(
+                    new mapboxgl.Popup({ offset: 25 }) // add popups
+                        .setHTML(
+                      //   `<h3>${feature.properties.title}</h3><p>${feature.properties.description}</p>`
+                        )
+                )
+                .addTo(map);
+        }
+
+        $('.title-schedule').click(function(){
+            let position = $(this).data('position');
+            position = position.split(',');
+            let lng = parseInt(position[1]);
+            let lat = parseInt(position[0]);
+           // console.log(position)
+
+            // change color title end show description
+            let id = $(this).data('id');
+            if ($('.content-schedule-'+id).hasClass('dis-none')) {  // none => block
+                // cho map di chuyển tới tọa độ
+                map.flyTo({
+                    center: [lng,lat], // Tọa độ vị trí cần zoom
+                    zoom: 10 // Mức độ zoom cho vị trí cần zoom
+                });
+                // đổi màu và show nội dung
+                $('.content-schedule-'+id).removeClass('dis-none');
+                $('.content-schedule-'+id).addClass('dis-block');
+                $(this).addClass('title-schedule-open');
+                $('.icon-action-'+id).removeClass('icon-close');
+                $('.icon-action-'+id).addClass('icon-open');
+
+            } else {
+                map.flyTo({
+                    center: [lng,lat], // Tọa độ vị trí cần zoom
+                    zoom:2 // Mức độ zoom cho vị trí cần zoom
+                });
+                // đổi màu và ẩn nội dung
+                $('.content-schedule-'+id).addClass('dis-none');
+                $('.content-schedule-'+id).removeClass('dis-block');
+                $(this).removeClass('title-schedule-open');
+                $('.icon-action-'+id).removeClass('icon-open');
+                $('.icon-action-'+id).addClass('icon-close');
+            }
+        })
+
+
+        var owl6 = $('.owl-six');
+        owl6.owlCarousel({
+            items:4,
+            loop:true,
+            nav:true,
+            margin:10,
+            navText:['<i class="ti-angle-left"></i>','<i class="ti-angle-right"></i>'],
+            autoplay:true,
+            autoplayTimeout:1500,
+            autoplayHoverPause:true,
+            responsive:{
+                0:{
+                    items:1,
+
+                    nav:true,
+                    loop:true,
+                },
+                600:{
+                    items:2,
+                    nav:true,
+                    loop:true
+                },
+
+                890:{
+                    items:3,
+                    nav:true,
+                    loop:true
+
+                },
+                1190:{
+                    items:4,
+                    nav:true,
+                    loop:true
+                },
+                1620:{
+                    items:4,
+                    nav:true,
+                    loop:true
+                },
+                /*2000:{
+                    items:5,
+                    nav:true,
+                    loop:false
+                }*/
+            }
+        });
+    </script>
 @endsection
