@@ -32,9 +32,9 @@ class EAVAttributeServiceProvider extends ServiceProvider
         }
 
         $this->app->booted(function () {
-            EAVAttribute::routes(__DIR__ . '/../routes/web.php');
-            $this->registerMigrations();
-            $this->registerDbSeed();
+          //  EAVAttribute::routes(__DIR__ . '/../routes/web.php');
+           // $this->registerMigrations();
+           // $this->registerDbSeed();
         });
     }
 
