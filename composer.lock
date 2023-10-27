@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2f9af4b93cc1d1aa31609eb59dd55bdb",
+    "content-hash": "476cb98ff2641d89995cf7371682bc1f",
     "packages": [
         {
             "name": "asm-laravel-admin-ext/tmeditor",
@@ -165,7 +165,7 @@
         },
         {
             "name": "dddd/banner",
-            "version": "dev-fix-1",
+            "version": "dev-main",
             "dist": {
                 "type": "path",
                 "url": "modules/dddd/banner",
@@ -258,6 +258,148 @@
             }
         },
         {
+            "name": "dddd/catalog-category",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "modules/dddd/catalog-category",
+                "reference": "9f1ceb07b30e62712c848efb390ea44d9d9c9986"
+            },
+            "require": {
+                "encore/laravel-admin": "~1.6",
+                "php": ">=7.0.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~6.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "DDDD\\CatalogCategory\\CatalogCategoryServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "DDDD\\CatalogCategory\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "your name",
+                    "email": "your email"
+                }
+            ],
+            "description": "description...",
+            "homepage": "https://github.com/dddd/catalog-category",
+            "keywords": [
+                "extension",
+                "laravel-admin"
+            ],
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
+            "name": "dddd/catalog-product",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "modules/dddd/catalog-product",
+                "reference": "1020856a9f13aa9ee1afbfa95f58f2912fa53b7f"
+            },
+            "require": {
+                "encore/laravel-admin": "~1.6",
+                "php": ">=7.0.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~6.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "DDDD\\CatalogProduct\\CatalogProductServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "DDDD\\CatalogProduct\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "your name",
+                    "email": "your email"
+                }
+            ],
+            "description": "description...",
+            "homepage": "https://github.com/dddd/catalog-product",
+            "keywords": [
+                "extension",
+                "laravel-admin"
+            ],
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
+            "name": "dddd/eav-attribute",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "modules/dddd/eav-attribute",
+                "reference": "4bd142b146d02f87692a2955bc9a61f6eb7af784"
+            },
+            "require": {
+                "encore/laravel-admin": "~1.6",
+                "php": ">=7.0.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~6.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "DDDD\\EAVAttribute\\EAVAttributeServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "DDDD\\EAVAttribute\\": "src/",
+                    "DDDD\\EAVAttribute\\Database\\Seeders\\": "database/seeders"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "your name",
+                    "email": "your email"
+                }
+            ],
+            "description": "description...",
+            "homepage": "https://github.com/dddd/eav-attribute",
+            "keywords": [
+                "extension",
+                "laravel-admin"
+            ],
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
             "name": "dddd/menu",
             "version": "dev-main",
             "dist": {
@@ -296,6 +438,53 @@
             ],
             "description": "description...",
             "homepage": "https://github.com/dddd/menu",
+            "keywords": [
+                "extension",
+                "laravel-admin"
+            ],
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
+            "name": "dddd/partnership",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "modules/dddd/partnership",
+                "reference": "17860f3ee074bdc391b2acee75e896dc5ec9c191"
+            },
+            "require": {
+                "encore/laravel-admin": "~1.6",
+                "php": ">=7.0.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~6.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "DDDD\\Partnership\\PartnershipServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "DDDD\\Partnership\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "your name",
+                    "email": "your email"
+                }
+            ],
+            "description": "description...",
+            "homepage": "https://github.com/dddd/partnership",
             "keywords": [
                 "extension",
                 "laravel-admin"
@@ -8201,7 +8390,11 @@
     "stability-flags": {
         "dddd/banner": 20,
         "dddd/blog": 20,
+        "dddd/catalog-category": 20,
+        "dddd/catalog-product": 20,
+        "dddd/eav-attribute": 20,
         "dddd/menu": 20,
+        "dddd/partnership": 20,
         "dddd/tour": 20,
         "dddd/url": 20
     },

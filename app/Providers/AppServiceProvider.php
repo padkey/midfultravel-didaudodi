@@ -6,7 +6,7 @@ use DDDD\Blog\Models\Pages;
 use DDDD\Url\Models\UrlModel;
 use DDDD\Blog\Models\BlogPost;
 use DDDD\Blog\Models\BlogCategory;
-use DDDD\Tour\Models\TourModel;
+use DDDD\Tour\Models\Partnership;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;

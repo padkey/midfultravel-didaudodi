@@ -24,8 +24,11 @@ class Tour extends Extension
             if (!$menuModel::firstWhere('uri', 'tour')) {
                 parent::createMenu('Tour Management', 'tour', 'fa-bars', $menuModelId);
             }
+            if (!$menuModel::firstWhere('uri', 'tour_schedule')) {
+                parent::createMenu('Tour Management', 'tour', 'fa-bars', $menuModelId);
+            }
         } catch (\Exception $exception) {
             return;
         }
-    }    
+    }
 }

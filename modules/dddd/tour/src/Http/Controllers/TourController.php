@@ -2,21 +2,24 @@
 
 namespace DDDD\Tour\Http\Controllers;
 
-use DDDD\Blog\Models\BlogPost;
 use DDDD\Blog\Models\Locale;
 use DDDD\Tour\Models\TourModel;
 use Encore\Admin\Auth\Permission;
+use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Facades\Admin;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Layout\Column;
 use Encore\Admin\Layout\Content;
 use Encore\Admin\Layout\Row;
+use http\Env\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
 use Encore\Admin\Controllers\HasResourceActions;
-
-class TourController extends Controller
+use Encore\Admin\Show;
+use DDDD\Partnership\Models\PartnershipBranch;
+use DDDD\Partnership\Models\TourPartnershipBranch;
+class TourController extends AdminController
 {
     use HasResourceActions;
 
@@ -40,8 +43,27 @@ class TourController extends Controller
      */
     public function show($id, Content $content)
     {
-        return redirect()->route('tour.edit', ['tour' => $id]);
+        return $content->title('Tour Details')->description('Details')->body($this->detail($id));
     }
+
+    protected function detail( $id): Show
+    {
+        $show = new Show(TourModel::findOrFail($id));
+
+        $show->field('id', __('ID'));
+        $show->field('name', __('Name'));
+        $show->field('is_active', __('Active'))->as(function ($status) {
+            return 1 ? 'On' : 'Off';
+        });
+
+        $show->tourSchedule('Tour Schedule', function ($items) {
+            $items->setResource('/admin/tour-schedule');
+            $items->id();
+            $items->title();
+        });
+        return $show;
+    }
+
         /**
      * @param Content $content
      * @return Content
@@ -73,6 +95,7 @@ class TourController extends Controller
                     $column->append($this->form()->edit($id));
                 });
             });
+
     }
 
     /**
@@ -86,7 +109,6 @@ class TourController extends Controller
         $grid->column(TourModel::COL_ID, __("ID"))->sortable();
         $grid->column(TourModel::COL_NAME, __("Name"));
         $grid->column(TourModel::COL_LOCALE_CODE, __("Language"));
-
         $grid->column(TourModel::COL_IS_ACTIVE)->bool();
         $grid->column(TourModel::COL_URL);
         $grid->column(TourModel::COL_DATE_START);
@@ -101,7 +123,7 @@ class TourController extends Controller
      */
     protected function form(): Form
     {
-
+        $TourPartnershipBranch = new Form(new TourPartnershipBranch);
         $form = new Form(new TourModel);
         $locales = Locale::all();
         $arrayLocale = [];
@@ -112,9 +134,13 @@ class TourController extends Controller
             $arrayLocale
         )->setWidth(4, 2);
         $form->tab(__("General Information"), function ($form) {
+            $states = [
+                'on' => ['value' => 1, 'text' => 'enable', 'color' => 'success'],
+                'off' => ['value' => 0, 'text' => 'disable', 'color' => 'danger'],
+            ];
+
             $form->text(TourModel::COL_NAME, __("Name"))->rules("required");
-           // $form->text(TourModel::COL_REGION, __("Region"));
-            $form->select(TourModel::COL_IS_ACTIVE, "Status")->options([1 => "Active", 0 => "Inactive"]);
+            $form->switch(TourModel::COL_IS_ACTIVE, 'Is Active?')->states($states);
 
             $form->select(TourModel::COL_REGION)->options(
                 [
@@ -124,20 +150,31 @@ class TourController extends Controller
                     'Europe'=>'Europe',
                     'Oceania'=>'Oceania',
                 ])->setWidth(4, 2);
-            $form->image(TourModel::COL_IMAGE, __("Image"))->setWidth(4, 2)->uniqueName();
-            $form->image(TourModel::COL_IMAGE_THUMBNAIL, __("Image Thumbnail"))->setWidth(4, 2)->uniqueName();
+            $form->multipleImage(TourModel::COL_IMAGE, __("Overview Image"))->setWidth(4, 2)->removable()->sortable()->uniqueName();
+            $form->image(TourModel::COL_IMAGE_THUMBNAIL, __("Image Thumbnail"))->setWidth(4, 2)->removable()->uniqueName();
             $form->text(TourModel::COL_TYPE_TOUR, __("Type tour"))->rules("required");
             if ($form->isEditing()) {
                 $form->text(TourModel::COL_URL, __("Url Key"))->rules("required");
             }
 
+
+
         });
+        $form->multipleSelect('partnershipBranch','Partnership Branch')
+            ->options(PartnershipBranch::all()->pluck('name','id'))
+            //->default(Request::capture()->query('partnership_branch_id'))
+            ->required();
+
         $form->datetime(TourModel::COL_DATE_START)->rules("required");
         $form->datetime(TourModel::COL_DATE_END)->rules("required");
 
         $form->tab(__("Content"), function ($form) {
+            $form->tmeditor(TourModel::COL_IMPORTANT_INFORMATION, __("Important Information"));
             $form->textarea(TourModel::COL_SHORT_DESCRIPTION, __("Short Description"));
-            $form->tmeditor(TourModel::COL_CONTENT);
+           // $form->tmeditor(TourModel::COL_CONTENT);
+            $form->textarea(TourModel::COL_PLACE_OVERVIEW, __("Place Overview"));
+            $form->image(TourModel::COL_IMAGE_TRIP_HIGHTLIGHTS, __("Image Trip Highlights"))->setWidth(4, 2)->uniqueName();
+            $form->tmeditor(TourModel::COL_TRIP_HIGHTLIGHTS, __("Text Trip Highlights"));
 
         });
         $form->tab(__("Meta Data"), function ($form) {

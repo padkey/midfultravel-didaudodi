@@ -19,6 +19,9 @@
         margin-left: 40px;
 
     }
+    .logo-bottom{
+        margin: auto;
+    }
     /*@media (max-width:2200px) {
         .logo-image {
             width: 26%;
@@ -70,12 +73,13 @@
     <div class="slider_active owl-three owl-carousel owl-theme">
         <div class="single_slider d-flex align-items-center  slider_bg_1">
             <div class="container" style="margin-top: 10px; ">
-                <div class="logo-image logo-top">
+                <div class=" logo-top">
                     <a href="/">
-                        <img src="{{url('uploads/'.$logoWhite->items[0]->path_desktop)}}" alt="">
+                        {{--<img src="{{url('uploads/'.$logoWhite->items[0]->path_desktop)}}" alt="">--}}
+                            <h1 style="color: white; font-size:80px;">Didaudodi <br> Mindful Travel - DMT</h1>
                     </a>
                 </div>
-                <div class="logo-image">
+                <div class="logo-image logo-bottom">
                     <a href="/">
                         <img src="{{url('uploads/'.$sloganImage->items[0]->path_desktop)}}" alt="">
                     </a>

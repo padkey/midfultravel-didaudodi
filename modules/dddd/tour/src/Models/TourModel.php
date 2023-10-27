@@ -2,9 +2,10 @@
 
 namespace DDDD\Tour\Models;
 
+use DDDD\Partnership\Models\PartnershipBranch;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-
+use Illuminate\Database\Eloquent\Relations\HasMany;
 class TourModel extends Model
 {
     const COL_ID = "id";
@@ -26,7 +27,11 @@ class TourModel extends Model
     const COL_TYPE_TOUR = "type_tour";
     const COL_LOCALE_CODE = "locale_code";
     const COL_REGION = "region";
+    const COL_IMAGE_TRIP_HIGHTLIGHTS = "image_trip_highlights";
+    const COL_TRIP_HIGHTLIGHTS = "trip_highlights";
 
+    const COL_PLACE_OVERVIEW = "place_overview";
+    const COL_IMPORTANT_INFORMATION = "important_information";
 
     /**
      * The table associated with the model.
@@ -107,23 +112,28 @@ class TourModel extends Model
     {
         return env('WEBSITE_BASE_URL') . $this->getUrl();
     }
-
+    public function tourSchedule(): HasMany
+    {
+        return $this->hasMany(TourSchedule::class, 'tour_id', 'id');
+    }
     /**
      * @param $pictures
      * @return mixed
      */
-    // public function getImageBannerAttribute($pictures)
-    // {
-    //     return json_decode($pictures, true);
-    // }
+     public function getImageAttribute($pictures)
+     {
+         return json_decode($pictures, true);
+     }
 
-    // public function setImageBannerAttribute($pictures)
-    // {
-    //     if (is_array($pictures)) {
-    //         $this->attributes['image_banner'] = json_encode($pictures);
-    //     }
-    // }
-
+     public function setImageAttribute($pictures)
+     {
+         if (is_array($pictures)) {
+             $this->attributes['image'] = json_encode($pictures);
+         }
+     }
+    public function partnershipBranch(){
+         return $this->belongsToMany(PartnershipBranch::class,'tour_partnership_branch','tour_id','partnership_branch_id');
+    }
     // public function categories()
     // {
     //     return $this->belongsToMany(BlogCategory::class, 'blog_post_category_relation',

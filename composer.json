@@ -7,9 +7,13 @@
     "require": {
         "php": "^7.3|^8.0",
         "asm-laravel-admin-ext/tmeditor": "^1.0",
-        "dddd/banner": "dev-fix-1",
+        "dddd/banner": "dev-main",
         "dddd/blog": "dev-main",
+        "dddd/catalog-category": "dev-main",
+        "dddd/catalog-product": "dev-main",
+        "dddd/eav-attribute": "dev-main",
         "dddd/menu": "dev-main",
+        "dddd/partnership": "dev-main",
         "dddd/tour": "dev-main",
         "dddd/url": "dev-main",
         "encore/laravel-admin": "^1.8",
@@ -84,6 +88,22 @@
         {
             "type": "path",
             "url": "modules/dddd/banner"
+        },
+        {
+            "type": "path",
+            "url": "modules/dddd/catalog-product"
+        },
+        {
+            "type": "path",
+            "url": "modules/dddd/eav-attribute"
+        },
+        {
+            "type": "path",
+            "url": "modules/dddd/catalog-category"
+        },
+        {
+            "type": "path",
+            "url": "modules/dddd/partnership"
         }
     ],
     "minimum-stability": "dev",

@@ -86,7 +86,7 @@ class UrlController extends Controller
      */
     public function edit($id, Content $content)
     {
-        Permission::check('dtv.url.edit');
+        Permission::check('dddd.url.edit');
         $urlModel = $this->model->findOrFail($id);
         if ($urlModel->entity_type != UrlModel::ENTITY_TYPE_CUSTOM) {
             admin_toastr(__("Admin only is able to edit URL with Entity Type is Custom"), 'warning');

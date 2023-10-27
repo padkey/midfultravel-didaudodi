@@ -3,14 +3,7 @@
 namespace DDDD\Tour;
 
 use Illuminate\Support\ServiceProvider;
-use DDDD\Blog\Observers\BlogPostObserver;
-use DDDD\Blog\Observers\BlogCategoryObserver;
-use DDDD\Blog\Observers\PagesObserver;
 use DDDD\Tour\Observers\TourObserver;
-
-use DDDD\Blog\Models\BlogCategory;
-use DDDD\Blog\Models\Pages;
-use DDDD\Blog\Models\BlogPost;
 use DDDD\Tour\Models\TourModel;
 class TourServiceProvider extends ServiceProvider
 {
