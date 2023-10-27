@@ -3,7 +3,7 @@
 namespace DDDD\Tour\Http\Controllers;
 
 
-use DDDD\Tour\Models\Partnership;
+use DDDD\Tour\Models\TourModel;
 use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
@@ -69,7 +69,7 @@ class TourScheduleController extends AdminController
         $form->text('position', 'position');
         $form->tmeditor('description', 'description');
         $form->select('tour_id', 'Tour ID')
-            ->options(Partnership::all()->pluck('name', 'id'))
+            ->options(TourModel::all()->pluck('name', 'id'))
             ->default(Request::capture()->query('tour_id'))
             ->required();
         return $form;
