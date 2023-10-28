@@ -13,10 +13,11 @@ return new class extends Migration
     {
 
         Schema::table('tour', function (Blueprint $table) {
-            $table->text('important_info_1')->nullable();
-            $table->text('important_info_2')->nullable();
-            $table->text('important_info_3')->nullable();
-            $table->text('important_info_4')->nullable();
+            $table->text('trip_highlights')->nullable();
+            $table->string('image_trip_highlights', 255)->nullable();
+            $table->text('place_overview')->nullable();
+
+
         });
     }
 
@@ -26,11 +27,9 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('tour', function (Blueprint $table) {
-            $table->dropColumn('important_info_1');
-            $table->dropColumn('important_info_2');
-            $table->dropColumn('important_info_3');
-            $table->dropColumn('important_info_4');
-
+            $table->dropColumn('trip_highlights');
+            $table->dropColumn('image_trip_highlights');
+            $table->dropColumn('place_overview');
         });
     }
 };

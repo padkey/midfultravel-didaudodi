@@ -67,6 +67,7 @@ class TourScheduleController extends AdminController
         $form->text('title', 'title')->required();
         $form->text('sub_title', 'sub_title');
         $form->text('position', 'position');
+        $form->text('meal', 'Meals');
         $form->tmeditor('description', 'description');
         $form->select('tour_id', 'Tour ID')
             ->options(TourModel::all()->pluck('name', 'id'))
