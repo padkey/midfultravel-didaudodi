@@ -7,6 +7,7 @@
 @endsection
 @section('content')
 <style>
+
     @keyframes rotateMenu {
         0% {
         transform: rotateX(-90deg)
@@ -83,15 +84,15 @@
    /* .overview-area {
         margin-top: 100px;
     }*/
-    .container{
+   /* .container{
         width:70%;
         margin:auto;
-    }
+    }*/
     @media (max-width: 800px) {
-        .container{
+        /*.container{
             width:95%;
             margin:auto;
-        }
+        }*/
         .hightlight-underline-white::before  {
             content: "";
             position: absolute;
@@ -125,9 +126,7 @@
         font-size: 18px;
         text-align: center;
     }
-    .images-overview{
-        justify-content: center;
-    }
+
     .short_desc  {
         text-align: center;
         font-size: 24px!important;
@@ -145,19 +144,13 @@
 
     }
     .highlight-area {
-        padding: 0px 50px 150px 50px;
+        padding-bottom: 150px;
         margin-top: 80px;
     }
     .bg-pink-1{
         background: #faf1eb!important;
     }
-    .content-trip{
-        width: 80%;
-        margin: auto;
-    }
-    .content-trip img{
-        width: 100%;
-    }
+
     .c_margin{
         margin-top: auto;
         margin-bottom: auto;
@@ -202,7 +195,15 @@
         margin: 0 10%;
         border-bottom: 3px solid #024f43;
     }
-
+    .single-gallery-image{
+        height: 300px;
+    }
+    .mb-10{
+        margin-bottom: 10px;
+    }
+    .mb-20{
+        margin-bottom: 20px;
+    }
 </style>
 	<!-- Start Sample Area -->
 	<{{--section class="sample-text-area">
@@ -244,7 +245,21 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
              </div>
          </div>
      </div>
+<style>
+    .image-l img{
+        width: 100%;
+        max-height: 450px;
+        object-fit: cover;
+    }
+    .image-l{
+        margin-bottom: 10px;
+    }
+    .content-trip{
+        align-items: center;
+        justify-content: center;
+    }
 
+</style>
     <div class="highlight-area bg-pink-1 mt-100 ">
         <div class="section-icon" style="top:-45px">
             <img src="{{url('/frontend/images/hightlight.png')}}" alt="">
@@ -254,12 +269,12 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
 
         </div>
 
-        <div class="content-trip">
-            <div class="row ">
-                <div class="col-md-6">
+        <div class="container">
+            <div class="row content-trip">
+                <div class="col-xl-6 col-lg-11 image-l">
                     <img src="{{url('/uploads/'.$tour->image_trip_highlights)}}" alt="">
                 </div>
-                <div class="col-md-6 c_margin">
+                <div class="col-xl-6 col-lg-11 c_margin">
                     {!! $tour->trip_highlights !!}
                 </div>
             </div>
@@ -267,19 +282,16 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
 
     </div>
     <style>
-        iframe{
-            width: 100%;
-            height:600px;
-        }
+
         #map{
             width: 100%;
-            height:400px;
+            height:500px;
         }
         .marker {
             background-image: url('/frontend/images/position5.png');
             background-size: cover;
-            width: 70px;
-            height: 70px;
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
             cursor: pointer;
         }
@@ -289,6 +301,26 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
         .mapboxgl-popup-content {
             text-align: center;
             font-family: 'Open Sans', sans-serif;
+        }
+        .green-2{
+            color: #024f43;
+            font-style: normal;
+            font-weight: 600;
+            font-family: "Raleway", sans-serif!important;
+            font-size: 18px!important;
+
+        }
+        .img-subtitle{
+            width: 50px;
+            height: 50px;
+        }
+        .img-subtitle img{
+            width: 40px;
+            height: 40px;
+        }
+        .decs-schedule p {
+            font-family: 'Open Sans', sans-serif!important;
+            font-size: 17px!important;
         }
     </style>
     <div class="schedule-area mt-100">
@@ -300,77 +332,22 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
                     <h2>Khám phá đông nam á- 18 day/17 night</h2>
                 </div>
             </div>
-            <div>
-{{--
-                <iframe src='https://api.mapbox.com/styles/v1/mapbox/streets-v12.html?title=false&zoomwheel=false&access_token=pk.eyJ1IjoidG9hbmNodW9uZyIsImEiOiJjbG80MG9zOXkwbWthMm11ZGFtcXFvdTZlIn0.VBX96EkqFGqhVwBrwSpw8A#15/37.771/-122.436/45/70' > </iframe>
---}}
-            </div>
             <div id='map'></div>
-
             <div>
-                @php
-                    $dataPosition =[];
-                    $dataPosition2 =[];
-                @endphp
                 @foreach($tour->tourSchedule as $key => $schedule)
-                    @php
-                        $position = $schedule->position;
-                        $position = explode(',',$position);
-                           $lng = (int)$position[0];
-                           $lat = (int)$position[1];
-
-                           array_push($dataPosition,
-                            [
-                               'type'=> 'FeatureCollection',
-                               'geometry'=> [
-                                   'type'=> 'Point',
-                                   'coordinates'=> [ $lng, $lat]
-                               ],
-                               'properties'=> [
-                                   'title'=> 'Mapbox',
-                                   'description'=> 'Washington, D.C.'
-                               ],
-                           ]);
-                    @endphp
                     <div class="schedule-day-{{$schedule->id}}">
                         <div class="title-schedule" data-id="{{$schedule->id}}" data-position="{{$schedule->position}}">
                             <span>{{$schedule->title}}</span> <span class="icon-close icon-action-{{$schedule->id}} down-up-action">   </span>
                         </div>
-                        <div class="content-schedule-{{$schedule->id}} dis-none decs-schedule">
+                        <div class="content-schedule-{{$schedule->id}} dis-none decs-schedule mt-20 mb-20">
+                            <h4 class="green-2 font-bold mb-20"><span class="img-subtitle"><img src="{{url('/frontend/images/position7.png')}}" alt="" ></span>{{$schedule->sub_title}}</h4>
                             {!! $schedule->description !!}
                         </div>
                     </div>
-                    {{--<script>
-                        let position = {{$schedule->position}};
-                        position = position.split(',');
-                        let lng = parseInt(position[0]);
-                        let lat = parseInt(position[1]);
-                        const geojson = {
-                            'type': 'FeatureCollection',
-                            'features': [
-                                {
-                                    'type': 'Feature',
-                                    'geometry': {
-                                        'type': 'Point',
-                                        'coordinates': [lng, lat]
-                                    },
-                                    'properties': {
-                                        'title': 'Mapbox',
-                                        'description': 'Washington, D.C.'
-                                    }
-                                }
-                            ]
-                        };
-                    </script>--}}
 
                 @endforeach
-
-              {{--@php$dataPosition2 =  json_encode($dataPosition2)@endphp--}}
-
-             {{--   <input type="hidden" value="{{$dataPosition}}" class="dataPosition">--}}
                 <input type="hidden" class="region" value="{{$tour->region}}">
             </div>
-
         </div>
     </div>
 
@@ -727,41 +704,85 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
 
     </div>
 </div>
-<div class="section-top-border mt-100">
+    <style>
+        .contact{
+
+        }
+        .modal-header{
+            background-color: #80b157;
+        }
+        .modal-title{
+            color: white;
+        }
+        .title-contact{
+            max-width:800px;
+            margin: auto;
+        }
+    </style>
+<div class="contact mt-180 bg-pink-1">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-md-8">
-                <h3 class="mb-30">Yêu cầu báo giá</h3>
-                <form action="#">
-                    <div class="mt-10">
-                        <input type="text" name="first_name" placeholder="First Name"
-                               onfocus="this.placeholder = ''" onblur="this.placeholder = 'First Name'" required
-                               class="single-input">
-                    </div>
-                    <div class="mt-10">
-                        <input type="text" name="phone" placeholder="Phone"
-                               onfocus="this.placeholder = ''" onblur="this.placeholder = 'First Name'" required
-                               class="single-input">
-                    </div>
-                    <div class="mt-10">
-                        <input type="email" name="EMAIL" placeholder="Email address"
-                               onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email address'" required
-                               class="single-input">
-                    </div>
-
-                    <div class="mt-10">
-                            <textarea class="single-textarea" placeholder="Message" onfocus="this.placeholder = ''"
-                                      onblur="this.placeholder = 'Message'" required></textarea>
-                    </div>
-                    <button class="boxed-btn3">Gửi</button>
-
-                </form>
+        <div class="section-icon">
+            <img src="{{url('/frontend/images/message1.png')}}" alt="" style="border-radius:0px; top: -45px">
+            <div class="title-center" style=" margin-bottom: 0px;">
+                <h1 class="hightlight-underline-green">GET IN TOUCH</h1>
+                <h2 class="title-contact">We love to talk travel. If you have any questions, please don't hesitate to get in touch. We're here to help!</h2>
+                <button type="button" class="btn btn-shop mt-20" data-toggle="modal" data-target="#exampleModalCenter">
+                    Enquire
+                </button>
             </div>
         </div>
     </div>
 </div>
+{{--  <div class="book_btn d-none d-lg-block">
+      <a href="#test-form" class="popup-with-form">Requỉe</a>
+  </div>--}}
 <!-- end-companion -->
 
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div>
+                        <h1 class="modal-title" id="exampleModalLongTitle">Contact Us</h1>
+                        <p class="modal-title">
+                            We're experts who take pride in tailor-made itineraries that suit any need. Please fill in the form below and a member of our team will be in touch shortly.
+                        </p>
+                    </div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="#">
+                        <div class="row mt-20">
+                            <div class="col-xl-6">
+                                <input  class="form-control" placeholder="Name">
+                            </div>
+                            <div class="col-xl-6">
+                                <input class="form-control"  placeholder="Phone">
+                            </div>
+                        </div>
+                        <div class="row mt-20">
+                            <div class="col-xl-6">
+                                <input class="form-control" placeholder="Email">
+                            </div>
+
+                        </div>
+                        <div class="row mt-20">
+                            <div class="col-xl-12">
+                                <textarea class="form-control" placeholder="Message"></textarea>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer mt-30">
+                    <button type="button" class="btn btn-shop">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection
 @section('script')
 <script>
@@ -823,8 +844,8 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
         $('.title-schedule').click(function(){
             let position = $(this).data('position');
             position = position.split(',');
-            let lng = parseInt(position[1]);
-            let lat = parseInt(position[0]);
+            let lng = parseFloat(position[1]);
+            let lat = parseFloat(position[0]);
            // console.log(position)
 
             // change color title end show description
@@ -833,7 +854,7 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
                 // cho map di chuyển tới tọa độ
                 map.flyTo({
                     center: [lng,lat], // Tọa độ vị trí cần zoom
-                    zoom: 10 // Mức độ zoom cho vị trí cần zoom
+                    zoom: 13 // Mức độ zoom cho vị trí cần zoom
                 });
                 // đổi màu và show nội dung
                 $('.content-schedule-'+id).removeClass('dis-none');
@@ -859,7 +880,7 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
 
         var owl6 = $('.owl-six');
         owl6.owlCarousel({
-            items:4,
+            items:3,
             loop:true,
             nav:true,
             margin:10,
@@ -887,12 +908,12 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
 
                 },
                 1190:{
-                    items:4,
+                    items:3,
                     nav:true,
                     loop:true
                 },
                 1620:{
-                    items:4,
+                    items:3,
                     nav:true,
                     loop:true
                 },
