@@ -29,8 +29,8 @@ class TourController extends Controller
             $position = $schedule->position;
             $position = explode(',',$position);
             // google map dịch ngược
-            $lng = (int)$position[1];
-            $lat = (int)$position[0];
+            $lng = (double)$position[1];
+            $lat = (double)$position[0];
 
             $marker = array(
                 'type' => 'Feature',
