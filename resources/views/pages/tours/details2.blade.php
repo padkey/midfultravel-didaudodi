@@ -320,7 +320,7 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
         }
         .decs-schedule p {
             font-family: 'Open Sans', sans-serif!important;
-            font-size: 17px!important;
+            font-size: 16px!important;
         }
     </style>
     <div class="schedule-area mt-100">
@@ -329,7 +329,7 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
                 <img src="{{url('/frontend/images/kinh-lup.gif')}}" alt="" style="border-radius: 0">
                 <div class="title-center">
                     <h1 class="hightlight-underline-green">LỊCH TRÌNH</h1>
-                    <h2>Khám phá đông nam á- 18 day/17 night</h2>
+                    <h2>{{$tour->name}}</h2>
                 </div>
             </div>
             <div id='map'></div>

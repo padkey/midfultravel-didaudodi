@@ -52,7 +52,7 @@
         p,span,a{
             font-family:"Cormorant Garamond",serif!important;
             color:#333333;
-            font-size: 20px;
+            /*font-size: 18px!important;*/
             line-height: 1.3;
         }
 
