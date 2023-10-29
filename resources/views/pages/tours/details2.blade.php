@@ -31,56 +31,7 @@
     .dis-block{
         display:block;
     }
-    .title-schedule{
-        cursor: pointer;
-        border: 1px solid #ffff;
-        background: rgba(250, 241, 235, 0.71);
-        margin-top:2px;
-        padding: 15px 15px 15px 25px;
-        border-radius:5px;
-        display:grid;
-        grid-template-columns: 85% 15%;
-        transition: 1s;
-    }
-    .title-schedule:hover{
-        border: 1px solid #c5c5c5;
-    }
-    .title-schedule  span {
-        font-family: sans-serif!important;
-        font-weight: 600;
-        font-size:20px;
-        font-style: normal;
-        color: #2b2b2b;
-    }
-    .title-schedule-open{
-        border: 1px solid #FFFFFF;
-        background: #024f43;
-        font-weight: 400;
-    }
-    .title-schedule-open span{
-        color: #fff!important;
-    }
-    .down-up-action{
-        float:right;
-        margin-left:auto;
-        margin-top: auto;
-        margin-bottom: auto;
-        transition:0.5s;
-    }
-    .icon-open{
-        background: url('/frontend/images/down-up3.png');
-        background-size: 35px;
-        width: 35px;
-        height: 35px;
 
-    }
-    .icon-close{
-        background: url('/frontend/images/down-up2.png');
-        transform: rotate(-180deg);
-        background-size: 35px;
-        width: 35px;
-        height: 35px;
-    }
    /* .overview-area {
         margin-top: 100px;
     }*/
@@ -322,6 +273,91 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
             font-family: 'Open Sans', sans-serif!important;
             font-size: 16px!important;
         }
+        .meals{
+            margin: 0 50px 0 0;
+            float: right;
+            position: relative;
+            top: -5px;
+            display:none;
+        }
+        .down-up-action{
+            /*float:right;
+            margin-left:auto;
+            margin-top: auto;
+            margin-bottom: auto;
+            transition:0.5s;*/
+            left: 99%!important;
+            margin-left: -30px;
+            margin-top: -8px;
+            position: absolute;
+            top: 37%!important;
+        }
+        @media (max-width : 1100px) {
+            .meals{
+                margin: 10px 0 0 0;
+                float: none;
+                display: block;
+            }
+            .down-up-action{
+                /*float:right;
+                margin-left:auto;
+                margin-top: auto;
+                margin-bottom: auto;
+                transition:0.5s;*/
+                left: 98%!important;
+
+            }
+        }
+        .meals img{
+            width: 40px;
+            height: 40px;
+
+        }
+        .title-schedule{
+            cursor: pointer;
+            border: 1px solid #ffff;
+            background: rgba(250, 241, 235, 0.71);
+            margin-top:2px;
+            padding: 15px 15px 15px 25px;
+            border-radius:5px;
+            display:block;
+            /*grid-template-columns: 70%   30%;*/
+            transition: 1s;
+            position: relative;
+        }
+        .title-schedule:hover{
+            border: 1px solid #c5c5c5;
+        }
+        .title-schedule  span {
+            font-family: sans-serif!important;
+            font-weight: 600;
+            font-size:20px;
+            font-style: normal;
+            color: #2b2b2b;
+        }
+        .title-schedule-open{
+            border: 1px solid #FFFFFF;
+            background: #024f43;
+            font-weight: 400;
+        }
+        .title-schedule-open span{
+            color: #fff!important;
+        }
+
+        .icon-open{
+            background: url('/frontend/images/down-up3.png');
+            background-size: 35px;
+            width: 35px;
+            height: 35px;
+
+        }
+        .icon-close{
+            background: url('/frontend/images/down-up2.png');
+            transform: rotate(-180deg);
+            background-size: 35px;
+            width: 35px;
+            height: 35px;
+        }
     </style>
     <div class="schedule-area mt-100">
         <div class="container">
@@ -337,7 +373,23 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
                 @foreach($tour->tourSchedule as $key => $schedule)
                     <div class="schedule-day-{{$schedule->id}}">
                         <div class="title-schedule" data-id="{{$schedule->id}}" data-position="{{$schedule->position}}">
-                            <span>{{$schedule->title}}</span> <span class="icon-close icon-action-{{$schedule->id}} down-up-action">   </span>
+                            {{--<div style="display: flex;width: 100%;">
+                                <span>{{$schedule->title}} </span>
+                                <div class="meals down-up-action">
+                                    <span><img src="{{url('/frontend/images/meal1.png')}}" alt=""></span>
+                                    <span> {{$schedule->meal}}</span>
+                                </div>
+                            </div>
+
+                            <div class="down-up-action">
+                                <span class="icon-close icon-action-{{$schedule->id}} down-up-action">   </span>
+                            </div>--}}
+                            <span class="icon-close icon-action-{{$schedule->id}} down-up-action">   </span>
+
+                            <span>{{$schedule->title}} </span>
+
+                            <span class="meals"><img src="{{url('/frontend/images/meal1.png')}}" alt=""> {{$schedule->meal}}</span>
+
                         </div>
                         <div class="content-schedule-{{$schedule->id}} dis-none decs-schedule mt-20 mb-20">
                             <h4 class="green-2 font-bold mb-20"><span class="img-subtitle"><img src="{{url('/frontend/images/position7.png')}}" alt="" ></span>{{$schedule->sub_title}}</h4>
@@ -351,6 +403,32 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
         </div>
     </div>
 
+<style>
+    .nav-link{
+        background: #7fb254!important;
+        font-weight: 500!important;
+    }
+    .nav-tabs{
+        padding: 0!important;
+        border-bottom: 7px solid #004e42!important;
+    }
+    .nav-link.active{
+        background: #004e42!important;
+        color:#FFFFFF!important;
+        border-color: #004e42!important;
+    }
+    .nav-link{
+        font-size: 20px;
+        margin-right: 2px;
+        border: 0px!important;
+        color:#FFFFFF!important;
+
+    }
+    .tab-content{
+        margin: auto;
+        padding: 25px 20px 20px 20px;
+    }
+</style>
     <div class="important-info-area mt-100">
     <div class="container">
         <div class="section-icon">
@@ -360,8 +438,26 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
             </div>
         </div>
 
-        <div class="schedule-day-1">
+        <div class="tabs">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="home-tab" data-toggle="tab" data-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Our service</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="profile-tab" data-toggle="tab" data-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Tour condition</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="contact-tab" data-toggle="tab" data-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Condition in euro</button>
+                </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">{!! $tour->important_info_1 !!}</div>
+                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">{!! $tour->important_info_2 !!}</div>
+                <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">{!! $tour->important_info_3 !!}</div>
+            </div>
+{{--
             {!! $tour->important_information !!}
+--}}
         </div>
 
     </div>
@@ -862,6 +958,8 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
                 $(this).addClass('title-schedule-open');
                 $('.icon-action-'+id).removeClass('icon-close');
                 $('.icon-action-'+id).addClass('icon-open');
+                // show meal
+                $('.meals').css('display','block');
 
             } else {
                 map.flyTo({
@@ -874,6 +972,8 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
                 $(this).removeClass('title-schedule-open');
                 $('.icon-action-'+id).removeClass('icon-open');
                 $('.icon-action-'+id).addClass('icon-close');
+                //hidden meal
+                $('.meals').css('display','none');
             }
         })
 
