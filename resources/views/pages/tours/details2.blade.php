@@ -278,7 +278,6 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
             float: right;
             position: relative;
             top: -5px;
-            display:none;
         }
         .down-up-action{
             /*float:right;
@@ -296,7 +295,6 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
             .meals{
                 margin: 10px 0 0 0;
                 float: none;
-                display: block;
             }
             .down-up-action{
                 /*float:right;
@@ -387,9 +385,9 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
                             <span class="icon-close icon-action-{{$schedule->id}} down-up-action">   </span>
 
                             <span>{{$schedule->title}} </span>
-
-                            <span class="meals"><img src="{{url('/frontend/images/meal1.png')}}" alt=""> {{$schedule->meal}}</span>
-
+                            @if($schedule->meal !== null)
+                            <span class="meals meals-{{$schedule->id}} dis-none"><img src="{{url('/frontend/images/meal1.png')}}" alt=""> {{$schedule->meal}}</span>
+                            @endif
                         </div>
                         <div class="content-schedule-{{$schedule->id}} dis-none decs-schedule mt-20 mb-20">
                             <h4 class="green-2 font-bold mb-20"><span class="img-subtitle"><img src="{{url('/frontend/images/position7.png')}}" alt="" ></span>{{$schedule->sub_title}}</h4>
@@ -959,7 +957,8 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
                 $('.icon-action-'+id).removeClass('icon-close');
                 $('.icon-action-'+id).addClass('icon-open');
                 // show meal
-                $('.meals').css('display','block');
+                $('.meals-'+id).addClass('dis-block');
+                $('.meals-'+id).removeClass('dis-none');
 
             } else {
                 map.flyTo({
@@ -973,7 +972,8 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
                 $('.icon-action-'+id).removeClass('icon-open');
                 $('.icon-action-'+id).addClass('icon-close');
                 //hidden meal
-                $('.meals').css('display','none');
+                $('.meals-'+id).addClass('dis-none');
+                $('.meals-'+id).removeClass('dis-block');
             }
         })
 
