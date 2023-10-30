@@ -75,7 +75,7 @@ class PartnershipBranchController extends AdminController
         $form->text('name', 'Name')->required();
         $form->image('image','Image')->uniqueName()->required();
         $form->text('address', 'Address');
-
+        $form->text('link_website', 'Link Website');
         $form->text('short_description', 'Short Description');
         $form->tmeditor('description', 'Description');
         $form->select('partnership_id', 'Partnership ID')
