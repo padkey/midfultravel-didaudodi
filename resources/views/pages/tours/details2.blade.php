@@ -386,13 +386,17 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
         .tour-name{
             margin-bottom:10px;
         }
+        .day-title{
+            display: block;
+            width: 95%;
+        }
     </style>
     <div class="schedule-area mt-100">
         <div class="container">
             <div class="section-icon">
                 <img src="{{url('/frontend/images/kinh-lup.gif')}}" alt="" style="border-radius: 0">
                 <div class="title-center">
-                    <h1 class="hightlight-underline-green">LỊCH TRÌNH</h1>
+                    <h1 class="hightlight-underline-green">Schedule</h1>
                     <h2 class="tour-name">{{$tour->name}}</h2>
                 </div>
             </div>
@@ -414,7 +418,7 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
                             </div>--}}
                             <span class="icon-close icon-action-{{$schedule->id}} down-up-action">   </span>
 
-                            <span>{{$schedule->title}} </span>
+                            <span class="day-title">{{$schedule->title}} </span>
                             @if($schedule->meal !== null)
                             <span class="meals meals-{{$schedule->id}} dis-none"><img src="{{url('/frontend/images/meal1.png')}}" alt=""> {{$schedule->meal}}</span>
                             @endif
@@ -858,8 +862,9 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
         padding: 0 0 0 10px;
         transition:0.5s;
     }
-    .desc-partner h2{
+    .desc-partner h3{
         color: #FFFFFF;
+        font-size: 27px;
     }
     .desc-partner p{
         color: #FFFFFF;
@@ -890,7 +895,7 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
                         <img src="{{url('/uploads/'.$partnershipBranch->image)}}" alt=""  style="">
                     </div>
                     <div class="desc-partner">
-                        <h2 style="margin-left: 5px;">{{$partnershipBranch->name}}</h2>
+                        <h3 style="margin-left: 5px;">{{$partnershipBranch->name}}</h3>
                         <p style="margin-left: 5px;">Address : {{$partnershipBranch->address}}</p>
                     </div>
                 </a>
