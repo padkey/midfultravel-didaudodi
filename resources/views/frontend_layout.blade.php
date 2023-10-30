@@ -526,7 +526,7 @@
                     <div class="col-xl-5 follow-us" >
                         <div class="footer_widget">
                             <h3 class="footer_title_2">
-                               {{trans('messages.follow')}}  Didaudodi
+                               {{trans('messages.follow')}}  Didaudodi Mindfultravel
                             </h3>
                             <a href="#">
                                 <i class="fa fa-facebook-square"></i>
