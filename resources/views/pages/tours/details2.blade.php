@@ -105,6 +105,9 @@
         margin-top: auto;
         margin-bottom: auto;
     }
+    .content-right{
+
+    }
     .title-center{
         text-align: center;
         margin-top: 5px;
@@ -270,9 +273,9 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
         <div class="container">
             <div class="row content-trip">
                 <div class="col-xl-6 col-lg-11 image-l">
-                    <img src="{{url('/uploads/'.$tour->image_trip_highlights)}}" alt="">
+                    <img class="image-li" src="{{url('/uploads/'.$tour->image_trip_highlights)}}" alt="">
                 </div>
-                <div class="col-xl-6 col-lg-11 c_margin">
+                <div class="col-xl-6 col-lg-11 c_margin content-right">
                     {!! $tour->trip_highlights !!}
                 </div>
             </div>
@@ -1034,6 +1037,11 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
     </div>
 @endsection
 @section('script')
+        <script>
+            var element = document.querySelector('.content-right');
+            alert(element.offsetHeight)
+            $('.image-li').css('height',element.offsetHeight);
+        </script>
 <script>
         mapboxgl.accessToken = 'pk.eyJ1IjoidG9hbmNodW9uZyIsImEiOiJjbG80MG9zOXkwbWthMm11ZGFtcXFvdTZlIn0.VBX96EkqFGqhVwBrwSpw8A';
         // Mã jQuery xử lý sau khi trang đã tải xong
