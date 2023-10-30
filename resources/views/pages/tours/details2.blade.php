@@ -845,7 +845,7 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
         <div class="row">
             @foreach($tour->partnershipBranch as $partnershipBranch)
             <div class="col-md-6 mt-20">
-                <a href="/partnership-branch/{{$partnershipBranch->url}}" class="details-partner ">
+                <a href="{{$partnershipBranch->link_website}}" class="details-partner">
                     <div class="image-partner" >
                         <img src="{{url('/uploads/'.$partnershipBranch->image)}}" alt=""  style="">
                     </div>
