@@ -75,7 +75,7 @@
         width:75px;
     }
     .cacdiemden{
-        font-size: 18px;
+        font-size: 20px;
         text-align: center;
     }
 
@@ -85,16 +85,13 @@
 
     }
     .short_desc  p{
-        font-size: 24px!important;
+        font-size: 20px!important;
     }
     .short_desc  span {
-        font-size: 24px!important;
+        font-size: 20px!important;
 
     }
-    .cacdiemden{
-        font-size: 24px;
 
-    }
     .highlight-area {
         padding-bottom: 100px;
         margin-top: 80px;
@@ -386,9 +383,12 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
         .tour-name{
             margin-bottom:10px;
         }
-        .day-title{
-            display: block;
-            width: 95%;
+
+        @media (max-width: 800px) {
+            .day-title{
+                display: block;
+                width: 95%;
+            }
         }
     </style>
     <div class="schedule-area mt-100">
@@ -396,7 +396,7 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
             <div class="section-icon">
                 <img src="{{url('/frontend/images/kinh-lup.gif')}}" alt="" style="border-radius: 0">
                 <div class="title-center">
-                    <h1 class="hightlight-underline-green">Schedule</h1>
+                    <h1 class="hightlight-underline-green">Itinerary</h1>
                     <h2 class="tour-name">{{$tour->name}}</h2>
                 </div>
             </div>
@@ -864,10 +864,11 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
     }
     .desc-partner h3{
         color: #FFFFFF;
-        font-size: 27px;
+        font-size: 26px;
     }
     .desc-partner p{
         color: #FFFFFF;
+        font-size: 17px;
     }
     .image-partner img{
         width: 100%;
