@@ -374,18 +374,21 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
             transition: 1s;
             position: relative;
         }
-        .title-schedule:hover .icon-close{
-            /*border: 1px solid #c5c5c5;*/
-            background: url('/frontend/images/donw-up7.png');
-            transform: rotate(-180deg);
-            background-size: 40px;
-            width: 40px;
-            height: 40px;
-            transition: 0.2s;
-        }
-         .title-schedule:hover .day-title{
-             font-size: 21px!important;
-             transition: 0.5s;
+
+         @media (min-width: 900px) {
+             .title-schedule:hover .day-title{
+                 font-size: 21px!important;
+                 transition: 0.5s;
+             }
+             .title-schedule:hover .icon-close{
+                 /*border: 1px solid #c5c5c5;*/
+                 background: url('/frontend/images/donw-up7.png');
+                 transform: rotate(-180deg);
+                 background-size: 40px;
+                 width: 40px;
+                 height: 40px;
+                 transition: 0.2s;
+             }
          }
         .title-schedule  span {
             font-family: 'Raleway', sans-serif!important;
