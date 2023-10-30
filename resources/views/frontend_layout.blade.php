@@ -399,7 +399,7 @@
             padding-bottom: 80px;
         }
         .title_address {
-            font-size: 18px;
+            font-size: 20px;
             font-weight: 600;
             margin-bottom: 5px;
             font-style: normal;
@@ -407,7 +407,7 @@
         .footer_title_1 {
             font-size: 35px;
             font-weight: 400;
-            /* color: #fff; */
+             color: black;
             /* margin-bottom: 45px; */
         }
         .footer_text {
@@ -418,7 +418,7 @@
             font-weight: 600;
             font-style: normal;
 
-            color: #c7c7c7;
+            color: #5e5e5e;
             /* margin-bottom: 45px; */
         }
         .input-dk{
@@ -427,8 +427,8 @@
         .footer_2 {
             margin-top:50px;
         }
-        .footer_content_address {
-            font-size: 17px;
+        .footer_content_address  a{
+            font-size: 18px!important;
             font-weight: 500;
             margin-left: 10px;
             font-style: normal;
@@ -487,20 +487,23 @@
                 </div>
                 <div class="row footer_2">
                     <div class="col-xl-7">
-                        <h3 class="footer_title_2">- {{trans('messages.our_partnership')}}</h3>
+                        <h3 class="footer_title_2"> {{trans('messages.our_partnership')}}</h3>
                         <div class="row practice-center" style="margin-top: 10px;">
-                            <div class="col-xl-4" style="margin-top: 20px;">
-                                <div class="footer_widget">
-                                    <h3 class="title_address">
-                                    Iuteressere Monastery
-                                    </h3>
-                                    <p class="footer_content_address">Lieu dit Le Pey</p>
-                                    <p class="footer_content_address">8 Rue des Fans</p>
-                                    <p class="footer_content_address">77510 Villeneuve-sur-</p>
+                            @foreach($allPartnership as $partnership)
+                                <div class="col-xl-4" style="margin-top: 20px;">
+                                    <div class="footer_widget">
+                                        <h3 class="title_address">
+                                            {{$partnership->name}}
+                                        </h3>
+                                        @foreach($partnership->partnershipBranch as $branch)
+                                            <p class="footer_content_address"><a href="{{$branch->link_website}}"> - {{$branch->name}}</a></p>
+                                        @endforeach
 
+
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-xl-4" style="margin-top: 20px;">
+                            @endforeach
+                            {{--<div class="col-xl-4" style="margin-top: 20px;">
                                 <div class="footer_widget">
                                     <h3 class="title_address">
                                     Plum Village France
@@ -540,14 +543,14 @@
                                     </h3>
                                     <p class="footer_text">8 Rue des Fans</p>
                                 </div>
-                            </div>
+                            </div>--}}
 
                         </div>
                     </div>
                     <div class="col-xl-5" >
                         <div class="footer_widget">
                             <h3 class="footer_title_2">
-                              -  {{trans('messages.follow')}}  Didaudodi
+                               {{trans('messages.follow')}}  Didaudodi
                             </h3>
                             <a href="#">
                                 <i class="fa fa-facebook-square"></i>
