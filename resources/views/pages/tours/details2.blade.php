@@ -149,6 +149,7 @@
     }
     .single-gallery-image{
         height: 250px;
+        margin-top:0px!important;
     }
     .mb-10{
         margin-bottom: 10px;
@@ -159,6 +160,15 @@
     .images-overview{
         width:90%;
         margin:auto;
+    }
+    @media (max-width: 800px) {
+        .images-overview{
+            width:100%;
+            margin:auto;
+        }
+        .container{
+            max-width: 100%;
+        }
     }
     b{
         font-size: 25px!important;
@@ -509,6 +519,19 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
     #myTabContent table{
         width: 100%!important;
     }
+    @media (max-width: 830px) {
+        .nav-tabs{
+            display:block;
+        }
+        .nav-link{
+            width: 100%;
+        }
+        .tab-content{
+            margin: auto;
+            padding: 25px 0px 0px 0px;
+            transition: 0.2s;
+        }
+    }
 </style>
     <div class="important-info-area mt-100">
     <div class="container">
@@ -531,7 +554,7 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
                     <button class="nav-link" id="contact-tab" data-toggle="tab" data-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Condition in euro</button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="practice-tab" data-toggle="tab" data-target="#practice" type="button" role="tab" aria-controls="practice" aria-selected="false">Schedule in mindful center</button>
+                    <button class="nav-link" id="practice-tab" data-toggle="tab" data-target="#practice" type="button" role="tab" aria-controls="practice" aria-selected="false">Schedule practice</button>
                 </li>
             </ul>
             <div class="tab-content" id="myTabContent">

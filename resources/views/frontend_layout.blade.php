@@ -110,16 +110,16 @@
             background-color: rgba(255,255,255,0.9);
             color: #a29e9e;
             font-size: 18px;
-            border: 1px solid rgba(192, 192, 192, 0.16);
+            border: 1px solid rgba(227, 227, 227, 0.16);
         }
         .owl-carousel .owl-nav div i{
             font-weight: 900;
         }
         .owl-prev{
-            left: -20px!important;
+            left: -30px!important;
         }
         .owl-next{
-            right: -20px!important;
+            right: -30px!important;
         }
 
         .owl-nav div:hover{
