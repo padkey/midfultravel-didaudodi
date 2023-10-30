@@ -160,6 +160,10 @@
         width:90%;
         margin:auto;
     }
+    b{
+        font-size: 25px!important;
+        font-weight: 900!important;
+    }
 </style>
 	<!-- Start Sample Area -->
 	<{{--section class="sample-text-area">
@@ -493,7 +497,15 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
     .tab-content p,span{
         font-size: 19px!important;
     }
-
+    #myTabContent .active ul li {
+        list-style: circle;
+        display: list-item;
+        color: #004e42;
+    }
+    #myTabContent .active ul{
+        margin-left: 20px;
+        margin-top: 10px;
+    }
 </style>
     <div class="important-info-area mt-100">
     <div class="container">
