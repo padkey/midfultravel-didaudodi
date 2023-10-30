@@ -414,11 +414,10 @@
             /* color: #fff; */
         }
         .footer_title_2 {
-            font-size: 20px;
-            font-weight: 600;
+            font-size: 24px;
+            font-weight: 900;
             font-style: normal;
-
-            color: #5e5e5e;
+            color: black;
             /* margin-bottom: 45px; */
         }
         .input-dk{
@@ -433,7 +432,12 @@
             margin-left: 10px;
             font-style: normal;
             margin-bottom: 0px;
-            color:#9a9a9a;
+            color: #a6a6a6;
+        }
+        .footer_content_address  a:hover{
+            font-size: 20px!important;
+            color:#004e42!important;
+            transition:0.2s;
         }
         .footer_widget a {
             font-size: 35px;
@@ -442,6 +446,20 @@
         }
         .practice-center .col-xl-4{
             width: auto!important;
+        }
+        @media (max-width: 800px){
+            .support_our{
+                margin-top: 30px;
+            }
+            .parnership {
+                margin-top:30px;
+            }
+            .follow-us{
+                margin-top:30px;
+            }
+            .footer_2{
+                margin-top:0px;
+            }
         }
     </style>
 
@@ -475,7 +493,7 @@
 
                         </div>
                     </div>
-                    <div class="col-xl-5 mt-30">
+                    <div class="col-xl-5 support_our">
                         <h3 class="footer_title_1">
                         {{trans('messages.support_our_community')}}
                         </h3>
@@ -486,11 +504,11 @@
                     </div>
                 </div>
                 <div class="row footer_2">
-                    <div class="col-xl-7">
+                    <div class="col-xl-7 parnership">
                         <h3 class="footer_title_2"> {{trans('messages.our_partnership')}}</h3>
                         <div class="row practice-center" style="margin-top: 10px;">
                             @foreach($allPartnership as $partnership)
-                                <div class="col-xl-4" style="margin-top: 20px;">
+                                <div class="col-xl-4" style="margin-top: 0px;">
                                     <div class="footer_widget">
                                         <h3 class="title_address">
                                             {{$partnership->name}}
@@ -503,51 +521,9 @@
                                     </div>
                                 </div>
                             @endforeach
-                            {{--<div class="col-xl-4" style="margin-top: 20px;">
-                                <div class="footer_widget">
-                                    <h3 class="title_address">
-                                    Plum Village France
-                                    </h3>
-                                    <p class="footer_content_address">Lieu dit Le Pey</p>
-                                    <p class="footer_content_address">8 Rue des Fans</p>
-                                    <p class="footer_content_address">77510 Villeneuve-sur-</p>
-
-                                </div>
-                            </div>
-                            <div class="col-xl-4" style="margin-top: 20px;">
-                                <div class="footer_widget">
-                                    <h3 class="title_address">
-                                    Plum Village France
-                                    </h3>
-                                    <p class="footer_content_address">Lieu dit Le Pey</p>
-                                    <p class="footer_content_address">8 Rue des Fans</p>
-                                    <p class="footer_content_address">77510 Villeneuve-sur-</p>
-
-                                </div>
-                            </div>
-                            <div class="col-xl-4" style="margin-top: 20px;">
-                                <div class="footer_widget">
-                                    <h3 class="title_address">
-                                    Plum Village France
-                                    </h3>
-                                    <p class="footer_content_address">Lieu dit Le Pey</p>
-                                    <p class="footer_content_address">8 Rue des Fans</p>
-                                    <p class="footer_content_address">77510 Villeneuve-sur-</p>
-
-                                </div>
-                            </div>
-                            <div class="col-xl-4" style="margin-top: 20px;">
-                                <div class="footer_widget">
-                                    <h3 class="title_address">
-                                    Healing Spring Monastery
-                                    </h3>
-                                    <p class="footer_text">8 Rue des Fans</p>
-                                </div>
-                            </div>--}}
-
                         </div>
                     </div>
-                    <div class="col-xl-5" >
+                    <div class="col-xl-5 follow-us" >
                         <div class="footer_widget">
                             <h3 class="footer_title_2">
                                {{trans('messages.follow')}}  Didaudodi
