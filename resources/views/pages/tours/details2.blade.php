@@ -371,12 +371,21 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
             transition: 1s;
             position: relative;
         }
-        .title-schedule:hover{
+        .title-schedule:hover .icon-close{
             /*border: 1px solid #c5c5c5;*/
+            background: url('/frontend/images/donw-up7.png');
+            transform: rotate(-180deg);
+            background-size: 40px;
+            width: 40px;
+            height: 40px;
+            transition: 0.2s;
         }
+         .title-schedule:hover .day-title{
+             font-size: 21px!important;
+             transition: 0.5s;
+         }
         .title-schedule  span {
             font-family: 'Raleway', sans-serif!important;
-
             font-weight: 700;
             font-size:18px !important;
             font-style: normal;
@@ -396,14 +405,15 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
             background-size: 35px;
             width: 35px;
             height: 35px;
-
+            transition: 0.2s;
         }
         .icon-close{
-            background: url('/frontend/images/down-up7.png');
+            background: url('/frontend/images/down-up8.png');
             transform: rotate(-180deg);
             background-size: 35px;
             width: 35px;
             height: 35px;
+            transition: 0.2s;
         }
         .tour-name{
             margin-bottom:10px;
