@@ -72,6 +72,7 @@
     .section-icon img{
         border-radius: 50%;
         margin-bottom: 10px;
+        width:75px;
     }
     .cacdiemden{
         font-size: 18px;
@@ -95,7 +96,7 @@
 
     }
     .highlight-area {
-        padding-bottom: 150px;
+        padding-bottom: 100px;
         margin-top: 80px;
     }
     .bg-pink-1{
@@ -109,10 +110,10 @@
     .title-center{
         text-align: center;
         margin-top: 5px;
-        margin-bottom: 35px;
+        margin-bottom: 10px;
     }
     .title-center h1 {
-        font-size: 45px;
+        font-size: 35px;
     }
     .mt-100{
         margin-top:100px;
@@ -134,7 +135,7 @@
 
     .hightlight-underline-green {
         text-transform: uppercase;
-        padding-bottom: 10px;
+        /*padding-bottom: 10px;*/
         display: inline-block;
         position: relative;
     }
@@ -147,13 +148,17 @@
         border-bottom: 3px solid #024f43;
     }
     .single-gallery-image{
-        height: 300px;
+        height: 250px;
     }
     .mb-10{
         margin-bottom: 10px;
     }
     .mb-20{
         margin-bottom: 20px;
+    }
+    .images-overview{
+        width:90%;
+        margin:auto;
     }
 </style>
 	<!-- Start Sample Area -->
@@ -183,7 +188,7 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
 
              <div class="row images-overview owl-six owl-theme owl-carousel">
                  @foreach($tour->image as $image)
-                     <div >
+                     <div>
                          <a href="{{url('/uploads/'.$image)}}" class="img-pop-up">
                              <div class="single-gallery-image" style="background: url('/uploads/{{$image}}');"></div>
                          </a>
@@ -199,7 +204,7 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
 <style>
     .image-l img{
         width: 100%;
-        max-height: 450px;
+        max-height: 400px;
         object-fit: cover;
     }
     .image-l{
@@ -208,8 +213,14 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
     .content-trip{
         align-items: center;
         justify-content: center;
-    }
 
+    }
+    .content-trip p,span{
+        font-size:22px!important;
+    }
+    .content-trip h4 span{
+        font-size:26px!important;
+    }
 </style>
     <div class="highlight-area bg-pink-1 mt-100 ">
         <div class="section-icon" style="top:-45px">
@@ -258,7 +269,7 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
             font-style: normal;
             font-weight: 600;
             font-family: "Raleway", sans-serif!important;
-            font-size: 18px!important;
+            font-size: 17px!important;
 
         }
         .img-subtitle{
@@ -270,8 +281,9 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
             height: 40px;
         }
         .decs-schedule p {
-            font-family: 'Open Sans', sans-serif!important;
+            font-family: 'Raleway', sans-serif!important;
             font-size: 16px!important;
+            font-weight: 500;
         }
         .meals{
             margin: 0 50px 0 0;
@@ -324,12 +336,13 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
             position: relative;
         }
         .title-schedule:hover{
-            border: 1px solid #c5c5c5;
+            /*border: 1px solid #c5c5c5;*/
         }
         .title-schedule  span {
-            font-family: sans-serif!important;
-            font-weight: 600;
-            font-size:20px;
+            font-family: 'Raleway', sans-serif!important;
+
+            font-weight: 700;
+            font-size:18px !important;
             font-style: normal;
             color: #2b2b2b;
         }
@@ -356,6 +369,9 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
             width: 35px;
             height: 35px;
         }
+        .tour-name{
+            margin-bottom:10px;
+        }
     </style>
     <div class="schedule-area mt-100">
         <div class="container">
@@ -363,7 +379,7 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
                 <img src="{{url('/frontend/images/kinh-lup.gif')}}" alt="" style="border-radius: 0">
                 <div class="title-center">
                     <h1 class="hightlight-underline-green">LỊCH TRÌNH</h1>
-                    <h2>{{$tour->name}}</h2>
+                    <h2 class="tour-name">{{$tour->name}}</h2>
                 </div>
             </div>
             <div id='map'></div>
@@ -402,30 +418,82 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
     </div>
 
 <style>
+    .area-button-contact{
+        text-align: center;
+    }
+    .btn-enquire {
+        background-color: white;
+        border: 1px solid #7fb254!important;
+        color: #7fb254!important;
+        padding: 5px 15px 5px 15px;
+        border-radius: 10px;
+        margin-bottom: 15px;
+        font-weight: 900;
+        font-size: 22px;
+        transition: 0.5s;
+
+    }
+    .btn-enquire:hover{
+        background-color: #7fb254;
+        color: white!important;
+
+    }
+</style>
+    <div class="area-button-contact mt-10">
+        <button type="button" class="btn btn-enquire mt-20" data-toggle="modal" data-target="#exampleModalCenter">
+           <i class="fa fa-commenting-o"></i> Enquire
+        </button>
+    </div>
+
+
+
+<style>
     .nav-link{
         background: #7fb254!important;
         font-weight: 500!important;
+        transition: 0.5s;
+
     }
     .nav-tabs{
         padding: 0!important;
         border-bottom: 7px solid #004e42!important;
+        transition: 0.2s;
+
     }
     .nav-link.active{
         background: #004e42!important;
         color:#FFFFFF!important;
         border-color: #004e42!important;
+        transition: 0.5s;
     }
     .nav-link{
-        font-size: 20px;
+        font-size: 21px;
         margin-right: 2px;
         border: 0px!important;
         color:#FFFFFF!important;
-
+        transition: 0.5s;
     }
     .tab-content{
         margin: auto;
         padding: 25px 20px 20px 20px;
+        transition: 0.2s;
     }
+    .nav-item:hover .nav-link{
+        font-size: 24px!important;
+        transition: 0.2s;
+    }
+    .nav-link.active:hover{
+        background: #004e42!important;
+
+    }
+
+    .nav-link:hover{
+        background: #7fb254 !important;
+    }
+    .tab-content p,span{
+        font-size: 19px!important;
+    }
+
 </style>
     <div class="important-info-area mt-100">
     <div class="container">
@@ -447,11 +515,16 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
                 <li class="nav-item" role="presentation">
                     <button class="nav-link" id="contact-tab" data-toggle="tab" data-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Condition in euro</button>
                 </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="practice-tab" data-toggle="tab" data-target="#practice" type="button" role="tab" aria-controls="practice" aria-selected="false">Schedule in mindful center</button>
+                </li>
             </ul>
             <div class="tab-content" id="myTabContent">
                 <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">{!! $tour->important_info_1 !!}</div>
                 <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">{!! $tour->important_info_2 !!}</div>
                 <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">{!! $tour->important_info_3 !!}</div>
+                <div class="tab-pane fade" id="practice" role="tabpanel" aria-labelledby="practice-tab">{!! $tour->important_info_4 !!}</div>
+
             </div>
 {{--
             {!! $tour->important_information !!}
@@ -811,6 +884,7 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
         .title-contact{
             max-width:800px;
             margin: auto;
+            font-size: 28px;
         }
     </style>
 <div class="contact mt-180 bg-pink-1">
