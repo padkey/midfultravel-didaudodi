@@ -846,14 +846,14 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
         display:none;
     }
     .details-partner:hover .desc-partner{
-        opacity: 100%;
+        background: #004e42!important;
 
     }
+
     .desc-partner{
-        position: absolute;
+        padding: 5px!important;
         bottom:0px;
         background: black;
-        opacity: 80%;
         width: calc(100% );
         padding: 0 0 0 10px;
         transition:0.5s;
@@ -890,8 +890,8 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
                         <img src="{{url('/uploads/'.$partnershipBranch->image)}}" alt=""  style="">
                     </div>
                     <div class="desc-partner">
-                        <h2>{{$partnershipBranch->name}}</h2>
-                        <p>Address : {{$partnershipBranch->address}}</p>
+                        <h2 style="margin-left: 5px;">{{$partnershipBranch->name}}</h2>
+                        <p style="margin-left: 5px;">Address : {{$partnershipBranch->address}}</p>
                     </div>
                 </a>
             </div>
