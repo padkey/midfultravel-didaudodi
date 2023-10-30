@@ -838,6 +838,9 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
     }
     .details-partner{
         position: relative;
+        display: block;
+        width: 100%;
+        height: 100%;
     }
     .show-details-partner{
         display:none;
@@ -850,7 +853,6 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
         position: absolute;
         bottom:0px;
         background: black;
-
         opacity: 80%;
         width: calc(100% );
         padding: 0 0 0 10px;
