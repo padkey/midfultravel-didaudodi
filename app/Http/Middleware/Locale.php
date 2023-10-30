@@ -7,7 +7,7 @@ use DDDD\Banner\Models\Banner;
 use DDDD\Blog\Models\BlogCategory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\View;
-
+use DDDD\Partnership\Models\PartnershipModel;
 class Locale
 {
     /**
@@ -30,7 +30,8 @@ class Locale
             ->where('url','!=','show-home-left')->get();
         $logoWhite = Banner::with('items')->where('uuid','logo_white')->first();
         $logoBlack = Banner::with('items')->where('uuid','logo_black')->first();
-        View::share(compact('categoryPost','logoWhite','logoBlack'));
+        $allPartnership = PartnershipModel::with('partnershipBranch')->get();
+        View::share(compact('categoryPost','logoWhite','logoBlack','allPartnership'));
 
         return $next($request);
     }
