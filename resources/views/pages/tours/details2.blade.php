@@ -231,11 +231,11 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
     }
     .content-trip p{
         font-size:22px!important;
-        font-weight: 700;
+        font-weight: 600;
     }
     .content-trip span{
         font-size:22px!important;
-        font-weight: 700;
+        font-weight: 600;
     }
 
     .content-trip h4 span{
