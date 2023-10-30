@@ -506,6 +506,9 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
         margin-left: 20px;
         margin-top: 10px;
     }
+    #myTabContent table{
+        width: 100%;
+    }
 </style>
     <div class="important-info-area mt-100">
     <div class="container">
