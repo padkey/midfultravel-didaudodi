@@ -77,11 +77,12 @@
     .cacdiemden{
         font-size: 20px;
         text-align: center;
+        margin-bottom: 15px;
     }
 
     .short_desc  {
         text-align: center;
-        font-size: 24px!important;
+        font-size: 22px!important;
 
     }
     .short_desc  p{
@@ -198,13 +199,15 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
 
 
              <div class="row images-overview owl-six owl-theme owl-carousel">
-                 @foreach($tour->image as $image)
-                     <div>
-                         <a href="{{url('/uploads/'.$image)}}" class="img-pop-up">
-                             <div class="single-gallery-image" style="background: url('/uploads/{{$image}}');"></div>
-                         </a>
-                     </div>
-                 @endforeach
+                 @if(is_array($tour->image))
+                     @foreach($tour->image as $image)
+                         <div>
+                             <a href="{{url('/uploads/'.$image)}}" class="img-pop-up">
+                                 <div class="single-gallery-image" style="background: url('/uploads/{{$image}}');"></div>
+                             </a>
+                         </div>
+                     @endforeach
+                 @endif
              </div>
 
              <div class="short_desc mt-30">
@@ -226,11 +229,33 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
         justify-content: center;
 
     }
-    .content-trip p,span{
+    .content-trip p{
         font-size:22px!important;
+        font-weight: 700;
     }
+    .content-trip span{
+        font-size:22px!important;
+        font-weight: 700;
+    }
+
     .content-trip h4 span{
         font-size:26px!important;
+        color: #004e42!important;
+
+    }
+    .content-trip h4 strong{
+        font-size:26px!important;
+        color: #004e42!important;
+
+    }
+    .content-trip h1,h2,h3 span{
+        font-size:26px!important;
+        color: #004e42!important;
+
+    }
+    .content-trip h1,h2,h3 strong{
+        font-size:26px!important;
+        color: #004e42!important;
     }
 </style>
     <div class="highlight-area bg-pink-1 mt-100 ">
@@ -367,14 +392,14 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
         }
 
         .icon-open{
-            background: url('/frontend/images/down-up3.png');
+            background: url('/frontend/images/down-up5.png');
             background-size: 35px;
             width: 35px;
             height: 35px;
 
         }
         .icon-close{
-            background: url('/frontend/images/down-up2.png');
+            background: url('/frontend/images/down-up7.png');
             transform: rotate(-180deg);
             background-size: 35px;
             width: 35px;

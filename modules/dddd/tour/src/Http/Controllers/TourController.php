@@ -170,7 +170,6 @@ class TourController extends AdminController
 
         $form->tab(__("Content"), function ($form) {
             $form->tmeditor(TourModel::COL_IMPORTANT_INFORMATION, __("Important Information"));
-
             $form->tmeditor('important_info_1', __("Our Service"));
             $form->tmeditor('important_info_2', __("Tour Condition"));
             $form->tmeditor('important_info_3', __("Condition in euro"));
