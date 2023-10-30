@@ -1039,7 +1039,7 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
 @section('script')
         <script>
             var element = document.querySelector('.content-right');
-            alert(element.offsetHeight)
+           // alert(element.offsetHeight)
             $('.image-li').css('height',element.offsetHeight);
         </script>
 <script>
