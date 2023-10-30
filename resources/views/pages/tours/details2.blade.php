@@ -229,9 +229,9 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
         justify-content: center;
 
     }
-    .content-trip p{
+/*    .content-trip p{
         font-size:22px!important;
-        font-weight: 600;
+        font-weight: 400;
     }
     .content-trip span{
         font-size:22px!important;
@@ -256,7 +256,7 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
     .content-trip h1,h2,h3 strong{
         font-size:26px!important;
         color: #004e42!important;
-    }
+    }*/
 </style>
     <div class="highlight-area bg-pink-1 mt-100 ">
         <div class="section-icon" style="top:-45px">

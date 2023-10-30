@@ -394,7 +394,7 @@ return [
     | the extension files will be generated in this directory.
     */
     'extension_dir' => 'modules',
-    
+
     /*
     |--------------------------------------------------------------------------
     | Settings for extensions.
@@ -405,7 +405,7 @@ return [
     |
     */
     'extensions' => [
-        
+
         'tmeditor' => [
 
             //Set to false if you want to disable this extension
@@ -415,7 +415,7 @@ return [
            'config' => [
             'height' => 500,
             'language' => 'en',
-            'plugins' => 'print preview searchreplace autolink directionality visualblocks visualchars fullscreen image link media template code table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists wordcount imagetools textpattern help ',
+            'plugins' => 'textcolor colorpicker print preview searchreplace autolink directionality visualblocks visualchars fullscreen image link media template code table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists wordcount imagetools textpattern help ',
             'toolbar1' =>  " bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | styleselect formatselect fontselect fontsizeselect",
             'toolbar2' =>  "cut copy paste | searchreplace | bullist numlist | outdent indent blockquote | undo redo | link unlink anchor litebox responsivefilemanager image | media code | preview | forecolor backcolor",
             'toolbar3' =>  "bootstrap_icons | table | hr removeformat | subscript superscript | charmap emoticons fullscreen | ltr rtl | visualchars visualblocks nonbreaking pagebreak template",
@@ -439,9 +439,9 @@ return [
             'image_caption' => true,
             'images_upload_credentials' => true
           ]
-            
+
         ],
     ],
 
-    
+
 ];
