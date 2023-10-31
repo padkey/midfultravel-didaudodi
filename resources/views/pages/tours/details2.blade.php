@@ -231,12 +231,14 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
     }
     .content-trip span{
         font-family: 'Open Sans', sans-serif;
+        /*
         font-size:20px!important;
+        */
         font-weight: 600;
         color: #5d6162;
     }
     .content-trip h4 span{
-        font-size:24px!important;
+       /* font-size:24px!important;*/
         color: #004e42!important;
         font-weight: 700;
 
