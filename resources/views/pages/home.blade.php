@@ -1013,7 +1013,7 @@
                 <h1 >{{trans('messages.companions')}}</h1>
             </div>
             <input type="hidden" value="{{count($companions)}}" class="companionNumber">
-            <div class="team-profile owl-four owl-carousel  owl-theme">
+            <div class="team-profile owl-five owl-carousel  owl-theme">
                 @if($companions != null)
                 @foreach($companions as $companion)
                     <div class="profile-card">
