@@ -53,5 +53,6 @@ return [
     'get_in_touch' => 'Get in Touch',
     'see_more' => 'See more',
     'shrink' => 'Shrink',
-    'all_tours' => 'All tours'
+    'all_tours' => 'All tours',
+    'tours_took_place' => 'Tours took place'
 ];

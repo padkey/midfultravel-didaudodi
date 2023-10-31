@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use DDDD\Blog\Models\Pages;
 use DDDD\Url\Models\UrlModel;
@@ -19,8 +20,10 @@ class HomeController extends Controller
     public function index(Request $req)
     {
         $locale_code =   config('app.locale');
+        $currentDate = Carbon::now();
 
-        $tours = TourModel::where('locale_code',$locale_code)->where('is_active',1)->get();
+        $tours = TourModel::where('locale_code',$locale_code)->where('is_active',1)->where('date_end','>',$currentDate)->get();
+        $toursTookPlace = TourModel::where('locale_code',$locale_code)->where('is_active',1)->where('date_end','<',$currentDate)->get();
         //center
         $catePostsCenter = BlogCategory::with('posts')->where('url','show-home-center')->first();
         $listPostsCenter  = $catePostsCenter->posts();
@@ -54,7 +57,7 @@ class HomeController extends Controller
         return view('pages.home')->with(compact('blockValue',
             'sloganImage','bannerHomeImage','blackgroundCompanion','TourBackground',
             'blockOurTour','blockOurMission','blogPostsCenter','blockShortAboutUs',
-            'blogPostsLeft','blogPostsRight','tours','videos','companions'));
+            'blogPostsLeft','blogPostsRight','tours','videos','companions','toursTookPlace'));
     }
     public function showAbout(Request $req)
     {

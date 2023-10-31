@@ -719,34 +719,6 @@
 
         });
 
-        var owl2 = $('.owl-two');
-        owl2.owlCarousel({
-            items:3,
-            loop:true,
-            nav:true,
-            navText:['<i class="ti-angle-left"></i>','<i class="ti-angle-right"></i>'],
-            margin:20,
-            autoplay:true,
-            autoplayTimeout:1500,
-            autoplayHoverPause:true,
-            responsive:{
-                0:{
-                    items:1,
-                    nav:true
-                },
-                700:{
-                    items:2,
-                    nav:true
-                },
-                1200:{
-                    items:3,
-                    nav:true,
-                    loop:true
-                }
-            }
-            });
-
-
 
 
             var owl4 = $('.owl-four');
@@ -755,6 +727,7 @@
             loop:true,
             nav:true,
                 navText:['<i class="ti-angle-left"></i>','<i class="ti-angle-right"></i>'],
+                lazyLoad: true,
             autoplay:true,
             autoplayTimeout:1500,
             autoplayHoverPause:true,
@@ -804,6 +777,7 @@
             autoplay:true,
             autoplayTimeout:500,
             autoplayHoverPause:true,
+            lazyLoad: true,
             responsive:{
                 0:{
                     items:1,
@@ -821,52 +795,6 @@
             }
         });
 
-        var owl5 = $('.owl-five');
-        owl5.owlCarousel({
-            items:4,
-            loop:true,
-            nav:true,
-
-            navText:['<i class="ti-angle-left"></i>','<i class="ti-angle-right"></i>'],
-            autoplay:true,
-            autoplayTimeout:1500,
-            autoplayHoverPause:true,
-            responsive:{
-                0:{
-                    items:1,
-
-                    nav:true,
-                    loop:true,
-                },
-                600:{
-                    items:2,
-                    nav:true,
-                    loop:true
-                },
-
-                890:{
-                    items:3,
-                    nav:true,
-                    loop:true
-
-                },
-                1190:{
-                    items:4,
-                    nav:true,
-                    loop:true
-                },
-                1620:{
-                    items:4,
-                    nav:true,
-                    loop:true
-                },
-                /*2000:{
-                    items:5,
-                    nav:true,
-                    loop:false
-                }*/
-            }
-        });
 
     </script>
 
