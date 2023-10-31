@@ -566,7 +566,7 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
     .nav-link:hover{
         background: #7fb254 !important;
     }
-    .tab-content p span{
+    .tab-content span{
         font-size: 19px!important;
         font-family: 'Open Sans',sans-serif!important;
         font-weight: 500;
