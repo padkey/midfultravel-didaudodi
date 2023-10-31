@@ -304,8 +304,8 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
             color: #024f43;
             font-style: normal;
             font-weight: 600;
-            font-family: serif!important;
-            font-size: 17px!important;
+            font-family: sans-serif!important;
+            font-size: 18px!important;
 
         }
         .img-subtitle{
@@ -317,10 +317,11 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
             height: 40px;
         }
         .decs-schedule p {
-            font-family: serif!important;
+            font-family: sans-serif!important;
             font-size: 17px!important;
-            font-weight: 500;
+            font-weight: 600;
             line-height: 1.7;
+            color: #505050;
         }
         .meals{
             margin: 0 50px 0 0;
@@ -390,7 +391,7 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
              }
          }
         .title-schedule  span {
-            font-family:  serif!important;
+            font-family:  sans-serif!important;
             font-weight: 600;
             font-size:18px;
             font-style: normal;
@@ -405,7 +406,7 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
             color: #fff!important;
         }
         .title-schedule  .meals {
-            font-family:  serif!important;
+            font-family:  sans-serif!important;
             font-weight: 600;
             font-size:16px!important;
             font-style: normal;
