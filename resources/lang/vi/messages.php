@@ -59,7 +59,7 @@ return [
     'tours_took_place' => 'Chuyến du lịch đã diễn ra',
     'overview' => 'TỔNG QUAN',
     'trip_highlights' => 'ĐIỂM NỔI BẬT CỦA CHUYẾN ĐI',
-    'itinerary' => 'HÀNH TRÌNH',
+    'itinerary' => 'LỊCH TRÌNH',
     'important_information' => 'THÔNG TIN QUAN TRỌNG',
     'our_service' => 'Dịch vụ của chúng tôi',
     'tour_condition'=> 'Điều kiện tham quan',
