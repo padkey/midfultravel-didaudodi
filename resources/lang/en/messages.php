@@ -71,5 +71,6 @@ return [
     'message' => 'Message',
     'name' => 'Name',
     'phone_number' =>'Phone number',
-    'email' => 'Email'
+    'email' => 'Email',
+
 ];

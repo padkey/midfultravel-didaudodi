@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use DDDD\Blog\Models\Block;
 use DDDD\Blog\Models\Companion;
 use Illuminate\Http\Request;
@@ -20,10 +21,16 @@ class TourController extends Controller
     public function showDetails($url)
     {
         $locale_code =   config('app.locale');
+        $currentDate = Carbon::now();
+
         $companions = Companion::where('locale_code',$locale_code)->take(4)->get();
         $blackgroundCompanion = Block::where('locale_code',$locale_code)->where('code','blackground_companion')->first();
         $tour = TourModel::with('tourSchedule')->where('locale_code',$locale_code)
             ->where('url',$url)->where('is_active',1)->first();
+
+        $toursTookPlace = TourModel::where('locale_code',$locale_code)
+            ->where('url',$url)->where('is_active',1)->where('date_end','>',$currentDate)->get();
+
         $geojson = array('type' => 'FeatureCollection', 'features' => array());
         if(!is_null($tour)) {
             if(count($tour->tourSchedule) > 0){
@@ -55,7 +62,7 @@ class TourController extends Controller
         }
 
         $geojson =  json_encode($geojson);
-        return view('pages.tours.details2')->with(compact('tour','companions','blackgroundCompanion','geojson'));
+        return view('pages.tours.details2')->with(compact('tour','companions','blackgroundCompanion','geojson','toursTookPlace'));
 
     }
     public function showPageTourDetails($url){
