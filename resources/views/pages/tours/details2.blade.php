@@ -376,6 +376,7 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
              .title-schedule:hover .day-title{
                  font-size: 21px!important;
                  transition: 0.5s;
+                 color: #3a3a3a;
              }
              .title-schedule:hover .icon-close{
                  /*border: 1px solid #c5c5c5;*/
@@ -858,7 +859,7 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
         <h1 class="hightlight-underline-white" >{{trans('messages.companions')}}</h1>
     </div>--}}
     <div class="companion-container">
-
+        <input type="hidden" value="{{count($companions)}}" class="companionNumber">
         <div class="team-profile owl-five owl-carousel  owl-theme">
             @if($companions != null)
                 @foreach($companions as $companion)
@@ -1193,5 +1194,45 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
                 }*/
             }
         });
+    </script>
+    <script>
+        let companionNumber = parseInt($('.companionNumber').val());
+        var owl5 = $('.owl-five');
+        owl5.owlCarousel({
+            loop:true,
+            nav:true,
+            navText:['<i class="ti-angle-left"></i>','<i class="ti-angle-right"></i>'],
+            autoplay:true,
+            autoplayTimeout:1500,
+            autoplayHoverPause:true,
+            lazyLoad: true,
+            responsive:{
+                0:{
+                    items:1,
+                    nav:true,
+                    loop:true,
+                },
+                600:{
+                    items:2,
+                    nav:true,
+                    loop:true
+                },
+
+                890:{
+                    items:3,
+                    nav:true,
+                    loop:true
+                },
+                1190:{
+                    items:companionNumber,
+                    nav:true,
+                    loop:true
+                },
+                1620:{
+                    items:companionNumber,
+                    nav:true,
+                    loop:true
+                },
+            }});
     </script>
 @endsection

@@ -55,6 +55,8 @@ return [
     'get_in_touch' => 'Liên lạc',
     'see_more' => 'Xem thêm',
     'shrink' => 'Thu gọn',
-    'all_tours' => 'Tất cả các chuyến du lịch'
+    'all_tours' => 'Tất cả các chuyến du lịch',
+    'tours_took_place' => 'Chuyến du lịch đã diễn ra'
+
 
 ];

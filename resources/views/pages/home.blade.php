@@ -165,8 +165,6 @@
         .impatti_area{
             box-shadow: 10px 10px 15px 10px rgba(221,221,221,0.3);
             background-color:beige;
-
-
         }
         .impatti_area:hover{
             background:#faf1eb;
@@ -328,7 +326,9 @@
             padding-top: 20px;
             margin-bottom:50px;
             background-size: cover;
+            /*
             background-image: url('uploads/{{$TourBackground != null ? $TourBackground->image_one : 2 }}');
+            */
             border-radius:35px;
             width: 100%;
             margin: auto;
@@ -383,6 +383,7 @@
             background: #faf1eb;
             /* background: beige; */
             border-radius: 5px;
+            max-width: 550px;
         }
         @media (max-width: 800px) {
             .single_offers{
@@ -401,24 +402,8 @@
             margin-left: 15px ;
         }
 
-
-/*        .offers_area::before{
-            content: "";
-            position: absolute;
-            top: 0px;
-            right: 0px;
-            bottom: 0px;
-            left: 0px;
-            background-color: rgba(0,0,0,0.30);
-            border-radius:35px;
-
-
-        }*/
         .title-offer{
             color: #8b572a;
-        }
-        .single_offers {
-            /*box-shadow: 10px 10px 15px 10px rgba(221,221,221,0.3);*/
         }
         .single_offers:hover {
             box-shadow: 10px 10px 15px 10px rgba(221,221,221,0.3);
@@ -449,7 +434,7 @@
 
 
 
-        .block {
+/*        .block {
             position: relative;
 
         }
@@ -459,8 +444,8 @@
             position: absolute;
             left: -2px;
             top: -2px;
-            /*background: linear-gradient(45deg, #fb0094, #0000ff, #00ff00,#ffff00, #ff0000, #fb0094,
-            #0000ff, #00ff00,#ffff00, #ff0000);*/
+            !*background: linear-gradient(45deg, #fb0094, #0000ff, #00ff00,#ffff00, #ff0000, #fb0094,
+            #0000ff, #00ff00,#ffff00, #ff0000);*!
             background: linear-gradient(45deg, white, white, white,white, #faf1eb, #faf1eb,
             #faf1eb, #faf1eb,white, #faf1eb);
             background-size: 400%;
@@ -484,7 +469,7 @@
 
         .block:after {
             filter: blur(50px);
-        }
+        }*/
 
     </style>
     <div class="offers_area" >
@@ -497,7 +482,8 @@
                     </div>
                 </div>
             </div>
-			<div class="row owl-carousel owl-two owl-theme"  style="margin: auto;">
+            <input type="hidden" value="{{count($tours)}}" class="toursNumber">
+            <div class="row owl-carousel owl-two owl-theme"  style="margin: auto;">
                 @foreach($tours as $tour)
                     <div class="single_offers block" data-img="{{url('/uploads/'.$tour->image_thumbnail)}}">
                         <div class="about_thumb">
@@ -527,93 +513,51 @@
     </div>
     <!-- offers_area_end -->
 
-    <!-- picture -->
-    {{--<style>
-        .ndh_area{
-            padding-bottom:50px;
-            padding-top:50px;
-        }
-        .avatar-p{
-            border-radius: 85px;
-            margin: 0px 25px 0 25px;
-        }
-        .avatar-p img{
-            width: 185px;
-            border-radius: 90px;
-            height: 180px;
-            object-fit: cover;
-        }
-        .avatar-p h3{
-            text-align:center;
-            font-size:25px;
-            padding-top:10px;
-            font-weight: 100;
-            font-style: inherit;
-            max-width:200px;
-            margin: auto;
-
-        }
-        .avatar-ndh img{
-            width: 185px;
-            border-radius: 90px;
-            height: 180px;
-            object-fit: cover;
-        }
-        .section-avatar{
-            background-size: cover;
-        }
-        .ndh_title h3{
-            font-style: inherit;
-            font-weight: 700;
-            color:#8b572a;
-
-        }
-        .avatar-p:hover{
-            transform: scale(1.1);
-            transition: 0.1s;
-        }
-        .avatar-p:hover > a h3{
-            color:darkcyan;
-
+    <!-- Tour ddax qua -->
+    <style>
+        .bg-bg{
+            background-color:beige!important;
         }
     </style>
-    <div class="ndh_area">
-        <div class="container"style="margin:auto">
+    <div class="offers_area" >
+        <div class="container-pop-tour" style="">
             <div class="row">
-                <div class="ndh_title">
-                    <h3>{{trans('messages.companions')}}</h3>
+                <div class="col-xl-12">
+                    <div class="section_title text-center mb-20 mt-10">
+                        <h1>{{trans('messages.tours_took_place')}}</h1>
+                    </div>
                 </div>
             </div>
-            <hr style="margin-bottom:50px;"> <!--  -->
-            <div class="row" style="justify-content:center">
-                @foreach($companions as $companion)
-                <div class="avatar-p">
-                    <a href="">
-                        <img src="{{url('uploads/'.$companion->avatar)}}" alt=""  >
-                        <h3>{{$companion->name}}</h3>
-                    </a>
-                </div>
+            <input type="hidden" value="{{count($toursTookPlace)}}" class="toursTPNumber">
+            <div class="row owl-carousel owlTourTP owl-theme"  style="margin: auto;">
+                @foreach($toursTookPlace as $tour)
+                    <div class="single_offers bg-bg block" data-img="{{url('/uploads/'.$tour->image_thumbnail)}}">
+                        <div class="about_thumb">
+                            <img src="{{url('/uploads/'.$tour->image_thumbnail)}}" alt="">
+                        </div>
+                        <div class="offers_content">
+                            <div class="trangthai-category">
+                                <span class="event-label trangthai-open">{{trans('messages.registration_open')}}</span> <span  class="event-label">{{$tour->type_tour}}</span>
+                            </div>
+                            @php
+                                $date = date_create($tour->date_start);
+                                $date_start= date_format($date, 'd/m/Y');
+                                $date = date_create($tour->date_end);
+                                $date_end= date_format($date, 'd/m/Y');
+                            @endphp
+                            <b>{{$date_start}} - {{$date_end}}</b>
+                            <h2 class="title-offer">  {{$tour->name}}</h2>
+                            <i class="fa fa-map-marker" aria-hidden="true"></i> {{$tour->region}}
+                            <p class="short-desc"> {{$tour->short_description}} </p>
+                            <a href="/tours/{{$tour->url}}" class="btn btn-earth">{{trans('messages.more_infomation_&_register')}}</a>
+                        </div>
+                    </div>
+
                 @endforeach
-                <div class="avatar-p">
-                    <img src="{{url('frontend/images/z3.jpg')}}" alt="" >
-                    <h3>Sister Sac Nghiem Vietnamese</h3>
-                </div>
-                <div class="avatar-p">
-                    <img src="{{url('frontend/images/z4.jpg')}}" alt="" >
-                    <h3>Thay Phap Linh Inglese</h3>
-                </div>
-                <div class="avatar-p">
-                    <img src="{{url('frontend/images/z5.jpg')}}" alt=""  >
-                    <h3>Sister Hien Nghiem Inglese</h3>
-                </div>
-                <div class="avatar-p">
-                    <img src="{{url('frontend/images/z2.jpg')}}" alt=""  >
-                    <h3>Fabio Cappiello Organizzatore</h3>
-                </div>
             </div>
         </div>
-    </div>--}}
-    <!-- end-picture -->
+    </div>
+    <!-- end-Tour ddax qua -->
 
     <!-- video_area_start -->
     <style>
@@ -1068,6 +1012,7 @@
             <div class="title-companion" style="margin-bottom: 80px">
                 <h1 >{{trans('messages.companions')}}</h1>
             </div>
+            <input type="hidden" value="{{count($companions)}}" class="companionNumber">
             <div class="team-profile owl-four owl-carousel  owl-theme">
                 @if($companions != null)
                 @foreach($companions as $companion)
@@ -1282,4 +1227,106 @@
         </div>
     </div>
     about_area_end -->
+@endsection
+@section('script')
+
+    <script>
+        let toursNumber = parseInt($('.toursNumber').val());
+        var owl2 = $('.owl-two');
+        owl2.owlCarousel({
+            loop:true,
+            nav:true,
+            navText:['<i class="ti-angle-left"></i>','<i class="ti-angle-right"></i>'],
+            margin:20,
+            autoplay:true,
+            autoplayTimeout:1500,
+            autoplayHoverPause:true,
+            lazyLoad: true,
+            responsive:{
+                0:{
+                    items:1,
+                    nav:true
+                },
+                700:{
+                    items:2,
+                    nav:true
+                },
+                1200:{
+                    items:toursNumber,
+                    nav:true,
+                    loop:true
+                }
+            }
+        });
+
+
+
+        let toursTPNumber = parseInt($('.toursTPNumber').val());
+        var owlTourTP = $('.owlTourTP');
+
+        owlTourTP.owlCarousel({
+            loop:true,
+            nav:true,
+            navText:['<i class="ti-angle-left"></i>','<i class="ti-angle-right"></i>'],
+            margin:20,
+            autoplay:true,
+            autoplayTimeout:1500,
+            autoplayHoverPause:true,
+            responsive:{
+                0:{
+                    items:1,
+                    nav:true
+                },
+                700:{
+                    items:2,
+                    nav:true
+                },
+                1200:{
+                    items:toursTPNumber,
+                    nav:true,
+                    loop:true
+                }
+            }
+        });
+    </script>
+    <script>
+        let companionNumber = parseInt($('.companionNumber').val());
+        var owl5 = $('.owl-five');
+        owl5.owlCarousel({
+        loop:true,
+        nav:true,
+        navText:['<i class="ti-angle-left"></i>','<i class="ti-angle-right"></i>'],
+        autoplay:true,
+        autoplayTimeout:1500,
+        autoplayHoverPause:true,
+        lazyLoad: true,
+        responsive:{
+        0:{
+            items:1,
+            nav:true,
+            loop:true,
+        },
+        600:{
+            items:2,
+            nav:true,
+            loop:true
+        },
+
+        890:{
+            items:3,
+            nav:true,
+            loop:true
+        },
+        1190:{
+            items:companionNumber,
+            nav:true,
+            loop:true
+        },
+        1620:{
+            items:companionNumber,
+            nav:true,
+            loop:true
+        },
+    }});
+    </script>
 @endsection
