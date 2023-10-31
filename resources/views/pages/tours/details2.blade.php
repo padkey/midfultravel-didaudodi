@@ -1063,11 +1063,11 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
         if(region == 'Asia'){
             center = [102.084961,3.557283]
         } else if (region == 'The Americas') {
-
+            center = [19.59069779479588, -99.01175929463237]
         } else if (region == 'Africa') {
-
+            center = [18.941603970405783, -98.0341575352991]
         } else if (region == 'Europe') {
-
+            center = [47.5797552796308, 14.165981015213825]
         } else if (region == 'Oceania') {
 
         }

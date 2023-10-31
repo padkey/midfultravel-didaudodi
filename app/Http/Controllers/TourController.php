@@ -25,30 +25,35 @@ class TourController extends Controller
         $tour = TourModel::with('tourSchedule')->where('locale_code',$locale_code)
             ->where('url',$url)->where('is_active',1)->first();
         $geojson = array('type' => 'FeatureCollection', 'features' => array());
-        if(count($tour->tourSchedule) > 0){
-            foreach ($tour->tourSchedule as $schedule) {
-                $position = $schedule->position;
-                $position = explode(',',$position);
-                // google map dịch ngược
-                $lng = (double)$position[1];
-                $lat = (double)$position[0];
+        if(!is_null($tour)) {
+            if(count($tour->tourSchedule) > 0){
+                foreach ($tour->tourSchedule as $schedule) {
+                    $position = $schedule->position;
+                    $position = explode(',',$position);
+                    // google map dịch ngược
+                    $lng = (double)$position[1];
+                    $lat = (double)$position[0];
 
-                $marker = array(
-                    'type' => 'Feature',
-                    'features' => array(
+                    $marker = array(
                         'type' => 'Feature',
-                        "geometry" => array(
-                            'type' => 'Polygon',
-                            'coordinates' => array(
-                                $lng,
-                                $lat
+                        'features' => array(
+                            'type' => 'Feature',
+                            "geometry" => array(
+                                'type' => 'Polygon',
+                                'coordinates' => array(
+                                    $lng,
+                                    $lat
+                                )
                             )
                         )
-                    )
-                );
-                array_push($geojson['features'], $marker);
+                    );
+                    array_push($geojson['features'], $marker);
+                }
             }
+        } else {
+            return redirect('/');
         }
+
         $geojson =  json_encode($geojson);
         return view('pages.tours.details2')->with(compact('tour','companions','blackgroundCompanion','geojson'));
 

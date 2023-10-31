@@ -3,7 +3,7 @@
 namespace DDDD\Tour\Observers;
 
 use DDDD\Url\Models\UrlModel;
-use DDDD\Tour\Models\Partnership;
+use DDDD\Tour\Models\TourModel;
 use DDDD\Url\Services\GenerateUrl;
 use DDDD\Url\Services\UrlService;
 use Exception;
@@ -41,20 +41,20 @@ class TourObserver
 
     /**
      * Handle the BlogPost "creating" event.
-     * @param Partnership $item
+     * @param TourModel $item
      * @throws Exception
      */
-    public function creating(Partnership $item): void
+    public function creating(TourModel $item): void
     {
-        $item->{Partnership::COL_URL} = $this->generateUrl->generateAndCheckUrl($item->getTitle());
+        $item->{TourModel::COL_URL} = $this->generateUrl->generateAndCheckUrl($item->getTitle());
     }
 
     /**
      * Handle the BlogPost "created" event.
-     * @param Partnership $item
+     * @param TourModel $item
      * @throws Exception
      */
-    public function created(Partnership $item): void
+    public function created(TourModel $item): void
     {
         $this->urlService->create($item->getUrl(), self::URL_ENTITY_TYPE , $item->getId());
     }

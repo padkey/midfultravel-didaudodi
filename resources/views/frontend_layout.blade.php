@@ -528,16 +528,17 @@
                             <h3 class="footer_title_2">
                                {{trans('messages.follow')}}  Didaudodi Mindfultravel
                             </h3>
-                            <a href="#">
+                            <a href="https://www.facebook.com/didaudodioutdoor">
                                 <i class="fa fa-facebook-square"></i>
                             </a>
-                            <a href="#">
-                                <i class="fa fa-twitter"></i>
+                            <a href="https://www.tiktok.com/@didaudodi_official?_t=8gxVAdjBKTa&_r=1">
+                                  <img src="{{url('/frontend/images/tiktok.png')}}" alt="" style="width: 33px;margin-bottom: 12px;">
+
                             </a>
-                            <a href="#">
+                            {{--<a href="#">
                                 <i class="fa fa-instagram"></i>
-                            </a>
-                            <a href="https://www.youtube.com/@didaudodireview">
+                            </a>--}}
+                            <a href="https://www.youtube.com/@didaudodichannel">
                                 <i class="fa fa-youtube"></i>
                             </a>
                         </div>

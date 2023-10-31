@@ -332,7 +332,6 @@
             border-radius:35px;
             width: 100%;
             margin: auto;
-
         }
         .container-pop-tour{
             width: 85%;
@@ -384,7 +383,6 @@
             background: #faf1eb;
             /* background: beige; */
             border-radius: 5px;
-
         }
         @media (max-width: 800px) {
             .single_offers{
@@ -654,7 +652,7 @@
         }
         .title-video{
             margin-top: 15px;
-        }
+        }/*
         @-webkit-keyframes radio-btn {
             0% {
                 -webkit-box-shadow: 0 0 4px 3px rgba(207, 8, 8, 0), 0 0 0 0 transparent, 0 0 0 0 rgba(207, 8, 8, 0);
@@ -683,30 +681,27 @@
                 -webkit-box-shadow: 0 0 4px 3px rgba(408, 8, 8, 0), 0 0 0 20px transparent, 0 0 0 20px rgba(408, 8, 8, 0);
                 box-shadow: 0 0 4px 3px rgba(408, 8, 8, 0), 0 0 0 15px transparent, 0 0 0 15px rgba(807, 8, 8, 0)
             }
-        }
+        }*/
 
         .icon-play{
             position: absolute;
             color: #ced0d2;
-            font-size: 16px;
             border:1px solid lightilver;
             transition: all .4s cubic-bezier(.15,.53,.35,1);
-            border-radius: 50%;
-            background:white;
-            width: 14%;
-            height: 20%;
+            background-image:url('/frontend/images/play-w.png');
+            background-size: 50px;
+            width: 50px;
+            height: 50px;
             bottom: 8%;
             left: 8%;
             display: flex;
             align-items: center;
             justify-content: center;
-            -webkit-animation: radio-btn 1.5s linear infinite;
-            animation: radio-btn 1.5s linear infinite;
+            /*-webkit-animation: radio-btn 1.5s linear infinite;
+            animation: radio-btn 1.5s linear infinite;*/
 
         }
-        .fa-play{
-            position: absolute;color:rgb(12, 12, 12); font-size:1rem;
-        }
+
         @media (max-width: 1200px) {
             .video-container{
                 display:grid;
@@ -719,8 +714,8 @@
                 margin: auto;
             }
             .icon-play{
-                width: 18%;
-                height: 25%;
+                width: 50px;
+                height: 50px;
             }
             .fa-play{
              font-size:1.5rem;
@@ -734,18 +729,20 @@
                 margin:auto;
             }
             .icon-play{
-                width: 14%;
-                height: 19%;
+                width: 50px;
+                height: 50px;
             }
             .fa-play{
              font-size:1rem;
             }
         }
         .single_video:hover .icon-play{
-            color:white;
-            background:black;
-            transform:  translateY(-20%);
+            background-image:url('/frontend/images/play-b.png');
+            background-size: 60px;
+            width: 60px;
+            height: 60px;
             transition: 0.3s;
+
         }
         .single_video:hover .fa-play{
             color:white;
@@ -789,7 +786,7 @@
                             <div class="thumbnail-video">
                                 <a href="/{{$video->url_video}}" class="popup-video">
                                     <img src="{{url('uploads/'.$video->image_thumbnail)}}" alt=""  >
-                                    <span  class="icon-play"><i class="fa fa-play" style=""></i></span>
+                                    <span  class="icon-play"></span>
                                     <!--  -->
                                 </a>
                             </div>
