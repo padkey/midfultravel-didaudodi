@@ -172,8 +172,8 @@
         .content-impatti{
             max-width: 100%;
             margin:auto;
-            font-size:20px
-
+            font-size:20px;
+            position: relative;
         }
         .image-mt{
             background-image: url("uploads/{{$blockValue->image_one}}");
