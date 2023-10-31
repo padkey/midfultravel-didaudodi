@@ -390,9 +390,9 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
         .title-schedule  span {
             font-family:  serif!important;
             font-weight: 600;
-            font-size:18px !important;
+            font-size:18px;
             font-style: normal;
-            color: #2b2b2b;
+            color: #4b4b4b;
         }
         .title-schedule-open{
             border: 1px solid #FFFFFF;
@@ -402,7 +402,13 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
         .title-schedule-open span{
             color: #fff!important;
         }
-
+        .title-schedule  .meals {
+            font-family:  serif!important;
+            font-weight: 600;
+            font-size:16px!important;
+            font-style: normal;
+            color: #2b2b2b;
+        }
         .icon-open{
             background: url('/frontend/images/down-up5.png');
             background-size: 35px;
