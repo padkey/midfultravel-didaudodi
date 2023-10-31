@@ -229,6 +229,18 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
         justify-content: center;
 
     }
+    .content-trip span{
+        font-family: 'Open Sans', sans-serif;
+        font-size:20px!important;
+        font-weight: 600;
+        color: #5d6162;
+    }
+    .content-trip h4 span{
+        font-size:24px!important;
+        color: #004e42!important;
+        font-weight: 700;
+
+    }
 /*    .content-trip p{
         font-size:22px!important;
         font-weight: 400;
@@ -304,7 +316,7 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
             color: #024f43;
             font-style: normal;
             font-weight: 600;
-            font-family: sans-serif!important;
+            font-family:'Open Sans', sans-serif!important;
             font-size: 18px!important;
 
         }
@@ -317,11 +329,11 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
             height: 40px;
         }
         .decs-schedule p {
-            font-family: sans-serif!important;
-            font-size: 17px!important;
-            font-weight: 600;
+            font-family: 'Open Sans',sans-serif!important;
+            font-size: 18px!important;
+            font-weight: 500;
             line-height: 1.7;
-            color: #505050;
+            color: #151515;
         }
         .meals{
             margin: 0 50px 0 0;
@@ -555,6 +567,8 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
     }
     .tab-content p,span{
         font-size: 19px!important;
+        font-family: 'Open Sans',sans-serif!important;
+        font-weight: 500;
     }
     #myTabContent .active ul li {
         list-style: circle;
