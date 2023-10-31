@@ -318,8 +318,9 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
         }
         .decs-schedule p {
             font-family: serif!important;
-            font-size: 16px!important;
+            font-size: 17px!important;
             font-weight: 500;
+            line-height: 1.7;
         }
         .meals{
             margin: 0 50px 0 0;
@@ -504,11 +505,9 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
 </style>
     <div class="area-button-contact mt-10">
         <button type="button" class="btn btn-enquire mt-20" data-toggle="modal" data-target="#exampleModalCenter">
-           <i class="fa fa-commenting-o"></i> Enquire
+           <i class="fa fa-commenting-o"></i> {{trans('messages.enquire')}}
         </button>
     </div>
-
-
 
 <style>
     .nav-link{

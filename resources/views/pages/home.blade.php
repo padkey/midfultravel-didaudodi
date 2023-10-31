@@ -320,6 +320,75 @@
 
     <!-- offers_area_start -->
     <style>
+        .bg-pink{
+            background-color: #faf1eb!important;
+        }
+        .section-icon{
+            text-align: center;
+            margin: auto;
+            position: relative;
+        }
+        .section-icon img{
+            border-radius: 50%;
+            margin-bottom: 10px;
+            width:100px;
+        }
+        .hightlight-underline-white {
+            text-transform: uppercase;
+            /*padding-bottom: 10px;*/
+            display: inline-block;
+            position: relative;
+        }
+        .hightlight-underline-white::before {
+            content: "";
+            top: -5px;
+            width: 80%;
+            position: absolute;
+            margin: 0 10%;
+            border-bottom: 3px solid #FFFFFF;
+        }
+        .hightlight-underline-green {
+            text-transform: uppercase;
+            /*padding-bottom: 10px;*/
+            display: inline-block;
+            position: relative;
+        }
+        .hightlight-underline-green::before {
+            content: "";
+            top: -5px;
+            width: 80%;
+            position: absolute;
+            margin: 0 10%;
+            border-bottom: 3px solid #024f43;
+        }
+        @media (max-width: 800px) {
+            /*.container{
+                width:95%;
+                margin:auto;
+            }*/
+            .hightlight-underline-white::before  {
+                content: "";
+                position: absolute;
+                bottom: -10px;
+                height: 1px;
+                width: 80%!important;
+                margin: 0 auto 0 10%!important;
+                display: block;
+            }
+            .hightlight-underline-green::before  {
+                content: "";
+                position: absolute;
+                bottom: -10px;
+                height: 1px;
+                width: 80%!important;
+                margin: 0 auto 0 10%!important;
+                display: block;
+            }
+        }
+        .title-center h1{
+
+        }
+
         .offers_area {
             position: relative;
             padding-bottom: 80px;
@@ -329,7 +398,7 @@
             /*
             background-image: url('uploads/{{$TourBackground != null ? $TourBackground->image_one : 2 }}');
             */
-            border-radius:35px;
+            /*border-radius:35px;*/
             width: 100%;
             margin: auto;
         }
@@ -474,12 +543,17 @@
     </style>
     <div class="offers_area" >
         <div class="container-pop-tour" style="">
-            <div class="row">
+            <div class="row mb-40">
                 <div class="col-xl-12">
                     <div class="section_title text-center mb-20 mt-10">
                         <h1>{{trans('messages.popular_tours')}}</h1>
-                        {{--<h1>Tours</h1>--}}
                     </div>
+                    {{--<div class="section-icon">
+                        <img src="{{url('/frontend/images/tour1.png')}}" alt="" style="border-radius: 0">
+                        <div class="title-center">
+                            <h1 class="hightlight-underline-green">{{trans('messages.popular_tours')}}</h1>
+                        </div>
+                    </div>--}}
                 </div>
             </div>
             <input type="hidden" value="{{count($tours)}}" class="toursNumber">
@@ -518,14 +592,25 @@
         .bg-bg{
             background-color:beige!important;
         }
+        .bg-w{
+            background-color:#FFFFFF!important;
+
+        }
+
     </style>
     <div class="offers_area" >
         <div class="container-pop-tour" style="">
-            <div class="row">
+            <div class="row  mb-40">
                 <div class="col-xl-12">
                     <div class="section_title text-center mb-20 mt-10">
                         <h1>{{trans('messages.tours_took_place')}}</h1>
                     </div>
+                    {{--<div class="section-icon">
+                        <img src="{{url('/frontend/images/tour3.png')}}" alt="" style="border-radius: 0">
+                        <div class="title-center">
+                            <h1 class="hightlight-underline-green">{{trans('messages.tours_took_place')}}</h1>
+                        </div>
+                    </div>--}}
                 </div>
             </div>
             <input type="hidden" value="{{count($toursTookPlace)}}" class="toursTPNumber">
@@ -1022,6 +1107,12 @@
             <div class="title-companion" style="margin-bottom: 80px">
                 <h1 >{{trans('messages.companions')}}</h1>
             </div>
+            {{--<div class="section-icon" style="top:-45px;">
+                <img src="{{url('/frontend/images/companion.png')}}" alt="" ">
+                <div class="title-center">
+                    <h1 class="hightlight-underline-white" >{{trans('messages.companions')}}</h1>
+                </div>
+            </div>--}}
             <input type="hidden" value="{{count($companions)}}" class="companionNumber">
             <div class="team-profile owl-five owl-carousel  owl-theme">
                 @if($companions != null)
