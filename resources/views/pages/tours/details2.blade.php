@@ -680,6 +680,10 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
             width: 220px;
             height: 220px;
         }
+        .name-companion h3{
+            font-size: 20px;
+            color: #8B572A;
+        }
         .profile-card .img img{
             height: 165px;
         }
@@ -713,6 +717,10 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
             width: 220px;
             height: 220px;
         }
+        .name-companion h3{
+            font-size: 20px;
+            color: #8B572A;
+        }
         .profile-card .img img{
             height: 165px;
         }
@@ -745,6 +753,10 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
         .profile-card{
             width: 220px;
             height: 220px;
+        }
+        .name-companion h3{
+            font-size: 20px;
+            color: #8B572A;
         }
         .profile-card .img img{
             height: 165px;
