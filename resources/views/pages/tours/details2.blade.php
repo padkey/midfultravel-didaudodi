@@ -343,6 +343,12 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
             line-height: 1.7;
             color: #151515;
         }
+        .decs-schedule img{
+            width: 100%!important;
+            height: 100%!important;
+            /*margin-top: 10px;
+            margin-bottom: 10px;*/
+        }
         .meals{
             margin: 0 50px 0 0;
             float: right;
@@ -472,19 +478,7 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
                 @foreach($tour->tourSchedule as $key => $schedule)
                     <div class="schedule-day-{{$schedule->id}}">
                         <div class="title-schedule" data-id="{{$schedule->id}}" data-position="{{$schedule->position}}">
-                            {{--<div style="display: flex;width: 100%;">
-                                <span>{{$schedule->title}} </span>
-                                <div class="meals down-up-action">
-                                    <span><img src="{{url('/frontend/images/meal1.png')}}" alt=""></span>
-                                    <span> {{$schedule->meal}}</span>
-                                </div>
-                            </div>
-
-                            <div class="down-up-action">
-                                <span class="icon-close icon-action-{{$schedule->id}} down-up-action">   </span>
-                            </div>--}}
                             <span class="icon-close icon-action-{{$schedule->id}} down-up-action">   </span>
-
                             <span class="day-title">{{$schedule->title}} </span>
                             @if($schedule->meal !== null)
                             <span class="meals meals-{{$schedule->id}} dis-none"><img src="{{url('/frontend/images/meal1.png')}}" alt=""> {{$schedule->meal}}</span>
@@ -561,6 +555,7 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
         padding: 25px 20px 20px 20px;
         transition: 0.2s;
     }
+
     .nav-item:hover .nav-link{
         font-size: 24px!important;
         transition: 0.2s;
@@ -646,11 +641,7 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
                 <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">{!! $tour->important_info_2 !!}</div>
                 <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">{!! $tour->important_info_3 !!}</div>
                 <div class="tab-pane fade" id="practice" role="tabpanel" aria-labelledby="practice-tab">{!! $tour->important_info_4 !!}</div>
-
             </div>
-{{--
-            {!! $tour->important_information !!}
---}}
         </div>
 
     </div>
@@ -1110,7 +1101,7 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
         };
         //console.log( geojson.features);
         let region = $('.region').val();
-        let center= [102.084961,3.557283];
+      //  let center= [102.084961,3.557283];
         if(region == 'Asia'){
             center = [102.084961,3.557283]
         } else if (region == 'The Americas') {
@@ -1120,13 +1111,13 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
         } else if (region == 'Europe') {
             center = [47.5797552796308, 14.165981015213825]
         } else if (region == 'Oceania') {
-
+            center= [102.084961,3.557283];
         }
 
         const map = new mapboxgl.Map({
             container: 'map', // container ID
             style: 'mapbox://styles/mapbox/streets-v12',
-            center: [ 106.65957339778778,10.82464603273621], // starting position [lng, lat]
+            center: center, // starting position [lng, lat]
            // projection:'globe',
           //  projection: 'globe',
 
