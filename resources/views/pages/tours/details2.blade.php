@@ -231,16 +231,15 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
     }
     .content-trip span{
         font-family: 'Open Sans', sans-serif;
-        /*
-        font-size:20px!important;
-        */
         font-weight: 600;
+        line-height: 1.7;
         color: #5d6162;
     }
     .content-trip h4 span{
        /* font-size:24px!important;*/
         color: #004e42!important;
         font-weight: 700;
+        line-height: 1.7;
 
     }
 /*    .content-trip p{
@@ -320,7 +319,7 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
             font-weight: 600;
             font-family:'Open Sans', sans-serif!important;
             font-size: 18px!important;
-
+            line-height: 1.7;
         }
         .img-subtitle{
             width: 50px;
@@ -405,7 +404,7 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
              }
          }
         .title-schedule  span {
-            font-family:  sans-serif!important;
+            font-family: 'Open Sans', sans-serif!important;
             font-weight: 600;
             font-size:18px;
             font-style: normal;
@@ -420,7 +419,7 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
             color: #fff!important;
         }
         .title-schedule  .meals {
-            font-family:  sans-serif!important;
+            font-family:  'Open Sans',sans-serif!important;
             font-weight: 600;
             font-size:16px!important;
             font-style: normal;
@@ -567,7 +566,12 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
     .nav-link:hover{
         background: #7fb254 !important;
     }
-    .tab-content p,span{
+    .tab-content p span{
+        font-size: 19px!important;
+        font-family: 'Open Sans',sans-serif!important;
+        font-weight: 500;
+    }
+    .tab-content p {
         font-size: 19px!important;
         font-family: 'Open Sans',sans-serif!important;
         font-weight: 500;
