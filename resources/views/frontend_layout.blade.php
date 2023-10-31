@@ -61,7 +61,7 @@
             font-style:italic;
         }
         h1{
-            font-size:40px;
+            font-size:45px;
         }
         .container{
             max-width: 85%;
@@ -82,9 +82,11 @@
             margin-bottom:15px;
             font-weight: 900;
             font-size:18px;
+            transition:0.5s;
         }
         .btn-earth:hover{
             background-color: #024f43;
+            color:white;
         }
         .btn-shop{
             background-color:  #ffe277;
@@ -417,7 +419,7 @@
             font-size: 24px;
             font-weight: 900;
             font-style: normal;
-            color: black;
+            color: #808080;
             /* margin-bottom: 45px; */
         }
         .input-dk{
@@ -432,13 +434,14 @@
             margin-left: 10px;
             font-style: normal;
             margin-bottom: 0px;
-            color: #a6a6a6;
+            color: #818181;
         }
         .footer_content_address  a:hover{
             font-size: 20px!important;
             color:#004e42!important;
             transition:0.2s;
         }
+
         .footer_widget a {
             font-size: 35px;
             color:black;
@@ -446,6 +449,11 @@
         }
         .practice-center .col-xl-4{
             width: auto!important;
+        }
+        .follow-us a:hover{
+            position: relative;
+            top: -5px;
+            transition:1s;
         }
         @media (max-width: 800px){
             .support_our{
@@ -459,6 +467,9 @@
             }
             .footer_2{
                 margin-top:0px;
+            }
+            .container {
+                max-width: 100%;
             }
         }
     </style>
@@ -509,7 +520,7 @@
                         <div class="row practice-center" style="margin-top: 10px;">
                             @foreach($allPartnership as $partnership)
                                 <div class="col-xl-4" style="margin-top: 0px;">
-                                    <div class="footer_widget">
+                                    <div class="">
                                         <h3 class="title_address">
                                             {{$partnership->name}}
                                         </h3>

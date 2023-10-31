@@ -199,8 +199,6 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
                  <div class="cacdiemden">
                      {!! $tour->place_overview !!}
                  </div>
-
-
              <div class="row images-overview owl-six owl-theme owl-carousel">
                  @if(is_array($tour->image))
                      @foreach($tour->image as $image)
@@ -212,7 +210,6 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
                      @endforeach
                  @endif
              </div>
-
              <div class="short_desc mt-30">
                  {!! $tour->short_description !!}
              </div>
@@ -307,7 +304,7 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
             color: #024f43;
             font-style: normal;
             font-weight: 600;
-            font-family: "Raleway", sans-serif!important;
+            font-family: serif!important;
             font-size: 17px!important;
 
         }
@@ -320,7 +317,7 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
             height: 40px;
         }
         .decs-schedule p {
-            font-family: 'Raleway', sans-serif!important;
+            font-family: serif!important;
             font-size: 16px!important;
             font-weight: 500;
         }
@@ -391,8 +388,8 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
              }
          }
         .title-schedule  span {
-            font-family: 'Raleway', sans-serif!important;
-            font-weight: 700;
+            font-family:  serif!important;
+            font-weight: 600;
             font-size:18px !important;
             font-style: normal;
             color: #2b2b2b;
