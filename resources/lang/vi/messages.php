@@ -56,7 +56,25 @@ return [
     'see_more' => 'Xem thêm',
     'shrink' => 'Thu gọn',
     'all_tours' => 'Tất cả các chuyến du lịch',
-    'tours_took_place' => 'Chuyến du lịch đã diễn ra'
+    'tours_took_place' => 'Chuyến du lịch đã diễn ra',
+    'overview' => 'TỔNG QUAN',
+    'trip_highlights' => 'ĐIỂM NỔI BẬT CỦA CHUYẾN ĐI',
+    'itinerary' => 'HÀNH TRÌNH',
+    'important_information' => 'THÔNG TIN QUAN TRỌNG',
+    'our_service' => 'Dịch vụ của chúng tôi',
+    'tour_condition'=> 'Điều kiện tham quan',
+    'condition_in_euro' => 'Tình hình Châu Âu',
+    'schedule_practice' => 'Lịch trình thực hành',
+    'get_in_touch' => 'LIÊN LẠC',
+    'get_in_touch_desc' => "Chúng tôi thích nói chuyện du lịch. Nếu bạn có bất kỳ câu hỏi nào, xin vui lòng liên hệ. Chúng tôi ở đây để giúp đỡ!",
+    'enquire' => 'Hỏi thăm',
+    'contact_us' => 'Liên hệ chúng tôi',
+    'contact_us_desc' => "Chúng tôi là những chuyên gia tự hào về những hành trình được thiết kế riêng phù hợp với mọi nhu cầu. Vui lòng điền vào mẫu dưới đây và một thành viên trong nhóm của chúng tôi sẽ liên lạc ngay.",
+    'submit' => 'Gửi',
+    'message' => 'Tin nhắn',
+    'name' => 'Tên',
+    'phone_number' =>'Số điện thoại',
+    'email' => 'Email',
 
 
 ];

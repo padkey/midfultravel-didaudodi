@@ -193,7 +193,7 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
                  <div class="section-icon">
                      <img src="{{url('/frontend/images/kinh-lup.png')}}" alt="">
                      <div class="title-center">
-                         <h1 class="hightlight-underline-green">OVERVIEW</h1>
+                         <h1 class="hightlight-underline-green">{{trans('messages.overview')}}</h1>
                      </div>
                  </div>
                  <div class="cacdiemden">
@@ -262,7 +262,7 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
         <div class="section-icon" style="top:-45px">
             <img src="{{url('/frontend/images/hightlight.png')}}" alt="">
             <div class="title-center">
-                <h1 class="hightlight-underline-white" >TRIP HIGHLIGHTS</h1>
+                <h1 class="hightlight-underline-white" >{{trans('messages.trip_highlights')}}</h1>
             </div>
 
         </div>
@@ -441,7 +441,7 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
             <div class="section-icon">
                 <img src="{{url('/frontend/images/kinh-lup.gif')}}" alt="" style="border-radius: 0">
                 <div class="title-center">
-                    <h1 class="hightlight-underline-green">Itinerary</h1>
+                    <h1 class="hightlight-underline-green">{{trans('messages.itinerary')}}</h1>
                     <h2 class="tour-name">{{$tour->name}}</h2>
                 </div>
             </div>
@@ -587,23 +587,31 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
         <div class="section-icon">
             <img src="{{url('/frontend/images/kinh-lup-ds.gif')}}" alt="" style="border-radius: 0px">
             <div class="title-center">
-                <h1 class="hightlight-underline-green">IMPORTANT INFORMATION</h1>
+                <h1 class="hightlight-underline-green">{{trans('messages.important_information')}}</h1>
             </div>
         </div>
 
         <div class="tabs">
             <ul class="nav nav-tabs" id="myTab" role="tablist">
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="home-tab" data-toggle="tab" data-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Our service</button>
+                    <button class="nav-link active" id="home-tab" data-toggle="tab" data-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">
+                        {{trans('messages.our_service')}}
+                    </button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="profile-tab" data-toggle="tab" data-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Tour condition</button>
+                    <button class="nav-link" id="profile-tab" data-toggle="tab" data-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">
+                        {{trans('messages.tour_condition')}}
+                    </button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="contact-tab" data-toggle="tab" data-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Condition in euro</button>
+                    <button class="nav-link" id="contact-tab" data-toggle="tab" data-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">
+                        {{trans('messages.condition_in_euro')}}
+                    </button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="practice-tab" data-toggle="tab" data-target="#practice" type="button" role="tab" aria-controls="practice" aria-selected="false">Schedule practice</button>
+                    <button class="nav-link" id="practice-tab" data-toggle="tab" data-target="#practice" type="button" role="tab" aria-controls="practice" aria-selected="false">
+                        {{trans('messages.schedule_practice')}}
+                    </button>
                 </li>
             </ul>
             <div class="tab-content" id="myTabContent">
@@ -941,7 +949,7 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
         <div class="section-icon">
             <img src="{{url('/frontend/images/partnership.png')}}" alt="" style="border-radius:0px;">
             <div class="title-center">
-                <h1 class="hightlight-underline-green">PartnerShip</h1>
+                <h1 class="hightlight-underline-green">{{trans('messages.our_partnership')}}</h1>
             </div>
         </div>
 
@@ -995,8 +1003,8 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
         <div class="section-icon">
             <img src="{{url('/frontend/images/message1.png')}}" alt="" style="border-radius:0px; top: -45px">
             <div class="title-center" style=" margin-bottom: 0px;">
-                <h1 class="hightlight-underline-green">GET IN TOUCH</h1>
-                <h2 class="title-contact">We love to talk travel. If you have any questions, please don't hesitate to get in touch. We're here to help!</h2>
+                <h1 class="hightlight-underline-green">{{trans('messages.get_in_touch')}}</h1>
+                <h2 class="title-contact">{{trans('messages.get_in_touch_desc')}}</h2>
                 <button type="button" class="btn btn-shop mt-20" data-toggle="modal" data-target="#exampleModalCenter">
                     Enquire
                 </button>
@@ -1016,9 +1024,9 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
             <div class="modal-content">
                 <div class="modal-header">
                     <div>
-                        <h1 class="modal-title" id="exampleModalLongTitle">Contact Us</h1>
+                        <h1 class="modal-title" id="exampleModalLongTitle">{{trans('messages.contact_us')}}</h1>
                         <p class="modal-title">
-                            We're experts who take pride in tailor-made itineraries that suit any need. Please fill in the form below and a member of our team will be in touch shortly.
+                            {{trans('messages.contact_us_desc')}}
                         </p>
                     </div>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -1029,27 +1037,27 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
                     <form action="#">
                         <div class="row mt-20">
                             <div class="col-xl-6">
-                                <input  class="form-control" placeholder="Name">
+                                <input  class="form-control" placeholder="{{trans('messages.name')}} ">
                             </div>
                             <div class="col-xl-6">
-                                <input class="form-control"  placeholder="Phone">
+                                <input class="form-control"  placeholder="{{trans('messages.phone_number')}} ">
                             </div>
                         </div>
                         <div class="row mt-20">
                             <div class="col-xl-6">
-                                <input class="form-control" placeholder="Email">
+                                <input class="form-control" placeholder="{{trans('messages.email')}} ">
                             </div>
 
                         </div>
                         <div class="row mt-20">
                             <div class="col-xl-12">
-                                <textarea class="form-control" placeholder="Message"></textarea>
+                                <textarea class="form-control" placeholder="{{trans('messages.message')}} "></textarea>
                             </div>
                         </div>
                     </form>
                 </div>
                 <div class="modal-footer mt-30">
-                    <button type="button" class="btn btn-shop">Submit</button>
+                    <button type="button" class="btn btn-shop">{{trans('messages.submit')}}   </button>
                 </div>
             </div>
         </div>
