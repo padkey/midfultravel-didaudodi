@@ -336,6 +336,13 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
             line-height: 1.7;
             color: #151515;
         }
+        .decs-schedule span {
+            font-family: 'Open Sans',sans-serif!important;
+            font-size: 18px!important;
+            font-weight: 500;
+            line-height: 1.7;
+            color: #151515;
+        }
         .meals{
             margin: 0 50px 0 0;
             float: right;
