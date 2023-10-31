@@ -537,7 +537,7 @@
                         </div>
                         <div class="offers_content">
                             <div class="trangthai-category">
-                                <span class="event-label trangthai-open">{{trans('messages.registration_open')}}</span> <span  class="event-label">{{$tour->type_tour}}</span>
+                                <span class="event-label trangthai-open">{{trans('messages.tours_took_place')}}</span> <span  class="event-label">{{$tour->type_tour}}</span>
                             </div>
                             @php
                                 $date = date_create($tour->date_start);
@@ -549,7 +549,7 @@
                             <h2 class="title-offer">  {{$tour->name}}</h2>
                             <i class="fa fa-map-marker" aria-hidden="true"></i> {{$tour->region}}
                             <p class="short-desc"> {{$tour->short_description}} </p>
-                            <a href="/tours/{{$tour->url}}" class="btn btn-earth">{{trans('messages.more_infomation_&_register')}}</a>
+                            <a href="/tours/{{$tour->url}}" class="btn btn-earth">{{trans('messages.see_details')}}</a>
                         </div>
                     </div>
 

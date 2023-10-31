@@ -32,7 +32,7 @@ return [
     'companions' => 'Những người đồng hành',
     'popular_tours' => 'Các chuyến du lịch phổ biến',
     'impacts'=>'Tác động',
-    'see_details'=>'See details',
+    'see_details'=>'Xem chi tiết',
     'registration_open'=>'Đang mở đăng kí',
     'more_infomation_&_register'=>'Xem thêm thông tin và đăng kí',
     'practice_centers'=>' Trung tâm tu học',
