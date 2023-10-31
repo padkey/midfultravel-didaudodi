@@ -843,6 +843,10 @@
                 width: 220px;
                 height: 220px;
             }
+            .name-companion h3{
+                font-size: 20px;
+                color: #8B572A;
+            }
             .profile-card .img img{
                 height: 165px;
             }
@@ -852,6 +856,15 @@
             .profile-card  .desc-companion{
                 -webkit-line-clamp: 13;
             }
+        }
+        .name-companion {
+            text-align: center;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+        .name-companion h3{
+            font-size: 25px;
+            color: #8B572A;
         }
         @media (max-width: 1190px) and (min-width: 1100px) {
             .profile-card{
@@ -878,6 +891,10 @@
             }
             .profile-card .img img{
                 height: 165px;
+            }
+            .name-companion h3{
+                font-size: 20px;
+                color: #8B572A;
             }
             .profile-card .caption{
                 transform: translateY(-265px);
@@ -908,6 +925,10 @@
             .profile-card{
                 width: 220px;
                 height: 220px;
+            }
+            .name-companion h3{
+                font-size: 20px;
+                color: #8B572A;
             }
             .profile-card .img img{
                 height: 165px;
@@ -967,18 +988,7 @@
             pointer-events: all;
         }
 
-        .name-companion {
-            text-align: center;
-            margin-top: 15px;
-            margin-bottom: 15px;
-        }
-        .name-companion h3{
-            font-size: 25px;
-            color: #8B572A;
-            /*
-            font-weight: 600;
-            */
-        }
+
         .caption p{
             font-size: 17px;
             font-weight: 500;
@@ -1318,7 +1328,7 @@
             loop:true
         },
         1190:{
-            items:companionNumber,
+            items:4 ,
             nav:true,
             loop:true
         },
