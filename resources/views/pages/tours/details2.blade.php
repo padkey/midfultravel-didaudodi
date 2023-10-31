@@ -1006,7 +1006,7 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
                 <h1 class="hightlight-underline-green">{{trans('messages.get_in_touch')}}</h1>
                 <h2 class="title-contact">{{trans('messages.get_in_touch_desc')}}</h2>
                 <button type="button" class="btn btn-shop mt-20" data-toggle="modal" data-target="#exampleModalCenter">
-                    Enquire
+                    {{trans('messages.enquire')}}
                 </button>
             </div>
         </div>

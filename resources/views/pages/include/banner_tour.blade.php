@@ -90,7 +90,7 @@
             $date = date_create($tour->date_end);
             $date_end= date_format($date, 'd/m/Y');
             @endphp
-            <p><span class="event-label trangthai-open">ĐĂNG KÝ MỞ</span> <span class="event-label"> {{$tour->type_tour}}</span></p>
+            <p><span class="event-label trangthai-open">{{count($toursTookPlace ) == 0  ? '' : trans('messages.registration_open')}}</span> <span class="event-label"> {{$tour->type_tour}}</span></p>
             <p class="date-start-end">{{$date_start}} - {{$date_end}}</p>
             <h3 class="">{{$tour->name}}</h3>
         </div>
