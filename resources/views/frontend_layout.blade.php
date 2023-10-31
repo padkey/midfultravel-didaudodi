@@ -50,7 +50,7 @@
         }
 
         p,span,a{
-            font-family:"Cormorant Garamond",serif!important;
+            font-family:"Cormorant Garamond",sans-serif!important;
             color:#333333;
             /*font-size: 18px!important;*/
             line-height: 1.3;
