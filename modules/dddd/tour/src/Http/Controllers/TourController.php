@@ -19,6 +19,8 @@ use Encore\Admin\Controllers\HasResourceActions;
 use Encore\Admin\Show;
 use DDDD\Partnership\Models\PartnershipBranch;
 use DDDD\Partnership\Models\TourPartnershipBranch;
+
+
 class TourController extends AdminController
 {
     use HasResourceActions;
@@ -36,6 +38,7 @@ class TourController extends AdminController
                 $row->column(12, $this->grid()->render());
             });
     }
+
     /**
      * @param $id
      * @param Content $content
@@ -43,7 +46,8 @@ class TourController extends AdminController
      */
     public function show($id, Content $content)
     {
-        return $content->title('Tour Details')->description('Details')->body($this->detail($id));
+        return $content->title('Tour Details')->body($this->detail($id));
+
     }
 
     protected function detail( $id): Show
@@ -60,7 +64,9 @@ class TourController extends AdminController
             $items->setResource('/admin/tour-schedule');
             $items->id();
             $items->title();
-        });
+            $items->order();
+        })->orderBy('order','DESC');
+
         return $show;
     }
 
@@ -123,7 +129,6 @@ class TourController extends AdminController
      */
     protected function form(): Form
     {
-        $TourPartnershipBranch = new Form(new TourPartnershipBranch);
         $form = new Form(new TourModel);
         $locales = Locale::all();
         $arrayLocale = [];
