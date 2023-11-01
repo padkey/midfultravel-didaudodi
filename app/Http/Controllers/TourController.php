@@ -25,7 +25,9 @@ class TourController extends Controller
 
         $companions = Companion::where('locale_code',$locale_code)->take(4)->get();
         $blackgroundCompanion = Block::where('locale_code',$locale_code)->where('code','blackground_companion')->first();
-        $tour = TourModel::with('tourSchedule')->where('locale_code',$locale_code)
+        $tour = TourModel::with(['tourSchedule' => function ($q){
+            $q->orderBy('order','ASC');
+            }])->where('locale_code',$locale_code)
             ->where('url',$url)->where('is_active',1)->first();
 
         $toursTookPlace = TourModel::where('locale_code',$locale_code)
