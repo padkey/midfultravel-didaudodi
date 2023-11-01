@@ -19,6 +19,7 @@ use Encore\Admin\Controllers\HasResourceActions;
 use Encore\Admin\Show;
 use DDDD\Partnership\Models\PartnershipBranch;
 use DDDD\Partnership\Models\TourPartnershipBranch;
+Use Encore\Admin\Widgets\Table;
 
 
 class TourController extends AdminController
@@ -113,7 +114,12 @@ class TourController extends AdminController
     {
         $grid = new Grid(new TourModel);
         $grid->column(TourModel::COL_ID, __("ID"))->sortable();
-        $grid->column(TourModel::COL_NAME, __("Name"));
+        $grid->column(TourModel::COL_NAME, __("Name"))->modal('Schedule Tour', function ($model) {
+            $comments = $model->tourSchedule()->get()->map(function ($comment) {
+                return $comment->only(['id', 'title','meal','order']);
+            });
+            return new Table(['ID', 'Title', 'Meals','Order'], $comments->toArray());
+        });;
         $grid->column(TourModel::COL_LOCALE_CODE, __("Language"));
         $grid->column(TourModel::COL_IS_ACTIVE)->bool();
         $grid->column(TourModel::COL_URL);
@@ -146,7 +152,6 @@ class TourController extends AdminController
 
             $form->text(TourModel::COL_NAME, __("Name"))->rules("required");
             $form->switch(TourModel::COL_IS_ACTIVE, 'Is Active?')->states($states);
-
             $form->select(TourModel::COL_REGION)->options(
                 [
                     'Asia'=>'Asia',
