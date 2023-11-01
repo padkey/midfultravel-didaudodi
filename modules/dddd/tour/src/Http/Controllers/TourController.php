@@ -122,7 +122,7 @@ class TourController extends AdminController
         });;
         $grid->column(TourModel::COL_LOCALE_CODE, __("Language"));
         $grid->column(TourModel::COL_IS_ACTIVE)->bool();
-        $grid->column(TourModel::COL_URL);
+        $grid->column(TourModel::COL_URL)->editable();
         $grid->column(TourModel::COL_DATE_START);
         $grid->column(TourModel::COL_DATE_END);
         return $grid;

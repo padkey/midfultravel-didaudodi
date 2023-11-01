@@ -67,6 +67,57 @@ class TourController extends Controller
         return view('pages.tours.details2')->with(compact('tour','companions','blackgroundCompanion','geojson','toursTookPlace'));
 
     }
+    public function showDetails2()  //$url
+    {
+        //temp
+        $url = 'mindful-travel-to-europe';
+        $locale_code =   config('app.locale');
+        $currentDate = Carbon::now();
+
+        $companions = Companion::where('locale_code',$locale_code)->take(4)->get();
+        $blackgroundCompanion = Block::where('locale_code',$locale_code)->where('code','blackground_companion')->first();
+        $tour = TourModel::with(['tourSchedule' => function ($q){
+            $q->orderBy('order','ASC');
+        }])->where('locale_code',$locale_code)
+            ->where('url',$url)->where('is_active',1)->first();
+
+        $toursTookPlace = TourModel::where('locale_code',$locale_code)
+            ->where('url',$url)->where('is_active',1)->where('date_end','>',$currentDate)->get();
+
+        $geojson = array('type' => 'FeatureCollection', 'features' => array());
+        if(!is_null($tour)) {
+            if(count($tour->tourSchedule) > 0){
+                foreach ($tour->tourSchedule as $schedule) {
+                    $position = $schedule->position;
+                    $position = explode(',',$position);
+                    // google map dịch ngược
+                    $lng = (double)$position[1];
+                    $lat = (double)$position[0];
+
+                    $marker = array(
+                        'type' => 'Feature',
+                        'features' => array(
+                            'type' => 'Feature',
+                            "geometry" => array(
+                                'type' => 'Polygon',
+                                'coordinates' => array(
+                                    $lng,
+                                    $lat
+                                )
+                            )
+                        )
+                    );
+                    array_push($geojson['features'], $marker);
+                }
+            }
+        } else {
+            return redirect('/');
+        }
+
+        $geojson =  json_encode($geojson);
+        return view('pages.tours.details2')->with(compact('tour','companions','blackgroundCompanion','geojson','toursTookPlace'));
+
+    }
     public function showPageTourDetails($url){
         $locale_code =   config('app.locale');
         $tour = Pages::where('locale_code',$locale_code)->where('url_key',$url)->where('is_active',1)->first();

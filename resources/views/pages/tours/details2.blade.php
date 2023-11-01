@@ -1,6 +1,6 @@
 @extends('frontend_layout')
 @section('header')
-    @include('pages.include.header_about')
+    @include('pages.include.header_temp')
 @endsection
 @section('banner')
     @include('pages.include.banner_tour')
@@ -221,6 +221,13 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
         /*max-height: 400px;*/
         object-fit: cover;
     }
+    @media (max-width: 1000px) {
+        .image-l img{
+            width: 100%;
+            max-height: 400px!important;
+            object-fit: cover;
+        }
+    }
     .image-l{
         margin-bottom: 10px;
     }
@@ -297,6 +304,12 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
         #map{
             width: 100%;
             height:500px;
+        }
+        @media (max-width: 850px) {
+            #map{
+                width: 100%;
+                max-height: 350px!important;
+            }
         }
         .marker {
             background-image: url('/frontend/images/position5.png');
@@ -1053,12 +1066,12 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
                 </div>
                 <div class="modal-body">
                     <form action="#">
-                        <div class="row mt-20">
+                        <div class="row ">
                             <div class="col-xl-6">
-                                <input  class="form-control" placeholder="{{trans('messages.name')}} ">
+                                <input  class="form-control mt-20" placeholder="{{trans('messages.name')}} ">
                             </div>
                             <div class="col-xl-6">
-                                <input class="form-control"  placeholder="{{trans('messages.phone_number')}} ">
+                                <input class="form-control mt-20"  placeholder="{{trans('messages.phone_number')}} ">
                             </div>
                         </div>
                         <div class="row mt-20">
