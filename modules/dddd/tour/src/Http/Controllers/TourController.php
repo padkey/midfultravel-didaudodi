@@ -64,7 +64,7 @@ class TourController extends AdminController
             $items->setResource('/admin/tour-schedule');
             $items->id();
             $items->title();
-            $items->order();
+            $items->order()->editable()->sortable();
         })->orderBy('order','DESC');
 
         return $show;

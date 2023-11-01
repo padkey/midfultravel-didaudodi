@@ -32,7 +32,7 @@ class TourScheduleController extends AdminController
      *
      * @return Grid
      */
-    protected function grid(): Grid
+    /*protected function grid(): Grid
     {
         $grid = new Grid(new TourSchedule);
 
@@ -42,8 +42,11 @@ class TourScheduleController extends AdminController
         $grid->column('position', __('Position'));
         $grid->column('description', __('Description'));
         return $grid;
+    }*/
+    public function index(Content $content)
+    {
+        return redirect()->back();
     }
-
     /**
      * Make a show builder.
      *
