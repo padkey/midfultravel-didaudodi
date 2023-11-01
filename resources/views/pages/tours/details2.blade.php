@@ -218,7 +218,7 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
 <style>
     .image-l img{
         width: 100%;
-        max-height: 400px;
+        /*max-height: 400px;*/
         object-fit: cover;
     }
     .image-l{
@@ -1082,11 +1082,12 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
     </div>
 @endsection
 @section('script')
-        <script>
-            var element = document.querySelector('.content-right');
-           // alert(element.offsetHeight)
-            $('.image-li').css('height',element.offsetHeight);
-        </script>
+<script>
+    var element = document.querySelector('.content-right');
+   // alert(element.offsetHeight)
+
+    $('.image-li').css('height',element.offsetHeight);
+</script>
 <script>
         mapboxgl.accessToken = 'pk.eyJ1IjoidG9hbmNodW9uZyIsImEiOiJjbG80MG9zOXkwbWthMm11ZGFtcXFvdTZlIn0.VBX96EkqFGqhVwBrwSpw8A';
         // Mã jQuery xử lý sau khi trang đã tải xong

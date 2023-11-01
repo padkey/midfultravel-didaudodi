@@ -56,7 +56,7 @@
             line-height: 1.3;
         }
 
-        h1,h2,h3,h4{
+        h1,h2,h3{
             font-family:"Cormorant Garamond",serif!important;
             font-style:italic;
         }
