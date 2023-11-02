@@ -81,7 +81,7 @@
                                         }
                                     @endphp
                                     <li class="f-r"><a href="">{{$language}} <i class="ti-angle-down"></i></a>
-                                        <ul class="submenu">
+                                        <ul class="submenu" style="    width: fit-content!important;">
                                             <li><a href="{!! route('user.change-language', ['en']) !!}">English</a></li>
                                             <li><a href="{!! route('user.change-language', ['vi']) !!}">VietNam</a></li>
                                         </ul>
