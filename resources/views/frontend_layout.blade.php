@@ -28,6 +28,7 @@
     <link rel="stylesheet" href="{{asset('frontend/css/new-fonts.css')}}">
     <link href='https://fonts.googleapis.com/css?family=Dancing Script' rel='stylesheet'>
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css' rel='stylesheet' />
+    <link href="{{asset('vendor/laravel-admin/sweetalert2/dist/sweetalert2.css')}}" rel='stylesheet' />
 
      <link rel="stylesheet" href="{{asset('frontend/css/responsive.css')}}">
 </head>
@@ -620,6 +621,7 @@
     <script src="{{asset('frontend/js/mail-script.js')}}"></script>
     <script src="{{asset('frontend/js/main.js')}}"></script>
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js'></script>
+    <script src="{{asset('vendor/laravel-admin/sweetalert2/dist/sweetalert2.min.js')}}"></script>
     @yield('script')
     <script>
         /*$(document).ready(function(){

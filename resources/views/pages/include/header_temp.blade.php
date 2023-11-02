@@ -29,7 +29,7 @@
                         .f-r{
                             float:right;
                             margin-left: 15px;
-                            margin-bottom: 25px;
+                            bottom: 10px;
                         }
                         .f-l:hover{
                             transform:  translateY(-15%);

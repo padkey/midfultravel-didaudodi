@@ -17,7 +17,7 @@
         background-size: cover;
         background-position: center center;
         /* text-align: center; */
-        padding: 120px 0 50px 0;
+        padding: 10px 0 50px 0;
         margin:auto;
         /*height: ;*/
     }
