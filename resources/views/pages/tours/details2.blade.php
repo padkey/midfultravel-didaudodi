@@ -1064,37 +1064,66 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body">
-                    <form action="#">
+                <form action="#">
+                    <div class="modal-body">
                         <div class="row ">
                             <div class="col-xl-6">
-                                <input  class="form-control mt-20" placeholder="{{trans('messages.name')}} ">
+                                <input  class="form-control mt-20 name" placeholder="{{trans('messages.name')}} ">
+                                <p class="errorName error"></p>
                             </div>
                             <div class="col-xl-6">
-                                <input class="form-control mt-20"  placeholder="{{trans('messages.phone_number')}} ">
+                                <input class="form-control mt-20 phone"  placeholder="{{trans('messages.phone_number')}} " >
+                                <p class="errorPhone error"></p>
+
                             </div>
                         </div>
                         <div class="row mt-20">
                             <div class="col-xl-6">
-                                <input class="form-control" placeholder="{{trans('messages.email')}} ">
+                                <input class="form-control email" placeholder="{{trans('messages.email')}} ">
+                                <p class="errorEmail error"></p>
                             </div>
-
                         </div>
                         <div class="row mt-20">
                             <div class="col-xl-12">
-                                <textarea class="form-control" placeholder="{{trans('messages.message')}} "></textarea>
+                                <textarea class="form-control message" placeholder="{{trans('messages.message')}} "></textarea>
+                                <p class="errorMessage error"></p>
                             </div>
                         </div>
-                    </form>
-                </div>
-                <div class="modal-footer mt-30">
-                    <button type="button" class="btn btn-shop">{{trans('messages.submit')}}   </button>
-                </div>
+                    </div>
+                    <div class="modal-footer mt-30">
+                        <button type="button" class="btn btn-shop btn-enquire-submit">{{trans('messages.submit')}}   </button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
 @endsection
 @section('script')
+        <script>
+            $('.btn-enquire-submit').click(function (){
+                /*Swal.fire(
+                        'Good Job',
+                      'Cảm ơn bạn, chúng tôi sẽ phản hồi trong thời gian sớm nhất!',
+                        'success'
+                );*/
+                validateFormEnquire();
+            })
+            function validateFormEnquire(){
+                $('.error').html('');
+                if($('.message').val() == ''){
+                    $('.errorMessage').html('Vui lòng nhập email');
+                }
+                if($('.name').val() == ''){
+                    $('.errorName').html('Vui lòng nhập email');
+                }
+                if($('.email').val() == ''){
+                    $('.errorEmail').html('Vui lòng nhập email');
+                }
+                if($('.phone').val() == ''){
+                    $('.errorPhone').html('Vui lòng nhập email');
+                }
+            }
+        </script>
 <script>
     var element = document.querySelector('.content-right');
    // alert(element.offsetHeight)
