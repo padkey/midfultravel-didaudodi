@@ -54,6 +54,7 @@
     }
     .logo-image img{
         width: 100%;
+        max-width: 500px;
     }
     /*@media (max-width:1900px) {
         .logo-image {
