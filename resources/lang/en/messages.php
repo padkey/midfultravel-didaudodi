@@ -72,5 +72,11 @@ return [
     'name' => 'Name',
     'phone_number' =>'Phone number',
     'email' => 'Email',
+    'require_phone' => 'Please enter the phone number!',
+    'require_email' => 'Please enter email!',
+    'require_message' => 'Please enter a message!',
+    'require_name' => 'Please enter a name!',
+    'this_field_is_required' => 'This field is required!',
+    'error_number_phone' => 'Please enter numbers only!',
 
 ];

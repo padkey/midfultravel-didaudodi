@@ -75,6 +75,13 @@ return [
     'name' => 'Tên',
     'phone_number' =>'Số điện thoại',
     'email' => 'Email',
+    'require_phone' => 'Vui lòng nhập số điện thoại!',
+    'require_email' => 'Vui lòng nhập email!',
+    'require_message' => 'Vui lòng nhập tin nhắn!',
+    'require_name' => 'Vui lòng nhập tên!',
+    'this_field_is_required' => 'Trường này là bắt buộc!',
+    'error_number_phone' => 'Vui lòng chỉ nhập số!',
+
 
 
 ];

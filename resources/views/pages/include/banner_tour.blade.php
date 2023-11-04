@@ -62,18 +62,88 @@
         }
     }*/
     /* Tablet desktop :768px. */
-    @media  (min-width: 768px) and (max-width: 993px) {
+    @media  (min-width: 800px) and (max-width: 993px) {
         .logo-image {
             width: 50%;
             margin:auto;
         }
+        .logo-image img{
+            max-width: 150px;
+        }
+        .title-package h3{
+            font-size: 30px;
+        }
+        .date-start-end {
+            font-weight: 900;
+            font-size: 24px;
+            color: #fff;
+            /* font-family: sans-serif!important; */
+            border: black;
+        }
+        .event-label {
+            display: inline-block;
+            background: #222;
+            text-transform: uppercase;
+            border-radius: 3px;
+            padding: 0 6px;
+            color: white;
+            margin: 0 5px 6px 0;
+            font-weight: 600;
+            font-size: 14px;
+            font-family: sans-serif!important;
+        }
+        .banner_package{
+            background-image: url("/uploads/{{$tour->image_thumbnail_mobile}}");
+            background-size: cover;
+            background-position: center center;
+            /* text-align: center; */
+            padding: 10px 0 50px 0;
+            margin:auto;
+            /*height: ;*/
+        }
     }
     /* Mobile desktop :768px.*/
-    @media (min-width: 100px) and (max-width: 767px) {
+    @media (min-width: 100px) and (max-width: 800px) {
         .logo-image {
             width: 100%;
             margin:auto;
-
+        }
+        .logo-image img{
+            max-width: 180px;
+        }
+        .title-package h3{
+            font-size: 30px;
+        }
+        .date-start-end {
+            font-weight: 900;
+            font-size: 24px;
+            color: #fff;
+            /* font-family: sans-serif!important; */
+            border: black;
+        }
+        .event-label {
+            display: inline-block;
+            background: #222;
+            text-transform: uppercase;
+            border-radius: 3px;
+            padding: 0 6px;
+            color: white;
+            margin: 0 5px 6px 0;
+            font-weight: 600;
+            font-size: 14px;
+            font-family: sans-serif!important;
+        }
+        .title-package {
+            margin-top: 20px;
+        }
+        .banner_package{
+            background-image: url("/uploads/{{$tour->image_thumbnail_mobile}}");
+            background-size: cover;
+            background-position: center center;
+            /* text-align: center; */
+            padding: 10px 0 50px 0;
+            margin:auto;
+            /*height: ;*/
         }
     }
 </style>
@@ -91,7 +161,7 @@
             $date = date_create($tour->date_end);
             $date_end= date_format($date, 'd/m/Y');
             @endphp
-            <p><span class="event-label trangthai-open">{{count($toursTookPlace ) == 0  ? '' : trans('messages.registration_open')}}</span> <span class="event-label"> {{$tour->type_tour}}</span></p>
+            <p style="margin: 0;"><span class="event-label trangthai-open">{{count($toursTookPlace ) == 0  ? '' : trans('messages.registration_open')}}</span> <span class="event-label"> {{$tour->type_tour}}</span></p>
             <p class="date-start-end">{{$date_start}} - {{$date_end}}</p>
             <h3 class="">{{$tour->name}}</h3>
         </div>
