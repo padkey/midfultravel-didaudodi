@@ -622,6 +622,10 @@
     <script src="{{asset('frontend/js/main.js')}}"></script>
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js'></script>
     <script src="{{asset('vendor/laravel-admin/sweetalert2/dist/sweetalert2.min.js')}}"></script>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+
+   {{-- <script src="https://www.google.com/recaptcha/enterprise.js?render=6Lcuv-woAAAAABB8ZT2141ZCNCpq4xD5BxLg5YhT" async defer></script>--}}
+
     @yield('script')
     <script>
         /*$(document).ready(function(){

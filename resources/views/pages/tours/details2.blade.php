@@ -1047,7 +1047,13 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
       <a href="#test-form" class="popup-with-form">Requỉe</a>
   </div>--}}
 <!-- end-companion -->
-
+    <style>
+        .error {
+            color:red;
+            font-weight: bold;
+            margin-left: 5px;
+        }
+    </style>
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -1089,9 +1095,21 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
                                 <p class="errorMessage error"></p>
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="col-xl-12">
+                                {{--<form action="?" method="POST">
+                                    <div class="g-recaptcha" data-sitekey="6Lcuv-woAAAAABB8ZT2141ZCNCpq4xD5BxLg5YhT"></div>
+                                    <br/>
+                                    <input type="submit" value="Submit">
+                                </form>--}}
+                            </div>
+                        </div>
                     </div>
                     <div class="modal-footer mt-30">
-                        <button type="button" class="btn btn-shop btn-enquire-submit">{{trans('messages.submit')}}   </button>
+                        <button type="button" class="btn btn-shop btn-enquire-submit g-recaptcha"
+                                data-sitekey="6Lcuv-woAAAAABB8ZT2141ZCNCpq4xD5BxLg5YhT"
+                                data-callback='onSubmit'
+                                data-action='submit'>{{trans('messages.submit')}}   </button>
                     </div>
                 </form>
             </div>
@@ -1099,6 +1117,11 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
     </div>
 @endsection
 @section('script')
+        <script>
+            function onSubmit(token) {
+                document.getElementById("demo-form").submit();
+            }
+        </script>
         <script>
             $('.btn-enquire-submit').click(function (){
                 /*Swal.fire(
@@ -1111,16 +1134,33 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
             function validateFormEnquire(){
                 $('.error').html('');
                 if($('.message').val() == ''){
-                    $('.errorMessage').html('Vui lòng nhập email');
+                    $('.errorMessage').html('{{trans('messages.require_message')}}');
                 }
                 if($('.name').val() == ''){
-                    $('.errorName').html('Vui lòng nhập email');
+                    $('.errorName').html('{{trans('messages.require_name')}}');
                 }
                 if($('.email').val() == ''){
-                    $('.errorEmail').html('Vui lòng nhập email');
+                    $('.errorEmail').html('{{trans('messages.require_email')}}');
                 }
                 if($('.phone').val() == ''){
-                    $('.errorPhone').html('Vui lòng nhập email');
+                    $('.errorPhone').html('{{trans('messages.require_phone')}}');
+                }else {
+                    let isNumeric = /^\d+$/
+                    if ($('.phone').val() && !isNumeric.test($('.phone').val())) {
+                        i = 1;
+                        $('.errorPhone').html('{{trans('messages.error_number_phone')}}');
+                    } /*else {
+                        let to_phone_arr = $('.customer_phone').val().split("");
+                        if (Number(to_phone_arr[0]) !== 0) { //check first number
+                            i = 1;
+                            $('.errorPhone').html('Số điện thoại không đúng');
+                        }
+                        let lengthPhone = to_phone_arr.length;
+                        if (lengthPhone !== 10) { //check
+                            i = 1;
+                            $('.errorPhone').html('Số điện thoại phải có 10 số');
+                        }
+                    }*/
                 }
             }
         </script>
