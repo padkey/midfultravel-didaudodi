@@ -114,12 +114,18 @@ class TourController extends AdminController
     {
         $grid = new Grid(new TourModel);
         $grid->column(TourModel::COL_ID, __("ID"))->sortable();
-        $grid->column(TourModel::COL_NAME, __("Name"))->modal('Schedule Tour', function ($model) {
+        /*$grid->column(TourModel::COL_NAME, __("Name"))->modal('Schedule Tour', function ($model) {
             $comments = $model->tourSchedule()->get()->map(function ($comment) {
                 return $comment->only(['id', 'title','meal','order']);
             });
             return new Table(['ID', 'Title', 'Meals','Order'], $comments->toArray());
-        });;
+        });*/
+        $grid->column(TourModel::COL_NAME, 'Name')->expand(function ($model) {
+            $comments = $model->tourSchedule()->orderBy('order','ASC')->get()->map(function ($comment) {
+                return $comment->only(['id', 'title', 'meal','order']);
+            });
+            return new Table(['ID', 'Title', 'Meals','Order'], $comments->toArray());
+        });
         $grid->column(TourModel::COL_LOCALE_CODE, __("Language"));
         $grid->column(TourModel::COL_IS_ACTIVE)->bool();
         $grid->column(TourModel::COL_URL)->editable();
@@ -167,9 +173,6 @@ class TourController extends AdminController
             if ($form->isEditing()) {
                 $form->text(TourModel::COL_URL, __("Url Key"))->rules("required");
             }
-
-
-
         });
         $form->multipleSelect('partnershipBranch','Partnership Branch')
             ->options(PartnershipBranch::all()->pluck('name','id'))

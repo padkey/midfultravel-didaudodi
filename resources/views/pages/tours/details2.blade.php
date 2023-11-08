@@ -1111,7 +1111,9 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
                         </div>
                         <div class="row">
                             <div class="col-xl-12">
-                                <div id="html_element"></div>
+                                <div id="html_element" data-callback="recaptchaCallback" ></div>
+                                <p class="errorCaptcha error"></p>
+
                             </div>
                         </div>
 
@@ -1122,7 +1124,7 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
                                  data-callback='onSubmit'
                                  data-action='submit'>{{trans('messages.submit')}}   </button>
                          <div class="g-recaptcha" id="feedback-recaptcha" data-sitekey="{{ env('RECAPTCHA_SITE_KEY')  }}"></div>--}}
-                        <button type="button" class="btn btn-shop btn-enquire-submit">{{trans('messages.submit')}} </button>
+                        <button type="button" class="btn btn-shop btn-enquire-submit" >{{trans('messages.submit')}} </button>
                     </div>
 
                 </form>
@@ -1131,22 +1133,20 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
     </div>
 @endsection
 @section('script')
-        <script>
-            function onClick(e) {
-
-            }
-        </script>
         <script type="text/javascript">
             var onloadCallback = function() {
                 grecaptcha.render('html_element', {
                     'sitekey' : '{{ config('services.recaptcha.site_key') }}'
                 });
             };
+            function recaptchaCallback() {
+                $('.errorCaptcha').html('');
+            };
         </script>
         <script>
             $('.btn-enquire-submit').click(function (e){
-                e.preventDefault();
-                alert(grecaptcha.getResponse());
+                //e.preventDefault();
+                //alert(grecaptcha.getResponse());
                 var _token = $('input[name="_token"]').val();
                 let message = $('.message').val();
                 let name =  $('.name').val();
@@ -1179,11 +1179,11 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
                                 function (isConfirm) {
                                     if (isConfirm) {
                                         $('#model-enquire').modal('hide');
-
                                     }
                                 },
                             );
                         },error: function() {
+                            grecaptcha.reset();
                             Swal.fire({
                                 title: "Error!",
                                 text: "Something went wrong!",
@@ -1197,32 +1197,33 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
                             );
                         },
                     });
+
                 }
             })
             function validateFormEnquire(){
-                return true;
                 $('.error').html('');
+                let i = 1;
                 if($('.message').val() == ''){
                     $('.errorMessage').html('{{trans('messages.require_message')}}');
-                    return false;
+                    i = 0;
                 }
                 if($('.name').val() == ''){
                     $('.errorName').html('{{trans('messages.require_name')}}');
-                    return false;
+                    i = 0;
                 }
                 if($('.email').val() == ''){
                     $('.errorEmail').html('{{trans('messages.require_email')}}');
-                    return false;
+                    i = 0;
                 }
                 if($('.phone').val() == ''){
                     $('.errorPhone').html('{{trans('messages.require_phone')}}');
-                    return false;
+                    i = 0;
                 }else {
                     let isNumeric = /^\d+$/
                     if ($('.phone').val() && !isNumeric.test($('.phone').val())) {
                         i = 1;
                         $('.errorPhone').html('{{trans('messages.error_number_phone')}}');
-                        return false;
+                        i = 0;
                     } /*else {
                         let to_phone_arr = $('.customer_phone').val().split("");
                         if (Number(to_phone_arr[0]) !== 0) { //check first number
@@ -1235,6 +1236,17 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
                             $('.errorPhone').html('Số điện thoại phải có 10 số');
                         }
                     }*/
+                }
+                if (grecaptcha && grecaptcha.getResponse().length > 0)  { //check recaptcha
+
+                } else {
+                    $('.errorCaptcha').html('{{trans('messages.error_captcha')}}');
+                    i = 0;
+                }
+                if(i==0){
+                    return false;
+                } else {
+                    return true;
                 }
             }
         </script>
