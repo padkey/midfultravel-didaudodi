@@ -992,24 +992,24 @@
         }
         @media (max-width: 1750px) and (min-width: 1620px) {
             .profile-card{
-                width: 250px;
+                width: 280px;
                 height: 310px;
             }
             .profile-card .img img{
-                height: 200px;
+                height: 220px;
             }
         }
 
         @media (max-width: 1420px) {
             .profile-card{
-                width: 250px;
+                width: 280px;
                 height: 310px;
             }
             .profile-card .img img{
-                height: 200px;
+                height: 220px;
             }
         }
-        @media (max-width: 1280px) and (min-width: 1190px) {
+/*        @media (max-width: 1280px) and (min-width: 1190px) {
             .profile-card{
                 width: 220px;
                 height: 310px;
@@ -1083,10 +1083,10 @@
             .profile-card .img img{
                 height: 200px;
             }
-        }
+        }*/
         @media (max-width: 660px) and (min-width: 599px) {
             .profile-card{
-                width: 220px;
+                width: 280px;
                 height: 310px;
             }
             .name-companion h3{
@@ -1094,7 +1094,7 @@
                 color: #8B572A;
             }
             .profile-card .img img{
-                height: 165px;
+                height: 220px;
             }
             .profile-card .caption{
                 transform: translateY(-295px);
@@ -1105,7 +1105,7 @@
         }
         @media (max-width: 599px) {
             .profile-card{
-                width: 250px;
+                width: 280px;
                 height: 310px;
                 margin: auto;
                 margin-top: 50px;
@@ -1113,12 +1113,21 @@
 
             }
             .profile-card .img img{
-                height: 200px;
+                height: 220px;
             }
+
+        }
+        .container-companion{
+            width: 100%;
+            margin: auto;
+        }
+        .team-profile {
+            max-width: 1200px;
+            margin: auto;
         }
     </style>
-    <div class="companion-area ">
-        <div class="container">
+    <div class="companion-area">
+        <div class="container-companion">  {{--container--}}
             <div class="title-companion" style="margin-bottom: 80px">
                 <h1 >{{trans('messages.companions')}}</h1>
             </div>
@@ -1409,10 +1418,14 @@
     </script>
     <script>
         let companionNumber = parseInt($('.companionNumber').val());
+        if (companionNumber > 4) {
+            companionNumber =4;
+        }
         var owl5 = $('.owl-five');
         owl5.owlCarousel({
         loop:true,
         nav:true,
+            margin:20,
         navText:['<i class="ti-angle-left"></i>','<i class="ti-angle-right"></i>'],
         autoplay:true,
         autoplayTimeout:1500,
