@@ -2,14 +2,13 @@
 
 namespace DDDD\Tour\Models;
 
-use Encore\Admin\Traits\AdminBuilder;
+//use Encore\Admin\Traits\AdminBuilder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-use Encore\Admin\Traits\ModelTree;
+//use Encore\Admin\Traits\ModelTree;
 
 class TourSchedule extends Model
 {
-    use ModelTree, AdminBuilder;
 
     const COL_ID = "id";
     const COL_TITLE = "title";
@@ -44,9 +43,9 @@ class TourSchedule extends Model
     public function __construct(array $attributes = [])
     {
         parent::__construct($attributes);
-        $this->setParentColumn(self::COL_TOUR_ID);
+/*        $this->setParentColumn(self::COL_TOUR_ID);
         $this->setOrderColumn(self::COL_ORDER);
-        $this->setTitleColumn(self::COL_TITLE);
+        $this->setTitleColumn(self::COL_TITLE);*/
     }
 
 
