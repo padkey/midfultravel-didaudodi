@@ -860,25 +860,23 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
         margin-bottom: 15px;
     }
     .name-companion h3{
-        font-size: 25px;
+        font-size: 23px;
         color: #8B572A;
-        /*
-        font-weight: 600;
-        */
+        margin-bottom: 0;
+        font-style: normal;
+        font-weight: 800;
     }
     .name-companion h5 {
-        font-size: 19px;
-        font-family: "Cormorant Garamond",serif!important;
+        font-size: 18px;
         color: #8B572A;
-        margin-bottom: 5px;
-        font-weight: 600;
+        margin-bottom: 7px;
+        font-weight: 500;
     }
     .name-companion h6 {
-        font-size: 18px;
-        font-family: "Cormorant Garamond",serif!important;
         color: #8B572A;
         margin-bottom: 5px;
-        font-weight: 600;
+        font-weight: 500;
+        font-size: 12px;
     }
     .caption p{
         font-size: 17px;
