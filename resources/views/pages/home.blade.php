@@ -1136,8 +1136,8 @@
                             <img src="{{url('uploads/'.$companion->avatar)}}" alt=""  >
                             <div class="name-companion">
                                 <h3>{{$companion->name}}</h3>
-                                <h5>{{$companion->company_name}}</h5>
-                                <h6>{{$companion->position}}</h6>
+                                <h5>{{$companion->position}}</h5>
+                                <h6> {{$companion->company_name}}</h6>
                             </div>
                         </div>
                         <div class="caption">
