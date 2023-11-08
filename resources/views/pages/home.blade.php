@@ -598,50 +598,53 @@
         }
 
     </style>
-    <div class="offers_area" >
-        <div class="container-pop-tour" style="">
-            <div class="row  mb-40">
-                <div class="col-xl-12">
-                    <div class="section_title text-center mb-20 mt-10">
-                        <h1>{{trans('messages.tours_took_place')}}</h1>
-                    </div>
-                    {{--<div class="section-icon">
-                        <img src="{{url('/frontend/images/tour3.png')}}" alt="" style="border-radius: 0">
-                        <div class="title-center">
-                            <h1 class="hightlight-underline-green">{{trans('messages.tours_took_place')}}</h1>
+    @if(count($toursTookPlace) > 0)
+        <div class="offers_area" >
+            <div class="container-pop-tour" style="">
+                <div class="row  mb-40">
+                    <div class="col-xl-12">
+                        <div class="section_title text-center mb-20 mt-10">
+                            <h1>{{trans('messages.tours_took_place')}}</h1>
                         </div>
-                    </div>--}}
+                        {{--<div class="section-icon">
+                            <img src="{{url('/frontend/images/tour3.png')}}" alt="" style="border-radius: 0">
+                            <div class="title-center">
+                                <h1 class="hightlight-underline-green">{{trans('messages.tours_took_place')}}</h1>
+                            </div>
+                        </div>--}}
+                    </div>
+                </div>
+                <input type="hidden" value="{{count($toursTookPlace)}}" class="toursTPNumber">
+                <div class="row owl-carousel owlTourTP owl-theme"  style="margin: auto;">
+                    @foreach($toursTookPlace as $tour)
+                        <div class="single_offers bg-bg block" data-img="{{url('/uploads/'.$tour->image_thumbnail)}}">
+                            <div class="about_thumb">
+                                <img src="{{url('/uploads/'.$tour->image_thumbnail)}}" alt="">
+                            </div>
+                            <div class="offers_content">
+                                <div class="trangthai-category">
+                                    <span class="event-label trangthai-open">{{trans('messages.tours_took_place')}}</span> <span  class="event-label">{{$tour->type_tour}}</span>
+                                </div>
+                                @php
+                                    $date = date_create($tour->date_start);
+                                    $date_start= date_format($date, 'd/m/Y');
+                                    $date = date_create($tour->date_end);
+                                    $date_end= date_format($date, 'd/m/Y');
+                                @endphp
+                                <b>{{$date_start}} - {{$date_end}}</b>
+                                <h2 class="title-offer">  {{$tour->name}}</h2>
+                                <i class="fa fa-map-marker" aria-hidden="true"></i> {{$tour->region}}
+                                <p class="short-desc"> {{$tour->short_description}} </p>
+                                <a href="/tours/{{$tour->url}}" class="btn btn-earth">{{trans('messages.see_details')}}</a>
+                            </div>
+                        </div>
+
+                    @endforeach
                 </div>
             </div>
-            <input type="hidden" value="{{count($toursTookPlace)}}" class="toursTPNumber">
-            <div class="row owl-carousel owlTourTP owl-theme"  style="margin: auto;">
-                @foreach($toursTookPlace as $tour)
-                    <div class="single_offers bg-bg block" data-img="{{url('/uploads/'.$tour->image_thumbnail)}}">
-                        <div class="about_thumb">
-                            <img src="{{url('/uploads/'.$tour->image_thumbnail)}}" alt="">
-                        </div>
-                        <div class="offers_content">
-                            <div class="trangthai-category">
-                                <span class="event-label trangthai-open">{{trans('messages.tours_took_place')}}</span> <span  class="event-label">{{$tour->type_tour}}</span>
-                            </div>
-                            @php
-                                $date = date_create($tour->date_start);
-                                $date_start= date_format($date, 'd/m/Y');
-                                $date = date_create($tour->date_end);
-                                $date_end= date_format($date, 'd/m/Y');
-                            @endphp
-                            <b>{{$date_start}} - {{$date_end}}</b>
-                            <h2 class="title-offer">  {{$tour->name}}</h2>
-                            <i class="fa fa-map-marker" aria-hidden="true"></i> {{$tour->region}}
-                            <p class="short-desc"> {{$tour->short_description}} </p>
-                            <a href="/tours/{{$tour->url}}" class="btn btn-earth">{{trans('messages.see_details')}}</a>
-                        </div>
-                    </div>
-
-                @endforeach
-            </div>
         </div>
-    </div>
+    @endif
+
     <!-- end-Tour ddax qua -->
 
     <!-- video_area_start -->
