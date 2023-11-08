@@ -151,6 +151,7 @@
     .single-gallery-image{
         height: 250px;
         margin-top:0px!important;
+        border-radius: 40px;
     }
     .mb-10{
         margin-bottom: 10px;
@@ -1350,7 +1351,7 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
             items:3,
             loop:true,
             nav:true,
-            margin:10,
+            margin:20,
             navText:['<i class="ti-angle-left"></i>','<i class="ti-angle-right"></i>'],
             autoplay:true,
             autoplayTimeout:1500,
