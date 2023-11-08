@@ -862,19 +862,19 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
     }
     .name-companion h3{
         font-size: 25px;
-        color: #8B572A;
+        color: #3d3d3d;
         margin-bottom: 0;
         font-style: normal;
         font-weight: 800;
     }
     .name-companion h5 {
         font-size: 18px;
-        color: #8B572A;
+        color: #3d3d3d;
         margin-bottom: 7px;
         font-weight: 500;
     }
     .name-companion h6 {
-        color: #8B572A;
+        color: #313131;
         margin-bottom: 5px;
         font-weight: 500;
         font-size: 12px;
