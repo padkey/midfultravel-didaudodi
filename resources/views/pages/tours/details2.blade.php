@@ -664,7 +664,7 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
 <!-- companion -->
 <style>
     .companion-container{
-        width: 85%;
+        width: 100%;
         margin: auto;
     }
     .companion-area{
@@ -696,24 +696,24 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
     }
     @media (max-width: 1750px) and (min-width: 1620px) {
         .profile-card{
-            width: 250px;
+            width: 280px;
             height: 310px;
         }
         .profile-card .img img{
-            height: 200px;
+            height: 220px;
         }
     }
 
     @media (max-width: 1420px) {
         .profile-card{
-            width: 250px;
+            width: 280px;
             height: 310px;
         }
         .profile-card .img img{
-            height: 200px;
+            height: 220px;
         }
     }
-    @media (max-width: 1280px) and (min-width: 1190px) {
+    /*@media (max-width: 1280px) and (min-width: 1190px) {
         .profile-card{
             width: 220px;
             height: 310px;
@@ -731,8 +731,8 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
         .profile-card  .desc-companion{
             -webkit-line-clamp: 13;
         }
-    }
-    @media (max-width: 1190px) and (min-width: 1100px) {
+    }*/
+ /*   @media (max-width: 1190px) and (min-width: 1100px) {
         .profile-card{
             width: 280px;
             height: 310px;
@@ -786,10 +786,10 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
         .profile-card .img img{
             height: 200px;
         }
-    }
+    }*/
     @media (max-width: 660px) and (min-width: 599px) {
         .profile-card{
-            width: 220px;
+            width: 280px;
             height: 310px;
         }
         .name-companion h3{
@@ -797,7 +797,7 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
             color: #8B572A;
         }
         .profile-card .img img{
-            height: 165px;
+            height: 220px;
         }
         .profile-card .caption{
             transform: translateY(-295px);
@@ -808,7 +808,7 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
     }
     @media (max-width: 599px) {
         .profile-card{
-            width: 250px;
+            width: 280px;
             height: 310px;
             margin: auto;
             margin-top: 50px;
@@ -816,7 +816,7 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
 
         }
         .profile-card .img img{
-            height: 200px;
+            height: 220px;
         }
     }
     .profile-card:hover{
