@@ -2,7 +2,7 @@
 
 namespace DDDD\TourEnquire;
 
-use DDDD\TourEnquire\Services\ISubmitProductTourEnquireService;
+//use DDDD\TourEnquire\Services\ISubmitProductTourEnquireService;
 use DDDD\TourEnquire\Services\ISubmitTourEnquireService;
 use DDDD\TourEnquire\Services\SubmitProductTourEnquireServiceService;
 use DDDD\TourEnquire\Services\SubmitTourEnquireServiceService;
@@ -53,7 +53,7 @@ class TourEnquireServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind(ISubmitProductTourEnquireService::class, SubmitProductTourEnquireServiceService::class);
+       // $this->app->bind(ISubmitProductTourEnquireService::class, SubmitProductTourEnquireServiceService::class);
         $this->app->bind(ISubmitTourEnquireService::class, SubmitTourEnquireServiceService::class);
 
     }

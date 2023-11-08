@@ -19,7 +19,13 @@ class TourEnquireController extends AdminController
     {
         $grid = new Grid(new TourEnquireModel());
         $grid->column(TourEnquireModel::COL_ID)->sortable();
-        $grid->column(TourEnquireModel::COL_STATUS);
+        $grid->column(TourEnquireModel::COL_STATUS)->label([
+            1 => 'default',
+            TourEnquireModel::STATUS_PENDING => 'danger',
+            TourEnquireModel::STATUS_COMPLETE => 'success',
+            4 => 'info',
+        ]);
+        $grid->created_at();
 
         $grid->filter(function ($filter) {
             $filter->equal(TourEnquireModel::COL_STATUS)
@@ -55,7 +61,7 @@ class TourEnquireController extends AdminController
             ->default(Request::capture()->query('tour_id'))
             ->readonly();
         $form->textarea(TourEnquireModel::COL_ADMIN_NOTE, __("Admin Note"));
-        $form->textarea(TourEnquireModel::COL_RESPONSE_MESSAGE_TO_EMAIL, __("Response to email"));
+      //  $form->textarea(TourEnquireModel::COL_RESPONSE_MESSAGE_TO_EMAIL, __("Response to email"));
 
 
         if (!$form->isCreating()) {
