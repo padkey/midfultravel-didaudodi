@@ -200,8 +200,8 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
                  <div class="cacdiemden">
                      {!! $tour->place_overview !!}
                  </div>
+             <input type="hidden" class="tour-id" value="{{$tour->id}}">
              <div class="row images-overview owl-six owl-theme owl-carousel">
-                 <input type="hidden" class="tour-id" value="{{$tour->id}}">
                  @if(is_array($tour->image))
                      @foreach($tour->image as $image)
                          <div>
@@ -1348,7 +1348,6 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
 
         var owl6 = $('.owl-six');
         owl6.owlCarousel({
-            items:3,
             loop:true,
             nav:true,
             margin:20,
@@ -1375,16 +1374,16 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
                     loop:true
 
                 },
-                1190:{
+                /*1190:{
                     items:3,
                     nav:true,
                     loop:true
-                },
-                1620:{
+                },*/
+                /*1620:{
                     items:3,
                     nav:true,
                     loop:true
-                },
+                },*/
                 /*2000:{
                     items:5,
                     nav:true,
