@@ -32,12 +32,13 @@ class Recaptcha implements Rule
             'response' => $value,   // value này là recaptcha_token ở client gửi qua
             'ip' => request()->ip(),
         ]);
-        //throw new ModelNotFoundException('User not found by ID ' . $value);
-        if ($response->successful() && $response->json('success') && $response->json('score') > config('services.recaptcha.min_score')) {
+        //throw new ModelNotFoundException('User not found by ID ' . $response);
+        if ($response->successful() && $response->json('success') ) {
             return true;
+
         }
 
-
+        throw new ModelNotFoundException('User not found by ID ' . $response);
         return false;
     }
 

@@ -1146,6 +1146,7 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
         <script>
             $('.btn-enquire-submit').click(function (e){
                 e.preventDefault();
+                alert(grecaptcha.getResponse());
                 var _token = $('input[name="_token"]').val();
                 let message = $('.message').val();
                 let name =  $('.name').val();
@@ -1155,50 +1156,46 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
                 validateFormEnquire();
                 var checkValidate = validateFormEnquire();
                 if(checkValidate) {  //true
-                    grecaptcha.ready(function() {
-                        grecaptcha.execute('{{ env('RECAPTCHA_SITE_KEY')  }}', {action: 'submit'}).then(function(recaptcha_token) {
-                            $.ajax({
-                                url:'{{url('/tour-enquire')}}',
-                                method:'POST',
-                                data: {
-                                    message:message,
-                                    name:name,
-                                    email:email,
-                                    phone:phone,
-                                    tourId:tourId,
-                                    _token:_token,
-                                    recaptcha_token:recaptcha_token
-                                },
-                                success(data){
-                                    Swal.fire({
-                                        title: "Good job!",
-                                        text: "Cảm ơn bạn, chúng tôi sẽ phản hồi trong thời gian sớm nhất!",
-                                        type: "success",
-                                        showConfirmButton: true,
-                                    }).then(
-                                        function (isConfirm) {
-                                            if (isConfirm) {
-                                                $('#model-enquire').modal('hide');
+                    $.ajax({
+                        url:'{{url('/tour-enquire')}}',
+                        method:'POST',
+                        data: {
+                            message:message,
+                            name:name,
+                            email:email,
+                            phone:phone,
+                            tourId:tourId,
+                            _token:_token,
+                            recaptcha_token:grecaptcha.getResponse()
+                        },
+                        success(data){
+                            grecaptcha.reset();
+                            Swal.fire({
+                                title: "Good job!",
+                                text: "Cảm ơn bạn, chúng tôi sẽ phản hồi trong thời gian sớm nhất!",
+                                type: "success",
+                                showConfirmButton: true,
+                            }).then(
+                                function (isConfirm) {
+                                    if (isConfirm) {
+                                        $('#model-enquire').modal('hide');
 
-                                            }
-                                        },
-                                    );
-                                },error: function() {
-                                    Swal.fire({
-                                        title: "Error!",
-                                        text: "Something went wrong!",
-                                        type: "error",
-                                    }).then(
-                                        function (isConfirm) {
-                                            if (isConfirm) {
-                                                $('#model-enquire').modal('hide');
-                                            }
-                                        },
-                                    );
+                                    }
                                 },
-                            });
-
-                        });
+                            );
+                        },error: function() {
+                            Swal.fire({
+                                title: "Error!",
+                                text: "Something went wrong!",
+                                type: "error",
+                            }).then(
+                                function (isConfirm) {
+                                    if (isConfirm) {
+                                        $('#model-enquire').modal('hide');
+                                    }
+                                },
+                            );
+                        },
                     });
                 }
             })
