@@ -895,7 +895,7 @@
         .profile-card{
             position: relative;
             width: 280px;
-            height: 280px;
+            height: 310px;
             background-color: #fff;
             padding: 30px;
             /**/border-radius: 10%;
@@ -904,44 +904,7 @@
             margin: 50px 0px;
 
         }
-        @media (max-width: 1750px) and (min-width: 1620px) {
-            .profile-card{
-                width: 250px;
-                height: 250px;
-            }
-            .profile-card .img img{
-                height: 200px;
-            }
-        }
 
-        @media (max-width: 1420px) {
-            .profile-card{
-                width: 250px;
-                height: 250px;
-            }
-            .profile-card .img img{
-                height: 200px;
-            }
-        }
-        @media (max-width: 1280px) and (min-width: 1190px) {
-            .profile-card{
-                width: 220px;
-                height: 220px;
-            }
-            .name-companion h3{
-                font-size: 20px;
-                color: #8B572A;
-            }
-            .profile-card .img img{
-                height: 165px;
-            }
-            .profile-card .caption{
-                transform: translateY(-265px);
-            }
-            .profile-card  .desc-companion{
-                -webkit-line-clamp: 13;
-            }
-        }
         .name-companion {
             text-align: center;
             margin-top: 15px;
@@ -951,96 +914,24 @@
             font-size: 25px;
             color: #8B572A;
         }
-        @media (max-width: 1190px) and (min-width: 1100px) {
-            .profile-card{
-                width: 280px;
-                height: 280px;
-            }
-            .profile-card .img img{
-                height: 220px;
-            }
+        .name-companion h5 {
+            font-size: 19px;
+            font-family: "Cormorant Garamond",serif!important;
+            color: #8B572A;
+            margin-bottom: 5px;
+            font-weight: 600;
         }
-        @media (max-width: 1100px) and (min-width: 900px) {
-            .profile-card{
-                width: 250px;
-                height: 250px;
-            }
-            .profile-card .img img{
-                height: 200px;
-            }
+        .name-companion h6 {
+            font-size: 18px;
+            font-family: "Cormorant Garamond",serif!important;
+            color: #8B572A;
+            margin-bottom: 5px;
+            font-weight: 600;
         }
-        @media (max-width: 970px) and (min-width: 890px) {
-            .profile-card{
-                width: 220px;
-                height: 220px;
-            }
-            .profile-card .img img{
-                height: 165px;
-            }
-            .name-companion h3{
-                font-size: 20px;
-                color: #8B572A;
-            }
-            .profile-card .caption{
-                transform: translateY(-265px);
-            }
-            .profile-card  .desc-companion{
-                -webkit-line-clamp: 13;
-            }
-        }
-        @media (max-width: 890px) and (min-width: 730px) {
-            .profile-card{
-                width: 280px;
-                height: 280px;
-            }
-            .profile-card .img img{
-                height: 220px;
-            }
-        }
-        @media (max-width: 730px) and (min-width: 660px) {
-            .profile-card{
-                width: 250px;
-                height: 250px;
-            }
-            .profile-card .img img{
-                height: 200px;
-            }
-        }
-        @media (max-width: 660px) and (min-width: 599px) {
-            .profile-card{
-                width: 220px;
-                height: 220px;
-            }
-            .name-companion h3{
-                font-size: 20px;
-                color: #8B572A;
-            }
-            .profile-card .img img{
-                height: 165px;
-            }
-            .profile-card .caption{
-                transform: translateY(-265px);
-            }
-            .profile-card  .desc-companion{
-                -webkit-line-clamp: 12;
-            }
-        }
-        @media (max-width: 599px) {
-            .profile-card{
-                width: 250px;
-                height: 250px;
-                margin: auto;
-                margin-top: 50px;
-                margin-bottom: 50px;
 
-            }
-            .profile-card .img img{
-                height: 200px;
-            }
-        }
         .profile-card:hover{
             border-radius: 10px;
-            height: 500px;
+            height: 590px;
         }
         .profile-card .img{
             position: relative;
@@ -1063,7 +954,7 @@
             object-fit: cover;
         }
         .caption{
-            transform: translateY(-210px);
+            transform: translateY(-245px);
             opacity: 0;
             pointer-events: none;
             transition: all .5s;
@@ -1098,8 +989,131 @@
         .title-companion h1 {
             color: #8b572a;
         }
-        .owl-carousel .owl-stage-outer {
-            /*overflow: inherit;*/
+        @media (max-width: 1750px) and (min-width: 1620px) {
+            .profile-card{
+                width: 250px;
+                height: 310px;
+            }
+            .profile-card .img img{
+                height: 200px;
+            }
+        }
+
+        @media (max-width: 1420px) {
+            .profile-card{
+                width: 250px;
+                height: 310px;
+            }
+            .profile-card .img img{
+                height: 200px;
+            }
+        }
+        @media (max-width: 1280px) and (min-width: 1190px) {
+            .profile-card{
+                width: 220px;
+                height: 310px;
+            }
+            .name-companion h3{
+                font-size: 20px;
+                color: #8B572A;
+            }
+
+            .profile-card .img img{
+                height: 165px;
+            }
+            .profile-card .caption{
+                transform: translateY(-295px);
+            }
+            .profile-card  .desc-companion{
+                -webkit-line-clamp: 13;
+            }
+        }
+        @media (max-width: 1190px) and (min-width: 1100px) {
+            .profile-card{
+                width: 280px;
+                height: 310px;
+            }
+            .profile-card .img img{
+                height: 220px;
+            }
+        }
+        @media (max-width: 1100px) and (min-width: 900px) {
+            .profile-card{
+                width: 250px;
+                height: 310px;
+            }
+            .profile-card .img img{
+                height: 200px;
+            }
+        }
+        @media (max-width: 970px) and (min-width: 890px) {
+            .profile-card{
+                width: 220px;
+                height: 310px;
+            }
+            .profile-card .img img{
+                height: 165px;
+            }
+            .name-companion h3{
+                font-size: 20px;
+                color: #8B572A;
+            }
+            .profile-card .caption{
+                transform: translateY(-295px);
+            }
+            .profile-card  .desc-companion{
+                -webkit-line-clamp: 13;
+            }
+        }
+        @media (max-width: 890px) and (min-width: 730px) {
+            .profile-card{
+                width: 280px;
+                height: 310px;
+            }
+            .profile-card .img img{
+                height: 220px;
+            }
+        }
+        @media (max-width: 730px) and (min-width: 660px) {
+            .profile-card{
+                width: 250px;
+                height: 310px;
+            }
+            .profile-card .img img{
+                height: 200px;
+            }
+        }
+        @media (max-width: 660px) and (min-width: 599px) {
+            .profile-card{
+                width: 220px;
+                height: 310px;
+            }
+            .name-companion h3{
+                font-size: 20px;
+                color: #8B572A;
+            }
+            .profile-card .img img{
+                height: 165px;
+            }
+            .profile-card .caption{
+                transform: translateY(-295px);
+            }
+            .profile-card  .desc-companion{
+                -webkit-line-clamp: 12;
+            }
+        }
+        @media (max-width: 599px) {
+            .profile-card{
+                width: 250px;
+                height: 310px;
+                margin: auto;
+                margin-top: 50px;
+                margin-bottom: 50px;
+
+            }
+            .profile-card .img img{
+                height: 200px;
+            }
         }
     </style>
     <div class="companion-area ">
@@ -1122,6 +1136,8 @@
                             <img src="{{url('uploads/'.$companion->avatar)}}" alt=""  >
                             <div class="name-companion">
                                 <h3>{{$companion->name}}</h3>
+                                <h5>{{$companion->company_name}}</h5>
+                                <h6>{{$companion->position}}</h6>
                             </div>
                         </div>
                         <div class="caption">

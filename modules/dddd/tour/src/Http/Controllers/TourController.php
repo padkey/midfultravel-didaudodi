@@ -184,7 +184,7 @@ class TourController extends AdminController
             $form->tmeditor('important_info_1', __("Our Service"));
             $form->tmeditor('important_info_2', __("Tour Condition"));
             $form->tmeditor('important_info_3', __("Condition in euro"));
-            $form->tmeditor('important_info_4', __("Schedule in mindful center"));
+            $form->tmeditor('important_info_4', __("Retreats schedule"));
             $form->textarea(TourModel::COL_SHORT_DESCRIPTION, __("Short Description"));
            // $form->tmeditor(TourModel::COL_CONTENT);
             $form->textarea(TourModel::COL_PLACE_OVERVIEW, __("Place Overview"));

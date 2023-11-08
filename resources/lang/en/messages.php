@@ -78,5 +78,5 @@ return [
     'require_name' => 'Please enter a name!',
     'this_field_is_required' => 'This field is required!',
     'error_number_phone' => 'Please enter numbers only!',
-
+'retreats_schedule' => 'Retreats schedule',
 ];

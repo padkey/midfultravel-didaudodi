@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "476cb98ff2641d89995cf7371682bc1f",
+    "content-hash": "688b25f62f7efab6ede2ff5a954a8b29",
     "packages": [
         {
             "name": "asm-laravel-admin-ext/tmeditor",
@@ -532,6 +532,53 @@
             ],
             "description": "description...",
             "homepage": "https://github.com/dddd/tour",
+            "keywords": [
+                "extension",
+                "laravel-admin"
+            ],
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
+            "name": "dddd/tour-enquire",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "modules/dddd/tour-enquire",
+                "reference": "c68ec13fd93510ac07fad9763c53668c7b7f6273"
+            },
+            "require": {
+                "encore/laravel-admin": "~1.6",
+                "php": ">=7.0.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~6.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "DDDD\\TourEnquire\\TourEnquireServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "DDDD\\TourEnquire\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "your name",
+                    "email": "your email"
+                }
+            ],
+            "description": "description...",
+            "homepage": "https://github.com/dddd/tour-enquire",
             "keywords": [
                 "extension",
                 "laravel-admin"
@@ -2862,6 +2909,87 @@
                 "php"
             ],
             "time": "2023-08-13T19:53:39+00:00"
+        },
+        {
+            "name": "nwidart/laravel-modules",
+            "version": "v8.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nWidart/laravel-modules.git",
+                "reference": "ee06dc0ac019cc392bd66a1c3e6cec0412fcc52d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nWidart/laravel-modules/zipball/ee06dc0ac019cc392bd66a1c3e6cec0412fcc52d",
+                "reference": "ee06dc0ac019cc392bd66a1c3e6cec0412fcc52d",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "php": ">=7.3"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.16",
+                "laravel/framework": "^8.0",
+                "mockery/mockery": "~1.0",
+                "orchestra/testbench": "^6.2",
+                "phpstan/phpstan": "^0.12.14",
+                "phpunit/phpunit": "^8.5",
+                "spatie/phpunit-snapshot-assertions": "^2.1.0|^4.2"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Nwidart\\Modules\\LaravelModulesServiceProvider"
+                    ],
+                    "aliases": {
+                        "Module": "Nwidart\\Modules\\Facades\\Module"
+                    }
+                },
+                "branch-alias": {
+                    "dev-master": "8.0-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/helpers.php"
+                ],
+                "psr-4": {
+                    "Nwidart\\Modules\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Widart",
+                    "email": "n.widart@gmail.com",
+                    "homepage": "https://nicolaswidart.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Laravel Module management",
+            "keywords": [
+                "laravel",
+                "module",
+                "modules",
+                "nwidart",
+                "rad"
+            ],
+            "support": {
+                "issues": "https://github.com/nWidart/laravel-modules/issues",
+                "source": "https://github.com/nWidart/laravel-modules/tree/v8.3.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/nwidart",
+                    "type": "github"
+                }
+            ],
+            "time": "2022-02-10T20:30:19+00:00"
         },
         {
             "name": "opis/closure",
@@ -8396,6 +8524,7 @@
         "dddd/menu": 20,
         "dddd/partnership": 20,
         "dddd/tour": 20,
+        "dddd/tour-enquire": 20,
         "dddd/url": 20
     },
     "prefer-stable": true,
