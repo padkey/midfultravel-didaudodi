@@ -73,11 +73,13 @@
         }
         .title-package h3{
             font-size: 30px;
+            -webkit-text-stroke: 0.2px black;
         }
         .date-start-end {
             font-weight: 900;
             font-size: 24px;
             color: #fff;
+            -webkit-text-stroke: 0.2px black;
             /* font-family: sans-serif!important; */
             border: black;
         }
@@ -114,11 +116,13 @@
         }
         .title-package h3{
             font-size: 30px;
+            -webkit-text-stroke: 0.2px black;
         }
         .date-start-end {
             font-weight: 900;
             font-size: 24px;
             color: #fff;
+            -webkit-text-stroke: 0.2px black;
             /* font-family: sans-serif!important; */
             border: black;
         }
