@@ -1,6 +1,6 @@
 @extends('frontend_layout')
 @section('header')
-    @include('pages.include.header_temp')
+    @include('pages.include.header_about')
 @endsection
 @section('banner')
     @include('pages.include.banner_tour')
@@ -200,6 +200,7 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
                      {!! $tour->place_overview !!}
                  </div>
              <div class="row images-overview owl-six owl-theme owl-carousel">
+                 <input type="hidden" class="tour-id" value="{{$tour->id}}">
                  @if(is_array($tour->image))
                      @foreach($tour->image as $image)
                          <div>
@@ -303,12 +304,12 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
 
         #map{
             width: 100%;
-            height:500px;
+            height:250px;
         }
         @media (max-width: 850px) {
             #map{
                 width: 100%;
-                max-height: 350px!important;
+                max-height: 250px!important;
             }
         }
         .marker {
@@ -532,7 +533,7 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
     }
 </style>
     <div class="area-button-contact mt-10">
-        <button type="button" class="btn btn-enquire mt-20" data-toggle="modal" data-target="#exampleModalCenter">
+        <button type="button" class="btn btn-enquire mt-20" data-toggle="modal" data-target="#model-enquire">
            <i class="fa fa-commenting-o"></i> {{trans('messages.enquire')}}
         </button>
     </div>
@@ -645,7 +646,7 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
                 </li>
                 <li class="nav-item" role="presentation">
                     <button class="nav-link" id="practice-tab" data-toggle="tab" data-target="#practice" type="button" role="tab" aria-controls="practice" aria-selected="false">
-                        {{trans('messages.schedule_practice')}}
+                        {{trans('messages.retreats_schedule')}}
                     </button>
                 </li>
             </ul>
@@ -671,7 +672,6 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
         /*margin: 0;*/
         box-sizing: border-box;
         font-family: Poppins;
-        loading:"lazy";
         /*padding-top: 10px;*/
         padding-bottom: 100px;
     }
@@ -686,19 +686,18 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
     .profile-card{
         position: relative;
         width: 280px;
-        height: 280px;
+        height: 310px;
         background-color: #fff;
         padding: 30px;
         /**/border-radius: 10%;
         box-shadow: -5px 8px 45px rgba(51, 51, 51, 0.126);
         transition: all .4s;
         margin: 50px 0px;
-
     }
     @media (max-width: 1750px) and (min-width: 1620px) {
         .profile-card{
             width: 250px;
-            height: 250px;
+            height: 310px;
         }
         .profile-card .img img{
             height: 200px;
@@ -708,7 +707,7 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
     @media (max-width: 1420px) {
         .profile-card{
             width: 250px;
-            height: 250px;
+            height: 310px;
         }
         .profile-card .img img{
             height: 200px;
@@ -717,7 +716,7 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
     @media (max-width: 1280px) and (min-width: 1190px) {
         .profile-card{
             width: 220px;
-            height: 220px;
+            height: 310px;
         }
         .name-companion h3{
             font-size: 20px;
@@ -727,7 +726,7 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
             height: 165px;
         }
         .profile-card .caption{
-            transform: translateY(-265px);
+            transform: translateY(-295px);
         }
         .profile-card  .desc-companion{
             -webkit-line-clamp: 13;
@@ -736,7 +735,7 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
     @media (max-width: 1190px) and (min-width: 1100px) {
         .profile-card{
             width: 280px;
-            height: 280px;
+            height: 310px;
         }
         .profile-card .img img{
             height: 220px;
@@ -745,7 +744,7 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
     @media (max-width: 1100px) and (min-width: 900px) {
         .profile-card{
             width: 250px;
-            height: 250px;
+            height: 310px;
         }
         .profile-card .img img{
             height: 200px;
@@ -754,7 +753,7 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
     @media (max-width: 970px) and (min-width: 890px) {
         .profile-card{
             width: 220px;
-            height: 220px;
+            height: 310px;
         }
         .name-companion h3{
             font-size: 20px;
@@ -764,7 +763,7 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
             height: 165px;
         }
         .profile-card .caption{
-            transform: translateY(-265px);
+            transform: translateY(-295px);
         }
         .profile-card  .desc-companion{
             -webkit-line-clamp: 13;
@@ -773,7 +772,7 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
     @media (max-width: 890px) and (min-width: 730px) {
         .profile-card{
             width: 280px;
-            height: 280px;
+            height: 310px;
         }
         .profile-card .img img{
             height: 220px;
@@ -782,7 +781,7 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
     @media (max-width: 730px) and (min-width: 660px) {
         .profile-card{
             width: 250px;
-            height: 250px;
+            height: 310px;
         }
         .profile-card .img img{
             height: 200px;
@@ -791,7 +790,7 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
     @media (max-width: 660px) and (min-width: 599px) {
         .profile-card{
             width: 220px;
-            height: 220px;
+            height: 310px;
         }
         .name-companion h3{
             font-size: 20px;
@@ -801,7 +800,7 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
             height: 165px;
         }
         .profile-card .caption{
-            transform: translateY(-265px);
+            transform: translateY(-295px);
         }
         .profile-card  .desc-companion{
             -webkit-line-clamp: 12;
@@ -810,7 +809,7 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
     @media (max-width: 599px) {
         .profile-card{
             width: 250px;
-            height: 250px;
+            height: 310px;
             margin: auto;
             margin-top: 50px;
             margin-bottom: 50px;
@@ -822,7 +821,7 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
     }
     .profile-card:hover{
         border-radius: 10px;
-        height: 500px;
+        height: 590px;
     }
     .profile-card .img{
         position: relative;
@@ -845,7 +844,7 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
         object-fit: cover;
     }
     .caption{
-        transform: translateY(-210px);
+        transform: translateY(-245px);
         opacity: 0;
         pointer-events: none;
         transition: all .5s;
@@ -866,6 +865,20 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
         /*
         font-weight: 600;
         */
+    }
+    .name-companion h5 {
+        font-size: 19px;
+        font-family: "Cormorant Garamond",serif!important;
+        color: #8B572A;
+        margin-bottom: 5px;
+        font-weight: 600;
+    }
+    .name-companion h6 {
+        font-size: 18px;
+        font-family: "Cormorant Garamond",serif!important;
+        color: #8B572A;
+        margin-bottom: 5px;
+        font-weight: 600;
     }
     .caption p{
         font-size: 17px;
@@ -919,6 +932,8 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
                             <img src="{{url('uploads/'.$companion->avatar)}}" alt=""  >
                             <div class="name-companion">
                                 <h3>{{$companion->name}}</h3>
+                                <h5>{{$companion->company_name}}</h5>
+                                <h6>{{$companion->position}}</h6>
                             </div>
                         </div>
                         <div class="caption">
@@ -1036,7 +1051,7 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
             <div class="title-center" style=" margin-bottom: 0px;">
                 <h1 class="hightlight-underline-green">{{trans('messages.get_in_touch')}}</h1>
                 <h2 class="title-contact">{{trans('messages.get_in_touch_desc')}}</h2>
-                <button type="button" class="btn btn-shop mt-20" data-toggle="modal" data-target="#exampleModalCenter">
+                <button type="button" class="btn btn-shop mt-20" data-toggle="modal" data-target="#model-enquire">
                     {{trans('messages.enquire')}}
                 </button>
             </div>
@@ -1056,7 +1071,7 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
     </style>
 
     <!-- Modal -->
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal fade" id="model-enquire" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -1097,20 +1112,20 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
                         </div>
                         <div class="row">
                             <div class="col-xl-12">
-                                {{--<form action="?" method="POST">
-                                    <div class="g-recaptcha" data-sitekey="6Lcuv-woAAAAABB8ZT2141ZCNCpq4xD5BxLg5YhT"></div>
-                                    <br/>
-                                    <input type="submit" value="Submit">
-                                </form>--}}
+                                <div id="html_element"></div>
                             </div>
                         </div>
+
                     </div>
                     <div class="modal-footer mt-30">
-                        <button type="button" class="btn btn-shop btn-enquire-submit g-recaptcha"
-                                data-sitekey="6Lcuv-woAAAAABB8ZT2141ZCNCpq4xD5BxLg5YhT"
-                                data-callback='onSubmit'
-                                data-action='submit'>{{trans('messages.submit')}}   </button>
+                        {{-- <button type="button" class="btn btn-shop btn-enquire-submit g-recaptcha"
+                                 data-sitekey="{{ env('RECAPTCHA_SITE_KEY')  }}"
+                                 data-callback='onSubmit'
+                                 data-action='submit'>{{trans('messages.submit')}}   </button>
+                         <div class="g-recaptcha" id="feedback-recaptcha" data-sitekey="{{ env('RECAPTCHA_SITE_KEY')  }}"></div>--}}
+                        <button type="button" class="btn btn-shop btn-enquire-submit">{{trans('messages.submit')}} </button>
                     </div>
+
                 </form>
             </div>
         </div>
@@ -1118,37 +1133,100 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
 @endsection
 @section('script')
         <script>
-            function onSubmit(token) {
-                document.getElementById("demo-form").submit();
+            function onClick(e) {
+
             }
         </script>
+        <script type="text/javascript">
+            var onloadCallback = function() {
+                grecaptcha.render('html_element', {
+                    'sitekey' : '{{ config('services.recaptcha.site_key') }}'
+                });
+            };
+        </script>
         <script>
-            $('.btn-enquire-submit').click(function (){
-                /*Swal.fire(
-                        'Good Job',
-                      'Cảm ơn bạn, chúng tôi sẽ phản hồi trong thời gian sớm nhất!',
-                        'success'
-                );*/
+            $('.btn-enquire-submit').click(function (e){
+                e.preventDefault();
+                var _token = $('input[name="_token"]').val();
+                let message = $('.message').val();
+                let name =  $('.name').val();
+                let email  = $('.email').val();
+                let phone = $('.phone').val();
+                let tourId =  $('.tour-id').val();
                 validateFormEnquire();
+                var checkValidate = validateFormEnquire();
+                if(checkValidate) {  //true
+                    grecaptcha.ready(function() {
+                        grecaptcha.execute('{{ env('RECAPTCHA_SITE_KEY')  }}', {action: 'submit'}).then(function(recaptcha_token) {
+                            $.ajax({
+                                url:'{{url('/tour-enquire')}}',
+                                method:'POST',
+                                data: {
+                                    message:message,
+                                    name:name,
+                                    email:email,
+                                    phone:phone,
+                                    tourId:tourId,
+                                    _token:_token,
+                                    recaptcha_token:recaptcha_token
+                                },
+                                success(data){
+                                    Swal.fire({
+                                        title: "Good job!",
+                                        text: "Cảm ơn bạn, chúng tôi sẽ phản hồi trong thời gian sớm nhất!",
+                                        type: "success",
+                                        showConfirmButton: true,
+                                    }).then(
+                                        function (isConfirm) {
+                                            if (isConfirm) {
+                                                $('#model-enquire').modal('hide');
+
+                                            }
+                                        },
+                                    );
+                                },error: function() {
+                                    Swal.fire({
+                                        title: "Error!",
+                                        text: "Something went wrong!",
+                                        type: "error",
+                                    }).then(
+                                        function (isConfirm) {
+                                            if (isConfirm) {
+                                                $('#model-enquire').modal('hide');
+                                            }
+                                        },
+                                    );
+                                },
+                            });
+
+                        });
+                    });
+                }
             })
             function validateFormEnquire(){
+                return true;
                 $('.error').html('');
                 if($('.message').val() == ''){
                     $('.errorMessage').html('{{trans('messages.require_message')}}');
+                    return false;
                 }
                 if($('.name').val() == ''){
                     $('.errorName').html('{{trans('messages.require_name')}}');
+                    return false;
                 }
                 if($('.email').val() == ''){
                     $('.errorEmail').html('{{trans('messages.require_email')}}');
+                    return false;
                 }
                 if($('.phone').val() == ''){
                     $('.errorPhone').html('{{trans('messages.require_phone')}}');
+                    return false;
                 }else {
                     let isNumeric = /^\d+$/
                     if ($('.phone').val() && !isNumeric.test($('.phone').val())) {
                         i = 1;
                         $('.errorPhone').html('{{trans('messages.error_number_phone')}}');
+                        return false;
                     } /*else {
                         let to_phone_arr = $('.customer_phone').val().split("");
                         if (Number(to_phone_arr[0]) !== 0) { //check first number

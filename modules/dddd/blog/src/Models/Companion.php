@@ -23,6 +23,8 @@ class Companion extends Model
     const COL_URL_KEY = "url_key";
     const COL_UPDATED_AT = "updated_at";
     const COL_LOCALE_CODE = "locale_code";
+    const COL_COMPANY_NAME = "company_name";
+    const COL_POSITION = "position";
 
     /**
      * The table associated with the model.

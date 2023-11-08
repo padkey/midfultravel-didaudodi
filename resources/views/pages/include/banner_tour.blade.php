@@ -5,7 +5,7 @@
         padding: 120px 0px 60px 188px;
     }
     .title-package{
-        margin-top:50px;
+        margin-top:30px;
     }
     .title-package h3{
         font-weight: 900;
@@ -43,6 +43,7 @@
         font-weight: 900;
         font-size: 35px;
         color: #fff;
+        margin-top: 15px;
     }
     .container-package{
         max-width: 1200px;
@@ -161,9 +162,12 @@
             $date = date_create($tour->date_end);
             $date_end= date_format($date, 'd/m/Y');
             @endphp
+{{--
             <p style="margin: 0;"><span class="event-label trangthai-open">{{count($toursTookPlace ) == 0  ? '' : trans('messages.registration_open')}}</span> <span class="event-label"> {{$tour->type_tour}}</span></p>
-            <p class="date-start-end">{{$date_start}} - {{$date_end}}</p>
+--}}
             <h3 class="">{{$tour->name}}</h3>
+            <p class="date-start-end">{{$date_start}} - {{$date_end}}</p>
+
         </div>
     </div>
 </div>

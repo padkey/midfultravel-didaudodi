@@ -130,6 +130,9 @@ class CompanionController extends Controller
         )->setWidth(4, 2);
         $form->tab(__("General Information"), function ($form) {
             $form->text(Companion::COL_NAME, __("Name"))->rules("required");
+            $form->text(Companion::COL_COMPANY_NAME, __("Company name"));
+            $form->text(Companion::COL_POSITION, __("Position"));
+
             $form->image(Companion::COL_AVATAR, __("Avatar"))->setWidth(4, 2)->uniqueName();
             if ($form->isEditing()) {
                 $form->text(Companion::COL_URL_KEY, __("Url Key"));
@@ -139,7 +142,6 @@ class CompanionController extends Controller
 
         $form->tab(__("Content"), function ($form) {
             //$form->multipleImage(Companion::COL_AVATAR, __("Avatar"))->removable()->uniqueName();
-
             $form->tmeditor(Companion::COL_CONTENT);
         });
         $form->tab(__("Meta Data"), function ($form) {

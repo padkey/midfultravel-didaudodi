@@ -7,6 +7,7 @@
     <title>Mindful Travel Didaudodi</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{csrf_token()}}">  <!--token -->
     {{--<meta property="og:image"
           content="{{url('frontend/images/s-logo.png')}}" />--}}
     <!-- <link rel="manifest" href="site.webmanifest"> -->
@@ -29,8 +30,9 @@
     <link href='https://fonts.googleapis.com/css?family=Dancing Script' rel='stylesheet'>
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css' rel='stylesheet' />
     <link href="{{asset('vendor/laravel-admin/sweetalert2/dist/sweetalert2.css')}}" rel='stylesheet' />
+    <script src="https://www.google.com/recaptcha/api.js?render={{ config('services.recaptcha.site_key') }}"></script>
 
-     <link rel="stylesheet" href="{{asset('frontend/css/responsive.css')}}">
+    <link rel="stylesheet" href="{{asset('frontend/css/responsive.css')}}">
 </head>
 
 <body >
@@ -428,7 +430,7 @@
             margin-bottom: 20px;
         }
         .footer_2 {
-            margin-top:50px;
+            /*margin-top:50px;*/
         }
         .footer_content_address  a{
             font-size: 18px!important;
@@ -481,7 +483,7 @@
     <footer class="footer">
         <div class="footer_top">
             <div class="container">
-                <div class="row">
+                {{--<div class="row">
                     <div class="col-xl-7">
                         <h3 class="footer_title_1"> {{trans('messages.bring_i_t_y_i')}}</h3>
                         <p class="footer_text"> {{trans('messages.bring_i_t_y_i_c')}}</p>
@@ -515,7 +517,7 @@
                             {{trans('messages.support_our_community_c')}}                            </p>
                         </div>
                     </div>
-                </div>
+                </div>--}}
                 <div class="row footer_2">
                     <div class="col-xl-7 parnership">
                         <h3 class="footer_title_2"> {{trans('messages.our_partnership')}}</h3>
@@ -622,8 +624,10 @@
     <script src="{{asset('frontend/js/main.js')}}"></script>
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js'></script>
     <script src="{{asset('vendor/laravel-admin/sweetalert2/dist/sweetalert2.min.js')}}"></script>
-    <script src="https://www.google.com/recaptcha/api.js"></script>
-
+    {{--<script src="https://www.google.com/recaptcha/api.js"></script>--}}
+    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+            async defer>
+    </script>
    {{-- <script src="https://www.google.com/recaptcha/enterprise.js?render=6Lcuv-woAAAAABB8ZT2141ZCNCpq4xD5BxLg5YhT" async defer></script>--}}
 
     @yield('script')
