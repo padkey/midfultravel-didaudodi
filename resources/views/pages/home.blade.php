@@ -911,7 +911,7 @@
             margin-bottom: 15px;
         }
         .name-companion h3{
-            font-size: 23px;
+            font-size: 25px;
             color: #8B572A;
             margin-bottom: 0;
             font-style: normal;
