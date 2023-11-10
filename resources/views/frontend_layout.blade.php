@@ -11,6 +11,9 @@
     {{--<meta property="og:image"
           content="{{url('frontend/images/s-logo.png')}}" />--}}
     <!-- <link rel="manifest" href="site.webmanifest"> -->
+    @isset($tour->image_thumbnail)
+        <meta property="og:image" content="{{url('/uploads/'.$tour->image_thumbnail)}}">
+    @endisset
     <link rel="shortcut icon" type="image/x-icon" href="{{url('frontend/images/s-logo.png')}}">
     <!-- Place favicon.ico in the root directory -->
 

@@ -9,12 +9,22 @@ use DDDD\Url\Models\UrlModel;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Controllers\AdminController;
+use Encore\Admin\Layout\Content;
+use Encore\Admin\Layout\Row;
 use Illuminate\Http\Request;
 
 
 class TourEnquireController extends AdminController
 {
-
+    public function index(Content $content)
+    {
+        // Permission::check('dtv.blog-post');
+        return $content
+            ->title("All Enquire")
+            ->row(function (Row $row) {
+                $row->column(12, $this->grid()->render());
+            });
+    }
     public function grid(): Grid
     {
         $grid = new Grid(new TourEnquireModel());
