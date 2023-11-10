@@ -13,7 +13,7 @@ return new class extends Migration
     {
 
         Schema::table('tour', function (Blueprint $table) {
-            $table->string('image_map',255)->nullable();
+            $table->string('image_map',255)->nullable()->change();
 
         });
     }
