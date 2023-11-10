@@ -1368,7 +1368,7 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
     $('.image-li').css('height',element.offsetHeight);
 </script>
 <script>
-        mapboxgl.accessToken = 'pk.eyJ1IjoidG9hbmNodW9uZyIsImEiOiJjbG80MG9zOXkwbWthMm11ZGFtcXFvdTZlIn0.VBX96EkqFGqhVwBrwSpw8A';
+        /*mapboxgl.accessToken = 'pk.eyJ1IjoidG9hbmNodW9uZyIsImEiOiJjbG80MG9zOXkwbWthMm11ZGFtcXFvdTZlIn0.VBX96EkqFGqhVwBrwSpw8A';
         // Mã jQuery xử lý sau khi trang đã tải xong
         var features = @php echo $geojson;@endphp;
 
@@ -1421,23 +1421,23 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
                         )
                 )
                 .addTo(map);
-        }
+        }*/
 
         $('.title-schedule').click(function(){
-            let position = $(this).data('position');
+            /*let position = $(this).data('position');
             position = position.split(',');
             let lng = parseFloat(position[1]);
-            let lat = parseFloat(position[0]);
+            let lat = parseFloat(position[0]);*/
            // console.log(position)
 
             // change color title end show description
             let id = $(this).data('id');
             if ($('.content-schedule-'+id).hasClass('dis-none')) {  // none => block
                 // cho map di chuyển tới tọa độ
-                map.flyTo({
+                /*map.flyTo({
                     center: [lng,lat], // Tọa độ vị trí cần zoom
                     zoom: 13 // Mức độ zoom cho vị trí cần zoom
-                });
+                });*/
                 // đổi màu và show nội dung
                 $('.content-schedule-'+id).removeClass('dis-none');
                 $('.content-schedule-'+id).addClass('dis-block');
@@ -1449,10 +1449,10 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
                 $('.meals-'+id).removeClass('dis-none');
 
             } else {
-                map.flyTo({
+                /*map.flyTo({
                     center: [lng,lat], // Tọa độ vị trí cần zoom
                     zoom:2 // Mức độ zoom cho vị trí cần zoom
-                });
+                });*/
                 // đổi màu và ẩn nội dung
                 $('.content-schedule-'+id).addClass('dis-none');
                 $('.content-schedule-'+id).removeClass('dis-block');
