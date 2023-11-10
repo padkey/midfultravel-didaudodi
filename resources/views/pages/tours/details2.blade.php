@@ -571,8 +571,12 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
                 width: 95%;
             }
         }
+        #map2{
+            margin: auto;
+            text-align: center;
+        }
         #map2 img{
-            width: 100%;
+            width: 80%;
             object-fit: cover;
 
         }
