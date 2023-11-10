@@ -33,6 +33,7 @@ class TourModel extends Model
     const COL_PLACE_OVERVIEW = "place_overview";
     const COL_IMPORTANT_INFORMATION = "important_information";
     const COL_IMAGE_THUMBNAIL_MOBILE = "image_thumbnail_mobile";
+    const COL_IMAGE_MAP = "image_map";
     /**
      * The table associated with the model.
      *

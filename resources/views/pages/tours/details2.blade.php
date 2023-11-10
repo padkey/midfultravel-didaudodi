@@ -8,6 +8,98 @@
 @section('content')
 <style>
 
+    /*@-webkit-keyframes fadeInDown {
+        0% {
+            opacity: 0;
+            -webkit-transform: translateY(-200px);
+        }
+        100% {
+            opacity: 1;
+            -webkit-transform: translateY(0);
+        }
+    }
+
+    @keyframes fadeInDown {
+        0% {
+            opacity: 0;
+            transform: translateY(-200px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .fadeInDown {
+        -webkit-animation-name: fadeInDown;
+        animation-name: fadeInDown;
+    }*/
+    /*.images-overview {
+        margin: 2em auto;
+        padding: 0;
+        max-width: 600px;
+        list-style: none;
+        height: 15em;
+    }*/
+
+    .single-gallery-image{
+        height: 250px;
+        margin-top:0px!important;
+        border-radius: 40px;
+        opacity: 0;
+        animation: fadeIn 1s ease-in both;
+        transition: 1.5s;
+    }
+    .single-image-overview:hover  .single-gallery-image{
+        border-radius: 0px;
+        transition: 1s;
+    }
+
+    /*.images-overview .single-gallery-image {
+        float: left;
+        width: 100px;
+        height: 100px;
+        margin: 0 5px;
+        background: #ccc;
+        text-align: center;
+        line-height: 100px;
+        opacity: 0;
+        animation: fadeIn 1s ease-in both;
+    }*/
+
+    .images-overview .image-overview-1 {
+        animation-delay: 0.1s;
+    }
+    .images-overview .image-overview-2 {
+        animation-delay: 0.3s;
+    }
+    .images-overview .image-overview-3 {
+        animation-delay: 0.5s;
+    }
+    .images-overview .image-overview-4 {
+        animation-delay: 0.7s;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translate3d(0, -180%, 0);
+        }
+        to {
+            opacity: 1;
+            transform: translate3d(0, 0, 0);
+        }
+    }
+    @keyframes fadeInP {
+        from {
+            opacity: 0;
+            transform: translate3d(0, -180%, 0);
+        }
+        to {
+            opacity: 1;
+            transform: translate3d(0, 0, 0);
+        }
+    }
     @keyframes rotateMenu {
         0% {
         transform: rotateX(-90deg)
@@ -148,11 +240,8 @@
         margin: 0 10%;
         border-bottom: 3px solid #024f43;
     }
-    .single-gallery-image{
-        height: 250px;
-        margin-top:0px!important;
-        border-radius: 40px;
-    }
+
+
     .mb-10{
         margin-bottom: 10px;
     }
@@ -162,6 +251,7 @@
     .images-overview{
         width:90%;
         margin:auto;
+
     }
     @media (max-width: 800px) {
         .images-overview{
@@ -201,12 +291,13 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
                      {!! $tour->place_overview !!}
                  </div>
              <input type="hidden" class="tour-id" value="{{$tour->id}}">
+             @php $i =1 @endphp
              <div class="row images-overview owl-six owl-theme owl-carousel">
                  @if(is_array($tour->image))
                      @foreach($tour->image as $image)
-                         <div>
+                         <div class="single-image-overview">
                              <a href="{{url('/uploads/'.$image)}}" class="img-pop-up">
-                                 <div class="single-gallery-image" style="background: url('/uploads/{{$image}}');"></div>
+                                 <div class="single-gallery-image fadeInDown image-overview-{{$i++}}" style="background: url('/uploads/{{$image}}');"></div>
                              </a>
                          </div>
                      @endforeach
@@ -306,6 +397,8 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
         #map{
             width: 100%;
             height:250px;
+            animation: fadeIn 1s ease-in both;
+            opacity: 0;
         }
         @media (max-width: 850px) {
             #map{
@@ -478,6 +571,11 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
                 width: 95%;
             }
         }
+        #map2 img{
+            width: 100%;
+            object-fit: cover;
+
+        }
     </style>
     <div class="schedule-area mt-100">
         <div class="container">
@@ -488,7 +586,9 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
                     <h2 class="tour-name">{{$tour->name}}</h2>
                 </div>
             </div>
-            <div id='map'></div>
+            <div id='map2'>
+                <img src="{{url('/uploads/'.$tour->image_map)}}" alt="">
+            </div>
             <div>
                 @foreach($tour->tourSchedule as $key => $schedule)
                     <div class="schedule-day-{{$schedule->id}}">
@@ -694,6 +794,8 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
         box-shadow: -5px 8px 45px rgba(51, 51, 51, 0.126);
         transition: all .4s;
         margin: 50px 0px;
+        animation: fadeIn 1s ease-in both;
+        opacity: 0;
     }
     @media (max-width: 1750px) and (min-width: 1620px) {
         .profile-card{
@@ -1133,6 +1235,16 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
     </div>
 @endsection
 @section('script')
+    <sctipt>
+        <div id = "animated-example" class = "animated fadeInDown"></div>
+        <button onclick = "myFunction()">Reload page</button>
+
+        <script>
+            function myFunction() {
+                location.reload();
+            }
+        </script>
+    </sctipt>
         <script type="text/javascript">
             var onloadCallback = function() {
                 grecaptcha.render('html_element', {
@@ -1253,7 +1365,6 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
 <script>
     var element = document.querySelector('.content-right');
    // alert(element.offsetHeight)
-
     $('.image-li').css('height',element.offsetHeight);
 </script>
 <script>

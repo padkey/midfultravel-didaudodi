@@ -169,6 +169,8 @@ class TourController extends AdminController
             $form->multipleImage(TourModel::COL_IMAGE, __("Overview Image"))->setWidth(4, 2)->removable()->sortable()->uniqueName();
             $form->image(TourModel::COL_IMAGE_THUMBNAIL, __("Image Thumbnail Desktop"))->setWidth(4, 2)->removable()->uniqueName();
             $form->image(TourModel::COL_IMAGE_THUMBNAIL_MOBILE, __("Image Thumbnail Mobile"))->setWidth(4, 2)->removable()->uniqueName();
+            $form->image(TourModel::COL_IMAGE_MAP, __("Image Map"))->setWidth(4, 2)->removable()->uniqueName();
+
             $form->text(TourModel::COL_TYPE_TOUR, __("Type tour"))->rules("required");
             if ($form->isEditing()) {
                 $form->text(TourModel::COL_URL, __("Url Key"))->rules("required");
