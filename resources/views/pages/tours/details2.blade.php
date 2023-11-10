@@ -576,9 +576,15 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
             text-align: center;
         }
         #map2 img{
-            width: 80%;
+            /*width: 80%;
             object-fit: cover;
-
+            */
+        }
+        @media (max-width: 800px) {
+            #map2 img{
+                width: 100%;
+                object-fit: cover;
+            }
         }
     </style>
     <div class="schedule-area mt-100">
