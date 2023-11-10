@@ -579,6 +579,7 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
             /*width: 80%;
             object-fit: cover;
             */
+            max-width: 100%;
         }
         @media (max-width: 800px) {
             #map2 img{
