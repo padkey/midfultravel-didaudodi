@@ -1,6 +1,6 @@
 @extends('frontend_layout')
 @section('header')
-    @include('pages.include.header_about')
+    @include('pages.include.header_temp')
 @endsection
 @section('banner')
     @include('pages.include.banner_tour')
@@ -1246,16 +1246,6 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
     </div>
 @endsection
 @section('script')
-    <sctipt>
-        <div id = "animated-example" class = "animated fadeInDown"></div>
-        <button onclick = "myFunction()">Reload page</button>
-
-        <script>
-            function myFunction() {
-                location.reload();
-            }
-        </script>
-    </sctipt>
         <script type="text/javascript">
             var onloadCallback = function() {
                 grecaptcha.render('html_element', {
