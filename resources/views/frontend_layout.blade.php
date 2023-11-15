@@ -635,14 +635,9 @@
 
     @yield('script')
     <script>
-        /*$(document).ready(function(){
-            $(".single_offers").hover(function(){
-                $('.offers_area').css("background-image", 'url(' + $(this).data('img') + ')' );
-
-            }, function(){
-                $('.offers_area').css("background-image", 'url(' + $(this).data('img') + ')' );
-            });
-        });*/
+       // $('.change-language').
+    </script>
+    <script>
         $('.btn-xt').click(function(){
             if(  $('.mission_content').css('display') == '-webkit-box') {
                 $('.mission_content').css('display','block');
