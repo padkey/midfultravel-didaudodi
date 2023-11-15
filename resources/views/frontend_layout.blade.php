@@ -576,7 +576,7 @@
             <div></div>
         </div>
         <div class="s_wheel">
-            <a href="https://zalo.me/0352554901" target="_blank" rel="nofollow"><span>Chat trên zalo</span><div><em></em></div></a>
+            <a href="https://zalo.me/3839925299675446019" target="_blank" rel="nofollow"><span>Chat trên zalo</span><div><em></em></div></a>
             <!-- <a href="" target="_blank" rel="nofollow"><span>Chat ngay</span><div><img loading="lazy" width="400" height="300" src="/images/icons/icon-mes.png" alt="messenger"></div></a> -->
 {{--
             <a href="https://goo.gl/maps/i7Tufrm2xLkcjNQn9" target="_blank" rel="nofollow"><span>Tìm cửa hàng</span><div><em></em></div></a>
