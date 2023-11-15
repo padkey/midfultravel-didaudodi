@@ -21,6 +21,7 @@ use DDDD\Blog\Models\Pages;
 */
 
 Route::get('/change-language/{language}', [HomeController::class,'changeLanguage'])->name('user.change-language');
+Route::get('/tours/{url}/{locale}',[TourController::class,'showDetailsChangeLanguage']);
 
 Route::group(['middleware' => 'locale'], function() {
 
@@ -30,7 +31,7 @@ Route::group(['middleware' => 'locale'], function() {
     //Tours
     Route::get('/tours/list-tours',[TourController::class,'showList']);
     Route::get('/tours/{url}',[TourController::class,'showDetails']);
-    Route::get('/tour-details/{url}',[TourController::class,'showPageTourDetails']);
+   // Route::get('/tour-details/{url}',[TourController::class,'showPageTourDetails']);
 
 
     //blog

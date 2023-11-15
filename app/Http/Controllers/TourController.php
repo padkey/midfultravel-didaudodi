@@ -124,4 +124,9 @@ class TourController extends Controller
         //return view('pages.tours.page_tour_details')->with(compact('tour'));
         return view('pages.tours.details2')->with(compact('tour'));
     }
+    public function showDetailsChangeLanguage($url,$locale) {
+        \Session::put('website_language', $locale);
+
+        return redirect('/tours/'. $url);
+    }
 }
