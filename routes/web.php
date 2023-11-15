@@ -22,6 +22,7 @@ use DDDD\Blog\Models\Pages;
 
 Route::get('/change-language/{language}', [HomeController::class,'changeLanguage'])->name('user.change-language');
 Route::get('/tours/{url}/{locale}',[TourController::class,'showDetailsChangeLanguage']);
+Route::get('/change-language-home/{language}', [HomeController::class,'changeLanguageHome']);
 
 Route::group(['middleware' => 'locale'], function() {
 
