@@ -64,7 +64,7 @@
         .offers_area {
             padding-bottom: 0;
             padding-top: 0px;
-            margin-bottom:50px;
+            margin-bottom:150px;
         }
         .title-offer{
             color: #8b572a;
@@ -80,7 +80,7 @@
         }
     </style>
     <div class="offers_area">
-        <div class="container  mb-40">
+        <div class="container">
             <div class="row">
                 <div class="col-xl-12">
                     <div class="section_title text-center mb-20 mt-10">
@@ -90,7 +90,7 @@
             </div>
 			<div class="row" >
                 @foreach($tours as $tour)
-                <div class="col-xl-4 col-md-4">
+                <div class="col-xl-4 col-md-6 mt-30">
                     <div class="single_offers">
                         <div class="about_thumb">
                             <img src="{{url('uploads/'.$tour->image_thumbnail)}}" alt="">
@@ -115,6 +115,7 @@
                 </div>
                 @endforeach
             </div>
+    </div>
     </div>
     <!-- offers_area_end -->
 

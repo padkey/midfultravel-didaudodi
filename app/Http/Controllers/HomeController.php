@@ -19,6 +19,18 @@ class HomeController extends Controller
     //
     public function index(Request $req)
     {
+        //----seo để cho google biết là google biết mình miêu tả trang web như thế này
+        $metaDes = "Tour du lịch chánh niệm";
+        //keywords này để người dùng nhập trên google xong nó hiện trang web của mình
+        $metaKeywords = "Tour du lịch chánh niệm";
+        // tiêu đề
+        $metaTitle = "Didaudodi mindfultravel";
+        //lấy ra đường dẫn hiện tại của trang mình đang truy cập
+        $urlCanonical = $req->url();
+        // ----------- End Seo -----------\\
+
+
+
         $locale_code =   config('app.locale');
         $currentDate = Carbon::now();
 
@@ -54,7 +66,7 @@ class HomeController extends Controller
         var_dump($sloganImage->items[0]->path_desktop);
         echo '</pre>';
         die();*/
-        return view('pages.home')->with(compact('blockValue',
+        return view('pages.home')->with(compact('blockValue','metaDes','metaTitle','metaKeywords','urlCanonical',
             'sloganImage','bannerHomeImage','blackgroundCompanion','TourBackground',
             'blockOurTour','blockOurMission','blogPostsCenter','blockShortAboutUs',
             'blogPostsLeft','blogPostsRight','tours','videos','companions','toursTookPlace'));
@@ -63,19 +75,39 @@ class HomeController extends Controller
     {
         $locale_code =   config('app.locale');
         $page = Pages::where('url_key','about-us')->where('locale_code',$locale_code)->first();
-        return view('pages.about-us.show')->with(compact('page'));
+        // ----------- SEO -----------\\
+        $metaDes = $page->meta_description;
+        $metaKeywords =$page->meta_keywords;
+        $metaTitle = $page->meta_title;
+        $urlCanonical = $req->url();
+        // ----------- End Seo -----------\\
+        return view('pages.about-us.show')->with(compact('page','metaDes','metaTitle','metaKeywords','urlCanonical',));
     }
-    public function showContact()
+    public function showContact(Request $req)
     {
         $locale_code =   config('app.locale');
         $page = Pages::where('url_key','contact')->where('locale_code',$locale_code)->first();
-        return view('pages.contact.show')->with(compact('page'));
+        // ----------- SEO -----------\\
+        $metaDes = $page->meta_description;
+        $metaKeywords =$page->meta_keywords;
+        $metaTitle = $page->meta_title;
+        $urlCanonical = $req->url();
+        // ----------- End Seo -----------\\
+
+        return view('pages.contact.show')->with(compact('page','metaDes','metaTitle','metaKeywords','urlCanonical'));
     }
-    public function showFabio()
+    public function showFabio(Request $req)
     {
         $locale_code =  config('app.locale');
         $page = Pages::where('url_key','fabio')->where('locale_code',$locale_code)->first();
-        return view('pages.fabio.show')->with(compact('page'));
+        // ----------- SEO -----------\\
+        $metaDes = $page->meta_description;
+        $metaKeywords =$page->meta_keywords;
+        $metaTitle = $page->meta_title;
+        $urlCanonical = $req->url();
+        // ----------- End Seo -----------\\
+
+        return view('pages.fabio.show')->with(compact('page','metaDes','metaTitle','metaKeywords','urlCanonical',));
     }
     public function changeLanguage($language)
     {

@@ -1,6 +1,6 @@
 @extends('frontend_layout')
 @section('header')
-    @include('pages.include.header_temp')
+    @include('pages.include.header_about')
 @endsection
 @section('banner')
     @include('pages.include.banner_tour')
@@ -1371,7 +1371,7 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
 <script>
         /*mapboxgl.accessToken = 'pk.eyJ1IjoidG9hbmNodW9uZyIsImEiOiJjbG80MG9zOXkwbWthMm11ZGFtcXFvdTZlIn0.VBX96EkqFGqhVwBrwSpw8A';
         // Mã jQuery xử lý sau khi trang đã tải xong
-        var features = @php echo $geojson;@endphp;
+        var features = ;
 
         features = JSON.stringify(features);
         features = JSON.parse(features);

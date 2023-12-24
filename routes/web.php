@@ -26,8 +26,8 @@ Route::get('/change-language-home/{language}', [HomeController::class,'changeLan
 
 Route::group(['middleware' => 'locale'], function() {
 
-   // Route::get('/', [HomeController::class,'index']);
-    Route::get('/', [TourController::class,'showDetails2']);
+    Route::get('/', [HomeController::class,'index']);
+    //Route::get('/', [TourController::class,'showDetails2']);
 
     //Tours
     Route::get('/tours/list-tours',[TourController::class,'showList']);

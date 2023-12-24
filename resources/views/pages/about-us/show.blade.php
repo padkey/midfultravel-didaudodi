@@ -13,7 +13,7 @@
         }
     </style>
     @if($page != null)
-        <section class="about">
+        <section class="about mb-100">
             <div class="container-about">
                 <div class="row">
                     <div class="title-about">
@@ -23,7 +23,6 @@
                     <p class="mt-4">
                             {!! $page->content !!}
                     </p>
-
                     </div>
                 </div>
 
