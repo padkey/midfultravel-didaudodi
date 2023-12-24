@@ -12,13 +12,21 @@ use DDDD\Blog\Models\Pages;
 class TourController extends Controller
 {
     //
-    public function showList()
+    public function showList( Request $req)
     {
         $locale_code =   config('app.locale');
         $tours = TourModel::where('locale_code',$locale_code)->where('is_active',1)->get();
-        return view('pages.tours.list_tours')->with(compact('tours'));
+
+        // ----------- SEO -----------\\
+        $metaDes = 'Danh sách tour du lịch chánh niệm';
+        $metaKeywords = 'anh sách tour du lịch chánh niệm';
+        $metaTitle = 'Danh sách tour du lịch chánh niệm';
+        $urlCanonical = $req->url();
+        // ----------- End Seo -----------\\
+
+        return view('pages.tours.list_tours')->with(compact('tours','metaDes','metaTitle','metaKeywords','urlCanonical'));
     }
-    public function showDetails($url)
+    public function showDetails($url, Request $req)
     {
         $locale_code =   config('app.locale');
         $currentDate = Carbon::now();
@@ -30,9 +38,17 @@ class TourController extends Controller
             }])->where('locale_code',$locale_code)
             ->where('url',$url)->where('is_active',1)->first();
 
-        $toursTookPlace = TourModel::where('locale_code',$locale_code)
-            ->where('url',$url)->where('is_active',1)->where('date_end','>',$currentDate)->get();
+        // ----------- SEO -----------\\
+        $metaDes = $tour->meta_description;
+        $metaKeywords =$tour->meta_keywords;
+        $metaTitle = $tour->meta_title;
+        $urlCanonical = $req->url();
+        // ----------- End Seo -----------\\
 
+
+        /* $toursTookPlace = TourModel::where('locale_code',$locale_code)
+             ->where('url',$url)->where('is_active',1)->where('date_end','>',$currentDate)->get();*/
+/*
         $geojson = array('type' => 'FeatureCollection', 'features' => array());
         if(!is_null($tour)) {
             if(count($tour->tourSchedule) > 0){
@@ -62,15 +78,15 @@ class TourController extends Controller
         } else {
             return redirect('/');
         }
-
-        $geojson =  json_encode($geojson);
-        return view('pages.tours.details2')->with(compact('tour','companions','blackgroundCompanion','geojson','toursTookPlace'));
+        $geojson =  json_encode($geojson);*/
+        return view('pages.tours.details2')->with(compact('tour','companions',
+            'blackgroundCompanion','metaDes','metaTitle','metaKeywords','urlCanonical'));
 
     }
     public function showDetails2()  //$url
     {
         //temp
-        $url = 'mindful-travel-to-europe';
+       // $url = 'mindful-travel-to-europe';
         $locale_code =   config('app.locale');
         $currentDate = Carbon::now();
 
@@ -118,12 +134,19 @@ class TourController extends Controller
         return view('pages.tours.details2')->with(compact('tour','companions','blackgroundCompanion','geojson','toursTookPlace'));
 
     }
-    public function showPageTourDetails($url){
+    /*public function showPageTourDetails($url,Request $req){
+        // ----------- SEO -----------\\
+        $metaDes = "Tour du lịch chánh niệm";
+        $metaKeywords = "Tour du lịch chánh niệm";
+        $metaTitle = "Didaudodi mindfultravel";
+        $urlCanonical = $req->url();
+        // ----------- End Seo -----------\\
+
         $locale_code =   config('app.locale');
         $tour = Pages::where('locale_code',$locale_code)->where('url_key',$url)->where('is_active',1)->first();
         //return view('pages.tours.page_tour_details')->with(compact('tour'));
-        return view('pages.tours.details2')->with(compact('tour'));
-    }
+        return view('pages.tours.details2')->with(compact('tour','metaDes','metaTitle','metaKeywords','urlCanonical'));
+    }*/
     public function showDetailsChangeLanguage($url,$locale) {
         \Session::put('website_language', $locale);
 

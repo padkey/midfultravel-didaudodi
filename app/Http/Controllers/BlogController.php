@@ -9,37 +9,35 @@ use DDDD\Blog\Models\BlogCategory;
 class BlogController extends Controller
 {
     //
-    public function showList($url)
+    public function showList($url,Request $req)
     {
-        // $aa = BlogPost::query()->findOrFail(1);
-        //        $cates = $aa->categories()->get();
-        //        foreach ($cates as $cate) {
-        //            /**
-        //             * @var BlogCategory $cate
-        //             *
-        //             */
-        //        }
-        //$listPosts =  BlogCategory::with('posts')->where('url',$url)->get();
-
-
-       // $listPosts = $catePost->posts()->get();
-        //$listPosts = BlogPost::with('categories')->where('categories.url',$url)->get();
-       /* $aa = BlogPost::query()->findOrFail(1);
-        $cates = $aa->categories()->get();*/
         $locale_code =   config('app.locale');
         $cate = BlogCategory::with('posts')->where('url',$url)->where('locale_code',$locale_code)->get();
         $listPosts = $cate[0]->posts();
         $listPosts = $listPosts->orderByDesc('id')->where('locale_code',$locale_code)->paginate(5);
-        //$listPosts =  BlogPost::with('categories')->where('url',$url)->orderBy('id','Desc')->get();
 
+        // ----------- SEO -----------\\
+        $metaDes = $cate[0]->meta_description;
+        $metaKeywords =$cate[0]->meta_keywords;
+        $metaTitle = $cate[0]->meta_title;
+        $urlCanonical = $req->url();
+        // ----------- End Seo -----------\\
 
-        return view('pages.blogs.list')->with(compact('listPosts'));
+        return view('pages.blogs.list')->with(compact('listPosts','metaDes','metaTitle','metaKeywords','urlCanonical'));
     }
-    public function showDetails($url)
+    public function showDetails($url,Request $req)
     {
+
+
         $locale_code =   config('app.locale');
         $post = BlogPost::where('url',$url)->where('locale_code',$locale_code)->first();
-        return view('pages.blogs.details')->with(compact('post'));
+        // ----------- SEO -----------\\
+        $metaDes = $post->meta_description;
+        $metaKeywords =$post->meta_keywords;
+        $metaTitle = $post->meta_title;
+        $urlCanonical = $req->url();
+        // ----------- End Seo -----------\\
+        return view('pages.blogs.details')->with(compact('post','metaDes','metaTitle','metaKeywords','urlCanonical'));
 
     }
 }

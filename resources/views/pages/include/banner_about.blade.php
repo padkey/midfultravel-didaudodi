@@ -24,6 +24,7 @@
     }
     .logo-img img{
         width: 100%;
+        max-width: 500px;
     }
     @media (max-width: 800px) {
         .about-page-area {

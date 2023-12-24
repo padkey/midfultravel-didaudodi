@@ -24,7 +24,7 @@
      }
  </style>
  @if($page != null)
-    <section class="">
+    <section class="mb-100">
             <div class="container-about">
 				<div class="row">
 					<div class="col-lg-8">

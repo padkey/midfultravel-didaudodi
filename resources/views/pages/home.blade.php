@@ -1274,7 +1274,7 @@
 
 
     </style>
-    <!--
+    <!-- -->
     <div class="about_area_home">
         <div class="container">
             <div class="row">
@@ -1356,7 +1356,7 @@
             </div>
         </div>
     </div>
-    about_area_end -->
+   <!-- about_area_end -->
 @endsection
 @section('script')
 

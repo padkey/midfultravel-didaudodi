@@ -12,10 +12,10 @@
         padding: 30px 30px 15px 5px;
     }
 </style>
-<section class="blog_area">
+<section class="blog_area mb-100">
         <div class="container" style="max-width: 1440px;">
             <div class="row">
-                <div class="col-lg-8 mb-5 mb-lg-0">
+                <div class="col-lg-7 mb-5 mb-lg-0">
                     <div class="blog_left_sidebar">
                         @foreach($listPosts as $post)
                         <article class="blog_item">
@@ -39,7 +39,7 @@
                             </div>
                         </article>
                         @endforeach
-{{--                        <div>
+                        {{--<div>
                             {!! $listPosts->links() !!}
                         </div>--}}
 

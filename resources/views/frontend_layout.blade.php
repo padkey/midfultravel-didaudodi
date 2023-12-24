@@ -14,6 +14,23 @@
     @isset($tour->image_thumbnail)
         <meta property="og:image" content="{{url('/uploads/'.$tour->image_thumbnail)}}">
     @endisset
+
+    <!----------- SEO ------->
+    <meta name="description" content="{{$metaDes}}">
+    <meta name="author" content="">
+    <meta name="keyword" content="{{$metaKeywords}}">
+    <meta name="robots" content="INDEX,FOLLOW">
+    <link rel="canonical" href="{{$urlCanonical}}">
+    <!--------- END SEO --------->
+
+    <!----------- SHARE FACEBOOK  --------->
+    <meta property="og:url" content="{{$urlCanonical}}">
+    <meta property="og:type" content="article"/>
+    <meta property="og:title" content="{{$metaTitle}}">
+    <meta property="og:description" content="{{$metaDes}}">
+    <!----------- END SHARE FACEBOOK  --------->
+
+
     <link rel="shortcut icon" type="image/x-icon" href="{{url('frontend/images/s-logo.png')}}">
     <!-- Place favicon.ico in the root directory -->
 
