@@ -144,7 +144,7 @@
                 bottom: 0px;
             }
         }
-        .primery-btn {
+        .primary-btn {
             display: block;
             color: #2b2b2b;
             font-size: 18px;
@@ -159,17 +159,17 @@
             animation: textFly 2s forwards;
             position:relative;
         }
-        .primery-btn:hover{
+        .primary-btn:hover{
             background-color: #024f43;
             color:white!important;
         }
-        .primery-btn span {
+        .primary-btn span {
             font-family: 'Open Sans', sans-serif!important;
             font-weight: 600;
             font-size: 18px;
             font-style: normal;
         }
-        .primery-btn:hover span {
+        .primary-btn:hover span {
             color:white!important;
         }
     </style>
@@ -179,9 +179,8 @@
             <div class="container xtc">
                 {{--<h2>{!! $blockShortAboutUs->content!!}</h2>  Đi Đâu Đó Đi Mindful Travel--}}
                 <h2 class="title-short-about-us">
-
                     We offers mindfulness tours globally.  We are committed to creating a positive impact on the environment and local communities through sustainability and social responsibility programs.</h2>
-                <a href="/about-us" class="btn primery-btn"> <span>About us</span> </a>
+                <a href="/about-us" class="btn primary-btn"> <span>About us</span> </a>
                 {{--<p>
                     We are committed to creating a positive impact on the environment and local communities through sustainability and social responsibility programs.
                 </p>--}}

@@ -103,9 +103,11 @@
             padding: 10px;
             border-radius: 10px;
             margin-bottom:15px;
-            font-weight: 900;
+            font-weight: 500;
             font-size:18px;
             transition:0.5s;
+            font-family: 'Open Sans', sans-serif!important;
+
         }
         .btn-earth:hover{
             background-color: #024f43;
