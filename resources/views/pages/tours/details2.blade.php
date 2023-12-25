@@ -1226,7 +1226,6 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
                             <div class="col-xl-12">
                                 <div id="html_element" data-callback="recaptchaCallback" ></div>
                                 <p class="errorCaptcha error"></p>
-
                             </div>
                         </div>
 

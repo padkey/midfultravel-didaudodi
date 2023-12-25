@@ -82,6 +82,7 @@ return [
     'this_field_is_required' => 'Trường này là bắt buộc!',
     'error_number_phone' => 'Vui lòng chỉ nhập số!',
     'retreats_schedule' => 'Thời khóa sinh hoạt',
-    'error_captcha' => 'Vui lòng xác thực captcha!'
+    'error_captcha' => 'Vui lòng xác thực captcha!',
+    'mindful_traveling' => 'Du lịch chánh niệm',
 
 ];

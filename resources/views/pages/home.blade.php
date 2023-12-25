@@ -119,11 +119,72 @@
         }
     }
 	</style>
+    <style>
+        .xtc {
+            height: 300px;
+            text-align: center;
+            max-width: 1100px;
+        }
+        .xtc h2{
+            font-style: normal;
+            /*color: #8b572a;*/
+            padding: 0 0 34px;
+            font-size: 40px;
+            animation-delay: 1s ;
+            animation: textFly 1s forwards;
+            position: relative;
+        }
+        @keyframes  textFly {
+            from{
+                opacity: 0;
+                bottom: -500px;
+            }
+            to{
+                opacity: 1;
+                bottom: 0px;
+            }
+        }
+        .primery-btn {
+            display: block;
+            color: #2b2b2b;
+            font-size: 18px;
+            font-family: raleway,sans-serif;
+            border: 1px solid #707070;
+            position: relative;
+            max-width: 330px;
+            padding: 10px 20px;
+            transition: .5s;
+            font-weight: 300;
+            margin: auto;
+            animation: textFly 2s forwards;
+            position:relative;
+        }
+        .primery-btn:hover{
+            background-color: #024f43;
+            color:white!important;
+        }
+        .primery-btn span {
+            font-family: 'Open Sans', sans-serif!important;
+            font-weight: 600;
+            font-size: 18px;
+            font-style: normal;
+        }
+        .primery-btn:hover span {
+            color:white!important;
+        }
+    </style>
     @if($blockShortAboutUs != null)
         <div class="row" style=" margin-right: 0;margin-left: 0;">
             <hr width=60%>
-            <div class="col-xl-7 xtc">
-                <h2>{!! $blockShortAboutUs->content!!}</h2>
+            <div class="container xtc">
+                {{--<h2>{!! $blockShortAboutUs->content!!}</h2>  Đi Đâu Đó Đi Mindful Travel--}}
+                <h2 class="title-short-about-us">
+
+                    We offers mindfulness tours globally.  We are committed to creating a positive impact on the environment and local communities through sustainability and social responsibility programs.</h2>
+                <a href="/about-us" class="btn primery-btn"> <span>About us</span> </a>
+                {{--<p>
+                    We are committed to creating a positive impact on the environment and local communities through sustainability and social responsibility programs.
+                </p>--}}
             </div>
         </div>
     @endif
