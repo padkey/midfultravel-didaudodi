@@ -1088,7 +1088,7 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
                         </form>
                     </div>
                     <div class="modal-footer mt-30">
-                        <button type="button" class="btn btn-shop">{{trans('messages.submit')}}   </button>
+                        <button type="button" class="btn btn-shop">{{trans('messages.submit')}} </button>
                     </div>
                 </div>
             </div>

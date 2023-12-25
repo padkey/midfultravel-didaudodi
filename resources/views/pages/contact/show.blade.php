@@ -66,31 +66,39 @@
 							<div class="title_contact">
 								<h1>{{trans('messages.get_in_touch')}}</h1>
 							</div>
-							<form class="form-contact contact_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
+							<form action="#">
 								<div class="row">
 									<div class="col-12">
 										<div class="form-group">
-											<textarea class="form-control w-100" name="message" id="message" cols="30" rows="9" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Message'" placeholder=" Name"></textarea>
-										</div>
+											<textarea class="form-control w-100 message"  cols="30" rows="9"  placeholder=" {{trans('messages.message')}}"></textarea>
+                                            <p class="errorMessage error"></p>
+                                        </div>
 									</div>
 									<div class="col-sm-6">
 										<div class="form-group">
-											<input class="form-control valid" name="name" id="name" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" placeholder="Enter your name">
-										</div>
+											<input class="form-control name"  type="text"  placeholder="{{trans('messages.name')}}">
+                                            <p class="errorName error"></p>
+                                        </div>
 									</div>
 									<div class="col-sm-6">
 										<div class="form-group">
-											<input class="form-control valid" name="email" id="email" type="email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" placeholder="Email">
+											<input class="form-control email"  type="email" placeholder="{{trans('messages.email')}}">
+                                            <p class="errorEmail error"></p>
 										</div>
 									</div>
 									<div class="col-12">
 										<div class="form-group">
-											<input class="form-control" name="subject" id="subject" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Subject'" placeholder="Enter Subject">
-										</div>
+                                            <input class="form-control phone" type="text" placeholder="{{trans('messages.phone_number')}}">
+                                            <p class="errorPhone error"></p>
+                                        </div>
 									</div>
+                                    <div class="col-12">
+                                        <div id="html_element" data-callback="recaptchaCallback" ></div>
+                                        <p class="errorCaptcha error"></p>
+                                    </div>
 								</div>
 								<div class="form-group mt-3">
-									<button type="submit" class="button button-contactForm boxed-btn">Send</button>
+									<button type="button" class="button button-contactForm boxed-btn btn-enquire-submit">Send</button>
 								</div>
 							</form>
 						</div>
@@ -100,4 +108,125 @@
         </section>
     <!-- ================ contact section end ================= -->
  @endif
+@endsection
+
+@section('script')
+    <script type="text/javascript">
+        var onloadCallback = function() {
+            grecaptcha.render('html_element', {
+                'sitekey' : '{{ config('services.recaptcha.site_key') }}'
+            });
+        };
+        function recaptchaCallback() {
+            $('.errorCaptcha').html('');
+        };
+    </script>
+    <script>
+        $('.btn-enquire-submit').click(function (e){
+            //e.preventDefault();
+            //alert(grecaptcha.getResponse());
+            var _token = $('input[name="_token"]').val();
+            let message = $('.message').val();
+            let name =  $('.name').val();
+            let email  = $('.email').val();
+            let phone = $('.phone').val();
+            let tourId = 0; //$('.tour-id').val();
+            alert(name);
+            validateFormEnquire();
+            var checkValidate = validateFormEnquire();
+            if(checkValidate) {  //true
+                $.ajax({
+                    url:'{{url('/tour-enquire')}}',
+                    method:'POST',
+                    data: {
+                        message:message,
+                        name:name,
+                        email:email,
+                        phone:phone,
+                        tourId:tourId,
+                        _token:_token,
+                        recaptcha_token:grecaptcha.getResponse()
+                    },
+                    success(data){
+                        grecaptcha.reset();
+                        Swal.fire({
+                            title: "Good job!",
+                            text: "Cảm ơn bạn, chúng tôi sẽ phản hồi trong thời gian sớm nhất!",
+                            type: "success",
+                            showConfirmButton: true,
+                        }).then(
+                            function (isConfirm) {
+                                if (isConfirm) {
+                                    $('#model-enquire').modal('hide');
+                                }
+                            },
+                        );
+                    },error: function() {
+                        grecaptcha.reset();
+                        Swal.fire({
+                            title: "Error!",
+                            text: "Something went wrong!",
+                            type: "error",
+                        }).then(
+                            function (isConfirm) {
+                                if (isConfirm) {
+                                    $('#model-enquire').modal('hide');
+                                }
+                            },
+                        );
+                    },
+                });
+
+            }
+        })
+        function validateFormEnquire(){
+            $('.error').html('');
+            let i = 1;
+            if($('.message').val() == ''){
+                $('.errorMessage').html('{{trans('messages.require_message')}}');
+                i = 0;
+            }
+            if($('.name').val() == ''){
+                $('.errorName').html('{{trans('messages.require_name')}}');
+                i = 0;
+            }
+            if($('.email').val() == ''){
+                $('.errorEmail').html('{{trans('messages.require_email')}}');
+                i = 0;
+            }
+            if($('.phone').val() == ''){
+                $('.errorPhone').html('{{trans('messages.require_phone')}}');
+                i = 0;
+            }else {
+                let isNumeric = /^\d+$/
+                if ($('.phone').val() && !isNumeric.test($('.phone').val())) {
+                    i = 1;
+                    $('.errorPhone').html('{{trans('messages.error_number_phone')}}');
+                    i = 0;
+                } /*else {
+                        let to_phone_arr = $('.customer_phone').val().split("");
+                        if (Number(to_phone_arr[0]) !== 0) { //check first number
+                            i = 1;
+                            $('.errorPhone').html('Số điện thoại không đúng');
+                        }
+                        let lengthPhone = to_phone_arr.length;
+                        if (lengthPhone !== 10) { //check
+                            i = 1;
+                            $('.errorPhone').html('Số điện thoại phải có 10 số');
+                        }
+                    }*/
+            }
+            if (grecaptcha && grecaptcha.getResponse().length > 0)  { //check recaptcha
+
+            } else {
+                $('.errorCaptcha').html('{{trans('messages.error_captcha')}}');
+                i = 0;
+            }
+            if(i==0){
+                return false;
+            } else {
+                return true;
+            }
+        }
+    </script>
 @endsection

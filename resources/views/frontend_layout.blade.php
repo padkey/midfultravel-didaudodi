@@ -128,7 +128,7 @@
         }
         strong{
             font-weight: 700!important;
-            font-size: 20px;
+            /*font-size: 20px;*/
         }
         .owl-carousel .owl-nav div {
             background: bisque;
