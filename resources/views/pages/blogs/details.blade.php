@@ -7,7 +7,7 @@
 @endsection
 @section('content')
    <!--================Blog Area =================-->
-   <section class="blog_area single-post-area">
+   <section class="blog_area single-post-area mb-100">
       <div class="container">
          <div class="row">
          <div class="col-lg-3">
