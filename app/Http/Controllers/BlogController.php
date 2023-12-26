@@ -27,8 +27,6 @@ class BlogController extends Controller
     }
     public function showDetails($url,Request $req)
     {
-
-
         $locale_code =   config('app.locale');
         $post = BlogPost::where('url',$url)->where('locale_code',$locale_code)->first();
         // ----------- SEO -----------\\

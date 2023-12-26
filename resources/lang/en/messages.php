@@ -80,6 +80,7 @@ return [
     'error_number_phone' => 'Please enter numbers only!',
 'retreats_schedule' => 'Retreats schedule',
     'error_captcha' => 'Please verify captcha!',
-    'mindful_traveling' => 'Mindful traveling'
+    'mindful_traveling' => 'Mindful traveling',
+    'our_products' => 'Our Products'
 
 ];
