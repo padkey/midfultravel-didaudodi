@@ -84,8 +84,8 @@
                                                 @endforeach
                                             </ul>
                                         </li>--}}
-                                        <li class="f-l"><a href="/list-blogs/mindfulness-practice">{{trans('messages.mindfulness_practice')}}</a></li>
                                         <li class="f-l"><a href="/list-blogs/mindful-traveling">{{trans('messages.mindful_traveling')}}</a></li>
+                                        <li class="f-l"><a href="/list-blogs/mindfulness-practice">{{trans('messages.mindfulness_practice')}}</a></li>
                                         <li class="f-l"><a href="/contact">{{trans('messages.contact')}}</a></li>
                                         <li class="f-r">
                                             <a class="btn-shop " href="https://didaudodi.com/" target='_blank' style="padding: 10px 20px 10px 20px;border-radius:0;top:-10px">{{trans('messages.shop')}}</a>
