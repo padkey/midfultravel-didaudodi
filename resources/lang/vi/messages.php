@@ -84,5 +84,5 @@ return [
     'retreats_schedule' => 'Thời khóa sinh hoạt',
     'error_captcha' => 'Vui lòng xác thực captcha!',
     'mindful_traveling' => 'Du lịch chánh niệm',
-    'our_products' => 'Our Products'
+    'our_products' => 'Sản phẩm của chúng tôi'
 ];

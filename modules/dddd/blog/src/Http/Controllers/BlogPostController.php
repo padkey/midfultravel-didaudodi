@@ -88,8 +88,8 @@ class BlogPostController extends Controller
         $grid->column(BlogPost::COL_ID, __("ID"))->sortable();
         $grid->column(BlogPost::COL_TITLE, __("Title"));
         $grid->column(BlogPost::COL_LOCALE_CODE,__("Language"));
-        $grid->column(BlogPost::COL_URL);
-        //$grid->column(BlogPost::COL_IS_ACTIVE)->bool();
+        $grid->column(BlogPost::COL_URL)->editable();
+        $grid->column(BlogPost::COL_IS_ACTIVE)->bool();
         //$grid->column(BlogPost::COL_META_KEYWORDS);
         //$grid->column(BlogPost::COL_META_DESCRIPTION);
         //$grid->column(BlogPost::COL_PUBLIC_DATE);
