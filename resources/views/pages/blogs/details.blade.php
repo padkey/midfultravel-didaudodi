@@ -7,6 +7,11 @@
 @endsection
 @section('content')
    <!--================Blog Area =================-->
+   <style>
+       .content-blog{
+           margin-top: 35px;
+       }
+   </style>
    <section class="blog_area single-post-area mb-100">
       <div class="container">
          <div class="row">
