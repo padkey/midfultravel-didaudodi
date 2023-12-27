@@ -92,7 +92,7 @@ class VideoController extends Controller
         $grid->column(Video::COL_ID, __("ID"))->sortable();
         $grid->column(Video::COL_TITLE, __("Title"));
         $grid->column(Video::COL_LOCALE_CODE, __("Language"));
-        $grid->column(Video::COL_URL_KEY);
+        $grid->column(Video::COL_URL_KEY)->editable();
         //$grid->column(Video::COL_IS_ACTIVE, __("Status"))->bool();
 
         /*$grid->column(Video::COL_CREATED_AT, __("Created At"))->display(function () {

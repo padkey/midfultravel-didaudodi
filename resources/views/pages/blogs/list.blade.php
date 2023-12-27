@@ -50,7 +50,7 @@
                                         <i class="ti-angle-left"></i>
                                     </a>
                                 </li>
-                                @for($i=1;$i<=$listPosts->total();$i++)
+                                @for($i=1;$i<=$listPosts->count();$i++)
                                     <li class="page-item">
                                         <a href="{{$listPosts->path()}}?page={{$i}}" class="page-link">{{$i}}</a>
                                     </li>
