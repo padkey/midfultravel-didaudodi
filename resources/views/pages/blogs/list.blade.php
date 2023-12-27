@@ -42,7 +42,11 @@
                         {{--<div>
                             {!! $listPosts->links() !!}
                         </div>--}}
-
+                        {{--@php
+                        echo '<pre>';
+                        echo $listPosts->lastPage();
+                        echo'</pre>';
+                        @endphp--}}
                         <nav class="blog-pagination justify-content-center d-flex">
                             <ul class="pagination">
                                 <li class="page-item">
@@ -50,7 +54,7 @@
                                         <i class="ti-angle-left"></i>
                                     </a>
                                 </li>
-                                @for($i=1;$i<=$listPosts->count();$i++)
+                                @for($i=1;$i<=$listPosts->lastPage();$i++)
                                     <li class="page-item">
                                         <a href="{{$listPosts->path()}}?page={{$i}}" class="page-link">{{$i}}</a>
                                     </li>
