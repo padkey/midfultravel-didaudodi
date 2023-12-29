@@ -73,17 +73,17 @@
     <div class="slider_active owl-three owl-carousel owl-theme">
         <div class="single_slider d-flex align-items-center  slider_bg_1">
             <div class="container" style="margin-top: 10px; ">
-                <div class=" logo-top">
-                    <a href="/">
-                        {{--<img src="{{url('uploads/'.$logoWhite->items[0]->path_desktop)}}" alt="">--}}
+                {{-- <div class=" logo-top">
+                     <a href="/">
+                         <img src="{{url('uploads/'.$logoWhite->items[0]->path_desktop)}}" alt="">
                             <h1 style="color: white; font-size:80px;">Didaudodi <br> Mindful Travel - DMT</h1>
                     </a>
-                </div>
-                <div class="logo-image logo-bottom">
+                </div>--}}
+                {{--<div class="logo-image logo-bottom">
                     <a href="/">
                         <img src="{{url('uploads/'.$sloganImage->items[0]->path_desktop)}}" alt="">
                     </a>
-                </div>
+                </div>--}}
                 {{--<div class="row">
                     <div class="col-xl-1">
 
