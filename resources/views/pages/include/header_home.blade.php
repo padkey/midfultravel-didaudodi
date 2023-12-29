@@ -56,7 +56,7 @@
                             <div class="main-menu  d-none d-lg-block">
                                 <nav>
                                     <ul id="navigation">
-                                        <li class="f-l"><a  href="/">{{trans('messages.home')}}</a></li>
+                                        <li class="f-l"><a href="/">{{trans('messages.home')}}</a></li>
                                         <li class="f-l"><a href="/about-us">{{trans('messages.about_us')}}</a></li>
 										<li class="f-l"><a href="/fabio">Fabio Cappiello</a></li>
 										<li class="f-l"><a href="/tours/list-tours">{{trans('messages.our_products')}}</a></li>

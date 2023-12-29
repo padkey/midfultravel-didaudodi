@@ -16,19 +16,20 @@
     @endisset
 
     <!----------- SEO ------->
-    <meta name="description" content="{{$metaDes}}">
+    {{--<meta name="description" content="{{$metaDes}}">
     <meta name="author" content="">
     <meta name="keyword" content="{{$metaKeywords}}">
     <meta name="robots" content="INDEX,FOLLOW">
-    <link rel="canonical" href="{{$urlCanonical}}">
+    <link rel="canonical" href="{{$urlCanonical}}">--}}
     <!--------- END SEO --------->
 
     <!----------- SHARE FACEBOOK  --------->
-    <meta property="og:url" content="{{$urlCanonical}}">
+    {{--<meta property="og:url" content="{{$urlCanonical}}">
     <meta property="og:type" content="article"/>
     <meta property="og:title" content="{{$metaTitle}}">
-    <meta property="og:description" content="{{$metaDes}}">
+    <meta property="og:description" content="{{$metaDes}}">--}}
     <!----------- END SHARE FACEBOOK  --------->
+    <meta name= “robots” content = “noindex,nofollow”>
 
 
     <link rel="shortcut icon" type="image/x-icon" href="{{url('frontend/images/s-logo.png')}}">
