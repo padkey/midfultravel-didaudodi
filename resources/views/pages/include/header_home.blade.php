@@ -45,6 +45,37 @@
                                 float:none!important;
                                 margin:30px;
                             }
+                            /*.f-r .submenu {
+                                background-color: transparent!important;
+                            }
+                            .f-r .submenu li a {
+                                color: #FFFFFF!important;
+                                padding: 10px!important;
+                                width: 93px;
+
+                            }
+                            .menu-language{
+                                background-color: transparent!important;
+                            }
+                            .menu-language a{
+                                padding: 8px 10px!important;
+                                width: 93px;
+                            }
+                            .btn-language{
+                                font-family:"Raleway",sans-serif!important;
+                                font-weight: 500;
+                                font-size:15px;
+                                top: -10px;
+                                border: 1px solid silver;
+                                padding: 10px!important;
+
+                            }
+                            .f-r .submenu a:hover{
+                                color: black!important;
+                                background: rgba(255, 255, 255, 0.8);
+                                border: 1px solid silver;
+                            }*/
+
                         </style>
                         <div class="">
                             <div class="trangchu-title">
@@ -83,12 +114,25 @@
                                                 $language = 'English';
                                             }
                                         @endphp
-                                        <li class="f-r"><a href="">{{$language}} <i class="ti-angle-down"></i></a>
+                                        <li class="f-r">
+                                            <a  href="">{{$language}} <i class="ti-angle-down"></i></a>
                                             <ul class="submenu">
                                                 <li><a href="{!! route('user.change-language', ['en']) !!}">English</a></li>
                                                 <li><a href="{!! route('user.change-language', ['vi']) !!}">VietNam</a></li>
                                             </ul>
                                         </li>
+                                        {{--<li class="f-r">
+                                            <!-- Example single danger button -->
+                                            <div class="btn-group">
+                                                <button type="button" class="btn btn-language dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    {{$language}}
+                                                </button>
+                                                <div class="dropdown-menu menu-language">
+                                                    <a class="dropdown-item" href="#">English</a>
+                                                    <a class="dropdown-item" href="#">VietNam</a>
+                                                </div>
+                                            </div>
+                                        </li>--}}
                                     </ul>
                                 </nav>
                             </div>

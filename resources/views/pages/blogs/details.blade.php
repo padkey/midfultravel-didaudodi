@@ -11,6 +11,13 @@
        .content-blog{
            margin-top: 35px;
        }
+       .single-post-area .blog_details .content-blog p,span{
+           font-family:"PV Sans Serif", sans-serif!important;
+           font-weight: 300;
+           line-height: 165%;
+       }
+       .single-post-area .blog_details .content-blog b{
+       }
    </style>
    <section class="blog_area single-post-area mb-100">
       <div class="container">
