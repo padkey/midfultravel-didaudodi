@@ -23,6 +23,18 @@
     .widget_title {
         font-size: 38px!important;
     }
+    .blog_details h4 {
+        font-size: 38px!important;
+        font-family:"Cormorant Garamond",serif!important;
+
+    }
+    .short-desc-blog {
+        font-family:"PV Sans Serif", sans-serif!important;
+        font-weight: 500;
+        line-height: 165%;
+        font-size: 20px;
+        color: rgba(0, 0, 0, 0.73);
+    }
 </style>
 <section class="blog_area mb-100">
         <div class="container" style="max-width: 1440px;">
@@ -121,7 +133,7 @@
                                 <a class="d-inline-block" href="/blogs/{{$post->url}}">
                                     <h4>{{ $post->title }}</h4>
                                 </a>
-                                <p>{{$post->short_description}}.</p>
+                                <p class="short-desc-blog">{{$post->short_description}}.</p>
                                 <ul class="blog-info-link">
                                     {{--<li><a href="#"><i class="fa fa-user"></i> {{$listPosts->title}}</a></li>--}}
                                     <!-- <li><a href="#"><i class="fa fa-comments"></i> 03 Comments</a></li> -->
