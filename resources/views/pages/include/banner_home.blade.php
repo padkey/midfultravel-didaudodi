@@ -13,6 +13,13 @@
     .slider_text h1{
         color:white;
     }
+    .logo-top{
+       /* width: 430px;*/
+
+    }
+    .logo-top img{
+        width: 100%;
+    }
     .logo-image{
         width: 26%;
         margin-top: 50px;
@@ -48,7 +55,7 @@
         }
     }
 
-    /*@media  (min-height: 800px) and (max-height: 950px) {
+    @media  (min-height: 800px) and (max-height: 950px) {
         .logo-image {
             width: 23%;
             margin-top: 100px;
@@ -57,8 +64,8 @@
         .logo-top{
             margin-top: 100px;
         }
-    }*/
-    /*@media  (min-height: 500px) and (max-height: 700px) {
+    }
+    @media  (min-height: 500px) and (max-height: 700px) {
         .logo-image {
             width: 20%;
             margin-top: 80px;
@@ -67,19 +74,29 @@
         .logo-top{
             margin-top: 100px;
         }
-    }*/
+    }
+    @media(max-width: 1206px) {
+        .logo-image {
+            margin: auto;
+        }
+    }
 </style>
 <div class="slider_area" style="margin-top:-13px;">
     <div class="slider_active owl-three owl-carousel owl-theme">
         <div class="single_slider d-flex align-items-center  slider_bg_1">
             <div class="container" style="margin-top: 10px; ">
-                {{-- <div class=" logo-top">
+                 <div class=" logo-top logo-image">
                      <a href="/">
+{{--
                          <img src="{{url('uploads/'.$logoWhite->items[0]->path_desktop)}}" alt="">
-                            <h1 style="color: white; font-size:80px;">Didaudodi <br> Mindful Travel - DMT</h1>
+--}}
+                         <img src="{{url('uploads/'.$sloganImage->items[0]->path_desktop)}}" alt="">
+{{--
+                         <h1 style="color: white; font-size:80px;">Didaudodi <br> Mindful Travel - DMT</h1>
+--}}
                     </a>
-                </div>--}}
-                {{--<div class="logo-image logo-bottom">
+                </div>
+               {{--<div class="logo-image logo-bottom">
                     <a href="/">
                         <img src="{{url('uploads/'.$sloganImage->items[0]->path_desktop)}}" alt="">
                     </a>
