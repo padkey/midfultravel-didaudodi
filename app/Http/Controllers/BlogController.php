@@ -28,7 +28,11 @@ class BlogController extends Controller
     public function showDetails($url,Request $req)
     {
         $locale_code =   config('app.locale');
-        $post = BlogPost::where('url',$url)->where('locale_code',$locale_code)->first();
+        $post = BlogPost::with('categories')->where('url',$url)->where('locale_code',$locale_code)->first();
+        /*echo '<pre>';
+        var_dump($post->categories[0]->url);
+        echo '</pre>';
+        die();*/
         // ----------- SEO -----------\\
         $metaDes = $post->meta_description;
         $metaKeywords =$post->meta_keywords;

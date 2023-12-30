@@ -18,25 +18,52 @@
        }
        .single-post-area .blog_details .content-blog b{
        }
+       .cate-blog-title {
+           font-family:"PV Sans Serif", sans-serif!important;
+           font-weight: 500;
+           line-height: 165%;
+           font-size: 20px;
+       }
+       .cate-blog-active{
+           color: #8b572a;
+       }
+       .widget_title {
+           font-size: 38px!important;
+       }
    </style>
    <section class="blog_area single-post-area mb-100">
       <div class="container">
          <div class="row">
          <div class="col-lg-3">
                <div class="blog_right_sidebar">
-                  <aside class="single_sidebar_widget post_category_widget" style="background:white;">
+                  {{--<aside class="single_sidebar_widget post_category_widget" style="background:white;">
                      <h4 class="widget_title">Category</h4>
                      <ul class="list cat-list">
                         @foreach($categoryPost as $cate)
                         <li>
                            <a href="/list-blogs/{{$cate->url}}" class="d-flex">
                               <p>{{ $cate->title }}</p>
-                             {{-- <p>(37)</p>--}}
+                             --}}{{-- <p>(37)</p>--}}{{--
                            </a>
                         </li>
                         @endforeach
                      </ul>
-                  </aside>
+                  </aside>--}}
+
+                   <aside class="single_sidebar_widget post_category_widget">
+                       <h1 class="widget_title">Category</h1>
+                       <ul class="list cat-list">
+                           @foreach($categoryPost as $cate)
+                               <li>
+                                   <a href="/list-blogs/{{$cate->url}}" class="d-flex">
+
+                                       <p class="cate-blog-title {{$cate->url == $post->categories[0]->url ? 'cate-blog-active' : ''}}">{{ $cate->title }}</p>
+                                       <!-- <p>(37)</p> -->
+                                   </a>
+                               </li>
+                           @endforeach
+                       </ul>
+                   </aside>
 
                   <!-- <aside class="single_sidebar_widget popular_post_widget" style="background:white;">
                      <h3 class="widget_title">Recommeded reading</h3>
