@@ -11,6 +11,18 @@
     .blog_details {
         padding: 30px 30px 15px 5px;
     }
+    .cate-blog-title {
+        font-family:"PV Sans Serif", sans-serif!important;
+        font-weight: 500;
+        line-height: 165%;
+        font-size: 20px;
+    }
+    .cate-blog-active{
+        color: #8b572a;
+    }
+    .widget_title {
+        font-size: 38px!important;
+    }
 </style>
 <section class="blog_area mb-100">
         <div class="container" style="max-width: 1440px;">
@@ -35,12 +47,13 @@
                         </aside>--}}
 
                         <aside class="single_sidebar_widget post_category_widget">
-                            <h4 class="widget_title">Category</h4>
+                            <h1 class="widget_title">Category</h1>
                             <ul class="list cat-list">
                                 @foreach($categoryPost as $cate)
                                     <li>
                                         <a href="/list-blogs/{{$cate->url}}" class="d-flex">
-                                            <p>{{ $cate->title }}</p>
+
+                                            <p class="cate-blog-title {{$cate->url == $url ? 'cate-blog-active' : ''}}">{{ $cate->title }}</p>
                                             <!-- <p>(37)</p> -->
                                         </a>
                                     </li>
@@ -106,7 +119,7 @@
 
                             <div class="blog_details">
                                 <a class="d-inline-block" href="/blogs/{{$post->url}}">
-                                    <h1>{{ $post->title }}</h1>
+                                    <h4>{{ $post->title }}</h4>
                                 </a>
                                 <p>{{$post->short_description}}.</p>
                                 <ul class="blog-info-link">

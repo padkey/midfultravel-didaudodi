@@ -23,7 +23,7 @@ class BlogController extends Controller
         $urlCanonical = $req->url();
         // ----------- End Seo -----------\\
 
-        return view('pages.blogs.list')->with(compact('listPosts','metaDes','metaTitle','metaKeywords','urlCanonical'));
+        return view('pages.blogs.list')->with(compact('listPosts','metaDes','metaTitle','metaKeywords','urlCanonical','url'));
     }
     public function showDetails($url,Request $req)
     {
