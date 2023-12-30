@@ -1244,9 +1244,10 @@
             padding: 15px 25px 5px 25px;
         }
         .blog_details h2{
-            font-size: 40px;
+            /*font-size: 40px;*/
             margin-bottom: 0px;
             padding: 0px 0 5px 0px;
+
         }
         .blog_details p{
             font-size: 25px;
@@ -1259,7 +1260,7 @@
 
         }
         .small-blog-details p{
-            padding: 0 0 15px 15px;
+            padding: 0 0 9px 15px;
         }
         .title-about{
             text-align:center;
@@ -1277,9 +1278,8 @@
         .d-inline-block {
             text-decoration:none;
             display:block;
-            position:relative;
         }
-        .d-inline-block::before{
+        /*.d-inline-block::before{
             content: '';
             background-color: rgba(255,210,42,.4);
             position: absolute;
@@ -1290,16 +1290,19 @@
             z-index: -1;
             transition: all .3s ease-in-out;
 
-        }
-        .d-inline-block:hover::before{
-            bottom: 0;
-            height: 100%;
-            background-color: #ffd22a;
+        }*/
+        .d-inline-block:hover{
+            text-decoration:underline;
+            transition: 0.1s;
+            bottom: 2px;
+            color: #ffd22a!important;
         }
         .small-image-blog{
-            height: 272px;
-         object-fit: cover;
+            max-height: 272px;
+            object-fit: cover;
             width:100%;
+            object-position: center center;
+
         }
         .blog_item {
             margin-bottom: 30px;
@@ -1312,6 +1315,12 @@
             height:200px;
             object-fit:cover;
         }
+        @media (max-width: 992px) {
+            .small-image-blog {
+                max-height: 100%;
+
+            }
+        }
         @media screen and (max-width: 800px) {
             .center-small-blog {
                 display:block;
@@ -1323,6 +1332,13 @@
                 height:100%;
                 object-fit:cover;
             }
+             .small-image-blog{
+                 max-height: 100%;
+                object-fit: cover;
+                width:100%;
+                object-position: center center;
+
+            }
         }
         .center-small-blog .small-blog-details p{
             font-size:22px;
@@ -1331,9 +1347,26 @@
             height: 560px;
             object-fit:cover;
         }
-
-
-    </style>
+        .short-desc-blog {
+            font-family:"Cormorant Garamond",serif!important;
+            font-weight: lighter;
+            line-height: 165%;
+            font-size: 20px;
+            word-break: break-word;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 3; /* number of lines to show */
+            -webkit-box-orient: vertical;
+            letter-spacing: 0.5px;
+        }
+        .post-title {
+            font-size: 38px!important;
+            font-family:"Cormorant Garamond",serif!important;
+            font-weight: 300!important;
+            font-style: italic;
+        }
+        </style>
     <!-- -->
     <div class="about_area_home">
         <div class="container">
@@ -1355,7 +1388,7 @@
                             </div>
                             <div class="small-blog-details">
                                 <a class="d-inline-block" href="/blogs/{{$post->url}}">
-                                    <h2>{{$post->title}}</h2>
+                                    <h2 class="post-title">{{$post->title}}</h2>
                                 </a>
                             </div>
                         </article>
@@ -1378,11 +1411,11 @@
 
                             </div>
 
-                            <div class="{{$small}} ">
+                            <div class="{{$small}}">
                                 <a class="d-inline-block" href="/blogs/{{$post->url}}">
-                                    <h2>{{$post->title}}</h2>
+                                    <h2 class="post-title">{{$post->title}}</h2>
                                 </a>
-                                <p>{{$post->short_description}}</p>
+                                <p class="short-desc-blog">{{$post->short_description}}</p>
                             </div>
                         </article>
                         @php
@@ -1404,7 +1437,7 @@
                             </div>
                             <div class="small-blog-details">
                                 <a class="d-inline-block" href="/blogs/{{$post->url}}">
-                                    <h2>{{$post->title}}</h2>
+                                    <h2 class="post-title">{{$post->title}}</h2>
                                 </a>
                             </div>
                         </article>

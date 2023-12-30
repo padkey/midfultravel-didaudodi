@@ -82,7 +82,7 @@
 
         h1,h2,h3{
             font-family:"Cormorant Garamond",serif!important;
-            font-style:italic;
+            /*font-style:italic;*/
         }
         h1{
             font-size:45px;
