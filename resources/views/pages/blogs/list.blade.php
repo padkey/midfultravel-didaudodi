@@ -34,6 +34,27 @@
         line-height: 165%;
         font-size: 20px;
         color: rgba(0, 0, 0, 0.73);
+        word-break: break-word;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3; /* number of lines to show */
+        -webkit-box-orient: vertical;
+    }
+
+    .short-desc{
+        word-break: break-word;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        line-height: 24px; /* fallback */
+        max-height: 72px; /* fallback */
+        -webkit-line-clamp: 3; /* number of lines to show */
+        -webkit-box-orient: vertical;
+        /* font-family: "Cormorant Garamond",Courier!important; */
+        font-size: 20px;
+        font-weight: 100;
+        /* font-family: "Raleway",sans-serif!important; */
     }
 </style>
 <section class="blog_area mb-100">
@@ -133,7 +154,7 @@
                                 <a class="d-inline-block" href="/blogs/{{$post->url}}">
                                     <h4>{{ $post->title }}</h4>
                                 </a>
-                                <p class="short-desc-blog">{{$post->short_description}}.</p>
+                                <p class="short-desc-blog">{{$post->short_description}}</p>
                                 <ul class="blog-info-link">
                                     {{--<li><a href="#"><i class="fa fa-user"></i> {{$listPosts->title}}</a></li>--}}
                                     <!-- <li><a href="#"><i class="fa fa-comments"></i> 03 Comments</a></li> -->
