@@ -2,7 +2,7 @@
     <style>
 
     </style>
-        <div class="header-area" style="background: white;    opacity: 80%;    position: relative;">
+        <div class="header-area "  style="background: white;    opacity: 80%;    position: relative;">
             <div id="sticky-header" class="main-header-area" >
                 <div class="container-fluid p-0" style="max-width:95%">
                     <div class="row align-items-center no-gutters">

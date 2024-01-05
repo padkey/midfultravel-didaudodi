@@ -154,12 +154,12 @@
 </style>
 <div class="banner_package bradcam_area breadcam_bg">
     <div class="container-package">
-        <div class="logo-image">
+        <div class="logo-image fadeIn wow" data-wow-delay="200ms">
             <a href="/">
                 <img src="{{url('uploads/'.$logoWhite->items[0]->path_desktop)}}" alt="">
             </a>
         </div>
-        <div class="title-package">
+        <div class="title-package fadeInUp wow" data-wow-delay="100ms">
             @php
             $date = date_create($tour->date_start);
             $date_start= date_format($date, 'd/m/Y');

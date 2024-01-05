@@ -52,8 +52,11 @@
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css' rel='stylesheet' />
     <link href="{{asset('vendor/laravel-admin/sweetalert2/dist/sweetalert2.css')}}" rel='stylesheet' />
     <script src="https://www.google.com/recaptcha/api.js?render={{ config('services.recaptcha.site_key') }}"></script>
-
     <link rel="stylesheet" href="{{asset('frontend/css/responsive.css')}}">
+
+    <!-- Font  Google-->
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=playfair">
 </head>
 
 <body >
@@ -62,10 +65,6 @@
 
 
     <style>
-        body{
-            font-family:"Cormorant Garamond",serif!important;
-
-        }
         .overlay::before{
             z-index:5!important;
         }
@@ -74,7 +73,7 @@
         }
 
         p,span,a{
-            font-family:"Cormorant Garamond",sans-serif!important;
+
             color:#333333;
             /*font-size: 18px!important;*/
             line-height: 1.3;
@@ -133,6 +132,10 @@
             font-weight: 700!important;
             /*font-size: 20px;*/
         }
+        strong span{
+            font-weight: 700!important;
+            /*font-size: 20px;*/
+        }
         .owl-carousel .owl-nav div {
             background: bisque;
             background-color: rgba(255,255,255,0.9);
@@ -153,6 +156,53 @@
         .owl-nav div:hover{
             background: #faf1eb!important;
             border: 1px solid #ffff;
+        }
+        .mt-50{
+            margin-top: 50px;
+        }
+        .mb-20 {
+            margin-bottom: 20px;
+        }
+        .pt-80{
+            padding-top: 80px;
+        }
+        .primary-btn {
+            display: block;
+            color: #2b2b2b;
+            font-size: 18px;
+            border: 1px solid #707070;
+            position: relative;
+            max-width: 380px;
+            padding: 10px 20px;
+            transition: .5s;
+            font-weight: 300;
+            margin: auto;
+            position:relative;
+            margin-top:30px;
+            font-family: 'Playfair Display',serif!important;
+            color: #4c423a;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+        .primary-btn:hover{
+            /*
+            background-color: #024f43;
+            */
+            background-color: #4c423a;
+            color:white!important;
+        }
+        .primary-btn span {
+            font-family: 'Playfair Display',serif!important;
+            letter-spacing: 1px;
+            font-weight: 600;
+            font-size: 18px;
+            font-style: normal;
+            text-transform: uppercase;
+            color: #4c423a;
+        }
+        .primary-btn:hover span {
+            color:white!important;
         }
     </style>
 
@@ -446,7 +496,9 @@
             font-size: 24px;
             font-weight: 900;
             font-style: normal;
-            color: #808080;
+            /*color: #808080*/;
+            color: #8b572a!important;
+
             /* margin-bottom: 45px; */
         }
         .input-dk{
@@ -502,8 +554,8 @@
     </style>
 
 
-    <hr style="margin-top: 0px;">
-    <footer class="footer">
+    <hr style="margin-top: 0px;" class=" wow fadeIn" data-wow-delay="300ms">
+    <footer class="footer wow fadeIn" data-wow-delay="300ms">
         <div class="footer_top">
             <div class="container">
                 {{--<div class="row">

@@ -46,9 +46,7 @@
         height: 250px;
         margin-top:0px!important;
         border-radius: 40px;
-        opacity: 0;
-        animation: fadeIn 1s ease-in both;
-        transition: 1.5s;
+        z-index: 2000;
     }
     .single-image-overview:hover  .single-gallery-image{
         border-radius: 0px;
@@ -67,29 +65,8 @@
         animation: fadeIn 1s ease-in both;
     }*/
 
-    .images-overview .image-overview-1 {
-        animation-delay: 0.1s;
-    }
-    .images-overview .image-overview-2 {
-        animation-delay: 0.3s;
-    }
-    .images-overview .image-overview-3 {
-        animation-delay: 0.5s;
-    }
-    .images-overview .image-overview-4 {
-        animation-delay: 0.7s;
-    }
 
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
-            transform: translate3d(0, -180%, 0);
-        }
-        to {
-            opacity: 1;
-            transform: translate3d(0, 0, 0);
-        }
-    }
+
     @keyframes fadeInP {
         from {
             opacity: 0;
@@ -281,7 +258,7 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
 	<!-- End Sample Area -->
      <div class="overview-area">
          <div class="container mb-65">
-                 <div class="section-icon">
+                 <div class="section-icon fadeInUp wow" data-wow-delay="100ms">
                      <img src="{{url('/frontend/images/kinh-lup.png')}}" alt="">
                      <div class="title-center">
                          <h1 class="hightlight-underline-green">{{trans('messages.overview')}}</h1>
@@ -291,15 +268,16 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
                      {!! $tour->place_overview !!}
                  </div>
              <input type="hidden" class="tour-id" value="{{$tour->id}}">
-             @php $i =1 @endphp
+             @php $delayOV = 100 @endphp
              <div class="row images-overview owl-six owl-theme owl-carousel">
                  @if(is_array($tour->image))
                      @foreach($tour->image as $image)
-                         <div class="single-image-overview">
+                         <div class="single-image-overview fadeInDownBig wow" data-wow-delay="{{$delayOV}}ms">
                              <a href="{{url('/uploads/'.$image)}}" class="img-pop-up">
-                                 <div class="single-gallery-image fadeInDown image-overview-{{$i++}}" style="background: url('/uploads/{{$image}}');"></div>
+                                 <div class="single-gallery-image " style="background: url('/uploads/{{$image}}');"></div>
                              </a>
                          </div>
+                         @php $delayOV = $delayOV + 200 @endphp
                      @endforeach
                  @endif
              </div>
@@ -372,7 +350,7 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
     }*/
 </style>
     <div class="highlight-area bg-pink-1 mt-100 ">
-        <div class="section-icon" style="top:-45px">
+        <div class="section-icon  fadeInUp wow" data-wow-delay="100ms" style="top:-45px">
             <img src="{{url('/frontend/images/hightlight.png')}}" alt="">
             <div class="title-center">
                 <h1 class="hightlight-underline-white" >{{trans('messages.trip_highlights')}}</h1>
@@ -383,9 +361,9 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
         <div class="container">
             <div class="row content-trip">
                 <div class="col-xl-6 col-lg-11 image-l">
-                    <img class="image-li" src="{{url('/uploads/'.$tour->image_trip_highlights)}}" alt="">
+                    <img class="image-li  fadeInLeft wow" data-wow-delay="200ms" src="{{url('/uploads/'.$tour->image_trip_highlights)}}" alt="">
                 </div>
-                <div class="col-xl-6 col-lg-11 c_margin content-right">
+                <div class="col-xl-6 col-lg-11 c_margin content-right fadeInRight wow" data-wow-delay="200ms">
                     {!! $tour->trip_highlights !!}
                 </div>
             </div>
@@ -590,19 +568,22 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
     </style>
     <div class="schedule-area mt-100">
         <div class="container">
-            <div class="section-icon">
+            <div class="section-icon fadeInUp wow" data-wow-delay="200ms" >
                 <img src="{{url('/frontend/images/kinh-lup.gif')}}" alt="" style="border-radius: 0">
                 <div class="title-center">
                     <h1 class="hightlight-underline-green">{{trans('messages.itinerary')}}</h1>
                     <h2 class="tour-name">{{$tour->name}}</h2>
                 </div>
             </div>
-            <div id='map2'>
+            <div id='map2' class="fadeInDown wow" data-wow-delay="200ms">
                 <img src="{{url('/uploads/'.$tour->image_map)}}" alt="">
             </div>
             <div>
+                @php
+                    $delayS = 100;
+                @endphp
                 @foreach($tour->tourSchedule as $key => $schedule)
-                    <div class="schedule-day-{{$schedule->id}}">
+                    <div class="schedule-day-{{$schedule->id}} wow fadeInDown" data-wow-delay="{{$delayS}}ms">
                         <div class="title-schedule" data-id="{{$schedule->id}}" data-position="{{$schedule->position}}">
                             <span class="icon-close icon-action-{{$schedule->id}} down-up-action">   </span>
                             <span class="day-title">{{$schedule->title}} </span>
@@ -615,7 +596,9 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
                             {!! $schedule->description !!}
                         </div>
                     </div>
-
+                @php
+                    $delayS = $delayS + 200;
+                @endphp
                 @endforeach
                 <input type="hidden" class="region" value="{{$tour->region}}">
             </div>
@@ -732,7 +715,7 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
 </style>
     <div class="important-info-area mt-100">
     <div class="container">
-        <div class="section-icon">
+        <div class="section-icon fadeInUp wow" data-wow-delay="200ms">
             <img src="{{url('/frontend/images/kinh-lup-ds.gif')}}" alt="" style="border-radius: 0px">
             <div class="title-center">
                 <h1 class="hightlight-underline-green">{{trans('messages.important_information')}}</h1>
@@ -741,29 +724,29 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
 
         <div class="tabs">
             <ul class="nav nav-tabs" id="myTab" role="tablist">
-                <li class="nav-item" role="presentation">
+                <li class="nav-item fadeInLeft wow" data-wow-delay="200ms" role="presentation">
                     <button class="nav-link active" id="home-tab" data-toggle="tab" data-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">
                         {{trans('messages.our_service')}}
                     </button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="profile-tab" data-toggle="tab" data-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">
+                    <button class="nav-link fadeInLeft wow" data-wow-delay="400ms" id="profile-tab" data-toggle="tab" data-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">
                         {{trans('messages.tour_condition')}}
                     </button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="contact-tab" data-toggle="tab" data-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">
+                    <button class="nav-link fadeInLeft wow" data-wow-delay="600ms" id="contact-tab" data-toggle="tab" data-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">
                         {{trans('messages.condition_in_euro')}}
                     </button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="practice-tab" data-toggle="tab" data-target="#practice" type="button" role="tab" aria-controls="practice" aria-selected="false">
+                    <button class="nav-link fadeInLeft wow" data-wow-delay="800ms" id="practice-tab" data-toggle="tab" data-target="#practice" type="button" role="tab" aria-controls="practice" aria-selected="false">
                         {{trans('messages.retreats_schedule')}}
                     </button>
                 </li>
             </ul>
             <div class="tab-content" id="myTabContent">
-                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">{!! $tour->important_info_1 !!}</div>
+                <div class="tab-pane fade show active fadeInLeft wow" data-wow-delay="200ms" id="home" role="tabpanel" aria-labelledby="home-tab">{!! $tour->important_info_1 !!}</div>
                 <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">{!! $tour->important_info_2 !!}</div>
                 <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">{!! $tour->important_info_3 !!}</div>
                 <div class="tab-pane fade" id="practice" role="tabpanel" aria-labelledby="practice-tab">{!! $tour->important_info_4 !!}</div>
@@ -1024,8 +1007,8 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
     }
 </style>
 <div class="companion-area bg-pink-1 mt-180">
-    <div class="section-icon" style="top:-45px;">
-        <img src="{{url('/frontend/images/companion.png')}}" alt="" ">
+    <div class="section-icon wow fadeInUp" data-wow-delay="100ms" style="top:-45px;">
+        <img src="{{url('/frontend/images/companion.png')}}" alt=" ">
         <div class="title-center">
             <h1 class="hightlight-underline-white" >{{trans('messages.companions')}}</h1>
         </div>
@@ -1038,8 +1021,11 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
         <input type="hidden" value="{{count($companions)}}" class="companionNumber">
         <div class="team-profile owl-five owl-carousel  owl-theme">
             @if($companions != null)
+                @php
+                    $delayC = 100;
+                @endphp
                 @foreach($companions as $companion)
-                    <div class="profile-card">
+                    <div class="profile-card wow fadeInLeft" data-wow-delay="{{$delayC}}ms">
                         <div class="img">
                             <img src="{{url('uploads/'.$companion->avatar)}}" alt=""  >
                             <div class="name-companion">
@@ -1054,6 +1040,9 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
                             </div>
                         </div>
                     </div>
+                    @php
+                        $delayC = $delayC + 200;
+                    @endphp
                 @endforeach
             @endif
         </div>
@@ -1104,7 +1093,7 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
 </style>
 <div class="partner-area mt-100">
     <div class="container">
-        <div class="section-icon">
+        <div class="section-icon wow fadeInUp" data-wow-delay="100ms">
             <img src="{{url('/frontend/images/partnership.png')}}" alt="" style="border-radius:0px;">
             <div class="title-center">
                 <h1 class="hightlight-underline-green">{{trans('messages.our_partnership')}}</h1>
@@ -1113,7 +1102,7 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
 
         <div class="row">
             @foreach($tour->partnershipBranch as $partnershipBranch)
-            <div class="col-md-6 mt-20">
+            <div class="col-md-6 mt-20 wow fadeIn" data-wow-delay="100ms">
                 <a href="{{$partnershipBranch->link_website}}" class="details-partner">
                     <div class="image-partner" >
                         <img src="{{url('/uploads/'.$partnershipBranch->image)}}" alt=""  style="">
@@ -1158,7 +1147,7 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
     </style>
 <div class="contact mt-180 bg-pink-1">
     <div class="container">
-        <div class="section-icon">
+        <div class="section-icon wow zoomIn" data-wow-delay="100ms">
             <img src="{{url('/frontend/images/message1.png')}}" alt="" style="border-radius:0px; top: -45px">
             <div class="title-center" style=" margin-bottom: 0px;">
                 <h1 class="hightlight-underline-green">{{trans('messages.get_in_touch')}}</h1>

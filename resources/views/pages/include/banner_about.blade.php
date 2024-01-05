@@ -13,7 +13,6 @@
         align-items:center!important;
         display:flex!important;
         width: 90%;
-
         /* justify-content:center; */
     }
     .logo-img{
