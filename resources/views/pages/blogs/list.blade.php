@@ -26,7 +26,6 @@
     .blog_details h4 {
         font-size: 38px!important;
         font-family:"Cormorant Garamond",serif!important;
-
     }
     .short-desc-blog {
         font-family:"PV Sans Serif", sans-serif!important;
@@ -56,6 +55,15 @@
         font-weight: 100;
         /* font-family: "Raleway",sans-serif!important; */
     }
+    .blog_area .blog_details .title-blog {
+        display:block;
+    }
+    .blog_area .blog_details .title-blog:hover{
+        text-decoration:underline!important;
+        transition: 0.1s;
+        bottom: 2px;
+        color: #ffd22a!important;
+    }
 </style>
 <section class="blog_area mb-100">
         <div class="container" style="max-width: 1440px;">
@@ -82,14 +90,16 @@
                         <aside class="single_sidebar_widget post_category_widget">
                             <h1 class="widget_title">Category</h1>
                             <ul class="list cat-list">
+                                @php $delayCB = 200 @endphp
                                 @foreach($categoryPost as $cate)
-                                    <li>
+                                    <li class="wow fadeInDown" data-wow-delay="{{$delayCB}}ms">
                                         <a href="/list-blogs/{{$cate->url}}" class="d-flex">
-
                                             <p class="cate-blog-title {{$cate->url == $url ? 'cate-blog-active' : ''}}">{{ $cate->title }}</p>
                                             <!-- <p>(37)</p> -->
                                         </a>
                                     </li>
+                                    @php $delayCB = $delayCB + 200 @endphp
+
                                 @endforeach
                             </ul>
                         </aside>
@@ -141,7 +151,7 @@
                 <div class="col-lg-7 mb-5 mb-lg-0">
                     <div class="blog_left_sidebar">
                         @foreach($listPosts as $post)
-                        <article class="blog_item">
+                        <article class="blog_item wow fadeIn" data-wow-delay="300ms">
                             <div class="blog_item_img">
                                 <img class="card-img rounded-0" src="{{url('/uploads/'.$post->image_thumbnail)}}" alt="">
                                 {{--<a href="#" class="blog_item_date">
@@ -151,7 +161,7 @@
                             </div>
 
                             <div class="blog_details">
-                                <a class="d-inline-block" href="/blogs/{{$post->url}}">
+                                <a class="title-blog " href="/blogs/{{$post->url}}">
                                     <h4>{{ $post->title }}</h4>
                                 </a>
                                 <p class="short-desc-blog">{{$post->short_description}}</p>

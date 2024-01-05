@@ -33,10 +33,7 @@
 
     <!-- mission -->
 	<style>
-    .misson_area{
-        /* background-image: url("frontend/images/banner2.png"); */
-        /*  background: #f5f5ef!important;
-        border: 1px solid silver; */
+    .mission_area{
 		padding: 50px 0px;
         padding-bottom:30px;
         margin-bottom:80px;
@@ -48,30 +45,32 @@
     }
     .mission-image img{
         width: 100%;
+        border-radius: 43px;
+        box-shadow: 0 40px 50px -20px rgba(0,0,0,.35);
     }
-	.misson h3{
-		font-size:50px;
-		color:black;
-	}
-	.misson_content p{
 
-	}
     .xtc{
         text-align:center;
         margin:auto;
     }
-    .xtc h2{
-        font-size: 35px;
-        font-weight: 100;
-        margin-top: 20px
+    .mission_title {
+        margin-bottom: 20px;
     }
-    .misson_title h1{
+    .mission_title h1{
         color:#8b572a;
-        /* font-family:'Dancing Script'!important;
-        font-weight: 500;
-        font-size: 65px; */
+        text-transform: uppercase;
+        font-family: 'Playfair';
+        color: #4c423a;
+        margin: 0;
+
     }
-    .mission_margin{
+    .mission_title h3{
+        font-family: 'Great Vibes',handwriting!important;
+        color: #c1955d;
+        font-size: 30px;
+        margin: 0;
+    }
+    .content_center{
         margin-top: auto;
         margin-bottom: auto;
     }
@@ -85,6 +84,16 @@
         display: -webkit-box;
         -webkit-box-orient: vertical;
     }
+    .mission_content span,p{
+        font-weight: 200;
+        line-height: 165%;
+        font-size: 24px;
+        font-family: 'Playfair';
+        letter-spacing: 0.5px;
+        color: rgba(77,66,58,0.76)!important;
+        line-height: 165%;
+
+    }
     @media (max-width: 1700px) {
         .mission_content {
             -webkit-line-clamp: 10;
@@ -96,8 +105,8 @@
         font-size: 18px;
     }
     @media (max-width: 990px) {
-        .mission_margin {
-            padding-left: 0px;
+        .content_center {
+            padding-left: 12px;
             padding-right: 0px;
 
         }
@@ -105,10 +114,12 @@
         .container-mission{
             width: 100%;
             margin:auto;
+            padding-left: 20px;
 
         }
-        .misson_title {
+        .mission_title {
             margin-left: 10px;
+
         }
         .mission_content{
             width: 95%;
@@ -121,174 +132,337 @@
 	</style>
     <style>
         .xtc {
-            height: 300px;
             text-align: center;
             max-width: 1100px;
+            height: fit-content;
+        }
+
+        .title-welcome{
+            font-family: 'Great Vibes',handwriting;
+            color: #c1955d;
+            font-size: 43px;
+            margin-top:50px;
+        }
+        .xtc h5 {
+            font-size: 24px;
+            font-family: 'Playfair';
+            letter-spacing: 0.5px;
+            color: rgba(77,66,58,0.76);
+        }
+        .xtc h2 {
+            color: #4c423a;
+            font-size: 43px;
+            text-transform: uppercase;
+
         }
         .xtc h2{
             font-style: normal;
             /*color: #8b572a;*/
-            padding: 0 0 34px;
+            /*padding: 0 0 34px;*/
             font-size: 40px;
             animation-delay: 1s ;
-            animation: textFly 1s forwards;
             position: relative;
         }
-        @keyframes  textFly {
-            from{
-                opacity: 0;
-                bottom: -500px;
-            }
-            to{
-                opacity: 1;
-                bottom: 0px;
-            }
-        }
-        .primary-btn {
-            display: block;
-            color: #2b2b2b;
-            font-size: 18px;
-            font-family: raleway,sans-serif;
-            border: 1px solid #707070;
-            position: relative;
-            max-width: 330px;
-            padding: 10px 20px;
-            transition: .5s;
-            font-weight: 300;
-            margin: auto;
-            animation: textFly 2s forwards;
-            position:relative;
-        }
-        .primary-btn:hover{
-            background-color: #024f43;
-            color:white!important;
-        }
-        .primary-btn span {
-            font-family: 'Open Sans', sans-serif!important;
-            font-weight: 600;
-            font-size: 18px;
-            font-style: normal;
-        }
-        .primary-btn:hover span {
-            color:white!important;
-        }
+
     </style>
     @if($blockShortAboutUs != null)
         <div class="row" style=" margin-right: 0;margin-left: 0;">
             <hr width=60%>
             <div class="container xtc">
                 {{--<h2>{!! $blockShortAboutUs->content!!}</h2>  Đi Đâu Đó Đi Mindful Travel--}}
-                <h2 class="title-short-about-us">
-                    We offers mindfulness tours globally.  We are committed to creating a positive impact on the environment and local communities through sustainability and social responsibility programs.</h2>
-                <a href="/about-us" class="btn primary-btn"> <span>About us</span> </a>
-                {{--<p>
+                <h4 class="title-welcome mt-10 fadeInDown wow" data-wow-delay="200ms">
+                    Welcome to our
+                </h4>
+                <h2 class="title-short-about-us mt-10 fadeInUp wow" data-wow-delay="200ms">
+                    We offer mindfulness tours globally.</h2>
+                <h5 class="mt-10 fadeInDown wow" data-wow-delay="200ms">
                     We are committed to creating a positive impact on the environment and local communities through sustainability and social responsibility programs.
-                </p>--}}
+                </h5>
+                <a href="/about-us" class="btn primary-btn fadeInUp wow" data-wow-delay="200ms"> <span>About us</span> </a>
             </div>
         </div>
     @endif
     @if($blockOurMission != null)
-     <div class="misson_area" >
+     <div class="mission_area" >
         <div class="container-mission">
             <div class="row">
-                <div class="col-xl-6 col-lg-12 mission_margin">
-                    <div class="mb-20px mission-image">
+                <div class="col-xl-6 col-lg-12 content_center wow fadeInLeft" data-wow-delay="0.5s">
+                    <div class="mb-20px mission-image ">
                         <img src="{{url('uploads/'.$blockOurMission->image_one)}}" alt=""  >
                     </div>
                 </div>
-                <div class="col-xl-6 col-lg-12 " >
-                    <div class="misson_title">
+                <div class="col-xl-6 col-lg-12 content_center wow fadeInRight" data-wow-delay="0.8s">
+                    <div class="mission_title">
                         <h1>{{trans('messages.mission')}}</h1>
+                        <h3>Our happy clients</h3>
                     </div>
-                    <div class="mission_content">{!! $blockOurMission->content !!} </div>
+                    <div class="mission_content ">{!! $blockOurMission->content !!} </div>
                     <div class="btn-xemthem">
-                        <button class="btn btn-earth btn-xt">{{trans('messages.see_more')}}</button>
+                        <button class="btn primary-btn btn-xt">{{trans('messages.see_more')}}</button>
                     </div>
                 </div>
             </div>
-            <!-- <div class="row">
-                <div class="col-xl-12 col-lg-12">
-                    <div class="misson_content">
-                        <p>Cải thiện chất lượng cuộc sống của người dân, bảo vệ và nâng cao bản sắc xã hội, văn hóa và môi trường của họ, đồng thời hỗ trợ sự phát triển nội sinh của họ. Hành động theo các nguyên tắc công bằng xã hội, môi trường và kinh tế với mục đích biến du lịch thành một trong những công cụ bền vững có khả năng chống lại nghèo đói và các hình thức phân biệt đối xử khác nhau. </p>
-                    </div>
-                </div>
-            </div> -->
         </div>
     </div>
     @endif
 
     <!-- mission_end -->
 
-    <!-- Value -->
-    @if($blockValue != null)
+    <!--VALUE AREA -->
     <style>
-        .impatti_area{
-            box-shadow: 10px 10px 15px 10px rgba(221,221,221,0.3);
-            background-color:beige;
+        .core_value_title h1{
+            text-align: center;
         }
-        .impatti_area:hover{
-            background:#faf1eb;
+        .content_core_value h3{
+            text-align: center;
         }
-        .content-impatti{
-            max-width: 100%;
-            margin:auto;
-            font-size:20px;
-            position: relative;
+        .single_value {
+            padding: 8px;
         }
-        .image-mt{
-            background-image: url("uploads/{{$blockValue->image_one}}");
-            background-size: cover;
-            background-position: center;
-        }
-        .image-cn{
-            background-image: url("uploads/{{$blockValue->image_two}}");
-            background-size: cover;
-            background-position: center;
-        }
-        @media (max-width: 990px) {
-            .image-mt{
-                background-size: cover;
-                height: 600px;
-                background-size: cover;
-                background-position: center;
-            }
-            .image-cn{
-                background-size: cover;
-                height: 600px;
-                background-size: cover;
-                background-position: center;
-            }
-        }
-        .title-impatti{
-            text-align:center;
-
-            /*font-family:'Dancing Script'!important;
-            font-weight: 500;
-            font-size: 75px;*/
-            color:#8b572a;
+        .single_content_value{
+            font-weight: 200;
+            line-height: 165%;
+            font-size: 18px;
+            font-family: 'Playfair';
+            letter-spacing: 0.5px;
+            color: rgba(77,66,58,0.76)!important;
+            line-height: 165%;
         }
     </style>
-    <div class="impatti_area">
-        <div class="row" style=" margin-right: 0;margin-left: 0;">
-            <div class="col-xl-4 col-lg-4 image-mt">
+    <!--END VALUE AREA -->
+
+    <style>
+        .area_core_value{
+            background-color: #f9f3ed;
+
+        }
+        .container_value {
+            background-color: transparent;
+            background-image: radial-gradient(at top center,#FFFFFF 0%,#F9F3ED00 65%),radial-gradient(at bottom left ,#FFFFFF 0%,#F9F3ED00 31%)
+            ,radial-gradient(at bottom right ,#FFFFFF 0%,#F9F3ED00 43%);
+        }
+        .timeline{
+
+            position: relative;
+            max-width: 1500px;
+            margin: 100px auto;
+        }
+        .single_value {
+            padding: 10px 65px;
+            position: relative;
+            width: 50%;
+            min-height: 250px;
+            /*background: rgba(0,0,0,0.3);*/
+            /*animation: movedown 1s linear forwards;
+            opacity: 0;*/
+        }
+
+        .text-box{
+            padding: 20px 30px;
+            background: #FFFFFF;
+            position: relative;
+            font-size: 15px;
+            border-radius: 20px  ;
+            border: 1px solid #FFFFFF;
+            box-shadow: rgba(0, 0, 0, 0.15) 0px 25px 50px -12px;
+        }
+        .left-container{
+            left: 0;
+        }
+        .right-container{
+            left: 50%
+        }
+        .single_value img {
+            position: absolute;
+             width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            right: -40px;
+            top: -10px;
+            z-index: 2;
+            object-fit: cover;
+            border: 5px solid #FFFFFF;
+            box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+
+        }
+        .right-container img {
+            left: -40px;
+        }
+        .left-container img{
+            right: -51px;
+        }
+        .timeline::after{
+           content: '';
+            position: absolute;
+            width: 12px;
+            height: 200px;
+            background: #FFFFFF;
+            top: 0;
+            left: 50%;
+            margin-left: 0px;
+            z-index: 1;
+            animation: moveline 4s linear forwards;
+            box-shadow: rgba(17, 17, 26, 0.02) 0px 1px 0px, rgba(17, 17, 26, 0.02) 0px 0px 8px;
+
+        }
+        @keyframes moveline {
+            0% {
+                height: 0;
+            }
+            100% {
+                height: calc(100% - 300px);
+            }
+
+        }
+        .text-box h2 {
+            font-weight: 600;
+        }
+        .text-box p {
+            font-weight: 200;
+            line-height: 165%;
+            font-size: 18px;
+            font-family: 'Playfair';
+            letter-spacing: 0.5px;
+            color: rgba(77,66,58,0.76)!important;
+            line-height: 165%;
+        }
+        .left-container-arrow {
+            height: 0;
+            width: 0;
+            position: absolute;
+            top: 5px;
+            z-index: 1;
+            border-top: 15px solid transparent;
+            border-bottom: 15px solid transparent;
+            border-left: 15px solid #FFFFFF;
+            right: -11px;
+        }
+        .right-container-arrow {
+            height: 0;
+            width: 0;
+            position: absolute;
+            top: 5px;
+            z-index: 1;
+            border-top: 15px solid transparent;
+            border-bottom: 15px solid transparent;
+            border-right: 15px solid #FFFFFF;
+            left: -11px;
+        }
+        @media screen and (max-width: 900px) {
+            .timeline{
+                margin: 50px auto;
+            }
+            .timeline::after {
+                left:31px;
+            }
+            .single_value{
+                width:100%;
+                padding-left: 80px;
+                padding-right: 25px;
+            }
+            .text-box{
+                font-size: 13px;
+            }
+            .text-box p {
+                font-weight: 200;
+                line-height: 165%;
+                font-size: 18px;
+                font-family: 'Playfair';
+                letter-spacing: 0.5px;
+                color: rgba(77,66,58,0.76)!important;
+                line-height: 165%;
+            }
+            .right-container {
+                left: 0;
+            }
+            .left-container img, .right-container img {
+                left: 0px;
+            }
+            .left-container-arrow, .right-container-arrow {
+                border-right: 15px solid silver;
+                border-radius: 10px ;
+                border-left: 0;
+                left: -15px;
+            }
+        }
+        .core_value_title h1{
+            color: #8b572a;
+            text-transform: uppercase;
+            font-family: 'Playfair';
+            color: #4c423a;
+            margin: 0;
+        }
+        .section_title h1{
+            color: #8b572a;
+            text-transform: uppercase;
+            font-family: 'Playfair';
+            color: #4c423a;
+            margin: 0;
+        }
+        .section_title h3{
+            font-family: 'Great Vibes',handwriting!important;
+            color: #c1955d;
+            font-size: 30px;
+            margin: 0;
+        }
+
+    </style>
+    <div class="area_core_value ">
+        <div class="container_value">
+            <div class="section_title pt-80">
+                <h3 class="text-center"> Mindful Travel </h3>
+                <h1 >
+                    {{trans('messages.value')}}
+                </h1>
             </div>
-            <div class="col-xl-4 col-lg-4" style="">
-                <h1 class="title-impatti mt-10">~ {{trans('messages.value')}} ~</h1>
-                <div class="content-impatti">
-                    {!! $blockValue->content !!}
+            <div class="timeline">
+                <div class="single_value left-container">
+                    <img src="{{url('frontend/images/mental-health.gif')}}" alt="" class="wow fadeIn" data-wow-delay="500ms">
+                    <div class="text-box wow fadeInLeftBig" data-wow-delay="400ms">
+                        <h2>Mindfulness</h2>
+                        <p>At the heart of mindful travel lies the practice of mindfulness itself. This means encouraging travelers to be present in the moment, to engage their senses and surroundings with curiosity and non-judgment.
+                        </p>
+                        <span class="left-container-arrow"></span>
+                    </div>
+                </div>
+                <div class="single_value right-container">
+                    <div class="image_value">
+                        <img src="{{url('frontend/images/volunteering.gif')}}" alt="" class="wow fadeIn" data-wow-delay="800ms">
+                    </div>
+                    <div class="text-box wow fadeInRightBig" data-wow-delay="700ms">
+                        <h2>Connection</h2>
+                        <p>
+                            Mindful travel is about more than just ticking destinations off a bucket list. It's about fostering genuine connections with local communities, cultures, and even oneself.
+                        </p>
+                        <span class="right-container-arrow"></span>
+
+                    </div>
+                </div>
+                <div class="single_value left-container">
+                    <img src="{{url('frontend/images/eco-earth.gif')}}" alt="" class="wow fadeIn" data-wow-delay="1100ms">
+                    <div class="text-box wow fadeInLeftBig" data-wow-delay="1000ms">
+                        <h2>Sustainability</h2>
+                        <p>
+                            Prioritizing sustainable practices that minimize this impact and contribute to the well-being of the places they visit.
+                        </p>
+                        <span class="left-container-arrow"></span>
+
+                    </div>
+                </div>
+                <div class="single_value right-container value-end" style="height: 300px">
+                    <img src="{{url('frontend/images/kindness.gif')}}" alt="" class="wow fadeIn" data-wow-delay="1400ms">
+                    <div class="text-box wow fadeInRightBig" data-wow-delay="1300ms">
+                        <h2>Personal Growth</h2>
+
+                        <p>Mindful travel is an opportunity for personal transformation. By stepping outside of their comfort zones and immersing themselves in new experiences, travelers can gain deeper insights into themselves and the world around them.
+                        </p>
+                        <span class="right-container-arrow"></span>
+                    </div>
                 </div>
             </div>
-            <div class="col-xl-4 col-lg-4 image-cn">
-
-            </div>
-
         </div>
 
     </div>
-    @endif
-    <!-- VALUE_end -->
-
-
     <!-- Our tour -->
     <style>
     .container-our-tour{
@@ -303,19 +477,28 @@
         padding-bottom:30px;
         margin-bottom:50px;
     }
-    .generated_title h1{
-    }
     .ourToursImage img{
         width: 100%;
+        border-radius: 43px;
+        box-shadow: 0 40px 50px -20px rgba(0,0,0,.35);
     }
-    .section_title h1{
-        color: #8b572a!important;
+
+    .our_tour_title {
+        margin-bottom: 20px;
     }
-    .generated_title h1{
-        color: #8b572a!important;
-        /* font-family:'Dancing Script'!important;
-            font-weight: 500;
-            font-size: 65px; */
+    .our_tour_title h1{
+        color:#8b572a;
+        text-transform: uppercase;
+        font-family: 'Playfair';
+        color: #4c423a;
+        margin: 0;
+
+    }
+    .our_tour_title h3{
+        font-family: 'Great Vibes',handwriting!important;
+        color: #c1955d;
+        font-size: 30px;
+        margin: 0;
     }
     .our_tour_content{
         position:relative;
@@ -326,25 +509,35 @@
         display: -webkit-box;
         -webkit-box-orient: vertical;
     }
+    .our_tour_content span,p{
+        font-weight: 200;
+        line-height: 165%;
+        font-size: 24px;
+        font-family: 'Playfair'!important;
+        letter-spacing: 0.5px!important;
+        color: rgba(77,66,58,0.76)!important;
+        line-height: 165%;
+    }
+
     .our_tour_xt{
         margin-top: 20px;
         margin-bottom: 40px;
         font-size: 18px;
     }
     @media (max-width: 990px) {
-        .mission_margin {
+        .content_center {
             padding-left: 0px;
             padding-right: 0px;
         }
         .container-our-tour{
             width: 100%;
         }
-        .generated_title {
-            margin-left: 10px;
+        .our_tour_title {
+            margin-left: 20px;
         }
         .our_tour_content{
             width: 95%;
-            margin: auto;
+            padding-left: 20px;
         }
         .our_tour_xt{
             margin-left: 20px;
@@ -355,18 +548,19 @@
     <div class="generated_area">
         <div class="container-our-tour">
             <div class="row" >
-                <div class="col-xl-6 col-lg-12 ">
-                    <div class="generated_title">
+                <div class="col-xl-6 col-lg-12   wow fadeInLeft" data-wow-delay="0.5s">
+                    <div class="our_tour_title">
                         <h1>{{trans('messages.our_tours')}}</h1>
+                        <h3>Giving you a memorable experience</h3>
                     </div>
                     <div class="our_tour_content">
                         {!! $blockOurTour->content !!}
                     </div>
-                    <div>
+                    {{--<div>
                         <button class="btn btn-earth our_tour_xt"> {{trans('messages.see_more')}} </button>
-                    </div>
+                    </div>--}}
                 </div>
-                <div class="col-xl-6 col-lg-12 mission_margin" >
+                <div class="col-xl-6 col-lg-12 content_center wow zoomIn" data-wow-delay="0.5s" >
                     <div class="ourToursImage">
                         <img src="{{url('uploads/'.$blockOurTour->image_one)}}" alt=""   loading="lazy">
                     </div>
@@ -445,10 +639,6 @@
                 display: block;
             }
         }
-        .title-center h1{
-
-        }
-
         .offers_area {
             position: relative;
             padding-bottom: 80px;
@@ -458,9 +648,17 @@
             /*
             background-image: url('uploads/{{$TourBackground != null ? $TourBackground->image_one : 2 }}');
             */
-            /*border-radius:35px;*/
             width: 100%;
             margin: auto;
+        }
+        .short-desc {
+            font-weight: 200;
+            line-height: 165%;
+            font-size: 24px;
+            font-family: 'Playfair'!important;
+            letter-spacing: 0.5px!important;
+            color: rgba(77,66,58,0.76)!important;
+            line-height: 165%;
         }
         .container-pop-tour{
             width: 85%;
@@ -475,14 +673,17 @@
             max-height: 72px; /* fallback */
             -webkit-line-clamp: 3; /* number of lines to show */
             -webkit-box-orient: vertical;
-            /* font-family: "Cormorant Garamond",Courier!important; */
             font-size: 20px;
-            font-weight: 100;
-            /* font-family: "Raleway",sans-serif!important; */
+            font-style: italic;
         }
-        .about_thumb {
-            height:120px;
+        .about_thumb_tour {
+            height:290px;
             border-radius: 5px 5px 0 0;
+
+        }
+        .about_thumb_tour img{
+            height: 100%;
+            object-fit: cover;
         }
         .trangthai-category{
             display:flex;
@@ -492,27 +693,35 @@
             display: inline-block;
             background: #222;
             text-transform: uppercase;
-            border-radius: 3px;
-            padding: 0 6px;
+            border-radius: 5px;
+            padding: 8px;
             color: white;
             margin: 0 5px 6px 0;
             font-weight: 600;
-            font-size: 16px;
+            font-size: 18px;
+            font-family: 'Playfair'!important;
+            letter-spacing:0.3px;
+
         }
         .trangthai-open{
-            background: #8b572a!important;
+            background: #c1955d!important;
+            font-family: 'Playfair'!important;
         }
         .trangthai-close{
             background: black!important;
+            font-family: 'Playfair'!important;
+
         }
         .mb-40{
             margin-bottom:40px;
         }
         .single_offers{
-            background: #faf1eb;
-            /* background: beige; */
+            /*background: #faf1eb;*/
+            background: #FFFFFF;
             border-radius: 5px;
             max-width: 550px;
+            box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+            margin: 43px 0 31px 0;
         }
         @media (max-width: 800px) {
             .single_offers{
@@ -528,11 +737,16 @@
         }
 
         .offers_content{
-            margin-left: 15px ;
+            padding: 15px 15px 25px 15px ;
         }
-
-        .title-offer{
-            color: #8b572a;
+        .offers_content b {
+            color: #4c423a;
+        }
+        .title-offer h1{
+            color: #4c423a;
+            text-transform: uppercase;
+            font-family: 'Playfair'!important;
+            font-weight: 600;
         }
         .single_offers:hover {
             box-shadow: 10px 10px 15px 10px rgba(221,221,221,0.3);
@@ -542,11 +756,7 @@
         }
 
         .section_title h1{
-            margin-bottom:50px;
             text-align:center;
-            /*font-family:'Dancing Script'!important;*/
-            /*font-weight: 500;
-            font-size: 85px;*/
         }
         .owl-prev{
             color: black!important;
@@ -561,51 +771,51 @@
             /* background: darkseagreen!important; */
         }
 
-
-
-/*        .block {
+        .title-top{
             position: relative;
+            top: 25px;
+        }
+        .bg-bg{
+            /* background-color:beige!important;*/
+            background-color:white!important;
 
         }
-
-        .block:before, .block:after {
-            content: '';
-            position: absolute;
-            left: -2px;
-            top: -2px;
-            !*background: linear-gradient(45deg, #fb0094, #0000ff, #00ff00,#ffff00, #ff0000, #fb0094,
-            #0000ff, #00ff00,#ffff00, #ff0000);*!
-            background: linear-gradient(45deg, white, white, white,white, #faf1eb, #faf1eb,
-            #faf1eb, #faf1eb,white, #faf1eb);
-            background-size: 400%;
-            width: calc(100% + 4px);
-            height: calc(100% + 4px);
-            z-index: -1;
-            animation: steam 20s linear infinite;
+        .bg-w{
+            background-color:#FFFFFF!important;
         }
-
-        @keyframes steam {
-            0% {
-                background-position: 0 0;
-            }
-            50% {
-                background-position: 400% 0;
-            }
-            100% {
-                background-position: 0 0;
-            }
+        .title_ttp{
+            text-align: left;
+            border-top: 1px solid #4c423a;
+            padding: 10px 0 10px 0;
         }
-
-        .block:after {
-            filter: blur(50px);
-        }*/
-
+        .title_ttp h1{
+            color: #8b572a;
+            text-transform: uppercase;
+            font-family: 'Playfair';
+            color: #4c423a;
+            margin: 0;
+        }
+        .title_ttp h3{
+            font-family: 'Great Vibes',handwriting!important;
+            color: #c1955d;
+            font-size: 30px;
+            margin: 0;
+        }
+        .position_tour {
+            width: 43px;
+            display: flex;
+        }
+        .position_tour img {
+            width: 100%;
+            object-fit: cover;
+        }
     </style>
     <div class="offers_area" >
         <div class="container-pop-tour" style="">
             <div class="row mb-40">
                 <div class="col-xl-12">
                     <div class="section_title text-center mb-20 mt-10">
+                        <h3 class="title-top">Our products</h3>
                         <h1>{{trans('messages.popular_tours')}}</h1>
                     </div>
                     {{--<div class="section-icon">
@@ -618,9 +828,12 @@
             </div>
             <input type="hidden" value="{{count($tours)}}" class="toursNumber">
             <div class="row owl-carousel owl-two owl-theme"  style="margin: auto;">
+                @php
+                    $delayPT = 100;
+                @endphp
                 @foreach($tours as $tour)
-                    <div class="single_offers block" data-img="{{url('/uploads/'.$tour->image_thumbnail)}}">
-                        <div class="about_thumb">
+                    <div class="single_offers hidden2 block  wow fadeInUp" data-wow-delay="{{$delayPT}}ms" data-img="{{url('/uploads/'.$tour->image_thumbnail)}}">
+                        <div class="about_thumb about_thumb_tour">
                             <img src="{{url('/uploads/'.$tour->image_thumbnail)}}" alt="">
                         </div>
                         <div class="offers_content">
@@ -635,12 +848,17 @@
                             @endphp
                             <b>{{$date_start}} - {{$date_end}}</b>
                             <h2 class="title-offer">  {{$tour->name}}</h2>
-                            <i class="fa fa-map-marker" aria-hidden="true"></i> {{$tour->region}}
+{{--
+                             <p><i class="fa fa-map-marker" aria-hidden="true"></i> {{$tour->region}}</p>
+--}}
+                            <p><i class="fa fa-map-marker" aria-hidden="true"></i> {{$tour->region}}</p>
                             <p class="short-desc"> {{$tour->short_description}} </p>
-                            <a href="/tours/{{$tour->url}}" class="btn btn-earth">{{trans('messages.more_infomation_&_register')}}</a>
+                            <a href="/tours/{{$tour->url}}" class="btn primary-btn">{{trans('messages.more_infomation_&_register')}}</a>
                         </div>
                     </div>
-
+                    @php
+                        $delayPT = $delayPT + 200;
+                    @endphp
                 @endforeach
             </div>
         </div>
@@ -650,21 +868,49 @@
     <!-- Tour ddax qua -->
     <style>
         .bg-bg{
-            background-color:beige!important;
+           /* background-color:beige!important;*/
+            background-color:white!important;
+
         }
         .bg-w{
             background-color:#FFFFFF!important;
-
         }
-
+        .title_ttp{
+            text-align: left;
+            border-top: 1px solid #4c423a;
+            padding: 10px 0 10px 0;
+        }
+        .title_ttp h1{
+            color: #8b572a;
+            text-transform: uppercase;
+            font-family: 'Playfair';
+            color: #4c423a;
+            margin: 0;
+        }
+        .title_ttp h3{
+            font-family: 'Great Vibes',handwriting!important;
+            color: #c1955d;
+            font-size: 30px;
+            margin: 0;
+        }
+        .position_tour {
+            width: 43px;
+            display: flex;
+        }
+        .position_tour img {
+            width: 100%;
+            object-fit: cover;
+        }
     </style>
     @if(count($toursTookPlace) > 0)
         <div class="offers_area" >
             <div class="container-pop-tour" style="">
                 <div class="row  mb-40">
                     <div class="col-xl-12">
-                        <div class="section_title text-center mb-20 mt-10">
+                        <div class="title_ttp mb-20 mt-10">
                             <h1>{{trans('messages.tours_took_place')}}</h1>
+                            <h3>See past tours
+                            </h3>
                         </div>
                         {{--<div class="section-icon">
                             <img src="{{url('/frontend/images/tour3.png')}}" alt="" style="border-radius: 0">
@@ -676,9 +922,12 @@
                 </div>
                 <input type="hidden" value="{{count($toursTookPlace)}}" class="toursTPNumber">
                 <div class="row owl-carousel owlTourTP owl-theme"  style="margin: auto;">
+                    @php
+                        $delayPT = 100;
+                    @endphp
                     @foreach($toursTookPlace as $tour)
-                        <div class="single_offers bg-bg block" data-img="{{url('/uploads/'.$tour->image_thumbnail)}}">
-                            <div class="about_thumb">
+                        <div class="single_offers bg-bg block wow fadeInUp" data-wow-delay="{{$delayPT}}ms" data-img="{{url('/uploads/'.$tour->image_thumbnail)}}">
+                            <div class="about_thumb about_thumb_tour">
                                 <img src="{{url('/uploads/'.$tour->image_thumbnail)}}" alt="">
                             </div>
                             <div class="offers_content">
@@ -693,12 +942,15 @@
                                 @endphp
                                 <b>{{$date_start}} - {{$date_end}}</b>
                                 <h2 class="title-offer">  {{$tour->name}}</h2>
-                                <i class="fa fa-map-marker" aria-hidden="true"></i> {{$tour->region}}
+                                {{--<i class="fa fa-map-marker" aria-hidden="true"></i>--}}
+                                <p class="position_tour" ><img src="{{url('/frontend/images/position.gif')}}" alt=""> {{$tour->region}} </p>
                                 <p class="short-desc"> {{$tour->short_description}} </p>
-                                <a href="/tours/{{$tour->url}}" class="btn btn-earth">{{trans('messages.see_details')}}</a>
+                                <a href="/tours/{{$tour->url}}" class="btn primary-btn">{{trans('messages.see_details')}}</a>
                             </div>
                         </div>
-
+                        @php
+                            $delayPT = $delayPT + 200;
+                        @endphp
                     @endforeach
                 </div>
             </div>
@@ -724,7 +976,7 @@
             margin-top:50px
         }
         .single_video{
-
+            z-index: 1;
         }
         .single_video img{
              width: 100%;
@@ -744,37 +996,7 @@
         }
         .title-video{
             margin-top: 15px;
-        }/*
-        @-webkit-keyframes radio-btn {
-            0% {
-                -webkit-box-shadow: 0 0 4px 3px rgba(207, 8, 8, 0), 0 0 0 0 transparent, 0 0 0 0 rgba(207, 8, 8, 0);
-                box-shadow: 0 0 4px 3px rgba(207, 8, 8, 0), 0 0 0 0 transparent, 0 0 0 0 rgba(207, 8, 8, 0)
-            }
-            10% {
-                -webkit-box-shadow: 0 0 4px 3px, 0 0 6px 5px transparent, 0 0 6px 7px;
-                box-shadow: 0 0 4px 3px, 0 0 6px 5px transparent, 0 0 6px 7px
-            }
-            100% {
-                -webkit-box-shadow: 0 0 4px 3px rgba(207, 8, 8, 0), 0 0 0 20px transparent, 0 0 0 20px rgba(207, 8, 8, 0);
-                box-shadow: 0 0 4px 3px rgba(207, 8, 8, 0), 0 0 0 15px transparent, 0 0 0 15px rgba(207, 8, 8, 0)
-            }
         }
-
-        @keyframes radio-btn {
-            0% {
-                -webkit-box-shadow: 0 0 4px 3px rgba(207, 8, 8, 0), 0 0 0 0 transparent, 0 0 0 0 rgba(207, 8, 8, 0);
-                box-shadow: 0 0 4px 3px rgba(207, 8, 8, 0), 0 0 0 0 transparent, 0 0 0 0 rgba(207, 8, 8, 0)
-            }
-            10% {
-                -webkit-box-shadow: 0 0 4px 3px, 0 0 6px 5px transparent, 0 0 6px 7px;
-                box-shadow: 0 0 4px 3px, 0 0 6px 5px transparent, 0 0 6px 7px
-            }
-            100% {
-                -webkit-box-shadow: 0 0 4px 3px rgba(408, 8, 8, 0), 0 0 0 20px transparent, 0 0 0 20px rgba(408, 8, 8, 0);
-                box-shadow: 0 0 4px 3px rgba(408, 8, 8, 0), 0 0 0 15px transparent, 0 0 0 15px rgba(807, 8, 8, 0)
-            }
-        }*/
-
         .icon-play{
             position: absolute;
             color: #ced0d2;
@@ -856,9 +1078,36 @@
             position:relative;
             display:block;
         }
-        .title-video{
-            font-size:1.48rem;
-            margin-bottom: 0;
+        .title_video {
+            text-align: right;
+            border-top: 1px solid #4c423a;
+            padding: 10px 0 10px 0;
+        }
+        .title_video h1{
+            color: #8b572a;
+            text-transform: uppercase;
+            font-family: 'Playfair';
+            color: #4c423a;
+            margin: 0;
+        }
+        .title_video h3{
+            font-family: 'Great Vibes',handwriting!important;
+            color: #c1955d;
+            font-size: 30px;
+            margin: 0;
+        }
+        .section_title h1{
+            color: #8b572a;
+            text-transform: uppercase;
+            font-family: 'Playfair';
+            color: #4c423a;
+            margin: 0;
+        }
+        .section_title h3{
+            font-family: 'Great Vibes',handwriting!important;
+            color: #c1955d;
+            font-size: 30px;
+            margin: 0;
         }
         .title-author{
             font-size:0.9rem;
@@ -867,14 +1116,18 @@
 
     </style>
     <div class="video_area2" >
-    <div class="text_area_video">
-                        <h3>{{trans('messages.our_journey')}}</h3>
-                        <hr style="margin-bottom:50px;"> <!--  -->
-                    </div>
+    <div class="title_video container-pop-tour mb-40">
+        <h1>{{trans('messages.our_journey')}}</h1>
+        <h3 >Enjoy the journey together</h3>
+        <!-- <hr style="margin-bottom:50px;">   -->
+    </div>
         <div class="video-container">
                @if($videos != null)
+                   @php
+                       $delayV = 100;
+                   @endphp
                 @foreach($videos as $video)
-                        <div class="single_video">
+                        <div class="single_video wow fadeInDownBig" data-wow-delay="{{$delayV}}ms">
                             <div class="thumbnail-video">
                                 <a href="/{{$video->url_video}}" class="popup-video">
                                     <img src="{{url('uploads/'.$video->image_thumbnail)}}" alt=""  >
@@ -888,58 +1141,17 @@
                                 <p></p>
                             </div>
                         </div>
+                    @php
+                        $delayV = $delayV + 200;
+                    @endphp
                 @endforeach
                 @endif
-                <!-- <div class="col-md-3">
-                    <div class="single_video">
-                        <div class="thumbnail-video ">
-                            <a href="/https://www.youtube.com/embed/m6keU6_2SzE?si=iIZemXgI14ErFKxH" class="popup-video">
-                                 <img src="{{url('frontend/images/tn2.jpg')}}" alt=""  >
-                                 <span  class="icon-play"><i class="fa fa-play"></i></span>
-                            </a>
-
-                        </div>
-                        <div class="title-video">
-                            <h3>Exploring the Nature of Consciousness</h3>
-                            <b>Thich Nhat hanh</b>
-                            <p> - July 20, 2023</p>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="single_video">
-                        <div class="thumbnail-video">
-                            <img src="{{url('frontend/images/tn3.jpg')}}" alt=""  >
-                            <a href="https://www.youtube.com/embed/m6keU6_2SzE?si=iIZemXgI14ErFKxH" class="icon-play"><i class="fa fa-play"></i></a>
-                        </div>
-                        <div class="title-video">
-                            <a href=""><h3>Exploring the Nature of Consciousness</h3></a>
-                            <b>Br Pháp Hữu, Br Pháp Linh, Br Troi Bao Tang</b>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="single_video">
-                        <div class="thumbnail-video">
-                            <img src="{{url('frontend/images/tn4.jpg')}}" alt=""  >
-                            <a href="" class="icon-play"><i class="fa fa-play"></i></a>
-                        </div>
-                        <div class="title-video">
-                            <h3>Presence, Ethics, and the Rewarding Challenges of Caring for Others</h3>
-                            <b>Thich Nhat hanh</b>
-                        </div>
-
-                    </div>
-                </div> -->
         </div>
     </div>
     <!-- video_area_end -->
 
     <!-- companion -->
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
         .companion-area{
             padding: 0;
             margin: 0;
@@ -947,7 +1159,6 @@
             font-family: Poppins;
             background-image: url("uploads/{{$blackgroundCompanion != null ? $blackgroundCompanion->image_one : 2}}");
             background-size:cover;
-            loading:"lazy";
         }
         .team-profile{
             display: flex;
@@ -1191,7 +1402,7 @@
     </style>
     <div class="companion-area">
         <div class="container-companion">  {{--container--}}
-            <div class="title-companion" style="margin-bottom: 80px">
+            <div class="section_title" style="margin-bottom: 80px">
                 <h1 >{{trans('messages.companions')}}</h1>
             </div>
             {{--<div class="section-icon" style="top:-45px;">
@@ -1203,8 +1414,11 @@
             <input type="hidden" value="{{count($companions)}}" class="companionNumber">
             <div class="team-profile owl-five owl-carousel  owl-theme">
                 @if($companions != null)
+                    @php
+                        $delayC = 100;
+                    @endphp
                 @foreach($companions as $companion)
-                    <div class="profile-card">
+                    <div class="profile-card fadeInRight wow"  data-wow-delay="{{$delayC}}ms">
                         <div class="img">
                             <img src="{{url('uploads/'.$companion->avatar)}}" alt=""  >
                             <div class="name-companion">
@@ -1219,6 +1433,9 @@
                             </div>
                         </div>
                     </div>
+                        @php
+                            $delayC = $delayC + 200;
+                        @endphp
                 @endforeach
                 @endif
             </div>
@@ -1235,6 +1452,7 @@
         }
         .about_thumb img{
             max-height: 50vh;
+
         }
         .small-blog-details{
             box-shadow: 0px 10px 20px 0px rgba(221,221,221,0.3);
@@ -1363,36 +1581,52 @@
         .post-title {
             font-size: 38px!important;
             font-family:"Cormorant Garamond",serif!important;
+            font-weight: 500!important;
+            font-style: italic;
+        }
+        .post-title-lr {
+            font-size: 31px!important;
+            font-family:"Cormorant Garamond",serif!important;
             font-weight: 300!important;
             font-style: italic;
         }
+        .short-desc-blog-lr{
+            display: none;
+        }
+
         </style>
     <!-- -->
     <div class="about_area_home">
         <div class="container">
             <div class="row">
                 <div class="col-xl-12">
-                    <div class="title-about">
+                    <div class="section_title mb-20">
                         <h1>{{trans('messages.mindful_travel_blog')}}</h1>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-xl-3 col-lg-3">
+                    @php
+                        $delayLB = 150;
+                     @endphp
                     @if($blogPostsLeft != null)
                     @foreach($blogPostsLeft as $post)
-                    <div class="blog_left_sidebar">
+                    <div class="blog_left_sidebar fadeIn wow"  data-wow-delay="{{$delayLB}}ms">
                         <article class="blog_item">
                             <div class="blog_item_img">
                                 <img class="card-img rounded-0 small-image-blog" src="{{url('/uploads/'.$post->image_thumbnail)}}" alt="">
                             </div>
                             <div class="small-blog-details">
                                 <a class="d-inline-block" href="/blogs/{{$post->url}}">
-                                    <h2 class="post-title">{{$post->title}}</h2>
+                                    <h2 class="post-title-lr">{{$post->title}}</h2>
                                 </a>
                             </div>
                         </article>
                     </div>
+                            @php
+                                $delayLB = $delayLB +50;
+                            @endphp
                     @endforeach
                     @endif
 
@@ -1402,10 +1636,11 @@
                         @php
                             $small = 'blog_details';
                             $flex = '';
+                            $smallCenter = '';
                         @endphp
                         @if($blogPostsCenter != null)
                         @foreach($blogPostsCenter as $post)
-                        <article class="blog_item {{$flex}}">
+                        <article class="blog_item {{$flex}} fadeIn wow" data-wow-delay="{{$delayLB}}ms">
                             <div class="blog_item_img">
                                 <img class="card-img rounded-0 " src="{{url('/uploads/'.$post->image_thumbnail)}}" alt="">
 
@@ -1413,7 +1648,7 @@
 
                             <div class="{{$small}}">
                                 <a class="d-inline-block" href="/blogs/{{$post->url}}">
-                                    <h2 class="post-title">{{$post->title}}</h2>
+                                    <h2 class="post-title{{$smallCenter}}">{{$post->title}}</h2>
                                 </a>
                                 <p class="short-desc-blog">{{$post->short_description}}</p>
                             </div>
@@ -1421,6 +1656,8 @@
                         @php
                             $small = 'small-blog-details';
                             $flex = 'center-small-blog';
+                                $delayLB = $delayLB + 50;
+                                $smallCenter = '-lr'
 
                         @endphp
                         @endforeach
@@ -1430,18 +1667,21 @@
                 <div class="col-xl-3 col-lg-3">
                     @if($blogPostsRight != null)
                     @foreach($blogPostsRight as $post)
-                    <div class="blog_left_sidebar">
+                    <div class="blog_left_sidebar fadeIn wow" data-wow-delay="{{$delayLB}}ms">
                         <article class="blog_item">
                             <div class="blog_item_img">
                                 <img class="card-img rounded-0 small-image-blog" src="{{url('/uploads/'.$post->image_thumbnail)}}" alt="">
                             </div>
                             <div class="small-blog-details">
                                 <a class="d-inline-block" href="/blogs/{{$post->url}}">
-                                    <h2 class="post-title">{{$post->title}}</h2>
+                                    <h2 class="post-title-lr">{{$post->title}}</h2>
                                 </a>
                             </div>
                         </article>
                     </div>
+                            @php
+                                $delayLB = $delayLB + 50;
+                            @endphp
                     @endforeach
                     @endif
 
@@ -1452,7 +1692,38 @@
    <!-- about_area_end -->
 @endsection
 @section('script')
+    <script>
+        /*const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                console.log(entry)
+                if(entry.isIntersecting) {
+                    entry.target.classList.add('show1');
+                } else {
+                    entry.target.classList.remove('show1');
+                }
+            });
+        });
+        const hiddenElements = document.querySelectorAll('.hidden1');
+        hiddenElements.forEach((el) => observer.observe(el));
 
+        const hiddenElements4 = document.querySelectorAll('.hidden2');
+        hiddenElements4.forEach((el) => observer.observe(el));
+
+        const hiddenElements2 = document.querySelectorAll('.logo-image');
+        hiddenElements2.forEach((el) => observer.observe(el));
+
+        const hiddenElements3 = document.querySelectorAll('.content-impatti');
+        hiddenElements3.forEach((el) => observer.observe(el));
+
+
+        const hiddenElements5 = document.querySelectorAll('.animation-list-video');
+        hiddenElements5.forEach((el) => observer.observe(el));
+
+        const hiddenElements6 = document.querySelectorAll('.fadeIn');
+        hiddenElements.forEach((el) => observer.observe(el));*/
+
+
+    </script>
     <script>
         let toursNumber = parseInt($('.toursNumber').val());
         var owl2 = $('.owl-two');
@@ -1461,9 +1732,9 @@
             nav:true,
             navText:['<i class="ti-angle-left"></i>','<i class="ti-angle-right"></i>'],
             margin:20,
-            autoplay:true,
-            autoplayTimeout:1500,
-            autoplayHoverPause:true,
+           /* autoplay:true,*/
+           /* autoplayTimeout:1500,*/
+          /*  autoplayHoverPause:true,*/
             lazyLoad: true,
             responsive:{
                 0:{
@@ -1492,9 +1763,6 @@
             nav:true,
             navText:['<i class="ti-angle-left"></i>','<i class="ti-angle-right"></i>'],
             margin:20,
-            autoplay:true,
-            autoplayTimeout:1500,
-            autoplayHoverPause:true,
             responsive:{
                 0:{
                     items:1,

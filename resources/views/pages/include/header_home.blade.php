@@ -84,7 +84,7 @@
                         </div>
 
                         <div class="col-xl-12 col-lg-6">
-                            <div class="main-menu  d-none d-lg-block">
+                            <div class="main-menu  d-none d-lg-block ">
                                 <nav>
                                     <ul id="navigation">
                                         <li class="f-l"><a href="/">{{trans('messages.home')}}</a></li>
