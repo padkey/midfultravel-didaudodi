@@ -53,7 +53,14 @@ class HomeController extends Controller
         //$blogPostsRight = BlogCategory::with('posts')->where('locale_code',$locale_code)->where('url','show-home-right')->first();
         $blockOurMission = Block::where('locale_code',$locale_code)->where('code','our_mission')->first();
         $blockOurTour= Block::where('locale_code',$locale_code)->where('code','our_tour')->first();
-        $blockValue = Block::where('locale_code',$locale_code)->where('code','value')->first();
+        /*$blockValue = Block::where('locale_code',$locale_code)->where('code','value')->first();*/
+        //Core Value
+        $valueMindfulness= Block::where('locale_code',$locale_code)->where('code','core_value_mindfulness')->first();
+        $valueConnection = Block::where('locale_code',$locale_code)->where('code','core_value_connection')->first();
+        $valueSustainability = Block::where('locale_code',$locale_code)->where('code','core_value_sustainability')->first();
+        $valuePersonalGrowth = Block::where('locale_code',$locale_code)->where('code','core_value_personal_growth')->first();
+
+
         $blockShortAboutUs = Block::where('locale_code',$locale_code)->where('code','short_about_us')->first();
         $blackgroundCompanion = Block::where('locale_code',$locale_code)->where('code','blackground_companion')->first();
         $TourBackground =Block::where('locale_code',$locale_code)->where('code','popular_tour')->first();
@@ -66,10 +73,12 @@ class HomeController extends Controller
         var_dump($sloganImage->items[0]->path_desktop);
         echo '</pre>';
         die();*/
-        return view('pages.home')->with(compact('blockValue','metaDes','metaTitle','metaKeywords','urlCanonical',
+        return view('pages.home')->with(compact('metaDes','metaTitle','metaKeywords','urlCanonical',
             'sloganImage','bannerHomeImage','blackgroundCompanion','TourBackground',
             'blockOurTour','blockOurMission','blogPostsCenter','blockShortAboutUs',
-            'blogPostsLeft','blogPostsRight','tours','videos','companions','toursTookPlace'));
+            'blogPostsLeft','blogPostsRight','tours','videos','companions','toursTookPlace',
+            'valueMindfulness','valueConnection','valueSustainability','valuePersonalGrowth',
+        ));
     }
     public function showAbout(Request $req)
     {

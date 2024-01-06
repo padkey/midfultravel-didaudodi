@@ -84,5 +84,10 @@ return [
     'retreats_schedule' => 'Thời khóa sinh hoạt',
     'error_captcha' => 'Vui lòng xác thực captcha!',
     'mindful_traveling' => 'Du lịch chánh niệm',
-    'our_products' => 'Sản phẩm của chúng tôi'
+    'our_products' => 'Sản phẩm của chúng tôi',
+    'category' => 'Danh mục',
+    'welcome_to_our' => 'Chào mừng bạn đến với chúng tôi',
+    'slogan_line_1' => 'Chúng tôi cung cấp các tour du lịch chánh niệm trên toàn cầu.',
+    'slogan_line_2' => 'Chúng tôi cam kết tạo ra tác động tích cực đến môi trường và cộng đồng địa phương thông qua các chương trình bền vững và trách nhiệm xã hội',
+
 ];
