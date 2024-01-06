@@ -51,12 +51,11 @@
                   </aside>--}}
 
                    <aside class="single_sidebar_widget post_category_widget">
-                       <h1 class="widget_title">Category</h1>
+                       <h1 class="widget_title">{{trans('messages.category')}}</h1>
                        <ul class="list cat-list">
                            @foreach($categoryPost as $cate)
                                <li>
                                    <a href="/list-blogs/{{$cate->url}}" class="d-flex">
-
                                        <p class="cate-blog-title {{$cate->url == $post->categories[0]->url ? 'cate-blog-active' : ''}}">{{ $cate->title }}</p>
                                        <!-- <p>(37)</p> -->
                                    </a>

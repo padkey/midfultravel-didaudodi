@@ -166,10 +166,10 @@ class TourController extends AdminController
                     'Europe'=>'Europe',
                     'Oceania'=>'Oceania',
                 ])->setWidth(4, 2);
-            $form->multipleImage(TourModel::COL_IMAGE, __("Overview Image"))->setWidth(4, 2)->removable()->sortable()->uniqueName();
-            $form->image(TourModel::COL_IMAGE_THUMBNAIL, __("Image Thumbnail Desktop"))->setWidth(4, 2)->removable()->uniqueName();
-            $form->image(TourModel::COL_IMAGE_THUMBNAIL_MOBILE, __("Image Thumbnail Mobile"))->setWidth(4, 2)->removable()->uniqueName();
-            $form->image(TourModel::COL_IMAGE_MAP, __("Image Map"))->setWidth(4, 2)->removable()->uniqueName();
+            $form->multipleImage(TourModel::COL_IMAGE, __("Overview Image"))->setWidth(4, 2)->removable()->sortable()->uniqueName()->rules("required");
+            $form->image(TourModel::COL_IMAGE_THUMBNAIL, __("Image Thumbnail Desktop"))->setWidth(4, 2)->removable()->uniqueName()->rules("required");
+            $form->image(TourModel::COL_IMAGE_THUMBNAIL_MOBILE, __("Image Thumbnail Mobile"))->setWidth(4, 2)->removable()->uniqueName()->rules("required");
+            $form->image(TourModel::COL_IMAGE_MAP, __("Image Map"))->setWidth(4, 2)->removable()->uniqueName()->rules("required");
 
             $form->text(TourModel::COL_TYPE_TOUR, __("Type tour"))->rules("required");
             if ($form->isEditing()) {
@@ -190,11 +190,11 @@ class TourController extends AdminController
             $form->tmeditor('important_info_2', __("Tour Condition"));
             $form->tmeditor('important_info_3', __("Condition in euro"));
             $form->tmeditor('important_info_4', __("Retreats schedule"));
-            $form->textarea(TourModel::COL_SHORT_DESCRIPTION, __("Short Description"));
+            $form->textarea(TourModel::COL_SHORT_DESCRIPTION, __("Short Description"))->rules("required");
            // $form->tmeditor(TourModel::COL_CONTENT);
             $form->textarea(TourModel::COL_PLACE_OVERVIEW, __("Place Overview"));
-            $form->image(TourModel::COL_IMAGE_TRIP_HIGHTLIGHTS, __("Image Trip Highlights"))->setWidth(4, 2)->uniqueName();
-            $form->tmeditor(TourModel::COL_TRIP_HIGHTLIGHTS, __("Text Trip Highlights"));
+            $form->image(TourModel::COL_IMAGE_TRIP_HIGHTLIGHTS, __("Image Trip Highlights"))->setWidth(4, 2)->uniqueName()->rules("required");
+            $form->tmeditor(TourModel::COL_TRIP_HIGHTLIGHTS, __("Text Trip Highlights"))->rules("required");
 
         });
         $form->tab(__("Meta Data"), function ($form) {

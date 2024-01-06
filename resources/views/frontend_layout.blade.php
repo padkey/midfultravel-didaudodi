@@ -55,8 +55,13 @@
     <link rel="stylesheet" href="{{asset('frontend/css/responsive.css')}}">
 
     <!-- Font  Google-->
-    <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=playfair">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto:ital,wght@1,100&display=swap" rel="stylesheet">
+
 </head>
 
 <body >
@@ -65,6 +70,9 @@
 
 
     <style>
+        .mt-40 {
+            margin-top: 40px;
+        }
         .overlay::before{
             z-index:5!important;
         }
@@ -84,7 +92,7 @@
             /*font-style:italic;*/
         }
         h1{
-            font-size:45px;
+            font-size:55px;
         }
         .container{
             max-width: 85%;
@@ -98,7 +106,7 @@
             margin-top:0;
         }
         .btn-earth{
-            background-color: #8b572a;
+            background-color: #c1955d;
             color:white;
             padding: 10px;
             border-radius: 10px;
@@ -172,16 +180,15 @@
             font-size: 18px;
             border: 1px solid #707070;
             position: relative;
-            max-width: 380px;
+            max-width: 430px;
             padding: 10px 20px;
             transition: .5s;
-            font-weight: 300;
             margin: auto;
             position:relative;
             margin-top:30px;
             font-family: 'Playfair Display',serif!important;
             color: #4c423a;
-            text-transform: uppercase;
+            /*text-transform: uppercase;*/
             letter-spacing: 1px;
             font-weight: 600;
         }
@@ -203,6 +210,13 @@
         }
         .primary-btn:hover span {
             color:white!important;
+        }
+        .mt-31 {
+            margin-top: 31px;
+        }
+        .mt-80{
+            margin-top: 80px;
+
         }
     </style>
 
@@ -273,7 +287,7 @@
             margin: 0;
             z-index: 9999;
             border-radius: 50%;
-            background: #914C04;
+            background: #a9711c;
             -webkit-box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 3px 6px rgb(0 0 0 / 23%);
             box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 3px 6px rgb(0 0 0 / 23%);
             overflow: hidden;
@@ -470,8 +484,9 @@
     <!-- footer -->
     <style>
         .footer {
-                background: white;
-            }
+            background: white;
+            border-top: 1px solid  rgba(77,65,57,0.11);
+        }
         .footer .footer_top {
             padding-top: 60px;
             padding-bottom: 80px;
@@ -481,6 +496,8 @@
             font-weight: 600;
             margin-bottom: 5px;
             font-style: normal;
+            font-family: "Playfair Display",sans-serif!important;
+
         }
         .footer_title_1 {
             font-size: 35px;
@@ -494,10 +511,11 @@
         }
         .footer_title_2 {
             font-size: 24px;
-            font-weight: 900;
+            font-weight: 500;
             font-style: normal;
             /*color: #808080*/;
-            color: #8b572a!important;
+            color: #c1955d!important;
+            font-family: "Playfair Display",sans-serif!important;
 
             /* margin-bottom: 45px; */
         }
@@ -509,10 +527,11 @@
         }
         .footer_content_address  a{
             font-size: 18px!important;
-            font-weight: 500;
+            font-weight: 400;
             margin-left: 10px;
             font-style: normal;
             margin-bottom: 0px;
+            letter-spacing: 1px;
             color: #818181;
         }
         .footer_content_address  a:hover{
@@ -551,11 +570,19 @@
                 max-width: 100%;
             }
         }
+        .logo-footer {
+            width: 300px;
+        }
+        .logo-footer img {
+            width: 100%;
+        }
+        .footer_content_address {
+            font-family: "Playfair Display",sans-serif!important;
+        }
     </style>
 
 
-    <hr style="margin-top: 0px;" class=" wow fadeIn" data-wow-delay="300ms">
-    <footer class="footer wow fadeIn" data-wow-delay="300ms">
+    <footer class="footer wow fadeIn" data-wow-delay="100ms">
         <div class="footer_top">
             <div class="container">
                 {{--<div class="row">
@@ -593,8 +620,25 @@
                         </div>
                     </div>
                 </div>--}}
+                <div class="row mb-20">
+                    <div class="col-xl-7" style="padding: 0">
+                        <div class="logo-footer">
+                            <img src="{{url('uploads/'.$logoBlack->items[0]->path_desktop)}}" alt="">
+                        </div>
+                    </div>
+                    {{--<div class="col-xl-5">
+                        <h3 class="footer_title_1">
+                            {{trans('messages.support_our_community')}}
+                        </h3>
+                        <div class="">
+                            <p class="footer_text">
+                                {{trans('messages.support_our_community_c')}}                            </p>
+                        </div>
+                    </div>--}}
+
+                </div>
                 <div class="row footer_2">
-                    <div class="col-xl-7 parnership">
+                    <div class="col-xl-7 partnership">
                         <h3 class="footer_title_2"> {{trans('messages.our_partnership')}}</h3>
                         <div class="row practice-center" style="margin-top: 10px;">
                             @foreach($allPartnership as $partnership)

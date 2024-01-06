@@ -29,7 +29,7 @@ return [
     'register' => 'Register',
     'dharma_talks'=> 'Dharma Talks',
     'companions' => 'Companions',
-    'popular_tours' => 'Tours',
+    'popular_tours' => 'Popular Tours',
     'impacts'=>'Impacts',
     'see_details'=>'See details',
     'registration_open'=>'Registration open',
@@ -81,6 +81,9 @@ return [
 'retreats_schedule' => 'Retreats schedule',
     'error_captcha' => 'Please verify captcha!',
     'mindful_traveling' => 'Mindful traveling',
-    'our_products' => 'Our Products'
-
+    'our_products' => 'Our Products',
+    'category' => 'Category',
+    'welcome_to_our' => 'Welcome to our',
+    'slogan_line_1' => 'We offer mindfulness tours globally.',
+    'slogan_line_2' => 'We are committed to creating a positive impact on the environment and local communities through sustainability and social responsibility programs.',
 ];

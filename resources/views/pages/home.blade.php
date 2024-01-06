@@ -9,27 +9,10 @@
 
     <!-- loading-start -->
     <style>
-        /*.loader {
-            position: fixed;
-            left: 0px;
-            top: 0px;
-            width: 100%;
-            height: 100%;
-            z-index: 9999;
-            background: url('frontend/images/logo-loading.gif') 50% 50% no-repeat white;
-        }
-        @media (max-width: 700px) {
-            .loader{
-                background: url('frontend/images/logo-loading-mobile.gif') 50% 50% no-repeat white;
-            }
-        }*/
         .owl-carousel:hover .owl-nav div:hover{
             background: lightgray;
         }
     </style>
-    {{--<div class="loader">
-    </div>--}}
-    <!-- loading-end -->
 
     <!-- mission -->
 	<style>
@@ -53,23 +36,49 @@
         text-align:center;
         margin:auto;
     }
-    .mission_title {
-        margin-bottom: 20px;
+    .xtc {
+        text-align: center;
+        max-width: 1100px;
+        height: fit-content;
     }
-    .mission_title h1{
-        color:#8b572a;
-        text-transform: uppercase;
-        font-family: 'Playfair';
+
+    .title-welcome{
+        font-family: 'Great Vibes', cursive;
+        color: #c1955d;
+        font-size: 43px;
+        margin-top:50px;
+    }
+    .xtc h5 {
+        font-size: 22px;
+        font-family: 'Playfair Display', serif!important;
+        letter-spacing: 0.5px;
+        color: rgba(77,66,58,0.76);
+        line-height: 1.6em;
+    }
+    .xtc h2{
         color: #4c423a;
-        margin: 0;
+        font-size: 43px;
+        text-transform: uppercase;
+        font-style: normal;
+        /*color: #8b572a;*/
+        /*padding: 0 0 34px;*/
+        font-size: 40px;
+        animation-delay: 1s ;
+        position: relative;
+        font-family: 'Playfair Display', serif!important;
 
     }
-    .mission_title h3{
-        font-family: 'Great Vibes',handwriting!important;
-        color: #c1955d;
-        font-size: 30px;
-        margin: 0;
+    .mt-12{
+        margin-top: 12px;
     }
+    .font-play-fair {
+        font-family: 'Playfair Display', serif!important;
+    }
+
+    .mission-title {
+        margin-bottom: 20px;
+    }
+
     .content_center{
         margin-top: auto;
         margin-bottom: auto;
@@ -87,13 +96,28 @@
     .mission_content span,p{
         font-weight: 200;
         line-height: 165%;
-        font-size: 24px;
-        font-family: 'Playfair';
+        font-size: 18px;
         letter-spacing: 0.5px;
         color: rgba(77,66,58,0.76)!important;
         line-height: 165%;
-
+        font-family: 'Playfair Display', serif!important;
     }
+    /*font title*/
+    .section-title h1{
+        color: #8b572a;
+        text-transform: uppercase;
+        font-family: 'Playfair Display', serif!important;
+        color: #4c423a;
+        margin: 0;
+        font-size: 65px;
+    }
+    .section-title h3{
+        font-family: 'Great Vibes',handwriting!important;
+        color: #c1955d;
+        font-size: 34px;
+        margin: 0;
+    }
+
     @media (max-width: 1700px) {
         .mission_content {
             -webkit-line-clamp: 10;
@@ -110,14 +134,12 @@
             padding-right: 0px;
 
         }
-
         .container-mission{
             width: 100%;
             margin:auto;
             padding-left: 20px;
-
         }
-        .mission_title {
+        .mission-title {
             margin-left: 10px;
 
         }
@@ -125,58 +147,45 @@
             width: 95%;
             margin: auto;
         }
+        .mission-image img{
+            border-radius: 0;
+        }
+        .mission-image {
+            margin-bottom: 31px;
+        }
+        .xtc h5{
+            font-size: 16px;
+            letter-spacing: 1px;
+        }
         .btn-xt{
             margin-right: 20px;
         }
+        .section-title h1 {
+            font-size: 43px;
+        }
+
     }
+
+
+
+
 	</style>
     <style>
-        .xtc {
-            text-align: center;
-            max-width: 1100px;
-            height: fit-content;
-        }
-
-        .title-welcome{
-            font-family: 'Great Vibes',handwriting;
-            color: #c1955d;
-            font-size: 43px;
-            margin-top:50px;
-        }
-        .xtc h5 {
-            font-size: 24px;
-            font-family: 'Playfair';
-            letter-spacing: 0.5px;
-            color: rgba(77,66,58,0.76);
-        }
-        .xtc h2 {
-            color: #4c423a;
-            font-size: 43px;
-            text-transform: uppercase;
-
-        }
-        .xtc h2{
-            font-style: normal;
-            /*color: #8b572a;*/
-            /*padding: 0 0 34px;*/
-            font-size: 40px;
-            animation-delay: 1s ;
-            position: relative;
-        }
 
     </style>
     @if($blockShortAboutUs != null)
         <div class="row" style=" margin-right: 0;margin-left: 0;">
             <hr width=60%>
             <div class="container xtc">
-                {{--<h2>{!! $blockShortAboutUs->content!!}</h2>  Đi Đâu Đó Đi Mindful Travel--}}
-                <h4 class="title-welcome mt-10 fadeInDown wow" data-wow-delay="200ms">
-                    Welcome to our
+                <h4 class="title-welcome mt-12 fadeInDown wow" data-wow-delay="200ms">
+                     {{trans('messages.welcome_to_our')}}
                 </h4>
-                <h2 class="title-short-about-us mt-10 fadeInUp wow" data-wow-delay="200ms">
-                    We offer mindfulness tours globally.</h2>
-                <h5 class="mt-10 fadeInDown wow" data-wow-delay="200ms">
-                    We are committed to creating a positive impact on the environment and local communities through sustainability and social responsibility programs.
+                <h2 class="title-short-about-us mt-12 fadeInUp wow" data-wow-delay="200ms">
+                    {{trans('messages.slogan_line_1')}}
+                </h2>
+                <h5 class=" mt-12 fadeInDown wow" data-wow-delay="200ms">
+                    {{trans('messages.slogan_line_2')}}
+
                 </h5>
                 <a href="/about-us" class="btn primary-btn fadeInUp wow" data-wow-delay="200ms"> <span>About us</span> </a>
             </div>
@@ -192,7 +201,7 @@
                     </div>
                 </div>
                 <div class="col-xl-6 col-lg-12 content_center wow fadeInRight" data-wow-delay="0.8s">
-                    <div class="mission_title">
+                    <div class="mission-title section-title">
                         <h1>{{trans('messages.mission')}}</h1>
                         <h3>Our happy clients</h3>
                     </div>
@@ -223,7 +232,7 @@
             font-weight: 200;
             line-height: 165%;
             font-size: 18px;
-            font-family: 'Playfair';
+            font-family: 'Playfair Display', serif!important;
             letter-spacing: 0.5px;
             color: rgba(77,66,58,0.76)!important;
             line-height: 165%;
@@ -242,9 +251,7 @@
             ,radial-gradient(at bottom right ,#FFFFFF 0%,#F9F3ED00 43%);
         }
         .timeline{
-
             position: relative;
-            max-width: 1500px;
             margin: 100px auto;
         }
         .single_value {
@@ -317,14 +324,13 @@
         .text-box h2 {
             font-weight: 600;
         }
-        .text-box p {
+        .text-box p,span {
             font-weight: 200;
             line-height: 165%;
             font-size: 18px;
-            font-family: 'Playfair';
-            letter-spacing: 0.5px;
+            font-family: 'Playfair Display',sans-serif !important;
+            letter-spacing:1px!important;
             color: rgba(77,66,58,0.76)!important;
-            line-height: 165%;
         }
         .left-container-arrow {
             height: 0;
@@ -353,21 +359,21 @@
                 margin: 50px auto;
             }
             .timeline::after {
-                left:31px;
+                left:41px;
             }
             .single_value{
                 width:100%;
-                padding-left: 80px;
-                padding-right: 25px;
+                padding-left: 112px;
+                padding-right: 12px;
             }
             .text-box{
                 font-size: 13px;
             }
-            .text-box p {
+            .text-box p,span {
                 font-weight: 200;
                 line-height: 165%;
                 font-size: 18px;
-                font-family: 'Playfair';
+                font-family: 'Playfair'!important;
                 letter-spacing: 0.5px;
                 color: rgba(77,66,58,0.76)!important;
                 line-height: 165%;
@@ -379,10 +385,10 @@
                 left: 0px;
             }
             .left-container-arrow, .right-container-arrow {
-                border-right: 15px solid silver;
+                border-right: 15px solid #FFFFFF;
                 border-radius: 10px ;
                 border-left: 0;
-                left: -15px;
+                left: -12px;
             }
         }
         .core_value_title h1{
@@ -392,24 +398,12 @@
             color: #4c423a;
             margin: 0;
         }
-        .section_title h1{
-            color: #8b572a;
-            text-transform: uppercase;
-            font-family: 'Playfair';
-            color: #4c423a;
-            margin: 0;
-        }
-        .section_title h3{
-            font-family: 'Great Vibes',handwriting!important;
-            color: #c1955d;
-            font-size: 30px;
-            margin: 0;
-        }
+
 
     </style>
     <div class="area_core_value ">
         <div class="container_value">
-            <div class="section_title pt-80">
+            <div class="section-title text-center pt-80">
                 <h3 class="text-center"> Mindful Travel </h3>
                 <h1 >
                     {{trans('messages.value')}}
@@ -419,9 +413,10 @@
                 <div class="single_value left-container">
                     <img src="{{url('frontend/images/mental-health.gif')}}" alt="" class="wow fadeIn" data-wow-delay="500ms">
                     <div class="text-box wow fadeInLeftBig" data-wow-delay="400ms">
-                        <h2>Mindfulness</h2>
-                        <p>At the heart of mindful travel lies the practice of mindfulness itself. This means encouraging travelers to be present in the moment, to engage their senses and surroundings with curiosity and non-judgment.
-                        </p>
+                        <h2> {{$valueMindfulness->title}}</h2>
+                        <div class="content-single-value">
+                             {!! $valueMindfulness->content !!}
+                        </div>
                         <span class="left-container-arrow"></span>
                     </div>
                 </div>
@@ -430,10 +425,10 @@
                         <img src="{{url('frontend/images/volunteering.gif')}}" alt="" class="wow fadeIn" data-wow-delay="800ms">
                     </div>
                     <div class="text-box wow fadeInRightBig" data-wow-delay="700ms">
-                        <h2>Connection</h2>
-                        <p>
-                            Mindful travel is about more than just ticking destinations off a bucket list. It's about fostering genuine connections with local communities, cultures, and even oneself.
-                        </p>
+                        <h2> {{$valueConnection->title}}</h2>
+                        <div class="content-single-value">
+                            {!!  $valueConnection->content!!}
+                        </div>
                         <span class="right-container-arrow"></span>
 
                     </div>
@@ -441,10 +436,10 @@
                 <div class="single_value left-container">
                     <img src="{{url('frontend/images/eco-earth.gif')}}" alt="" class="wow fadeIn" data-wow-delay="1100ms">
                     <div class="text-box wow fadeInLeftBig" data-wow-delay="1000ms">
-                        <h2>Sustainability</h2>
-                        <p>
-                            Prioritizing sustainable practices that minimize this impact and contribute to the well-being of the places they visit.
-                        </p>
+                        <h2> {{$valueSustainability->title}}</h2>
+                        <div class="content-single-value">
+                             {!! $valueSustainability->content  !!}
+                        </div>
                         <span class="left-container-arrow"></span>
 
                     </div>
@@ -452,10 +447,10 @@
                 <div class="single_value right-container value-end" style="height: 300px">
                     <img src="{{url('frontend/images/kindness.gif')}}" alt="" class="wow fadeIn" data-wow-delay="1400ms">
                     <div class="text-box wow fadeInRightBig" data-wow-delay="1300ms">
-                        <h2>Personal Growth</h2>
-
-                        <p>Mindful travel is an opportunity for personal transformation. By stepping outside of their comfort zones and immersing themselves in new experiences, travelers can gain deeper insights into themselves and the world around them.
-                        </p>
+                        <h2> {{$valuePersonalGrowth->title}}</h2>
+                        <div class="content-single-value">
+                          {!! $valuePersonalGrowth->content !!}
+                        </div>
                         <span class="right-container-arrow"></span>
                     </div>
                 </div>
@@ -486,20 +481,6 @@
     .our_tour_title {
         margin-bottom: 20px;
     }
-    .our_tour_title h1{
-        color:#8b572a;
-        text-transform: uppercase;
-        font-family: 'Playfair';
-        color: #4c423a;
-        margin: 0;
-
-    }
-    .our_tour_title h3{
-        font-family: 'Great Vibes',handwriting!important;
-        color: #c1955d;
-        font-size: 30px;
-        margin: 0;
-    }
     .our_tour_content{
         position:relative;
         overflow: hidden;
@@ -513,7 +494,7 @@
         font-weight: 200;
         line-height: 165%;
         font-size: 24px;
-        font-family: 'Playfair'!important;
+        font-family: 'Playfair Display', serif!important;
         letter-spacing: 0.5px!important;
         color: rgba(77,66,58,0.76)!important;
         line-height: 165%;
@@ -542,6 +523,9 @@
         .our_tour_xt{
             margin-left: 20px;
         }
+        .ourToursImage img {
+            border-radius: 0;
+        }
     }
 	</style>
     @if($blockOurTour != null)
@@ -549,7 +533,7 @@
         <div class="container-our-tour">
             <div class="row" >
                 <div class="col-xl-6 col-lg-12   wow fadeInLeft" data-wow-delay="0.5s">
-                    <div class="our_tour_title">
+                    <div class="our_tour_title section-title">
                         <h1>{{trans('messages.our_tours')}}</h1>
                         <h3>Giving you a memorable experience</h3>
                     </div>
@@ -575,7 +559,7 @@
     <!-- offers_area_start -->
     <style>
         .bg-pink{
-            background-color: #faf1eb!important;
+            background-color: #f9f3ed;
         }
         .section-icon{
             text-align: center;
@@ -641,29 +625,44 @@
         }
         .offers_area {
             position: relative;
-            padding-bottom: 80px;
-            padding-top: 20px;
-            margin-bottom:50px;
+            padding-bottom:0px!important;
             background-size: cover;
-            /*
-            background-image: url('uploads/{{$TourBackground != null ? $TourBackground->image_one : 2 }}');
-            */
             width: 100%;
             margin: auto;
+
         }
+        .pop-color {
+            padding-bottom: 43px;
+            background-color: transparent;
+            background-image: radial-gradient(at top center,#FFFFFF 0%,#F9F3ED00 65%),radial-gradient(at bottom left ,#FFFFFF 0%,#F9F3ED00 31%)
+            ,radial-gradient(at bottom right ,#FFFFFF 0%,#F9F3ED00 43%),radial-gradient(at bottom  ,#FFFFFF 0%,#F9F3ED00 43%);
+        }
+
+        .container-pop-tour{
+            width: 85%;
+            margin: auto;
+
+        }
+
+        .area_core_value{
+            background-color: #f9f3ed;
+
+        }
+        .container_value {
+            background-color: transparent;
+            background-image: radial-gradient(at top center,#FFFFFF 0%,#F9F3ED00 65%),radial-gradient(at bottom left ,#FFFFFF 0%,#F9F3ED00 31%)
+            ,radial-gradient(at bottom right ,#FFFFFF 0%,#F9F3ED00 43%);
+        }
+
         .short-desc {
-            font-weight: 200;
-            line-height: 165%;
-            font-size: 24px;
-            font-family: 'Playfair'!important;
+            font-weight: 500;
+            font-size: 23px;
+            font-family: 'Cormorant Garamond', serif!important;
             letter-spacing: 0.5px!important;
             color: rgba(77,66,58,0.76)!important;
             line-height: 165%;
         }
-        .container-pop-tour{
-            width: 85%;
-            margin: auto;
-        }
+
         .short-desc{
             word-break: break-word;
             overflow: hidden;
@@ -673,7 +672,6 @@
             max-height: 72px; /* fallback */
             -webkit-line-clamp: 3; /* number of lines to show */
             -webkit-box-orient: vertical;
-            font-size: 20px;
             font-style: italic;
         }
         .about_thumb_tour {
@@ -695,21 +693,21 @@
             text-transform: uppercase;
             border-radius: 5px;
             padding: 8px;
-            color: white;
+            color: #FFFFFF!important;
             margin: 0 5px 6px 0;
             font-weight: 600;
             font-size: 18px;
-            font-family: 'Playfair'!important;
+            font-family: 'Playfair Display', serif!important;
             letter-spacing:0.3px;
 
         }
         .trangthai-open{
             background: #c1955d!important;
-            font-family: 'Playfair'!important;
+            font-family: 'Playfair Display', serif!important;
         }
         .trangthai-close{
             background: black!important;
-            font-family: 'Playfair'!important;
+            font-family: 'Playfair Display', serif!important;
 
         }
         .mb-40{
@@ -731,6 +729,9 @@
             .container-pop-tour{
                 width: 95%;
             }
+            .event-label {
+                font-size: 16px;
+            }
         }
         .single_offers h2{
             font-weight: 100;
@@ -745,7 +746,7 @@
         .title-offer h1{
             color: #4c423a;
             text-transform: uppercase;
-            font-family: 'Playfair'!important;
+            font-family: 'Playfair Display', serif!important;
             font-weight: 600;
         }
         .single_offers:hover {
@@ -755,9 +756,6 @@
             transition: 0.1s;
         }
 
-        .section_title h1{
-            text-align:center;
-        }
         .owl-prev{
             color: black!important;
             left: -20px!important;
@@ -771,10 +769,7 @@
             /* background: darkseagreen!important; */
         }
 
-        .title-top{
-            position: relative;
-            top: 25px;
-        }
+
         .bg-bg{
             /* background-color:beige!important;*/
             background-color:white!important;
@@ -791,14 +786,14 @@
         .title_ttp h1{
             color: #8b572a;
             text-transform: uppercase;
-            font-family: 'Playfair';
+            font-family: 'Playfair Display', serif!important;
             color: #4c423a;
             margin: 0;
         }
         .title_ttp h3{
             font-family: 'Great Vibes',handwriting!important;
             color: #c1955d;
-            font-size: 30px;
+            font-size: 34px;
             margin: 0;
         }
         .position_tour {
@@ -810,56 +805,58 @@
             object-fit: cover;
         }
     </style>
-    <div class="offers_area" >
-        <div class="container-pop-tour" style="">
-            <div class="row mb-40">
-                <div class="col-xl-12">
-                    <div class="section_title text-center mb-20 mt-10">
-                        <h3 class="title-top">Our products</h3>
-                        <h1>{{trans('messages.popular_tours')}}</h1>
-                    </div>
-                    {{--<div class="section-icon">
-                        <img src="{{url('/frontend/images/tour1.png')}}" alt="" style="border-radius: 0">
-                        <div class="title-center">
-                            <h1 class="hightlight-underline-green">{{trans('messages.popular_tours')}}</h1>
+    <div class="offers_area bg-pink" >
+        <div class="pop-color">
+            <div class="container-pop-tour">
+                <div class="row mb-40">
+                    <div class="col-xl-12">
+                        <div class="section-title text-center mb-20 mt-80">
+                            <h3 class="title-top">Our products</h3>
+                            <h1>{{trans('messages.popular_tours')}}</h1>
                         </div>
-                    </div>--}}
-                </div>
-            </div>
-            <input type="hidden" value="{{count($tours)}}" class="toursNumber">
-            <div class="row owl-carousel owl-two owl-theme"  style="margin: auto;">
-                @php
-                    $delayPT = 100;
-                @endphp
-                @foreach($tours as $tour)
-                    <div class="single_offers hidden2 block  wow fadeInUp" data-wow-delay="{{$delayPT}}ms" data-img="{{url('/uploads/'.$tour->image_thumbnail)}}">
-                        <div class="about_thumb about_thumb_tour">
-                            <img src="{{url('/uploads/'.$tour->image_thumbnail)}}" alt="">
-                        </div>
-                        <div class="offers_content">
-                            <div class="trangthai-category">
-                                <span class="event-label trangthai-open">{{trans('messages.registration_open')}}</span> <span  class="event-label">{{$tour->type_tour}}</span>
+                        {{--<div class="section-icon">
+                            <img src="{{url('/frontend/images/tour1.png')}}" alt="" style="border-radius: 0">
+                            <div class="title-center">
+                                <h1 class="hightlight-underline-green">{{trans('messages.popular_tours')}}</h1>
                             </div>
-                            @php
-                            $date = date_create($tour->date_start);
-                            $date_start= date_format($date, 'd/m/Y');
-                            $date = date_create($tour->date_end);
-                            $date_end= date_format($date, 'd/m/Y');
-                            @endphp
-                            <b>{{$date_start}} - {{$date_end}}</b>
-                            <h2 class="title-offer">  {{$tour->name}}</h2>
-{{--
-                             <p><i class="fa fa-map-marker" aria-hidden="true"></i> {{$tour->region}}</p>
---}}
-                            <p><i class="fa fa-map-marker" aria-hidden="true"></i> {{$tour->region}}</p>
-                            <p class="short-desc"> {{$tour->short_description}} </p>
-                            <a href="/tours/{{$tour->url}}" class="btn primary-btn">{{trans('messages.more_infomation_&_register')}}</a>
-                        </div>
+                        </div>--}}
                     </div>
+                </div>
+                <input type="hidden" value="{{count($tours)}}" class="toursNumber">
+                <div class="row owl-carousel owl-two owl-theme"  style="margin: auto;">
                     @php
-                        $delayPT = $delayPT + 200;
+                        $delayPT = 100;
                     @endphp
-                @endforeach
+                    @foreach($tours as $tour)
+                        <div class="single_offers hidden2 block  wow fadeInUp" data-wow-delay="{{$delayPT}}ms" data-img="{{url('/uploads/'.$tour->image_thumbnail)}}">
+                            <div class="about_thumb about_thumb_tour">
+                                <img src="{{url('/uploads/'.$tour->image_thumbnail)}}" alt="">
+                            </div>
+                            <div class="offers_content">
+                                <div class="trangthai-category">
+                                    <span class="event-label trangthai-open">{{trans('messages.registration_open')}}</span> <span  class="event-label">{{$tour->type_tour}}</span>
+                                </div>
+                                @php
+                                    $date = date_create($tour->date_start);
+                                    $date_start= date_format($date, 'd/m/Y');
+                                    $date = date_create($tour->date_end);
+                                    $date_end= date_format($date, 'd/m/Y');
+                                @endphp
+                                <b>{{$date_start}} - {{$date_end}}</b>
+                                <h2 class="title-offer">  {{$tour->name}}</h2>
+                                {{--
+                                                             <p><i class="fa fa-map-marker" aria-hidden="true"></i> {{$tour->region}}</p>
+                                --}}
+                                <p class="position_tour" ><img src="{{url('/frontend/images/position.gif')}}" alt=""> {{$tour->region}} </p>
+                                <p class="short-desc"> {{$tour->short_description}} </p>
+                                <a href="/tours/{{$tour->url}}" class="btn primary-btn">{{trans('messages.more_infomation_&_register')}}</a>
+                            </div>
+                        </div>
+                        @php
+                            $delayPT = $delayPT + 200;
+                        @endphp
+                    @endforeach
+                </div>
             </div>
         </div>
     </div>
@@ -883,14 +880,14 @@
         .title_ttp h1{
             color: #8b572a;
             text-transform: uppercase;
-            font-family: 'Playfair';
+            font-family: 'Playfair Display', serif!important;
             color: #4c423a;
             margin: 0;
         }
         .title_ttp h3{
             font-family: 'Great Vibes',handwriting!important;
             color: #c1955d;
-            font-size: 30px;
+            font-size: 34px;
             margin: 0;
         }
         .position_tour {
@@ -901,13 +898,16 @@
             width: 100%;
             object-fit: cover;
         }
+        .pt-20{
+            padding-top: 20px;
+        }
     </style>
     @if(count($toursTookPlace) > 0)
         <div class="offers_area" >
             <div class="container-pop-tour" style="">
-                <div class="row  mb-40">
+                <div class="row ">
                     <div class="col-xl-12">
-                        <div class="title_ttp mb-20 mt-10">
+                        <div class="title_ttp mb-20 pt-20">
                             <h1>{{trans('messages.tours_took_place')}}</h1>
                             <h3>See past tours
                             </h3>
@@ -1000,7 +1000,6 @@
         .icon-play{
             position: absolute;
             color: #ced0d2;
-            border:1px solid lightilver;
             transition: all .4s cubic-bezier(.15,.53,.35,1);
             background-image:url('/frontend/images/play-w.png');
             background-size: 50px;
@@ -1081,42 +1080,31 @@
         .title_video {
             text-align: right;
             border-top: 1px solid #4c423a;
-            padding: 10px 0 10px 0;
         }
         .title_video h1{
             color: #8b572a;
             text-transform: uppercase;
-            font-family: 'Playfair';
+            font-family: 'Playfair Display', serif!important;
             color: #4c423a;
             margin: 0;
         }
         .title_video h3{
             font-family: 'Great Vibes',handwriting!important;
             color: #c1955d;
-            font-size: 30px;
+            font-size: 34px;
             margin: 0;
         }
-        .section_title h1{
-            color: #8b572a;
-            text-transform: uppercase;
-            font-family: 'Playfair';
-            color: #4c423a;
-            margin: 0;
-        }
-        .section_title h3{
-            font-family: 'Great Vibes',handwriting!important;
-            color: #c1955d;
-            font-size: 30px;
-            margin: 0;
-        }
-        .title-author{
-            font-size:0.9rem;
 
+
+        .title-author{
+            font-size:16px;
+            font-family: 'Playfair Display', serif!important;
+            font-weight: 900;
         }
 
     </style>
     <div class="video_area2" >
-    <div class="title_video container-pop-tour mb-40">
+    <div class="title_video container-pop-tour mb-40 pt-20">
         <h1>{{trans('messages.our_journey')}}</h1>
         <h3 >Enjoy the journey together</h3>
         <!-- <hr style="margin-bottom:50px;">   -->
@@ -1137,7 +1125,7 @@
                             </div>
                             <div class="">
                                 <h3 class="title-video">{{$video->title}}</h3>
-                                <b class="title-author">- {{$video->author}}</b>
+                                <p class="title-author">- {{$video->author}}</p>
                                 <p></p>
                             </div>
                         </div>
@@ -1400,46 +1388,47 @@
             margin: auto;
         }
     </style>
-    <div class="companion-area">
-        <div class="container-companion">  {{--container--}}
-            <div class="section_title" style="margin-bottom: 80px">
-                <h1 >{{trans('messages.companions')}}</h1>
-            </div>
-            {{--<div class="section-icon" style="top:-45px;">
-                <img src="{{url('/frontend/images/companion.png')}}" alt="" ">
-                <div class="title-center">
-                    <h1 class="hightlight-underline-white" >{{trans('messages.companions')}}</h1>
+    <div class="companion-area " >
+            <div class="container-companion">  {{--container--}}
+                <div class="section-title text-center" style="margin-bottom: 80px">
+                    <h1 style="padding-top: 30px;">{{trans('messages.companions')}}</h1>
                 </div>
-            </div>--}}
-            <input type="hidden" value="{{count($companions)}}" class="companionNumber">
-            <div class="team-profile owl-five owl-carousel  owl-theme">
-                @if($companions != null)
-                    @php
-                        $delayC = 100;
-                    @endphp
-                @foreach($companions as $companion)
-                    <div class="profile-card fadeInRight wow"  data-wow-delay="{{$delayC}}ms">
-                        <div class="img">
-                            <img src="{{url('uploads/'.$companion->avatar)}}" alt=""  >
-                            <div class="name-companion">
-                                <h3>{{$companion->name}}</h3>
-                                <h5>{{$companion->position}}</h5>
-                                <h6> {{$companion->company_name}}</h6>
-                            </div>
-                        </div>
-                        <div class="caption">
-                            <div class="desc-companion">
-                                {!! $companion->content !!}
-                            </div>
-                        </div>
+                {{--<div class="section-icon" style="top:-45px;">
+                    <img src="{{url('/frontend/images/companion.png')}}" alt="" ">
+                    <div class="title-center">
+                        <h1 class="hightlight-underline-white" >{{trans('messages.companions')}}</h1>
                     </div>
+                </div>--}}
+                <input type="hidden" value="{{count($companions)}}" class="companionNumber">
+                <div class="team-profile owl-five owl-carousel  owl-theme">
+                    @if($companions != null)
                         @php
-                            $delayC = $delayC + 200;
+                            $delayC = 100;
                         @endphp
-                @endforeach
-                @endif
+                        @foreach($companions as $companion)
+                            <div class="profile-card fadeInRight wow"  data-wow-delay="{{$delayC}}ms">
+                                <div class="img">
+                                    <img src="{{url('uploads/'.$companion->avatar)}}" alt=""  >
+                                    <div class="name-companion">
+                                        <h3>{{$companion->name}}</h3>
+                                        <h5>{{$companion->position}}</h5>
+                                        <h6> {{$companion->company_name}}</h6>
+                                    </div>
+                                </div>
+                                <div class="caption">
+                                    <div class="desc-companion">
+                                        {!! $companion->content !!}
+                                    </div>
+                                </div>
+                            </div>
+                            @php
+                                $delayC = $delayC + 200;
+                            @endphp
+                        @endforeach
+                    @endif
+                </div>
             </div>
-        </div>
+
     </div>
 
     <!-- end-companion -->
@@ -1447,8 +1436,6 @@
     <!-- about_area_start -->
         <style>
         .about_area_home{
-            padding-top:20px;
-
         }
         .about_thumb img{
             max-height: 50vh;
@@ -1487,11 +1474,14 @@
         .title-about h1{
             font-style: normal;
             /* font-family:'Dancing Script'!important; */
-            color: #8b572a!important;
+            color: #c1955d!important;
+            font-family:"Playfair Display",serif!important;
 
         }
         .title-about p {
             font-weight:500;
+            font-family:"Playfair Display",serif!important;
+
         }
         .d-inline-block {
             text-decoration:none;
@@ -1524,6 +1514,8 @@
         }
         .blog_item {
             margin-bottom: 30px;
+            background-color: #fff;
+            box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
         }
         .center-small-blog{
             display:flex;
@@ -1582,13 +1574,11 @@
             font-size: 38px!important;
             font-family:"Cormorant Garamond",serif!important;
             font-weight: 500!important;
-            font-style: italic;
         }
         .post-title-lr {
             font-size: 31px!important;
             font-family:"Cormorant Garamond",serif!important;
-            font-weight: 300!important;
-            font-style: italic;
+            font-weight: 400!important;
         }
         .short-desc-blog-lr{
             display: none;
@@ -1596,95 +1586,98 @@
 
         </style>
     <!-- -->
-    <div class="about_area_home">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-12">
-                    <div class="section_title mb-20">
-                        <h1>{{trans('messages.mindful_travel_blog')}}</h1>
+    <div class="about_area_home mt-40 bg-pink">
+        <div class="pop-color">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="section-title mb-30 mt-80">
+                            <h3 class="text-center">Share experiences</h3>
+                            <h1 class="text-center">{{trans('messages.mindful_travel_blog')}}</h1>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-xl-3 col-lg-3">
-                    @php
-                        $delayLB = 150;
-                     @endphp
-                    @if($blogPostsLeft != null)
-                    @foreach($blogPostsLeft as $post)
-                    <div class="blog_left_sidebar fadeIn wow"  data-wow-delay="{{$delayLB}}ms">
-                        <article class="blog_item">
-                            <div class="blog_item_img">
-                                <img class="card-img rounded-0 small-image-blog" src="{{url('/uploads/'.$post->image_thumbnail)}}" alt="">
-                            </div>
-                            <div class="small-blog-details">
-                                <a class="d-inline-block" href="/blogs/{{$post->url}}">
-                                    <h2 class="post-title-lr">{{$post->title}}</h2>
-                                </a>
-                            </div>
-                        </article>
-                    </div>
-                            @php
-                                $delayLB = $delayLB +50;
-                            @endphp
-                    @endforeach
-                    @endif
-
-                </div>
-                <div class="col-lg-6 mb-5 mb-lg-0">
-                    <div class="blog_left_sidebar">
+                <div class="row">
+                    <div class="col-xl-3 col-lg-3">
                         @php
-                            $small = 'blog_details';
-                            $flex = '';
-                            $smallCenter = '';
+                            $delayLB = 150;
                         @endphp
-                        @if($blogPostsCenter != null)
-                        @foreach($blogPostsCenter as $post)
-                        <article class="blog_item {{$flex}} fadeIn wow" data-wow-delay="{{$delayLB}}ms">
-                            <div class="blog_item_img">
-                                <img class="card-img rounded-0 " src="{{url('/uploads/'.$post->image_thumbnail)}}" alt="">
-
-                            </div>
-
-                            <div class="{{$small}}">
-                                <a class="d-inline-block" href="/blogs/{{$post->url}}">
-                                    <h2 class="post-title{{$smallCenter}}">{{$post->title}}</h2>
-                                </a>
-                                <p class="short-desc-blog">{{$post->short_description}}</p>
-                            </div>
-                        </article>
-                        @php
-                            $small = 'small-blog-details';
-                            $flex = 'center-small-blog';
-                                $delayLB = $delayLB + 50;
-                                $smallCenter = '-lr'
-
-                        @endphp
-                        @endforeach
+                        @if($blogPostsLeft != null)
+                            @foreach($blogPostsLeft as $post)
+                                <div class="blog_left_sidebar fadeIn wow"  data-wow-delay="{{$delayLB}}ms">
+                                    <article class="blog_item">
+                                        <div class="blog_item_img">
+                                            <img class="card-img rounded-0 small-image-blog" src="{{url('/uploads/'.$post->image_thumbnail)}}" alt="">
+                                        </div>
+                                        <div class="small-blog-details">
+                                            <a class="d-inline-block" href="/blogs/{{$post->url}}">
+                                                <h2 class="post-title-lr">{{$post->title}}</h2>
+                                            </a>
+                                        </div>
+                                    </article>
+                                </div>
+                                @php
+                                    $delayLB = $delayLB +50;
+                                @endphp
+                            @endforeach
                         @endif
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-3">
-                    @if($blogPostsRight != null)
-                    @foreach($blogPostsRight as $post)
-                    <div class="blog_left_sidebar fadeIn wow" data-wow-delay="{{$delayLB}}ms">
-                        <article class="blog_item">
-                            <div class="blog_item_img">
-                                <img class="card-img rounded-0 small-image-blog" src="{{url('/uploads/'.$post->image_thumbnail)}}" alt="">
-                            </div>
-                            <div class="small-blog-details">
-                                <a class="d-inline-block" href="/blogs/{{$post->url}}">
-                                    <h2 class="post-title-lr">{{$post->title}}</h2>
-                                </a>
-                            </div>
-                        </article>
-                    </div>
-                            @php
-                                $delayLB = $delayLB + 50;
-                            @endphp
-                    @endforeach
-                    @endif
 
+                    </div>
+                    <div class="col-lg-6 mb-5 mb-lg-0">
+                        <div class="blog_left_sidebar">
+                            @php
+                                $small = 'blog_details';
+                                $flex = '';
+                                $smallCenter = '';
+                            @endphp
+                            @if($blogPostsCenter != null)
+                                @foreach($blogPostsCenter as $post)
+                                    <article class="blog_item {{$flex}} fadeIn wow" data-wow-delay="{{$delayLB}}ms">
+                                        <div class="blog_item_img">
+                                            <img class="card-img rounded-0 " src="{{url('/uploads/'.$post->image_thumbnail)}}" alt="">
+
+                                        </div>
+
+                                        <div class="{{$small}}">
+                                            <a class="d-inline-block" href="/blogs/{{$post->url}}">
+                                                <h2 class="post-title{{$smallCenter}}">{{$post->title}}</h2>
+                                            </a>
+                                            <p class="short-desc-blog">{{$post->short_description}}</p>
+                                        </div>
+                                    </article>
+                                    @php
+                                        $small = 'small-blog-details';
+                                        $flex = 'center-small-blog';
+                                            $delayLB = $delayLB + 50;
+                                            $smallCenter = '-lr'
+
+                                    @endphp
+                                @endforeach
+                            @endif
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3">
+                        @if($blogPostsRight != null)
+                            @foreach($blogPostsRight as $post)
+                                <div class="blog_left_sidebar fadeIn wow" data-wow-delay="{{$delayLB}}ms">
+                                    <article class="blog_item">
+                                        <div class="blog_item_img">
+                                            <img class="card-img rounded-0 small-image-blog" src="{{url('/uploads/'.$post->image_thumbnail)}}" alt="">
+                                        </div>
+                                        <div class="small-blog-details">
+                                            <a class="d-inline-block" href="/blogs/{{$post->url}}">
+                                                <h2 class="post-title-lr">{{$post->title}}</h2>
+                                            </a>
+                                        </div>
+                                    </article>
+                                </div>
+                                @php
+                                    $delayLB = $delayLB + 50;
+                                @endphp
+                            @endforeach
+                        @endif
+
+                    </div>
                 </div>
             </div>
         </div>
@@ -1728,14 +1721,13 @@
         let toursNumber = parseInt($('.toursNumber').val());
         var owl2 = $('.owl-two');
         owl2.owlCarousel({
-            loop:true,
+            /*loop:true,*/
             nav:true,
             navText:['<i class="ti-angle-left"></i>','<i class="ti-angle-right"></i>'],
             margin:20,
-           /* autoplay:true,*/
+            /* autoplay:true,*/
            /* autoplayTimeout:1500,*/
           /*  autoplayHoverPause:true,*/
-            lazyLoad: true,
             responsive:{
                 0:{
                     items:1,
