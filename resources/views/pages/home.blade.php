@@ -973,7 +973,7 @@
         }
         .video_area2{
             margin-bottom:50px;
-            margin-top:50px
+            /*margin-top:50px*/
         }
         .single_video{
             z-index: 1;
@@ -1586,7 +1586,7 @@
 
         </style>
     <!-- -->
-    <div class="about_area_home mt-40 bg-pink">
+    <div class="about_area_home  bg-pink">
         <div class="pop-color">
             <div class="container">
                 <div class="row">
