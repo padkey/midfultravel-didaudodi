@@ -75,17 +75,15 @@
                                         <li class="f-l"><a href="/about-us">{{trans('messages.about_us')}}</a></li>
                                         <li class="f-l"><a href="/fabio">Fabio Cappiello</a></li>
                                         <li class="f-l"><a href="/tours/list-tours">{{trans('messages.our_products')}}</a></li>
-                                        {{--<li class="f-l"><a href="">{{trans('messages.blog')}} <i class="ti-angle-down"></i></a>
+                                        <li class="f-l"><a href="">{{trans('messages.blog')}} <i class="ti-angle-down"></i></a>
                                             <ul class="submenu">
                                                 @foreach($categoryPost as $cate)
-                                                    @if($cate->url != 'mindfulness-practice')
-                                                        <li><a href="/list-blogs/{{$cate->url}}">{{$cate->title}}</a></li>
-                                                    @endif
+                                                    <li><a href="/list-blogs/{{$cate->url}}">{{$cate->title}}</a></li>
                                                 @endforeach
                                             </ul>
-                                        </li>--}}
-                                        <li class="f-l"><a href="/list-blogs/mindful-traveling">{{trans('messages.mindful_traveling')}}</a></li>
-                                        <li class="f-l"><a href="/list-blogs/mindfulness-practice">{{trans('messages.mindfulness_practice')}}</a></li>
+                                        </li>
+                                        {{--<li class="f-l"><a href="/list-blogs/mindful-traveling">{{trans('messages.mindful_traveling')}}</a></li>
+                                        <li class="f-l"><a href="/list-blogs/mindfulness-practice">{{trans('messages.mindfulness_practice')}}</a></li>--}}
                                         <li class="f-l"><a href="/contact">{{trans('messages.contact')}}</a></li>
                                         <li class="f-r">
                                             <a class="btn-shop " href="https://didaudodi.com/" target='_blank' style="padding: 10px 20px 10px 20px;border-radius:0;top:-10px">{{trans('messages.shop')}}</a>
