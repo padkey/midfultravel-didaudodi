@@ -132,12 +132,11 @@
         .content_center {
             padding-left: 12px;
             padding-right: 0px;
-
         }
         .container-mission{
             width: 100%;
             margin:auto;
-            padding-left: 20px;
+            /*padding-left: 20px;*/
         }
         .mission-title {
             margin-left: 10px;
@@ -163,34 +162,44 @@
         .section-title h1 {
             font-size: 43px;
         }
+        .row {
+            margin-left: 0;margin-right: 0;
+        }
+        .row {
+            margin-left: 0;margin-right: 0;
+        }
 
     }
 
-
-
-
+    .image-earth {
+        width: 200px;
+    }
+    .image-earth img   {
+        width: 100%;
+    }
 	</style>
     <style>
 
     </style>
-    @if($blockShortAboutUs != null)
         <div class="row" style=" margin-right: 0;margin-left: 0;">
             <hr width=60%>
             <div class="container xtc">
+                {{--<div class="image-earth">
+                    <img src="{{url('/frontend/images/green-planet.gif')}}" alt="">
+                </div>--}}
                 <h4 class="title-welcome mt-12 fadeInDown wow" data-wow-delay="200ms">
                      {{trans('messages.welcome_to_our')}}
                 </h4>
                 <h2 class="title-short-about-us mt-12 fadeInUp wow" data-wow-delay="200ms">
                     {{trans('messages.slogan_line_1')}}
+
                 </h2>
                 <h5 class=" mt-12 fadeInDown wow" data-wow-delay="200ms">
                     {{trans('messages.slogan_line_2')}}
-
                 </h5>
-                <a href="/about-us" class="btn primary-btn fadeInUp wow" data-wow-delay="200ms"> <span>About us</span> </a>
+                <a href="/about-us" class="btn primary-btn fadeInUp wow" data-wow-delay="200ms"> <span>{{trans('messages.about_us')}}</span> </a>
             </div>
         </div>
-    @endif
     @if($blockOurMission != null)
      <div class="mission_area" >
         <div class="container-mission">
@@ -203,7 +212,7 @@
                 <div class="col-xl-6 col-lg-12 content_center wow fadeInRight" data-wow-delay="0.8s">
                     <div class="mission-title section-title">
                         <h1>{{trans('messages.mission')}}</h1>
-                        <h3>Our happy clients</h3>
+                        <h3>{{trans('messages.spread_happiness')}}</h3>
                     </div>
                     <div class="mission_content ">{!! $blockOurMission->content !!} </div>
                     <div class="btn-xemthem">
@@ -404,7 +413,7 @@
     <div class="area_core_value ">
         <div class="container_value">
             <div class="section-title text-center pt-80">
-                <h3 class="text-center"> Mindful Travel </h3>
+                <h3 class="text-center"> {{trans('messages.we_love')}} </h3>
                 <h1 >
                     {{trans('messages.value')}}
                 </h1>
@@ -514,11 +523,9 @@
             width: 100%;
         }
         .our_tour_title {
-            margin-left: 20px;
         }
         .our_tour_content{
             width: 95%;
-            padding-left: 20px;
         }
         .our_tour_xt{
             margin-left: 20px;
@@ -526,16 +533,17 @@
         .ourToursImage img {
             border-radius: 0;
         }
+
     }
 	</style>
     @if($blockOurTour != null)
     <div class="generated_area">
         <div class="container-our-tour">
-            <div class="row" >
+            <div class="row">
                 <div class="col-xl-6 col-lg-12   wow fadeInLeft" data-wow-delay="0.5s">
                     <div class="our_tour_title section-title">
                         <h1>{{trans('messages.our_tours')}}</h1>
-                        <h3>Giving you a memorable experience</h3>
+                        <h3>{{trans('messages.bringing_you')}}</h3>
                     </div>
                     <div class="our_tour_content">
                         {!! $blockOurTour->content !!}
@@ -756,14 +764,7 @@
             transition: 0.1s;
         }
 
-        .owl-prev{
-            color: black!important;
-            left: -20px!important;
-        }
-        .owl-next{
-            color: black!important;
-            right: -20px!important;
-        }
+
 
         .owl-nav div:hover{
             /* background: darkseagreen!important; */
@@ -811,7 +812,7 @@
                 <div class="row mb-40">
                     <div class="col-xl-12">
                         <div class="section-title text-center mb-20 mt-80">
-                            <h3 class="title-top">Our products</h3>
+                            <h3 class="title-top">{{trans('messages.everyone_likes')}}</h3>
                             <h1>{{trans('messages.popular_tours')}}</h1>
                         </div>
                         {{--<div class="section-icon">
@@ -909,7 +910,7 @@
                     <div class="col-xl-12">
                         <div class="title_ttp mb-20 pt-20">
                             <h1>{{trans('messages.tours_took_place')}}</h1>
-                            <h3>See past tours
+                            <h3> {{trans('messages.previous_tours')}}
                             </h3>
                         </div>
                         {{--<div class="section-icon">
@@ -1071,7 +1072,6 @@
             width: 100%;
 
 
-
         }
         .popup-video {
             position:relative;
@@ -1106,7 +1106,7 @@
     <div class="video_area2" >
     <div class="title_video container-pop-tour mb-40 pt-20">
         <h1>{{trans('messages.our_journey')}}</h1>
-        <h3 >Enjoy the journey together</h3>
+        {{--<h3 >Enjoy the journey together</h3>--}}
         <!-- <hr style="margin-bottom:50px;">   -->
     </div>
         <div class="video-container">
@@ -1178,6 +1178,7 @@
             margin-bottom: 0;
             font-style: normal;
             font-weight: 800;
+            font-family: "Cormorant Garamond"!important;
         }
         .name-companion h5 {
             font-size: 18px;
@@ -1229,9 +1230,7 @@
 
 
         .caption p{
-            font-size: 17px;
-            font-weight: 500;
-            margin: 2px 0 12px 0;
+
         }
         .caption .social-links i:hover{
             color: #0c52a1;
@@ -1242,6 +1241,12 @@
             display: -webkit-box;
             -webkit-line-clamp: 10;
             -webkit-box-orient: vertical;
+        }
+        .desc-companion span,p{
+            font-family: "Playfair Display"!important;
+            font-size: 15px;
+            font-weight: 500;
+            margin: 2px 0 12px 0;
         }
         .title-companion{
             text-align: center;
@@ -1592,7 +1597,7 @@
                 <div class="row">
                     <div class="col-xl-12">
                         <div class="section-title mb-30 mt-80">
-                            <h3 class="text-center">Share experiences</h3>
+                            <h3 class="text-center">{{trans('messages.share_experiences')}}</h3>
                             <h1 class="text-center">{{trans('messages.mindful_travel_blog')}}</h1>
                         </div>
                     </div>

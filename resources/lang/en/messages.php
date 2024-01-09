@@ -86,4 +86,11 @@ return [
     'welcome_to_our' => 'Welcome to our',
     'slogan_line_1' => 'We offer mindfulness tours globally.',
     'slogan_line_2' => 'We are committed to creating a positive impact on the environment and local communities through sustainability and social responsibility programs.',
+    'we_love' => 'We love',
+    'bringing_you' => 'Bringing you a memorable experience',
+    'spread_happiness' => 'Spread happiness',
+    'everyone_likes' => 'Everyone likes',
+    'previous_tours' => 'Previous tours',
+    'share_experiences' => 'Share experiences',
+
 ];
