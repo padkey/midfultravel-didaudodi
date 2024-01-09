@@ -143,22 +143,26 @@
             font-weight: 700!important;
             /*font-size: 20px;*/
         }
+        .owl-prev{
+            margin-left: -60px!important;
+        }
+        .owl-next{
+            margin-right: -60px!important;
+        }
         .owl-carousel .owl-nav div {
-            background: bisque;
-            background-color: rgba(255,255,255,0.9);
-            color: #a29e9e;
+            background-color: #ffdfd2;
+            color: #ffff;
             font-size: 18px;
-            border: 1px solid rgba(227, 227, 227, 0.16);
+            /*border: 1px solid rgba(227, 227, 227, 0.16);*/
+            width: 43px!important;
+            height: 43px!important;
         }
         .owl-carousel .owl-nav div i{
             font-weight: 900;
+            top: -5px!important;
         }
-        .owl-prev{
-            left: -30px!important;
-        }
-        .owl-next{
-            right: -30px!important;
-        }
+
+
 
         .owl-nav div:hover{
             background: #faf1eb!important;

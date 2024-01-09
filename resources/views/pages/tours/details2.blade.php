@@ -976,8 +976,6 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
         font-size: 12px;
     }
     .caption p{
-        font-size: 17px;
-        font-weight: 500;
         margin: 2px 0 12px 0;
     }
     .caption .social-links i:hover{
@@ -989,6 +987,15 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
         display: -webkit-box;
         -webkit-line-clamp: 10;
         -webkit-box-orient: vertical;
+    }
+    .desc-companion span,p{
+        font-family: "Playfair Display"!important;
+        font-size: 15px;
+        margin: 2px 0 12px 0;
+        color: rgba(77,66,58,0.76)!important;
+        letter-spacing: 0.5px!important;
+        color: rgba(77,66,58,0.76)!important;
+        line-height: 165%;
     }
     .title-companion{
         text-align: center;

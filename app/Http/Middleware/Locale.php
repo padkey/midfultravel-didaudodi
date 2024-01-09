@@ -30,7 +30,7 @@ class Locale
             ->where('url','!=','show-home-left')->get();
         $logoWhite = Banner::with('items')->where('uuid','logo_white')->first();
         $logoBlack = Banner::with('items')->where('uuid','logo_black')->first();
-        $allPartnership = PartnershipModel::with('partnershipBranch')->get();
+        $allPartnership = PartnershipModel::with('partnershipBranch')->where('locale_code',$language)->get();
         View::share(compact('categoryPost','logoWhite','logoBlack','allPartnership'));
 
         return $next($request);
