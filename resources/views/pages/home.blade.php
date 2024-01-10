@@ -128,6 +128,27 @@
         float:right;
         font-size: 18px;
     }
+    @media (max-width: 990px)  {
+        .mission-title h1{
+            text-align: left;
+        }
+        .mission-title h3{
+            text-align: left;
+        }
+        .our_tour_title h1{
+            text-align: left;
+        }
+        .our_tour_title h3{
+            text-align: left;
+        }
+        .title-ttp h1 {
+            text-align: center;
+        }
+        .title-ttp h3 {
+            text-align: center;
+        }
+    }
+
     @media (max-width: 990px) {
         .content_center {
             padding-left: 12px;
@@ -156,12 +177,23 @@
             font-size: 16px;
             letter-spacing: 1px;
         }
+        .xtc h2{
+            font-size: 35px;
+            letter-spacing: 1px;
+            margin-top:0px;
+        }
+        .xtc h4{
+            font-size: 34px;
+            margin: 0;
+        }
         .btn-xt{
             margin-right: 20px;
         }
         .section-title h1 {
             font-size: 43px;
         }
+
+
         .row {
             margin-left: 0;margin-right: 0;
         }
@@ -190,7 +222,7 @@
                 <h4 class="title-welcome mt-12 fadeInDown wow" data-wow-delay="200ms">
                      {{trans('messages.welcome_to_our')}}
                 </h4>
-                <h2 class="title-short-about-us mt-12 fadeInUp wow" data-wow-delay="200ms">
+                <h2 class="title-short-about-us  fadeInUp wow" data-wow-delay="200ms">
                     {{trans('messages.slogan_line_1')}}
 
                 </h2>
@@ -274,7 +306,7 @@
         }
 
         .text-box{
-            padding: 20px 30px;
+            padding: 20px 20px;
             background: #FFFFFF;
             position: relative;
             font-size: 15px;
@@ -311,7 +343,6 @@
            content: '';
             position: absolute;
             width: 12px;
-            height: 200px;
             background: #FFFFFF;
             top: 0;
             left: 50%;
@@ -326,10 +357,11 @@
                 height: 0;
             }
             100% {
-                height: calc(100% - 300px);
+                height: calc(100%);
             }
 
         }
+
         .text-box h2 {
             font-weight: 600;
         }
@@ -399,6 +431,9 @@
                 border-left: 0;
                 left: -12px;
             }
+            .value-end {
+                height: calc(100% + 100px);
+            }
         }
         .core_value_title h1{
             color: #8b572a;
@@ -414,14 +449,14 @@
         <div class="container_value">
             <div class="section-title text-center pt-80">
                 <h3 class="text-center"> {{trans('messages.we_love')}} </h3>
-                <h1 >
+                <h1>
                     {{trans('messages.value')}}
                 </h1>
             </div>
             <div class="timeline">
                 <div class="single_value left-container">
                     <img src="{{url('frontend/images/mental-health.gif')}}" alt="" class="wow fadeIn" data-wow-delay="500ms">
-                    <div class="text-box wow fadeInLeftBig" data-wow-delay="400ms">
+                    <div class="text-box wow fadeInLeft" data-wow-delay="400ms">
                         <h2> {{$valueMindfulness->title}}</h2>
                         <div class="content-single-value">
                              {!! $valueMindfulness->content !!}
@@ -433,7 +468,7 @@
                     <div class="image_value">
                         <img src="{{url('frontend/images/volunteering.gif')}}" alt="" class="wow fadeIn" data-wow-delay="800ms">
                     </div>
-                    <div class="text-box wow fadeInRightBig" data-wow-delay="700ms">
+                    <div class="text-box wow fadeInRight" data-wow-delay="700ms">
                         <h2> {{$valueConnection->title}}</h2>
                         <div class="content-single-value">
                             {!!  $valueConnection->content!!}
@@ -444,7 +479,7 @@
                 </div>
                 <div class="single_value left-container">
                     <img src="{{url('frontend/images/eco-earth.gif')}}" alt="" class="wow fadeIn" data-wow-delay="1100ms">
-                    <div class="text-box wow fadeInLeftBig" data-wow-delay="1000ms">
+                    <div class="text-box wow fadeInLeft" data-wow-delay="1000ms">
                         <h2> {{$valueSustainability->title}}</h2>
                         <div class="content-single-value">
                              {!! $valueSustainability->content  !!}
@@ -453,9 +488,9 @@
 
                     </div>
                 </div>
-                <div class="single_value right-container value-end" style="height: 300px">
+                <div class="single_value right-container value-end" >
                     <img src="{{url('frontend/images/kindness.gif')}}" alt="" class="wow fadeIn" data-wow-delay="1400ms">
-                    <div class="text-box wow fadeInRightBig" data-wow-delay="1300ms">
+                    <div class="text-box wow fadeInRight" data-wow-delay="1300ms">
                         <h2> {{$valuePersonalGrowth->title}}</h2>
                         <div class="content-single-value">
                           {!! $valuePersonalGrowth->content !!}
@@ -477,7 +512,7 @@
         /* background-image: url("frontend/images/banner2.png"); */
         /* background-color:white; */
 		padding: 50px 0px;
-        margin-top:100px;
+        margin-top:50px;
         padding-bottom:30px;
         margin-bottom:50px;
     }
@@ -738,7 +773,8 @@
                 width: 95%;
             }
             .event-label {
-                font-size: 16px;
+                font-size: 15px;
+                font-weight: 900;
             }
         }
         .single_offers h2{
@@ -779,31 +815,23 @@
         .bg-w{
             background-color:#FFFFFF!important;
         }
-        .title_ttp{
-            text-align: left;
-            border-top: 1px solid #4c423a;
-            padding: 10px 0 10px 0;
-        }
-        .title_ttp h1{
-            color: #8b572a;
-            text-transform: uppercase;
-            font-family: 'Playfair Display', serif!important;
-            color: #4c423a;
-            margin: 0;
-        }
-        .title_ttp h3{
-            font-family: 'Great Vibes',handwriting!important;
-            color: #c1955d;
-            font-size: 34px;
-            margin: 0;
-        }
         .position_tour {
             width: 43px;
             display: flex;
+            font-size: 23px;
         }
         .position_tour img {
             width: 100%;
             object-fit: cover;
+        }
+        @media (max-width: 990px)  {
+            .pop-title h1{
+                text-align: center;
+            }
+            .pop-title h3{
+                text-align: center;
+            }
+
         }
     </style>
     <div class="offers_area bg-pink" >
@@ -811,8 +839,8 @@
             <div class="container-pop-tour">
                 <div class="row mb-40">
                     <div class="col-xl-12">
-                        <div class="section-title text-center mb-20 mt-80">
-                            <h3 class="title-top">{{trans('messages.everyone_likes')}}</h3>
+                        <div class="section-title pop-title text-center mb-20 mt-80">
+                            <h3>{{trans('messages.everyone_likes')}}</h3>
                             <h1>{{trans('messages.popular_tours')}}</h1>
                         </div>
                         {{--<div class="section-icon">
@@ -873,23 +901,10 @@
         .bg-w{
             background-color:#FFFFFF!important;
         }
-        .title_ttp{
+        .title-ttp{
             text-align: left;
             border-top: 1px solid #4c423a;
             padding: 10px 0 10px 0;
-        }
-        .title_ttp h1{
-            color: #8b572a;
-            text-transform: uppercase;
-            font-family: 'Playfair Display', serif!important;
-            color: #4c423a;
-            margin: 0;
-        }
-        .title_ttp h3{
-            font-family: 'Great Vibes',handwriting!important;
-            color: #c1955d;
-            font-size: 34px;
-            margin: 0;
         }
         .position_tour {
             width: 43px;
@@ -908,7 +923,7 @@
             <div class="container-pop-tour" style="">
                 <div class="row ">
                     <div class="col-xl-12">
-                        <div class="title_ttp mb-20 pt-20">
+                        <div class="section-title title-ttp mb-20 pt-20">
                             <h1>{{trans('messages.tours_took_place')}}</h1>
                             <h3> {{trans('messages.previous_tours')}}
                             </h3>
@@ -1015,6 +1030,10 @@
             animation: radio-btn 1.5s linear infinite;*/
 
         }
+        .title_video {
+            text-align: right;
+            border-top: 1px solid #4c423a;
+        }
 
         @media (max-width: 1200px) {
             .video-container{
@@ -1034,12 +1053,15 @@
             .fa-play{
              font-size:1.5rem;
             }
+            .title_video h3,h1{
+                text-align: center;
+            }
         }
         @media (max-width: 750px) {
             .video-container{
                 display:grid;
                 grid-template-columns: 1fr ;
-                width:95%;
+                width:90%;
                 margin:auto;
             }
             .icon-play{
@@ -1077,23 +1099,7 @@
             position:relative;
             display:block;
         }
-        .title_video {
-            text-align: right;
-            border-top: 1px solid #4c423a;
-        }
-        .title_video h1{
-            color: #8b572a;
-            text-transform: uppercase;
-            font-family: 'Playfair Display', serif!important;
-            color: #4c423a;
-            margin: 0;
-        }
-        .title_video h3{
-            font-family: 'Great Vibes',handwriting!important;
-            color: #c1955d;
-            font-size: 34px;
-            margin: 0;
-        }
+
 
 
         .title-author{
@@ -1104,7 +1110,7 @@
 
     </style>
     <div class="video_area2" >
-    <div class="title_video container-pop-tour mb-40 pt-20">
+    <div class="title_video section-title container-pop-tour mb-40 pt-20">
         <h1>{{trans('messages.our_journey')}}</h1>
         {{--<h3 >Enjoy the journey together</h3>--}}
         <!-- <hr style="margin-bottom:50px;">   -->
@@ -1115,7 +1121,7 @@
                        $delayV = 100;
                    @endphp
                 @foreach($videos as $video)
-                        <div class="single_video wow fadeInDownBig" data-wow-delay="{{$delayV}}ms">
+                        <div class="single_video wow fadeInDown" data-wow-delay="{{$delayV}}ms">
                             <div class="thumbnail-video">
                                 <a href="/{{$video->url_video}}" class="popup-video">
                                     <img src="{{url('uploads/'.$video->image_thumbnail)}}" alt=""  >
@@ -1125,7 +1131,6 @@
                             </div>
                             <div class="">
                                 <h3 class="title-video">{{$video->title}}</h3>
-                                <p class="title-author">- {{$video->author}}</p>
                                 <p></p>
                             </div>
                         </div>
@@ -1358,7 +1363,6 @@
             }
             .name-companion h3{
                 font-size: 20px;
-                color: #8B572A;
             }
             .profile-card .img img{
                 height: 220px;
@@ -1411,7 +1415,7 @@
                             $delayC = 100;
                         @endphp
                         @foreach($companions as $companion)
-                            <div class="profile-card fadeInRight wow"  data-wow-delay="{{$delayC}}ms">
+                            <div class="profile-card fadeInUp wow"  data-wow-delay="{{$delayC}}ms">
                                 <div class="img">
                                     <img src="{{url('uploads/'.$companion->avatar)}}" alt=""  >
                                     <div class="name-companion">
