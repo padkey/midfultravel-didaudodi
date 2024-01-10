@@ -583,7 +583,7 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
                     $delayS = 100;
                 @endphp
                 @foreach($tour->tourSchedule as $key => $schedule)
-                    <div class="schedule-day-{{$schedule->id}} wow fadeInDown" data-wow-delay="{{$delayS}}ms">
+                    <div class="schedule-day-{{$schedule->id}} wow fadeInLeft" data-wow-delay="{{$delayS}}ms">
                         <div class="title-schedule" data-id="{{$schedule->id}}" data-position="{{$schedule->position}}">
                             <span class="icon-close icon-action-{{$schedule->id}} down-up-action">   </span>
                             <span class="day-title">{{$schedule->title}} </span>
@@ -597,7 +597,7 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
                         </div>
                     </div>
                 @php
-                    $delayS = $delayS + 200;
+                    $delayS = $delayS + 10;
                 @endphp
                 @endforeach
                 <input type="hidden" class="region" value="{{$tour->region}}">
@@ -619,7 +619,7 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
         font-weight: 900;
         font-size: 22px;
         transition: 0.5s;
-
+        font-family: "Cormorant Garamond"!important;
     }
     .btn-enquire:hover{
         background-color: #7fb254;
@@ -988,7 +988,16 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
         -webkit-line-clamp: 10;
         -webkit-box-orient: vertical;
     }
-    .desc-companion span,p{
+    .desc-companion span{
+        font-family: "Playfair Display"!important;
+        font-size: 15px;
+        margin: 2px 0 12px 0;
+        color: rgba(77,66,58,0.76)!important;
+        letter-spacing: 0.5px!important;
+        color: rgba(77,66,58,0.76)!important;
+        line-height: 165%;
+    }
+    .desc-companion p{
         font-family: "Playfair Display"!important;
         font-size: 15px;
         margin: 2px 0 12px 0;
@@ -1086,7 +1095,7 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
         font-size: 26px;
     }
     .desc-partner p{
-        color: #FFFFFF;
+        color: #FFFFFF!important;
         font-size: 17px;
     }
     .image-partner img{
@@ -1097,6 +1106,7 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
     .mt-20 {
         margin-top:20px;
     }
+    .
 </style>
 <div class="partner-area mt-100">
     <div class="container">
@@ -1151,6 +1161,14 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
             margin: auto;
             font-size: 28px;
         }
+        .btn-enquire-yellow {
+            background-color: #ffe277;
+            color: black!important;
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
     </style>
 <div class="contact mt-180 bg-pink-1">
     <div class="container">
@@ -1159,7 +1177,7 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
             <div class="title-center" style=" margin-bottom: 0px;">
                 <h1 class="hightlight-underline-green">{{trans('messages.get_in_touch')}}</h1>
                 <h2 class="title-contact">{{trans('messages.get_in_touch_desc')}}</h2>
-                <button type="button" class="btn btn-shop mt-20" data-toggle="modal" data-target="#model-enquire">
+                <button type="button" class="btn btn-enquire-yellow mt-20" data-toggle="modal" data-target="#model-enquire">
                     {{trans('messages.enquire')}}
                 </button>
             </div>

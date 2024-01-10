@@ -144,30 +144,31 @@
             /*font-size: 20px;*/
         }
         .owl-prev{
-            margin-left: -60px!important;
+            margin-left: -50px!important;
         }
         .owl-next{
-            margin-right: -60px!important;
+            margin-right: -50px!important;
         }
         .owl-carousel .owl-nav div {
-            background-color: #ffdfd2;
+            background-color: #ffebe2;
             color: #ffff;
             font-size: 18px;
             /*border: 1px solid rgba(227, 227, 227, 0.16);*/
-            width: 43px!important;
-            height: 43px!important;
+            width: 50px!important;
+            height: 50px!important;
+            top: 38%;
         }
         .owl-carousel .owl-nav div i{
             font-weight: 900;
-            top: -5px!important;
+            top: -1px!important;
         }
-
-
 
         .owl-nav div:hover{
             background: #faf1eb!important;
             border: 1px solid #ffff;
+            background: darkseagreen!important;
         }
+
         .mt-50{
             margin-top: 50px;
         }
