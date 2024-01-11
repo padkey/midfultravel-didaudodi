@@ -44,7 +44,7 @@
     }
     @media (max-width: 900px) {
         .content-about p,span {
-            font-size: 20px!important;
+            font-size: 18px!important;
         }
     }
  </style>
