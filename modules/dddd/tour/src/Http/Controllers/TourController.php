@@ -187,8 +187,8 @@ class TourController extends AdminController
 /*            $form->tmeditor(TourModel::COL_IMPORTANT_INFORMATION, __("Important Information"));*/
             $form->tmeditor('important_info_1', __("Our Service"));
             $form->tmeditor('important_info_2', __("Tour Condition"));
-            $form->tmeditor('important_info_3', __("Condition in euro"));
-            $form->tmeditor('important_info_4', __("Retreats schedule"));
+            $form->tmeditor('important_info_3', __("Terms & Condition"));
+            $form->tmeditor('important_info_4', __("Retreats Schedule"));
 
             $form->multipleSelect('partnershipBranch','Partnership Branch')
                 ->options(PartnershipBranch::all()->pluck('address','id'))

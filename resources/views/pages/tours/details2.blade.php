@@ -243,19 +243,19 @@
         font-size: 25px!important;
         font-weight: 900!important;
     }
+    @media (max-width: 1000px) {
+        .cacdiemden {
+            font-size: 16px;
+        }
+        .short_desc {
+            font-size: 16px!important;
+        }
+        .content-trip span,p {
+            font-size: 16px!important;
+        }
+    }
 </style>
-	<!-- Start Sample Area -->
-	<{{--section class="sample-text-area">
-		<div class="container box_1170">
-			<h3 class="text-heading">Chuyến đi cộng đồng khám phá đất nước sau chiến tranh</h3>
-			<p class="sample-text">
-Một chuyến đi du lịch có trách nhiệm coi cuộc gặp gỡ với người dân địa phương là thời điểm trung tâm của trải nghiệm du lịch, khiến chuyến đi trở thành cơ hội không thể bỏ qua để so sánh các nền văn hóa khác nhau, tìm hiểu những dân tộc khác, truyền thống, thói quen và phong tục của họ, với quan điểm về văn hóa. trao đổi. Hơn nữa, đây còn là cơ hội để hiểu sâu hơn về một nền văn hóa khác với nền văn hóa của mình, tiếp xúc trực tiếp với thực tế xã hội của một đất nước, những khó khăn, bi kịch và hy vọng thay đổi của nó.
-“Gặp Việt Nam, hành trình cộng đồng khám phá đất nước ngoài chiến tranh” là trải nghiệm đưa du khách tìm hiểu về lịch sử và tinh thần của một dân tộc chống lại bộ máy quân sự hung hãn của Mỹ nửa sau thế kỷ 20, và thậm chí trước cả cuộc xâm lược của Pháp, Trung Quốc và Mông Cổ. Bằng cách đấu tranh, người dân Việt Nam đã giữ được nền văn hóa ngàn năm vẫn còn tồn tại cho đến ngày nay trong gia đình, trong các tu viện Phật giáo trên núi và trong sự đa dạng của các dân tộc gồm 53 nhóm khác nhau. Chính trong sự đa dạng này, chúng ta sẽ "vượt ra ngoài chiến tranh", để khám phá và hiểu những điểm giao thoa văn hóa rất hấp dẫn về mặt con người: chúng ta sẽ ở bên các gia đình, chúng ta sẽ hiểu rõ hơn về những người nông dân, chúng ta sẽ đắm mình vào những vấn đề hàng ngày liên quan đến phần lớn người dân Việt Nam, chúng ta sẽ tập Thái Cực Quyền, và chúng ta sẽ đến thăm những địa điểm linh thiêng mà Thiền sư vĩ đại "Thích Nhất Hạnh", ứng cử viên giải Nobel Hòa bình, thường xuyên lui tới vì hoạt động chống lại chiến tranh ở Việt Nam, qua đời vào ngày 22 tháng 1 năm 2022, để cùng tham dự các buổi lễ và thực hành tâm linh cùng với các đệ tử của mình. Chúng tôi cũng sẽ đến thăm những "cảnh quan hoàn hảo về mặt hình học" rất nổi tiếng do các đồn điền trồng lúa tạo ra và chúng tôi sẽ đến thăm các dự án nhỏ của các tổ chức phi chính phủ, có giá trị cấu trúc và kinh tế xã hội to lớn cho nhiều cộng đồng và các nhóm dân tộc nhỏ. Ứng cử viên giải Nobel Hòa bình vì hoạt động chống chiến tranh ở Việt Nam, đã qua đời vào ngày 22 tháng 1 năm 2022, để cùng tham dự các buổi lễ và thực hành tâm linh cùng với các đệ tử của mình. Chúng tôi cũng sẽ đến thăm những "cảnh quan hoàn hảo về mặt hình học" rất nổi tiếng do các đồn điền trồng lúa tạo ra và chúng tôi sẽ đến thăm các dự án nhỏ của các tổ chức phi chính phủ, có giá trị cấu trúc và kinh tế xã hội to lớn cho nhiều cộng đồng và các nhóm dân tộc nhỏ. Ứng cử viên giải Nobel Hòa bình vì hoạt động chống chiến tranh ở Việt Nam, đã qua đời vào ngày 22 tháng 1 năm 2022, để cùng tham dự các buổi lễ và thực hành tâm linh cùng với các đệ tử của mình. Chúng tôi cũng sẽ đến thăm những "cảnh quan hoàn hảo về mặt hình học" rất nổi tiếng do các đồn điền trồng lúa tạo ra và chúng tôi sẽ đến thăm các dự án nhỏ của các tổ chức phi chính phủ, có giá trị cấu trúc và kinh tế xã hội to lớn cho nhiều cộng đồng và các nhóm dân tộc nhỏ.
-Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những bãi biển tuyệt vời của Việt Nam để tái tạo cơ thể và tinh thần trước khi trở lại cuộc sống thường ngày.
-			</p>
-		</div>
-	</section>--}}
-	<!-- End Sample Area -->
+
      <div class="overview-area">
          <div class="container mb-65">
                  <div class="section-icon fadeInUp wow" data-wow-delay="100ms">
@@ -350,7 +350,7 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
     }*/
 </style>
     <div class="highlight-area bg-pink-1 mt-100 ">
-        <div class="section-icon  fadeInUp wow" data-wow-delay="100ms" style="top:-45px">
+        <div class="section-icon  fadeInUp wow" data-wow-delay="10ms" style="top:-45px">
             <img src="{{url('/frontend/images/hightlight.png')}}" alt="">
             <div class="title-center">
                 <h1 class="hightlight-underline-white" >{{trans('messages.trip_highlights')}}</h1>
@@ -361,9 +361,9 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
         <div class="container">
             <div class="row content-trip">
                 <div class="col-xl-6 col-lg-11 image-l">
-                    <img class="image-li  fadeInLeft wow" data-wow-delay="200ms" src="{{url('/uploads/'.$tour->image_trip_highlights)}}" alt="">
+                    <img class="image-li  fadeInLeft wow" data-wow-delay="50ms" src="{{url('/uploads/'.$tour->image_trip_highlights)}}" alt="">
                 </div>
-                <div class="col-xl-6 col-lg-11 c_margin content-right fadeInRight wow" data-wow-delay="200ms">
+                <div class="col-xl-6 col-lg-11 c_margin content-right fadeInRight wow" data-wow-delay="50ms">
                     {!! $tour->trip_highlights !!}
                 </div>
             </div>
@@ -565,6 +565,11 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
                 object-fit: cover;
             }
         }
+        @media (max-width: 1000px) {
+            .decs-schedule p,span {
+                font-size: 16px!important;
+            }
+        }
     </style>
     <div class="schedule-area mt-100">
         <div class="container">
@@ -711,6 +716,16 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
             padding: 25px 0px 0px 0px;
             transition: 0.2s;
         }
+        .tab-content span,p {
+            font-size: 16px!important;
+            font-family: 'Open Sans',sans-serif!important;
+            font-weight: 500;
+        }
+        #myTabContent img {
+            width: 100%;
+            object-fit: cover;
+            height: auto;
+        }
     }
 </style>
     <div class="important-info-area mt-100">
@@ -724,29 +739,29 @@ Kết thúc chuyến đi, chúng ta còn có cơ hội thư giãn trên những 
 
         <div class="tabs">
             <ul class="nav nav-tabs" id="myTab" role="tablist">
-                <li class="nav-item fadeInLeft wow" data-wow-delay="200ms" role="presentation">
+                <li class="nav-item fadeInDown wow" data-wow-delay="100ms" role="presentation">
                     <button class="nav-link active" id="home-tab" data-toggle="tab" data-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">
                         {{trans('messages.our_service')}}
                     </button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link fadeInLeft wow" data-wow-delay="400ms" id="profile-tab" data-toggle="tab" data-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">
+                    <button class="nav-link fadeInDown wow" data-wow-delay="200ms" id="profile-tab" data-toggle="tab" data-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">
                         {{trans('messages.tour_condition')}}
                     </button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link fadeInLeft wow" data-wow-delay="600ms" id="contact-tab" data-toggle="tab" data-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">
+                    <button class="nav-link fadeInDown wow" data-wow-delay="300ms" id="contact-tab" data-toggle="tab" data-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">
                         {{trans('messages.condition_in_euro')}}
                     </button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link fadeInLeft wow" data-wow-delay="800ms" id="practice-tab" data-toggle="tab" data-target="#practice" type="button" role="tab" aria-controls="practice" aria-selected="false">
+                    <button class="nav-link fadeInDown wow" data-wow-delay="400ms" id="practice-tab" data-toggle="tab" data-target="#practice" type="button" role="tab" aria-controls="practice" aria-selected="false">
                         {{trans('messages.retreats_schedule')}}
                     </button>
                 </li>
             </ul>
             <div class="tab-content" id="myTabContent">
-                <div class="tab-pane fade show active fadeInLeft wow" data-wow-delay="200ms" id="home" role="tabpanel" aria-labelledby="home-tab">{!! $tour->important_info_1 !!}</div>
+                <div class="tab-pane fade show active fadeIn wow" data-wow-delay="100ms" id="home" role="tabpanel" aria-labelledby="home-tab">{!! $tour->important_info_1 !!}</div>
                 <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">{!! $tour->important_info_2 !!}</div>
                 <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">{!! $tour->important_info_3 !!}</div>
                 <div class="tab-pane fade" id="practice" role="tabpanel" aria-labelledby="practice-tab">{!! $tour->important_info_4 !!}</div>
