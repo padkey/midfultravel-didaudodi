@@ -18,7 +18,7 @@
     .content_contact p,span {
         font-weight: 200;
         line-height: 165%;
-        font-size: 22px;
+        font-size: 22px!important;
         font-family: 'Playfair Display', serif!important;
         letter-spacing: 0.5px!important;
         color: rgba(77,66,58,0.76)!important;
@@ -41,6 +41,11 @@
     .container-about{
         width: 75%;
         margin: auto;
+    }
+    @media (max-width: 900px) {
+        .content-about p,span {
+            font-size: 20px!important;
+        }
     }
  </style>
 
