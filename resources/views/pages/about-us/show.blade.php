@@ -41,14 +41,15 @@
                     .content-about {
                         width: 100%;
                     }
-                    .content-about img{
-                        width: 100%;
-                        object-fit: cover;
-                        height: auto;
-                    }
+
                     @media (max-width: 900px) {
                         .content-about p,span{
-                            font-size: 20px!important;
+                            font-size: 18px!important;
+                        }
+                        .content-about img{
+                            width: 100%;
+                            object-fit: cover;
+                            height: auto;
                         }
                     }
                 </style>
