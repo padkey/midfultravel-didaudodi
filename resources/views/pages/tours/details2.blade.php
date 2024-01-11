@@ -361,9 +361,9 @@
         <div class="container">
             <div class="row content-trip">
                 <div class="col-xl-6 col-lg-11 image-l">
-                    <img class="image-li  fadeInLeft wow" data-wow-delay="50ms" src="{{url('/uploads/'.$tour->image_trip_highlights)}}" alt="">
+                    <img class="image-li  fadeInUp wow" data-wow-delay="50ms" src="{{url('/uploads/'.$tour->image_trip_highlights)}}" alt="">
                 </div>
-                <div class="col-xl-6 col-lg-11 c_margin content-right fadeInRight wow" data-wow-delay="50ms">
+                <div class="col-xl-6 col-lg-11 c_margin content-right fadeInUp wow" data-wow-delay="50ms">
                     {!! $tour->trip_highlights !!}
                 </div>
             </div>
@@ -584,11 +584,9 @@
                 <img src="{{url('/uploads/'.$tour->image_map)}}" alt="">
             </div>
             <div>
-                @php
-                    $delayS = 100;
-                @endphp
+
                 @foreach($tour->tourSchedule as $key => $schedule)
-                    <div class="schedule-day-{{$schedule->id}} wow fadeInLeft" data-wow-delay="{{$delayS}}ms">
+                    <div class="schedule-day-{{$schedule->id}} ">
                         <div class="title-schedule" data-id="{{$schedule->id}}" data-position="{{$schedule->position}}">
                             <span class="icon-close icon-action-{{$schedule->id}} down-up-action">   </span>
                             <span class="day-title">{{$schedule->title}} </span>
@@ -601,9 +599,6 @@
                             {!! $schedule->description !!}
                         </div>
                     </div>
-                @php
-                    $delayS = $delayS + 10;
-                @endphp
                 @endforeach
                 <input type="hidden" class="region" value="{{$tour->region}}">
             </div>
@@ -1052,11 +1047,8 @@
         <input type="hidden" value="{{count($companions)}}" class="companionNumber">
         <div class="team-profile owl-five owl-carousel  owl-theme">
             @if($companions != null)
-                @php
-                    $delayC = 100;
-                @endphp
                 @foreach($companions as $companion)
-                    <div class="profile-card wow fadeInLeft" data-wow-delay="{{$delayC}}ms">
+                    <div class="profile-card wow fadeInUp" data-wow-delay="100ms">
                         <div class="img">
                             <img src="{{url('uploads/'.$companion->avatar)}}" alt=""  >
                             <div class="name-companion">
@@ -1071,9 +1063,6 @@
                             </div>
                         </div>
                     </div>
-                    @php
-                        $delayC = $delayC + 200;
-                    @endphp
                 @endforeach
             @endif
         </div>
@@ -1187,7 +1176,7 @@
     </style>
 <div class="contact mt-180 bg-pink-1">
     <div class="container">
-        <div class="section-icon wow zoomIn" data-wow-delay="100ms">
+        <div class="section-icon wow zoomIn" data-wow-delay="10ms">
             <img src="{{url('/frontend/images/message1.png')}}" alt="" style="border-radius:0px; top: -45px">
             <div class="title-center" style=" margin-bottom: 0px;">
                 <h1 class="hightlight-underline-green">{{trans('messages.get_in_touch')}}</h1>
