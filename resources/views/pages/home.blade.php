@@ -219,14 +219,14 @@
                 {{--<div class="image-earth">
                     <img src="{{url('/frontend/images/green-planet.gif')}}" alt="">
                 </div>--}}
-                <h4 class="title-welcome mt-12 fadeInDown wow" data-wow-delay="200ms">
+                <h4 class="title-welcome mt-12 fadeInDown wow" data-wow-delay="100ms">
                      {{trans('messages.welcome_to_our')}}
                 </h4>
-                <h2 class="title-short-about-us  fadeInUp wow" data-wow-delay="200ms">
+                <h2 class="title-short-about-us  fadeInUp wow" data-wow-delay="100ms">
                     {{trans('messages.slogan_line_1')}}
 
                 </h2>
-                <h5 class=" mt-12 fadeInDown wow" data-wow-delay="200ms">
+                <h5 class=" mt-12 fadeInDown wow" data-wow-delay="100ms">
                     {{trans('messages.slogan_line_2')}}
                 </h5>
                 <a href="/about-us" class="btn primary-btn fadeInUp wow" data-wow-delay="200ms"> <span>{{trans('messages.about_us')}}</span> </a>
@@ -236,12 +236,12 @@
      <div class="mission_area" >
         <div class="container-mission">
             <div class="row">
-                <div class="col-xl-6 col-lg-12 content_center wow fadeInLeft" data-wow-delay="0.5s">
+                <div class="col-xl-6 col-lg-12 content_center wow fadeInUp" data-wow-delay="0.1s">
                     <div class="mb-20px mission-image ">
                         <img src="{{url('uploads/'.$blockOurMission->image_one)}}" alt=""  >
                     </div>
                 </div>
-                <div class="col-xl-6 col-lg-12 content_center wow fadeInRight" data-wow-delay="0.8s">
+                <div class="col-xl-6 col-lg-12 content_center wow fadeInUp" data-wow-delay="0.1s">
                     <div class="mission-title section-title">
                         <h1>{{trans('messages.mission')}}</h1>
                         <h3>{{trans('messages.spread_happiness')}}</h3>
@@ -455,8 +455,8 @@
             </div>
             <div class="timeline">
                 <div class="single_value left-container">
-                    <img src="{{url('frontend/images/mental-health.gif')}}" alt="" class="wow fadeIn" data-wow-delay="500ms">
-                    <div class="text-box wow fadeInLeft" data-wow-delay="400ms">
+                    <img src="{{url('frontend/images/mental-health.gif')}}" alt="" class="wow fadeInDown" data-wow-delay="100ms">
+                    <div class="text-box wow fadeInDown" data-wow-delay="100ms">
                         <h2> {{$valueMindfulness->title}}</h2>
                         <div class="content-single-value">
                              {!! $valueMindfulness->content !!}
@@ -466,9 +466,9 @@
                 </div>
                 <div class="single_value right-container">
                     <div class="image_value">
-                        <img src="{{url('frontend/images/volunteering.gif')}}" alt="" class="wow fadeIn" data-wow-delay="800ms">
+                        <img src="{{url('frontend/images/volunteering.gif')}}" alt="" class="wow fadeInDown" data-wow-delay="100ms">
                     </div>
-                    <div class="text-box wow fadeInRight" data-wow-delay="700ms">
+                    <div class="text-box wow fadeInDown" data-wow-delay="100ms">
                         <h2> {{$valueConnection->title}}</h2>
                         <div class="content-single-value">
                             {!!  $valueConnection->content!!}
@@ -478,8 +478,8 @@
                     </div>
                 </div>
                 <div class="single_value left-container">
-                    <img src="{{url('frontend/images/eco-earth.gif')}}" alt="" class="wow fadeIn" data-wow-delay="1100ms">
-                    <div class="text-box wow fadeInLeft" data-wow-delay="1000ms">
+                    <img src="{{url('frontend/images/eco-earth.gif')}}" alt="" class="wow fadeInDown" data-wow-delay="100ms">
+                    <div class="text-box wow fadeInDown" data-wow-delay="100ms">
                         <h2> {{$valueSustainability->title}}</h2>
                         <div class="content-single-value">
                              {!! $valueSustainability->content  !!}
@@ -489,8 +489,8 @@
                     </div>
                 </div>
                 <div class="single_value right-container value-end" >
-                    <img src="{{url('frontend/images/kindness.gif')}}" alt="" class="wow fadeIn" data-wow-delay="1400ms">
-                    <div class="text-box wow fadeInRight" data-wow-delay="1300ms">
+                    <img src="{{url('frontend/images/kindness.gif')}}" alt="" class="wow fadeInDown" data-wow-delay="100ms">
+                    <div class="text-box wow fadeInDown" data-wow-delay="100ms">
                         <h2> {{$valuePersonalGrowth->title}}</h2>
                         <div class="content-single-value">
                           {!! $valuePersonalGrowth->content !!}
@@ -575,7 +575,7 @@
     <div class="generated_area">
         <div class="container-our-tour">
             <div class="row">
-                <div class="col-xl-6 col-lg-12   wow fadeInLeft" data-wow-delay="0.5s">
+                <div class="col-xl-6 col-lg-12   wow fadeInDown" data-wow-delay="0.1s">
                     <div class="our_tour_title section-title">
                         <h1>{{trans('messages.our_tours')}}</h1>
                         <h3>{{trans('messages.bringing_you')}}</h3>
@@ -587,7 +587,7 @@
                         <button class="btn btn-earth our_tour_xt"> {{trans('messages.see_more')}} </button>
                     </div>--}}
                 </div>
-                <div class="col-xl-6 col-lg-12 content_center wow zoomIn" data-wow-delay="0.5s" >
+                <div class="col-xl-6 col-lg-12 content_center wow zoomIn" data-wow-delay="0.1s" >
                     <div class="ourToursImage">
                         <img src="{{url('uploads/'.$blockOurTour->image_one)}}" alt=""   loading="lazy">
                     </div>
@@ -1411,11 +1411,9 @@
                 <input type="hidden" value="{{count($companions)}}" class="companionNumber">
                 <div class="team-profile owl-five owl-carousel  owl-theme">
                     @if($companions != null)
-                        @php
-                            $delayC = 100;
-                        @endphp
+
                         @foreach($companions as $companion)
-                            <div class="profile-card fadeInUp wow"  data-wow-delay="{{$delayC}}ms">
+                            <div class="profile-card fadeInUp wow"  data-wow-delay="100ms">
                                 <div class="img">
                                     <img src="{{url('uploads/'.$companion->avatar)}}" alt=""  >
                                     <div class="name-companion">
@@ -1430,9 +1428,7 @@
                                     </div>
                                 </div>
                             </div>
-                            @php
-                                $delayC = $delayC + 200;
-                            @endphp
+
                         @endforeach
                     @endif
                 </div>

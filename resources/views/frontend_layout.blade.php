@@ -150,13 +150,15 @@
             margin-right: -50px!important;
         }
         .owl-carousel .owl-nav div {
+            /*
             background-color: #ffebe2;
-            color: #ffff;
+            */
+            color: black;
             font-size: 18px;
-            /*border: 1px solid rgba(227, 227, 227, 0.16);*/
+            border: 1px solid rgba(159, 159, 159, 0.16);
             width: 50px!important;
             height: 50px!important;
-            top: 38%;
+            top: 50%;
         }
         .owl-carousel .owl-nav div i{
             font-weight: 900;
@@ -164,9 +166,10 @@
         }
 
         .owl-nav div:hover{
-            background: #faf1eb!important;
-            border: 1px solid #ffff;
-            background: darkseagreen!important;
+            background: transparent!important;
+            border: 1px solid darkseagreen;
+            color: darkseagreen!important;
+            /*background: darkseagreen!important;*/
         }
 
         .mt-50{
