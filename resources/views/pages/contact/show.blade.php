@@ -15,6 +15,15 @@
 		margin-bottom:40px;
 
 	}
+    .content_contact p,span {
+        font-weight: 200;
+        line-height: 165%;
+        font-size: 22px;
+        font-family: 'Playfair Display', serif!important;
+        letter-spacing: 0.5px!important;
+        color: rgba(77,66,58,0.76)!important;
+        line-height: 165%;
+    }
     .content-about p,span {
         font-weight: 200;
         line-height: 165%;
@@ -24,10 +33,9 @@
         color: rgba(77,66,58,0.76)!important;
         line-height: 165%;
     }
-    .title-about h1{
+    .title_contact h1{
         color: #8b572a;
         text-transform: uppercase;
-        text-align: center;
         font-family: 'Playfair Display', serif!important;
     }
     .container-about{
