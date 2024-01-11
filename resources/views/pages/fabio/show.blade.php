@@ -29,6 +29,14 @@
             text-align: center;
             font-family: 'Playfair Display', serif!important;
         }
+        .content-about {
+            width: 100%;
+        }
+        .content-about img{
+            width: 100%;
+            object-fit: cover;
+            height: auto;
+        }
     </style>
     @if($page != null)
     <section class="about mb-100 pt-30">

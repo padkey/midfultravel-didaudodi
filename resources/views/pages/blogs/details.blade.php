@@ -30,6 +30,14 @@
        .widget_title {
            font-size: 38px!important;
        }
+
+       @media (max-width: 900px) {
+           .blog_details img {
+               width: 100%!important;
+               object-fit: cover;
+               height: auto;
+           }
+       }
    </style>
    <section class="blog_area single-post-area mb-100">
       <div class="container">

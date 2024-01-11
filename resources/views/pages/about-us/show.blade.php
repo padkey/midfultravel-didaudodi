@@ -38,7 +38,14 @@
                     .bg-pink{
                         background-color: #f9f3ed;
                     }
-
+                    .content-about {
+                        width: 100%;
+                    }
+                    .content-about img{
+                        width: 100%;
+                        object-fit: cover;
+                        height: auto;
+                    }
                 </style>
                 <section class="about mb-100">
                     <div class="container-about">
