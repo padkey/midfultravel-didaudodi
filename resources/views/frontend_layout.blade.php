@@ -652,7 +652,7 @@
                                             {{$partnership->name}}
                                         </h3>
                                         @foreach($partnership->partnershipBranch as $branch)
-                                            <p class="footer_content_address"><a href="{{$branch->link_website}}"> - {{$branch->name}}</a></p>
+                                            <p class="footer_content_address"><a href="{{$branch->link_website}}"> - {{$branch->address}}</a></p>
                                         @endforeach
 
 

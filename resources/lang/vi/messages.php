@@ -63,7 +63,7 @@ return [
     'important_information' => 'THÔNG TIN QUAN TRỌNG',
     'our_service' => 'Dịch vụ của chúng tôi',
     'tour_condition'=> 'Điều kiện tham quan',
-    'condition_in_euro' => 'Tình hình Châu Âu',
+    'condition_in_euro' => 'Các điều khoản',
     'schedule_practice' => 'Lịch trình thực hành',
     'get_in_touch' => 'LIÊN LẠC',
     'get_in_touch_desc' => "Chúng tôi thích nói chuyện du lịch. Nếu bạn có bất kỳ câu hỏi nào, xin vui lòng liên hệ. Chúng tôi ở đây để giúp đỡ!",

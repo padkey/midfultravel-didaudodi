@@ -60,7 +60,7 @@ return [
     'important_information' => 'IMPORTANT INFORMATION',
     'our_service' => 'Our service',
     'tour_condition'=> 'Tour condition',
-    'condition_in_euro' => 'Condition in euro',
+    'condition_in_euro' => 'Terms & Condition',
     'schedule_practice' => 'Schedule practice',
     'get_in_touch' => 'GET IN TOUCH',
     'get_in_touch_desc' => "We love to talk travel. If you have any questions, please don't hesitate to get in touch. We're here to help!",
