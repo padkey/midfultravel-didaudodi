@@ -191,7 +191,7 @@ class TourController extends AdminController
             $form->tmeditor('important_info_4', __("Retreats schedule"));
 
             $form->multipleSelect('partnershipBranch','Partnership Branch')
-                ->options(PartnershipBranch::all()->pluck('name','id'))
+                ->options(PartnershipBranch::all()->pluck('address','id'))
                 //->default(Request::capture()->query('partnership_branch_id'))
                 ->required();
 

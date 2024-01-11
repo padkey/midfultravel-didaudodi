@@ -15,14 +15,27 @@
 		margin-bottom:40px;
 
 	}
+    .content-about p,span {
+        font-weight: 200;
+        line-height: 165%;
+        font-size: 22px;
+        font-family: 'Playfair Display', serif!important;
+        letter-spacing: 0.5px!important;
+        color: rgba(77,66,58,0.76)!important;
+        line-height: 165%;
+    }
+    .title-about h1{
+        color: #8b572a;
+        text-transform: uppercase;
+        text-align: center;
+        font-family: 'Playfair Display', serif!important;
+    }
+    .container-about{
+        width: 75%;
+        margin: auto;
+    }
+ </style>
 
- </style>
- <style>
-     .container-about{
-         width: 75%;
-         margin: auto;
-     }
- </style>
  @if($page != null)
     <section class="mb-100">
             <div class="container-about">
@@ -35,7 +48,7 @@
                             {!! $page->content !!}
 						</div>
 
-						<!-- <div class="media_contact row">
+						{{--<div class="media_contact row">
 							<div class="media contact-info col-lg-4">
 								<span class="contact-info__icon"><i class="ti-home"></i></span>
 								<div class="media-body">
@@ -57,7 +70,7 @@
 									<p>Send us your query anytime!</p>
 								</div>
 							</div>
-						</div> -->
+						</div>--}}
 					</div>
 
 				</div>
