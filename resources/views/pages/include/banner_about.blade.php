@@ -1,7 +1,9 @@
 <style>
     .breadcam_bg_1{
-        background-image: url("frontend/images/banner2.png");
-
+        /*background-image: url("frontend/images/banner2.png");
+*/
+    }
+    .logo-img {
     }
     .about-page-logo {
        justify-content:center;
@@ -13,7 +15,7 @@
         align-items:center!important;
         display:flex!important;
         width: 90%;
-        /* justify-content:center; */
+        margin: auto;
     }
     .logo-img{
         width: 75%;
@@ -30,8 +32,9 @@
             margin: auto;
         }
     }
+
 </style>
-<div class="about-page-area">
+<div class="about-page-area ">
     <div class="about-page-logo">
         <div class="logo-img">
             <a href="/">

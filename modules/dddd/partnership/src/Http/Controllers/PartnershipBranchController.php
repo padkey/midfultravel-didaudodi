@@ -73,6 +73,7 @@ class PartnershipBranchController extends AdminController
             $arrayLocale
         )->setWidth(4, 2);
         $form->text('name', 'Name')->required();
+        //777 x 430px
         $form->image('image','Image')->uniqueName()->required();
         $form->text('address', 'Address');
         $form->text('link_website', 'Link Website');
