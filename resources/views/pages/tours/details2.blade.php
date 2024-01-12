@@ -735,28 +735,28 @@
         <div class="tabs">
             <ul class="nav nav-tabs" id="myTab" role="tablist">
 
-                @if ($tour->important_info_1 !== '')
+                @if ($tour->important_info_1 != '')
                     <li class="nav-item fadeInDown wow" data-wow-delay="100ms" role="presentation">
                         <button class="nav-link active" id="home-tab" data-toggle="tab" data-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">
                             {{trans('messages.our_service')}}
                         </button>
                     </li>
                 @endif
-                @if ($tour->important_info_2 !== '')
+                @if ($tour->important_info_2 != '')
                     <li class="nav-item" role="presentation">
                         <button class="nav-link fadeInDown wow" data-wow-delay="200ms" id="profile-tab" data-toggle="tab" data-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">
                             {{trans('messages.tour_condition')}}
                         </button>
                     </li>
                 @endif
-                @if ($tour->important_info_3 !== '')
+                @if ($tour->important_info_3 != '')
                     <li class="nav-item" role="presentation">
                         <button class="nav-link fadeInDown wow" data-wow-delay="300ms" id="contact-tab" data-toggle="tab" data-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">
                             {{trans('messages.condition_in_euro')}}
                         </button>
                     </li>
                 @endif
-                @if ($tour->important_info_4 !== '')
+                @if ($tour->important_info_4 != '')
                     <li class="nav-item" role="presentation">
                         <button class="nav-link fadeInDown wow" data-wow-delay="400ms" id="practice-tab" data-toggle="tab" data-target="#practice" type="button" role="tab" aria-controls="practice" aria-selected="false">
                             {{trans('messages.retreats_schedule')}}
@@ -766,16 +766,16 @@
 
             </ul>
             <div class="tab-content" id="myTabContent">
-                @if ($tour->important_info_1 !== '')
+                @if ($tour->important_info_1 != '')
                     <div class="tab-pane fade show active fadeIn wow" data-wow-delay="100ms" id="home" role="tabpanel" aria-labelledby="home-tab">{!! $tour->important_info_1 !!}</div>
                 @endif
-                @if ($tour->important_info_2 !== '')
+                @if ($tour->important_info_2 != '')
                         <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">{!! $tour->important_info_2 !!}</div>
                 @endif
-                @if ($tour->important_info_3 !== '')
+                @if ($tour->important_info_3 != '')
                         <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">{!! $tour->important_info_3 !!}</div>
                 @endif
-                @if ($tour->important_info_4 !== '')
+                @if ($tour->important_info_4 != '')
                         <div class="tab-pane fade" id="practice" role="tabpanel" aria-labelledby="practice-tab">{!! $tour->important_info_4 !!}</div>
                 @endif
             </div>
