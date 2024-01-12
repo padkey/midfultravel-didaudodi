@@ -80,7 +80,7 @@ class TourScheduleController extends AdminController
     {
         $form = new Form(new TourSchedule);
         $form->text('title', 'title')->required();
-        $form->text('sub_title', 'sub_title')->required();
+        $form->text('sub_title', 'sub_title');
         $form->text('position', 'position')->required();
         $form->text('meal', 'Meals')->rules("required");
         $form->tmeditor('description', 'description')->required();
