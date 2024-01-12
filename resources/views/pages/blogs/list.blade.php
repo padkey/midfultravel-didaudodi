@@ -151,7 +151,7 @@
                 <div class="col-lg-7 mb-5 mb-lg-0">
                     <div class="blog_left_sidebar">
                         @foreach($listPosts as $post)
-                        <article class="blog_item wow fadeIn" data-wow-delay="300ms">
+                        <article class="blog_item ">
                             <div class="blog_item_img">
                                 <img class="card-img rounded-0" src="{{url('/uploads/'.$post->image_thumbnail)}}" alt="">
                                 {{--<a href="#" class="blog_item_date">

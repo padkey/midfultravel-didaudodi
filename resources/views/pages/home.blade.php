@@ -147,6 +147,9 @@
         .title-ttp h3 {
             text-align: center;
         }
+        .mission_content span,p{
+            font-size: 16px!important;
+        }
     }
 
     @media (max-width: 990px) {
@@ -568,6 +571,9 @@
         .ourToursImage img {
             border-radius: 0;
         }
+        .our_tour_content span,p{
+            font-size: 16px!important;
+        }
 
     }
 	</style>
@@ -575,7 +581,7 @@
     <div class="generated_area">
         <div class="container-our-tour">
             <div class="row">
-                <div class="col-xl-6 col-lg-12   wow fadeInDown" data-wow-delay="0.1s">
+                <div class="col-xl-6 col-lg-12 ">
                     <div class="our_tour_title section-title">
                         <h1>{{trans('messages.our_tours')}}</h1>
                         <h3>{{trans('messages.bringing_you')}}</h3>
@@ -587,7 +593,7 @@
                         <button class="btn btn-earth our_tour_xt"> {{trans('messages.see_more')}} </button>
                     </div>--}}
                 </div>
-                <div class="col-xl-6 col-lg-12 content_center wow zoomIn" data-wow-delay="0.1s" >
+                <div class="col-xl-6 col-lg-12 content_center wow zoomIn" >
                     <div class="ourToursImage">
                         <img src="{{url('uploads/'.$blockOurTour->image_one)}}" alt=""   loading="lazy">
                     </div>
@@ -1121,7 +1127,7 @@
                        $delayV = 100;
                    @endphp
                 @foreach($videos as $video)
-                        <div class="single_video wow fadeInDown" data-wow-delay="{{$delayV}}ms">
+                        <div class="single_video wow fadeInUp" data-wow-delay="{{$delayV}}ms">
                             <div class="thumbnail-video">
                                 <a href="/{{$video->url_video}}" class="popup-video">
                                     <img src="{{url('uploads/'.$video->image_thumbnail)}}" alt=""  >
@@ -1604,12 +1610,9 @@
                 </div>
                 <div class="row">
                     <div class="col-xl-3 col-lg-3">
-                        @php
-                            $delayLB = 150;
-                        @endphp
                         @if($blogPostsLeft != null)
                             @foreach($blogPostsLeft as $post)
-                                <div class="blog_left_sidebar fadeIn wow"  data-wow-delay="{{$delayLB}}ms">
+                                <div class="blog_left_sidebar ">
                                     <article class="blog_item">
                                         <div class="blog_item_img">
                                             <img class="card-img rounded-0 small-image-blog" src="{{url('/uploads/'.$post->image_thumbnail)}}" alt="">
@@ -1621,9 +1624,6 @@
                                         </div>
                                     </article>
                                 </div>
-                                @php
-                                    $delayLB = $delayLB +50;
-                                @endphp
                             @endforeach
                         @endif
 
@@ -1637,10 +1637,9 @@
                             @endphp
                             @if($blogPostsCenter != null)
                                 @foreach($blogPostsCenter as $post)
-                                    <article class="blog_item {{$flex}} fadeIn wow" data-wow-delay="{{$delayLB}}ms">
+                                    <article class="blog_item {{$flex}}">
                                         <div class="blog_item_img">
                                             <img class="card-img rounded-0 " src="{{url('/uploads/'.$post->image_thumbnail)}}" alt="">
-
                                         </div>
 
                                         <div class="{{$small}}">
@@ -1653,7 +1652,6 @@
                                     @php
                                         $small = 'small-blog-details';
                                         $flex = 'center-small-blog';
-                                            $delayLB = $delayLB + 50;
                                             $smallCenter = '-lr'
 
                                     @endphp
@@ -1664,7 +1662,7 @@
                     <div class="col-xl-3 col-lg-3">
                         @if($blogPostsRight != null)
                             @foreach($blogPostsRight as $post)
-                                <div class="blog_left_sidebar fadeIn wow" data-wow-delay="{{$delayLB}}ms">
+                                <div class="blog_left_sidebar ">
                                     <article class="blog_item">
                                         <div class="blog_item_img">
                                             <img class="card-img rounded-0 small-image-blog" src="{{url('/uploads/'.$post->image_thumbnail)}}" alt="">
@@ -1676,9 +1674,6 @@
                                         </div>
                                     </article>
                                 </div>
-                                @php
-                                    $delayLB = $delayLB + 50;
-                                @endphp
                             @endforeach
                         @endif
 
