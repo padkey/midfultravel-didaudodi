@@ -595,7 +595,9 @@
                             @endif
                         </div>
                         <div class="content-schedule-{{$schedule->id}} dis-none decs-schedule mt-20 mb-20">
-                            <h4 class="green-2 font-bold mb-20"><span class="img-subtitle"><img src="{{url('/frontend/images/position7.png')}}" alt="" ></span>{{$schedule->sub_title}}</h4>
+                            @if($schedule->sub_title != '')
+                                <h4 class="green-2 font-bold mb-20"><span class="img-subtitle"><img src="{{url('/frontend/images/position7.png')}}" alt="" ></span>{{$schedule->sub_title}}</h4>
+                            @endif
                             {!! $schedule->description !!}
                         </div>
                     </div>
