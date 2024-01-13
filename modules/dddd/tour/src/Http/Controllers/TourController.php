@@ -2,6 +2,7 @@
 
 namespace DDDD\Tour\Http\Controllers;
 
+use DDDD\Blog\Models\Companion;
 use DDDD\Blog\Models\Locale;
 use DDDD\Tour\Models\TourModel;
 use Encore\Admin\Auth\Permission;
@@ -189,6 +190,11 @@ class TourController extends AdminController
             $form->tmeditor('important_info_2', __("Tour Condition"));
             $form->tmeditor('important_info_3', __("Terms & Condition"));
             $form->tmeditor('important_info_4', __("Retreats Schedule"));
+
+            $form->multipleSelect('companion','Companions')
+                ->options(Companion::all()->pluck('name','id'))
+                //->default(Request::capture()->query('partnership_branch_id'))
+                ->required();
 
             $form->multipleSelect('partnershipBranch','Partnership Branch')
                 ->options(PartnershipBranch::all()->pluck('address','id'))

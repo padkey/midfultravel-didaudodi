@@ -167,7 +167,13 @@
         margin-top: 80px;
     }
     .bg-pink-1{
-        background: #faf1eb!important;
+        background: #f9f3ed!important;
+    }
+    .pop-color {
+        padding-bottom: 43px;
+        background-color: transparent;
+        background-image: radial-gradient(at top center,#FFFFFF 0%,#F9F3ED00 65%),radial-gradient(at bottom left ,#FFFFFF 0%,#F9F3ED00 31%)
+        ,radial-gradient(at bottom right ,#FFFFFF 0%,#F9F3ED00 43%),radial-gradient(at bottom  ,#FFFFFF 0%,#F9F3ED00 43%);
     }
 
     .c_margin{
@@ -348,8 +354,11 @@
         font-size:26px!important;
         color: #004e42!important;
     }*/
+    .content-right ul {
+        list-style-image: url('sqpurple.gif');
+    }
 </style>
-    <div class="highlight-area bg-pink-1 mt-100 ">
+    <div class="highlight-area bg-pink-1 mt-100  pop-color">
         <div class="section-icon  fadeInUp wow" data-wow-delay="10ms" style="top:-45px">
             <img src="{{url('/frontend/images/hightlight.png')}}" alt="">
             <div class="title-center">
@@ -1064,10 +1073,10 @@
         <h1 class="hightlight-underline-white" >{{trans('messages.companions')}}</h1>
     </div>--}}
     <div class="companion-container">
-        <input type="hidden" value="{{count($companions)}}" class="companionNumber">
+        <input type="hidden" value="{{count($tour->companion)}}" class="companionNumber">
         <div class="team-profile owl-five owl-carousel  owl-theme">
             @if($companions != null)
-                @foreach($companions as $companion)
+                @foreach($tour->companion as $companion)
                     <div class="profile-card wow fadeInUp" data-wow-delay="100ms">
                         <div class="img">
                             <img src="{{url('uploads/'.$companion->avatar)}}" alt=""  >
@@ -1195,7 +1204,7 @@
         }
     </style>
 <div class="contact mt-180 bg-pink-1">
-    <div class="container">
+    <div class="container ">
         <div class="section-icon wow zoomIn" data-wow-delay="10ms">
             <img src="{{url('/frontend/images/message1.png')}}" alt="" style="border-radius:0px; top: -45px">
             <div class="title-center" style=" margin-bottom: 0px;">

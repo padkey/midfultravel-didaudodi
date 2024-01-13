@@ -2,6 +2,7 @@
 
 namespace DDDD\Tour\Models;
 
+use DDDD\Blog\Models\Companion;
 use DDDD\Partnership\Models\PartnershipBranch;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
@@ -134,6 +135,9 @@ class TourModel extends Model
      }
     public function partnershipBranch(){
          return $this->belongsToMany(PartnershipBranch::class,'tour_partnership_branch','tour_id','partnership_branch_id');
+    }
+    public function companion(){
+        return $this->belongsToMany(Companion::class,'tour_companion','tour_id','companion_id');
     }
     // public function categories()
     // {

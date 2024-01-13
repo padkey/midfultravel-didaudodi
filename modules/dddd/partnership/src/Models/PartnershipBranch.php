@@ -71,7 +71,7 @@ class PartnershipBranch extends Model
         return self::COL_URL;
     }
     public function tourPartnershipBranch(){
-        return $this->belongsToMany(PartnershipBranch::class,'tour_partnership_branch','tour_id','partnership_branch_id');
+        return $this->belongsToMany(PartnershipBranch::class,'tour_partnership_branch','partnership_branch_id','tour_id');
     }
     /**
      * @param $pictures
