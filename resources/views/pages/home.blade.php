@@ -446,7 +446,6 @@
             margin: 0;
         }
 
-
     </style>
     <div class="area_core_value ">
         <div class="container_value">

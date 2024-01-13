@@ -88,9 +88,9 @@
                         </aside>--}}
 
                         <aside class="single_sidebar_widget post_category_widget">
-                            <h1 class="widget_title">Category</h1>
+                            <h1 class="widget_title">{{trans('messages.category')}}</h1>
                             <ul class="list cat-list">
-                                @php $delayCB = 200 @endphp
+                                @php $delayCB = 100 @endphp
                                 @foreach($categoryPost as $cate)
                                     <li class="wow fadeInDown" data-wow-delay="{{$delayCB}}ms">
                                         <a href="/list-blogs/{{$cate->url}}" class="d-flex">
@@ -98,7 +98,7 @@
                                             <!-- <p>(37)</p> -->
                                         </a>
                                     </li>
-                                    @php $delayCB = $delayCB + 200 @endphp
+                                    @php $delayCB = $delayCB + 100 @endphp
 
                                 @endforeach
                             </ul>
