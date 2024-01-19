@@ -239,12 +239,12 @@
      <div class="mission_area" >
         <div class="container-mission">
             <div class="row">
-                <div class="col-xl-6 col-lg-12 content_center wow fadeInUp" data-wow-delay="0.1s">
+                <div class="col-xl-6 col-lg-12 content_center wow fadeInUp element" data-wow-delay="0.1s">
                     <div class="mb-20px mission-image ">
                         <img src="{{url('uploads/'.$blockOurMission->image_one)}}" alt=""  >
                     </div>
                 </div>
-                <div class="col-xl-6 col-lg-12 content_center wow fadeInUp" data-wow-delay="0.1s">
+                <div class="col-xl-6 col-lg-12 content_center wow fadeInUp element" data-wow-delay="0.1s">
                     <div class="mission-title section-title">
                         <h1>{{trans('messages.mission')}}</h1>
                         <h3>{{trans('messages.spread_happiness')}}</h3>
@@ -592,7 +592,7 @@
                         <button class="btn btn-earth our_tour_xt"> {{trans('messages.see_more')}} </button>
                     </div>--}}
                 </div>
-                <div class="col-xl-6 col-lg-12 content_center wow zoomIn" >
+                <div class="col-xl-6 col-lg-12 content_center  wow zoomIn" >
                     <div class="ourToursImage">
                         <img src="{{url('uploads/'.$blockOurTour->image_one)}}" alt=""   loading="lazy">
                     </div>

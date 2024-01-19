@@ -1159,7 +1159,7 @@
                     </div>
                     <div class="desc-partner">
                         <h3 style="margin-left: 5px;">{{$partnershipBranch->name}}</h3>
-                        <p style="margin-left: 5px;">Address : {{$partnershipBranch->address}}</p>
+                        <p style="margin-left: 5px;">{{trans('messages.address')}} : {{$partnershipBranch->address}}</p>
                     </div>
                 </a>
             </div>

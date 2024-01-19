@@ -16,20 +16,21 @@ class TourController extends Controller
     {
         $locale_code =   config('app.locale');
         $tours = TourModel::where('locale_code',$locale_code)->where('is_active',1)->get();
-
-        // ----------- SEO -----------\\
-        $metaDes = 'Danh sách tour du lịch chánh niệm';
-        $metaKeywords = 'anh sách tour du lịch chánh niệm';
-        $metaTitle = 'Danh sách tour du lịch chánh niệm';
-        $urlCanonical = $req->url();
-        // ----------- End Seo -----------\\
-
-        return view('pages.tours.list_tours')->with(compact('tours','metaDes','metaTitle','metaKeywords','urlCanonical'));
+        if (count($tours) > 0) {
+            // ----------- SEO -----------\\
+            $metaDes = 'Danh sách tour du lịch chánh niệm';
+            $metaKeywords = 'anh sách tour du lịch chánh niệm';
+            $metaTitle = 'Danh sách tour du lịch chánh niệm';
+            $urlCanonical = $req->url();
+            // ----------- End Seo -----------\\
+            return view('pages.tours.list_tours')->with(compact('tours','metaDes','metaTitle','metaKeywords','urlCanonical'));
+        }
+       abort(404);
     }
     public function showDetails($url, Request $req)
     {
         $locale_code =   config('app.locale');
-        $currentDate = Carbon::now();
+        /*$currentDate = Carbon::now();*/
 
         $companions = Companion::where('locale_code',$locale_code)->take(4)->get();
         $blackgroundCompanion = Block::where('locale_code',$locale_code)->where('code','blackground_companion')->first();
@@ -38,14 +39,20 @@ class TourController extends Controller
             }])->where('locale_code',$locale_code)
             ->where('url',$url)->where('is_active',1)->first();
 
-        // ----------- SEO -----------\\
-        $metaDes = $tour->meta_description;
-        $metaKeywords =$tour->meta_keywords;
-        $metaTitle = $tour->meta_title;
-        $urlCanonical = $req->url();
-        // ----------- End Seo -----------\\
 
 
+        if($tour) {
+            // ----------- SEO -----------\\
+            $metaDes = $tour->meta_description;
+            $metaKeywords =$tour->meta_keywords;
+            $metaTitle = $tour->meta_title;
+            $urlCanonical = $req->url();
+            // ----------- End Seo -----------\\
+
+            return view('pages.tours.details2')->with(compact('tour','companions',
+                'blackgroundCompanion','metaDes','metaTitle','metaKeywords','urlCanonical'));
+        }
+        abort(404);
         /* $toursTookPlace = TourModel::where('locale_code',$locale_code)
              ->where('url',$url)->where('is_active',1)->where('date_end','>',$currentDate)->get();*/
 /*
@@ -79,8 +86,7 @@ class TourController extends Controller
             return redirect('/');
         }
         $geojson =  json_encode($geojson);*/
-        return view('pages.tours.details2')->with(compact('tour','companions',
-            'blackgroundCompanion','metaDes','metaTitle','metaKeywords','urlCanonical'));
+
 
     }
     public function showDetails2()  //$url

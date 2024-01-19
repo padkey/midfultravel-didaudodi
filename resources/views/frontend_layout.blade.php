@@ -199,6 +199,23 @@
             letter-spacing: 1px;
             font-weight: 600;
         }
+        /* Kiểu CSS cho màn hình điện thoại */
+        @media screen and (max-width: 767px) {
+            /* Các quy tắc CSS cho màn hình điện thoại */
+            .primary-btn{
+                font-size: 12px;
+            }
+        }
+
+        /* Kiểu CSS cho màn hình tablet */
+        @media screen and (min-width: 768px) and (max-width: 991px) {
+            /* Các quy tắc CSS cho màn hình tablet */
+        }
+
+        /* Kiểu CSS cho màn hình máy tính để bàn */
+        @media screen and (min-width: 992px) {
+            /* Các quy tắc CSS cho màn hình máy tính để bàn */
+        }
         .primary-btn:hover{
             /*
             background-color: #024f43;
@@ -759,6 +776,20 @@
     @yield('script')
     <script>
        // $('.change-language').
+       // Kiểm tra xem người dùng truy cập bằng điện thoại hay không
+       function isMobileDevice() {
+           return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
+       }
+
+       // Xóa class fadeIn nếu người dùng truy cập bằng điện thoại
+       if (isMobileDevice()) {
+           var element = document.querySelector('.element');
+           element.classList.remove('fadeIn');
+           element.classList.remove('fadeInDown');
+           element.classList.remove('fadeInUp');
+           element.classList.remove('wow');
+
+       }
     </script>
     <script>
         $('.btn-xt').click(function(){

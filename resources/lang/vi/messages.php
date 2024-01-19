@@ -96,5 +96,6 @@ return [
     'everyone_likes' => 'Mọi người đều thích',
     'previous_tours' => 'Các tour đã qua',
     'share_experiences' => 'Chia sẻ kinh nghiệm',
+    'address' => 'Địa chỉ'
 
 ];
