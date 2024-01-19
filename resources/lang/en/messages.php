@@ -92,5 +92,6 @@ return [
     'everyone_likes' => 'Everyone likes',
     'previous_tours' => 'Previous tours',
     'share_experiences' => 'Share experiences',
+    'address' => 'Address'
 
 ];

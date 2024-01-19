@@ -101,7 +101,7 @@
     <div class="slider_active owl-three owl-carousel owl-theme">
         <div class="single_slider d-flex align-items-center  slider_bg_1">
             <div class="container" style="margin-top: 10px; ">
-                 <div class=" logo-top logo-image wow fadeIn" data-wow-delay="0.1s">
+                 <div class="element logo-top logo-image wow fadeIn" data-wow-delay="0.1s">
                      <a href="/">
 {{--
                          <img src="{{url('uploads/'.$logoWhite->items[0]->path_desktop)}}" alt="">
@@ -112,7 +112,7 @@
 --}}
                     </a>
                 </div>
-               <div class="logo-image logo-bottom wow fadeIn" data-wow-delay="0.2s">
+               <div class="logo-image element logo-bottom wow fadeIn" data-wow-delay="0.2s">
                     <a href="/">
                         <img src="{{url('uploads/'.$sloganImage->items[0]->path_desktop)}}" alt="">
                     </a>
