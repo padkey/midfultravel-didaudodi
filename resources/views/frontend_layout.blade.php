@@ -184,7 +184,7 @@
         .primary-btn {
             display: block;
             color: #2b2b2b;
-            font-size: 18px;
+            font-size: 16px;
             border: 1px solid #707070;
             position: relative;
             max-width: 430px;
@@ -204,6 +204,14 @@
             /* Các quy tắc CSS cho màn hình điện thoại */
             .primary-btn{
                 font-size: 12px;
+            }
+            .event-label {
+                font-size: 12px;
+                font-weight: 900;
+            }
+            .title-offer {
+                font-size: 28px;
+                font-weight: 900;
             }
         }
 

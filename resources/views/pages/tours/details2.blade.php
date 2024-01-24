@@ -589,7 +589,7 @@
                     <h2 class="tour-name">{{$tour->name}}</h2>
                 </div>
             </div>
-            <div id='map2' class="fadeInDown wow" data-wow-delay="200ms">
+            <div id='map2' class="fadeInUp wow" data-wow-delay="200ms">
                 <img src="{{url('/uploads/'.$tour->image_map)}}" alt="">
             </div>
             <div>

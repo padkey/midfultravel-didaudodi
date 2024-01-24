@@ -707,7 +707,7 @@
             font-size: 23px;
             font-family: 'Cormorant Garamond', serif!important;
             letter-spacing: 0.5px!important;
-            color: rgba(77,66,58,0.76)!important;
+            color: rgb(77, 66, 58) !important;
             line-height: 165%;
         }
 
@@ -720,7 +720,6 @@
             max-height: 72px; /* fallback */
             -webkit-line-clamp: 3; /* number of lines to show */
             -webkit-box-orient: vertical;
-            font-style: italic;
         }
         .about_thumb_tour {
             height:290px;
